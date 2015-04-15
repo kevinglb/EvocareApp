@@ -96,7 +96,7 @@
                             </div>
 
                             <div class="form-group">
-                                <a href="#main_page" id="login_submit" value="Log in" name="login_btn" class="btn btn-lg btn-perspective btn-block">LOG IN</a>
+                                <a href="#checklist_page" id="login_submit" value="Log in" name="login_btn" class="btn btn-lg btn-perspective btn-block">LOG IN</a>
                             </div>
                         </form>
                     </div>
@@ -147,7 +147,7 @@
             <!-- content -->
             <div data-role="main" class="ui-content">
                <div id="main_content" class="main_content">
-                <div class="container-fluid">
+                <div class="container">
                     <div class="row">
                         <div class="col-sm-3">
                             <img src="img/RedCross.png">
@@ -208,6 +208,48 @@
         
         </div>
         <!-- main page end -->
+
+        <!-- checklist page -->
+        <div id="checklist_page" data-role="page" class="ui-responsive-panel">
+
+             <!-- left menu -->
+            <div id="left_menu"  data-role="panel" data-position="left" data-display="push">
+                <h1>Left Menu</h1>
+            </div>
+
+            <!-- right menu -->
+            <div id="right_menu" data-role="panel" data-position="right" data-display="overlay">
+                <h3>Right Menu</h3>
+                <ul data-role="listview">
+                    <li><a href="#">Edit patient details</a></li>
+                    <li><a href="#">Add virtual clinic record</a></li>
+                    <li><a href="#">carry out triage</a></li>
+                    <li><a href="#">manage patient checklist</a></li>
+                    <li><a href="#" style="position:fixed; bottom:0px;">Log out</a></li>
+                </ul>
+            </div>
+
+            <!-- header -->
+            <div data-role="header" position="fixed" data-theme="a">
+                <a href="#left_menu" data-role="button"></a>
+                <h1>CHECKLIST</h1>
+                <a href="#right_menu" data-role="button" class="ui-btn ui-corner-all"></a>
+            </div>
+            <!-- header -->
+
+            <!-- content -->
+            <div data-role="main" class="ui-content">
+                <div id="checklist_create" class="checklist_create">
+                    <div class="container">
+                        <div class="row">
+                            <h2>Create Checklist</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- content end -->
+        </div>
+        <!-- checlist page end -->
 
 
 <script type="text/javascript">
