@@ -25,12 +25,14 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 
-        <!-- main css -->
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
+       
         <!-- css & font libraries  -->
         <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+
+         <!-- main css -->
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
 
         <!-- javascript libraries -->
         <script type="text/javascript" src="plugins/jquery-1.11.2.min.js"></script>
@@ -41,6 +43,82 @@
         <title>Evocare</title>
     </head>
     <body>
+
+        <!-- log in page -->
+        <div id="login_page" data-role="page">
+            <!-- header -->
+            <div date-role="header" position="fixed">
+            </div>
+            <!-- header -->
+
+            <!-- content -->
+            <div data-role="content" class="ui-content">
+                <div class="login_header text-center">
+                </div>
+                <div id="signup_content" class="container hide">
+                    <div class="row">
+                        <!-- signup form -->
+                        <form id="signup_form" role="form">
+                            <div class="form-group">
+                                <input type="text" id="signup_username" name="username" class="form-control no-border input-lg rounded text-center" placeholder="username" />
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="signup_email" name="email" class="form-control no-border input-lg rounded text-center" placeholder="email address"/>
+                            </div>
+                            <div class="form-group text-center">
+                                <input type="password" id="signup_password" name="password" class="form-control no-border input-lg rounded text-center" placeholder="password"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="signup_birthday" name="birthday" class="form-control no-border input-lg rounded text-center" placeholder="birth date"/>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" id="signup_submit" value="sign up" name="signup_btn" class="btn btn-lg btn-presepctive btn-block">sign up</button>
+                            </div>
+
+                        </form>
+                        <div class="row text-center">
+                            <a href="#" id="login_link" onClick="showLogInContent()">Do you have an account?</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="login_content" class="container">
+                    <div class="row">
+                        <!-- login form -->
+                        <form id="login_form" role="form">
+                            <div class="form-group has-feedback lg left-feedback no-label">
+                                <input type="text" id="login_username" name="username" class="form-control no-border input-lg rounded" placeholder="youremail@mail.com">
+                                    <span class="fa fa-2x fa-user form-control-feedback"></span>
+                            </div>
+                            <div class="form-group has-feedback lg left-feedback no-label">
+                                <input type="password" id="login_password" name="password" class="form-control no-border input-lg rounded" placeholder="password">
+                                <span class="fa fa-2x fa-lock form-control-feedback"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" id="login_submit" value="Log in" name="login_btn" class="btn btn-lg btn-perspective btn-block">LOG IN</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="row text-center">
+                        <a href="#">Forgot username or password?</a>
+                    </div>
+
+                    <div class="row text-center">
+                        <a href="#" id="signup_link" onClick="showSignUpContent()">Register now</a>
+                    </div>
+                </div>
+
+                
+                
+            </div>
+            <!-- content -->
+
+
+        </div>
+
+        <!-- log in page -->
         <!-- main page -->
         <div  id="#main_page" data-role="page" class="ui-responsive-panel">
 
@@ -70,7 +148,7 @@
             </div>
             <!-- header -->
             <!-- content -->
-            <div data-role="main" class="ui-content">
+            <div data-role="content" class="ui-content">
             </div>    
             <!-- content -->
 
@@ -83,7 +161,22 @@
         <!-- main page end -->
         
 
+<script type="text/javascript">
+function showLogInContent(){
 
+       
+        $("#signup_content").slideUp('500');
+
+}
+
+function showSignUpContent(){
+    
+        $("#signup_content").slideDown('500');
+        $("#signup_content").removeClass('hide');
+
+}
+
+</script>
 
         <script type="text/javascript" src="cordova.js"></script>
         <script src="plugins/com.phonegap.plugins.sqlite/www/SQLitePlugin.js"></script>
