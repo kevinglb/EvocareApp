@@ -158,6 +158,7 @@ h1 {
     line-height: 45px;
 }
 
+<<<<<<< HEAD
 
 /*triage page */
 #triage_page {
@@ -190,3 +191,24 @@ h1 {
     position: absolute;
     bottom: 0px;
 }
+=======
+/* main page */
+.row
+{
+    margin-right: 15px;
+    margin-left: 15px;
+    padding-bottom: 12px;
+}
+
+.main_content
+{
+    height:100% ;
+}
+
+.main_content p
+{
+    font-size: 2.5vw;
+}
+/* main page end */
+
+>>>>>>> 90183ba931120331ed664b9535b35ba2df65c401
