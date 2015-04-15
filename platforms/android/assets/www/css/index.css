@@ -114,6 +114,43 @@ h1 {
     -webkit-animation:fade 3000ms infinite;
 }
 
+/*login page css*/
+#login_page {
+    height: 100%;
+}
+
+#login_page .ui-content {
+    height: 100%;
+    overflow: hidden;
+}
+
+#login_page .login_header {
+    height: 30%;
+    z-index: 10;
+}
+
+#login_content, #signup_content{
+    height: 70%;
+}
+.has-feedback .form-control {
+    padding-right:  0;
+    padding-left: 45px;
+}
+
+.form-control-feedback {
+    left: 0px;
+    top: 0px;
+    width: 45px;
+    height: 45px;
+}
+
+.fa-user::before {
+    line-height: 45px;
+}
+
+.fa-lock::before {
+    line-height: 45px;
+}
 
 /* main page */
 .row
@@ -133,5 +170,4 @@ h1 {
     font-size: 2.5vw;
 }
 /* main page end */
-
 
