@@ -29,20 +29,35 @@
         <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
-
+        <link rel="stylesheet" type="text/css" href="css/mobiscroll.custom-2.15.1.min.css"/>
 
          <!-- main css -->
         <link rel="stylesheet" type="text/css" href="css/index.css" />
 
         <!-- javascript libraries -->
+
+
         <script type="text/javascript" src="plugins/jquery-1.11.2.min.js"></script>
         <script type="text/javascript" src="plugins/jquery.mobile-1.4.5.min.js"></script>
+
         <script type="text/javascript" src="plugins/bootstrap.min.js"></script>
+        <!-- date pikcer on mobile device trail version -->
+        <script type="text/javascript" src="plugins/mobiscroll.custom-2.15.1.min.js" ></script>
         
 
         <title>Evocare</title>
 
+        <script>
 
+        $(function () {
+                // Date initialization
+                $('.datepicker_input').mobiscroll().date({
+                    theme: 'android-holo-light',
+                    mode : 'scroller',
+                    display: 'modal'
+                });
+        });
+        </script>
     </head>
     <body onload="setHeightofContent()">
 
@@ -276,22 +291,27 @@
                             </div>
 
                             <div class="item contianer">
-                                <h3><strong>Symptoms</strong></h3>
-                                <div class="row symptoms_checklist">
-                                    <input name="symptom_1" id="symptom_1" checked="" data-cacheval="true" type="checkbox">
-                                    <label for="symptom_1">Symptom 1</label>
-                                     <input name="symptom_2" id="symptom_2" checked="" data-cacheval="true" type="checkbox">
-                                    <label for="symptom_2">Symptom 2</label>
-                                     <input name="symptom_3" id="symptom_3" checked=""  data-cacheval="true" type="checkbox">
-                                    <label for="symptom_3">Symptom 3</label>
-                                     <input name="symptom_4" id="symptom_4" checked="" data-cacheval="true" type="checkbox">
-                                    <label for="symptom_4">Symptom 4</label>
-                                     <input name="symptom_5" id="symptom_5" checked="" data-cacheval="true" type="checkbox">
-                                    <label for="symptom_5">Symptom 5</label>
+                                <div class="row">
+                                    <h3><strong>Symptoms</strong></h3>
+                                    <div class="symptoms_checklist">
+                                        <input name="symptom_1" id="symptom_1" checked="" data-cacheval="true" type="checkbox">
+                                        <label for="symptom_1">Symptom 1</label>
+                                     
+                                        <input name="symptom_2" id="symptom_2" checked="" data-cacheval="true" type="checkbox">
+                                        <label for="symptom_2">Symptom 2</label>
+                                     
+                                        <input name="symptom_3" id="symptom_3" checked=""  data-cacheval="true" type="checkbox">
+                                        <label for="symptom_3">Symptom 3</label>
+                                     
+                                        <input name="symptom_4" id="symptom_4" checked="" data-cacheval="true" type="checkbox">
+                                        <label for="symptom_4">Symptom 4</label>
+    
+                                        <input name="symptom_5" id="symptom_5" checked="" data-cacheval="true" type="checkbox">
+                                        <label for="symptom_5">Symptom 5</label>
+                                    </div>
                                 </div>
-                                
                             </div>
-        
+                                
                             <div class="item container">
                                 <div class="row">
                                     <h3>Title</h3>
@@ -327,10 +347,10 @@
                                     <input type="text" id="treatment_name" name="treatment_name"></input>
 
                                     <label for="treatement_date">Date of last treatment</label>
-                                    <input type="text" id="treatment_last_date" name="treatment_date"></input>
+                                    <input  id="treatment_last_date" class="datepicker_input" name="treatment_date"></input>
 
                                     <label for="blood_date">Last bloods done</label>
-                                    <input type="text" id="blood_last_date" name="blood_date"></input>
+                                    <input type="text" id="blood_last_date" name="blood_date" class="datepicker_input"></input>
 
                                     <label for="symptom">Symptom</label>
                                     <input type="text" id="treatment_symptom" name="symptom"></input>
@@ -374,11 +394,11 @@
                         <!-- controls -->
                         <div class="carousel_controls">
                             <div class="back_btn">
-                                <a class="left carousel-control" href="#triage_slide" role="button" data-slide="prev">Back</a>
+                                <a class="left carousel-control" href="#triage_slide" role="button" data-slide="prev" onClick="initialCarousel()">Back</a>
                                 <a class="carousel-control" role="button" style="display:none">+Symptom</a>
                             </div>
                             <div class="continue_btn">
-                                <a class="right carousel-control" href="#triage_slide" role="button" data-slide="next">Continue</a>
+                                <a class="right carousel-control" href="#triage_slide" role="button" data-slide="next" onClick="initialCarousel()">Continue</a>
                                 <a class="carousel-control add_btn" role="button" style="display:none;;">Add note</a>
                             </div>
                         </div>
@@ -438,6 +458,34 @@ function initialTriageCarousel(){
         }
     });
 }
+
+function initialCarousel(){
+    if($('.carousel-inner .item:first').hasClass('active')){  
+            $('.carousel_controls .back_btn .left').attr('disabled',true);
+            console.log("the 1st item");
+        }
+
+    else if($('.carousel-inner .item:last').hasClass('active')) {
+            $('.carousel_controls continue_btn.right').hide();
+            $('.carousel_controls continue_btn.add_btn').show();
+            console.log("the last item");
+        }
+
+    else{
+        $('.carousel_controls .back_btn .left').attr('disabled',false);
+        $('.carousel_controls continue_btn.add_btn').hide();
+        $('.carousel_controls continue_btn.right').show();
+        console.log("the rest items");
+
+    }
+}
+
+$(function(){
+    initialCarousel();
+
+});
+
+
 </script>
 
         <script type="text/javascript" src="cordova.js"></script>
