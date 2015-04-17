@@ -163,35 +163,61 @@ h1 {
 /*triage page */
 #triage_page {
     height: 100%;
-    overflow-y:hidden  ;
+    overflow-y:hidden;
 }
 
 
 #triage_info  {
-    height: 25%;
+    height: 15vh;
+    padding: 0px 15px;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+#triage_info div img{
+    margin: 0 auto;
 }
 
 #triage_slide {
-    height: 75%;
-
+    height: 84vh;
+    overflow-y: auto;
 }
 
-#triage_slide .carousel-inner{
-    height: 100%;
-   
-}
-
-#triage_slide .carousel-inner .item {
-    height: 100%;
-}
 
 .carousel_controls{
     width: 100%;
-    height: 75px;
-    position: absolute;
+    height: 60px;
+    position: fixed;
     bottom: 0px;
 }
 
+
+
+.carousel_controls div{
+    height: 100%;
+}
+
+
+.carousel_controls .back_btn .carousel-control, .continue_btn .carousel-control{
+    width: 50%;
+    background-color: grey;
+    color: #FFFFFF;
+    line-height: 60px;
+
+}
+.carousel_controls div .left{
+    border-right: 1px solid #FFFFFF;
+}
+.carousel_controls div .right{
+    border-left: 1px solid #FFFFFF;
+}
+
+input.ui-slider-input {
+    float: right;
+}
+.ui-slider-track {
+    margin: 0px 70px 0px 5px;
+}
 /* main page */
 .row
 {
@@ -218,36 +244,11 @@ h1 {
 }
 
 #checklist_slide {
-    height: 100%;
+    height: 90%;
+    overflow-y: auto;
 
 }
 
-#checklist_slide .carousel-inner{
-    height: 100%;
-   
-}
-
-#checklist_slide .carousel-inner .item {
-    height: 100%;
-}
-
-.carousel_controls{
-    width: 100%;
-    height: 75px;
-    position: absolute;
-    bottom: 0px;
-}
-
-#listDiv {
-    position: absolute;
-    top: 0px;
-    left:0px;
-    right: 0px;
-    bottom: 0px;
-    margin-top: 48px;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-}
 
 /* checklist page end */
 

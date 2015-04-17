@@ -117,6 +117,9 @@
                         <a href="#checklist_page" >Jump to checklist page</a>
                     </div>
 
+                     <div class="row text-center">
+                        <a href="#triage_page" >Jump to triage page</a>
+                    </div>
                 </div>
             </div>
             <!-- content -->
@@ -162,55 +165,55 @@
                <div id="main_content" class="main_content">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-3">
+                        <div class="col-xs-3">
                             <img src="img/RedCross.png">
                         </div>
-                        <div class="col-sm-7 col-sm-offset-2">
+                        <div class="col-xs-7 col-xs-offset-2">
                             <p>VIRTUAL CLINIC</p>
                         </div>
                     </div>
        
                     <div class="row">
-                        <div class="col-sm-3">
+                        <div class="col-xs-3">
                             <img src="img/RedCross.png">
                         </div>
-                        <div class="col-sm-7 col-sm-offset-2">
+                        <div class="col-xs-7 col-xs-offset-2">
                             <p>PATIENT TRIAGE</p>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-3">
+                        <div class="col-xs-3">
                             <img src="img/RedCross.png">
                         </div>
-                        <div class="col-sm-7 col-sm-offset-2">
+                        <div class="col-xs-7 col-xs-offset-2">
                             <p>PATIENT CHECKLIST</p>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-3">
+                        <div class="col-xs-3">
                             <img src="img/RedCross.png">
                         </div>
-                        <div class="col-sm-7 col-sm-offset-2">
+                        <div class="col-xs-7 col-xs-offset-2">
                             <p>CONSULTANT ON CALL</p>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-3">
+                        <div class="col-xs-3">
                             <img src="img/RedCross.png">
                         </div>
-                        <div class="col-sm-7 col-sm-offset-2">
+                        <div class="col-xs-7 col-xs-offset-2">
                             <p>SCHEDULER</p>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-3">
+                        <div class="col-xs-3">
                             <img src="img/RedCross.png">
                         </div>
-                        <div class="col-sm-7 col-sm-offset-2">
+                        <div class="col-xs-7 col-xs-offset-2">
                             <p>PATIENTS</p>
                         </div>
                     </div>
@@ -224,49 +227,168 @@
         <!-- main page end -->
         
 
-        <div id="triage_page" data-role="page" >
+        <div id="triage_page" data-role="page">
             <!-- header -->
             <div date-role="header" class="ui-header" position="fixed">
+         <!--        <a href="#" data-role="button"></a> -->
                 <h1>Triage</h1>
+                <!-- <a href="#" data-role="button"><i class="fa fa-bar"></i></a> -->
             </div>
             <!-- header -->
             <!-- content -->
             <div role="main" class="ui-content">
                 <div id="triage_info">
-                </div>
+                    <div class="col-xs-3">
+                        <img src="img/RedCross.png" class="img-circle img-responsive">
+                    </div>
+                    <div class="col-xs-8 col-xs-offset-1">
+                        <div class="row">
+                            <p><strong>Claire O'Dwyer</strong> F. 16 APR 1950</p>
+                        </div>
+                        <div class="row">
+                            <p>Myeloddysplastic Syndromes(MDS)</p>
+                        </div>
+                    </div>
 
-                <div id="triage_slide" class="carousel slide" data-ride="carousel" data-interval="false">
+                </div>
+                <!-- caoursel -->
+                <div id="triage_slide" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
 
                     <!-- wrapper for slides -->
-                    <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                            <p>Triage trend including the pie chart</p>
-                        </div>
-                         <div class="item">
-                            <p>Triage trend including the time line</p>
-                        </div>
-                         <div class="item">
-                            <p>Triage manager including the symptoms</p>
-                        </div>
-                        <div class="item">
-                            <p>Triage manager including the detailed symptoms</p>
-                        </div>
-                        <div class="item">
-                            <p>Triage manager including the treatment info</p>
-                        </div>
-                    </div>
+                    <form id="triage_form" role="form">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active container">
+                                <div class="row">
+                                    <h3><strong>Triage Trend</strong></h3>
+                                </div>
+                                <div class="row">
+                                    <div id="chart_pie">here will be a pie chart</div>
+                                </div>
+                                <div class="row">
+                                </div>
+                            </div>
+                            
+                            <div class="item container">
+                                <div class="row">
+                                    <p>Triage trend including the time line</p>
+                                </div>
+                            </div>
 
+                            <div class="item contianer">
+                                <h3><strong>Symptoms</strong></h3>
+                                <div class="row symptoms_checklist">
+                                    <input name="symptom_1" id="symptom_1" checked="" data-cacheval="true" type="checkbox">
+                                    <label for="symptom_1">Symptom 1</label>
+                                     <input name="symptom_2" id="symptom_2" checked="" data-cacheval="true" type="checkbox">
+                                    <label for="symptom_2">Symptom 2</label>
+                                     <input name="symptom_3" id="symptom_3" checked=""  data-cacheval="true" type="checkbox">
+                                    <label for="symptom_3">Symptom 3</label>
+                                     <input name="symptom_4" id="symptom_4" checked="" data-cacheval="true" type="checkbox">
+                                    <label for="symptom_4">Symptom 4</label>
+                                     <input name="symptom_5" id="symptom_5" checked="" data-cacheval="true" type="checkbox">
+                                    <label for="symptom_5">Symptom 5</label>
+                                </div>
+                                
+                            </div>
+        
+                            <div class="item container">
+                                <div class="row">
+                                    <h3>Title</h3>
+                                    <div class="row">
+                                        <p>Grade</p>
+                                        <input name="slider"id="grade_slider" data-highlight="true" min="0" max="10" value="5" type="range">
+                                        <label for="slider" disabled="disabled"></label>
+                                    </div>
+                                    <div class="row">
+                                        <label for="flip_checkbox">History:</label>
+                                        <input id="history_switch" data-role="flipswitch" name="flip_chechbox" data-on-text="Yes" data-off-text="No" data-wrapper-class="custom-size-flipswitch" type="checkbox">
+                                    </div>
+                                    <div class="row">
+                                        <p>Character of Pain</p>
+                                        <fieldset>
+                                            <input name="radio-choice-v-2" id="radio-choice-v-2a" value="on" checked="checked" type="radio">
+                                            <label for="radio-choice-v-2a">One</label>
+                                            <input name="radio-choice-v-2" id="radio-choice-v-2b" value="off" type="radio">
+                                            <label for="radio-choice-v-2b">Two</label>
+                                            <input name="radio-choice-v-2" id="radio-choice-v-2c" value="other" type="radio">
+                                            <label for="radio-choice-v-2c">Three</label>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
 
-                    <!-- controls -->
-                    <div class="carousel_controls">
-                        <a class="left carousel-control" href="#triage_slide" role="button" data-slide="prev">Back</a>
-                        <a class="right carousel-control" href="#triage_slide" role="button" data-slide="next">Continue</a>
-                    </div>
-                </div>
+                            <div class="item container">
+                                <div class="row">
+                                    <label for="flip_checkbox">On   Treatment in Unit?</label>
+                                    <input id="treatment_switch" data-role="flipswitch" name="flip_chechbox" data-on-text="Yes" data-off-text="No" data-wrapper-class="custom-size-flipswitch" type="checkbox">
+                                
+                                    <label for="treatment_name">Name of the treatment</label>
+                                    <input type="text" id="treatment_name" name="treatment_name"></input>
 
+                                    <label for="treatement_date">Date of last treatment</label>
+                                    <input type="text" id="treatment_last_date" name="treatment_date"></input>
+
+                                    <label for="blood_date">Last bloods done</label>
+                                    <input type="text" id="blood_last_date" name="blood_date"></input>
+
+                                    <label for="symptom">Symptom</label>
+                                    <input type="text" id="treatment_symptom" name="symptom"></input>
+                                </div>
+                            </div>
+                            <div class="item container">
+                                <div class="row">
+                                    <h3>Symptom</h3>
+                                    <ul id="symptom_list" data-role="listview">
+                                        <li>
+                                            <div class="col-xs-9">
+                                                <input type="text" placeholder="Symptom 1"></input>
+                                            </div>
+                                            <div class="col-xs-2 col-xs-offset-1">
+                                                <a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="col-xs-9">
+                                                <input type="text" placeholder="Symptom 2"></input>
+                                            </div>
+                                            <div class="col-xs-2 col-xs-offset-1">
+                                                <a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="col-xs-9">
+                                                <input type="text" placeholder="Symptom 1"></input>
+                                            </div>
+                                            <div class="col-xs-2 col-xs-offset-1">
+                                                <a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- carousel inner -->
+                        <!-- controls -->
+                        <div class="carousel_controls">
+                            <div class="back_btn">
+                                <a class="left carousel-control" href="#triage_slide" role="button" data-slide="prev">Back</a>
+                                <a class="carousel-control" role="button" style="display:none">+Symptom</a>
+                            </div>
+                            <div class="continue_btn">
+                                <a class="right carousel-control" href="#triage_slide" role="button" data-slide="next">Continue</a>
+                                <a class="carousel-control add_btn" role="button" style="display:none;;">Add note</a>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- triage form -->    
+                </div> 
+                <!-- triage slide -->
             </div>
-
+            <!-- content -->
         </div>
+        <!-- triage page -->
 
 
 
@@ -304,61 +426,148 @@
                <div id="checklist_slide" class="carousel slide" data-ride="carousel" data-interval="false">
 
                     <!-- wrapper for slides -->
-                    <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                            <h3>Create Checklist</h3>
-                            
-                            <ul id="checklist_listview_create" data-role="listview">
-                                <li class="ui-field-contain">
-                                    <input type="text" id="checklist_name_create" name="checklist name" placeholder="Checcklist name">
-                                </li>
+                    <div class="carousel-inner" role="listbox">  
+                        <div class="item active container">
+                                <h3>Create Checklist</h3>
+                            <div class="row">
+                                <ul id="checklist_listview_create" data-role="listview">
+                                    <li class="ui-field-contain">
+                                        <div class="col-xs-9">
+                                            <input type="text" id="checklist_name_create" name="checklist name" placeholder="Checcklist name">
+                                        </div>
+                                        <div class="col-xs-2 col-xs-offset-1">
+                                            <a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a>
+                                        </div>
+                                    </li>
+                                    
+                                    <li class="ui-field-contain">
+                                        <div class="col-xs-9">
+                                            <input type="text" id="checklist_category_create" name="category" placeholder="Category">
+                                        </div>
+                                        <div class="col-xs-2 col-xs-offset-1">
+                                            <a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a>
+                                        </div>
+                                    </li>
 
-                                 <li class="ui-field-contain">
-                                    <input type="text" id="checklist_category_create" name="category" placeholder="Category">
-                                </li>
-
-                                 <li class="ui-field-contain">
-                                    <input type="text" id="checklist_tag1_create" name="tag1" placeholder="Optional tag 1">
-                                </li>
+                                    <li class="ui-field-contain">
+                                        <div class="col-xs-9">
+                                            <input type="text" id="checklist_tag1_create" name="tag1" placeholder="Optional tag 1">
+                                        </div>
+                                        <div class="col-xs-2 col-xs-offset-1">
+                                            <a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a>
+                                    </div>
+                                        </li>
                                 
-                                 <li class="ui-field-contain">
-                                    <input type="text" id="checklist_tag2_create" name="tag2" placeholder="Optional tag 2">
-                                </li>
-                            </ul>
-
-                             <button type="button" class="ui-btn ui-corner-all ui-btn-a" onclick="addNewTag()">ADD TAG</button>
+                                    <li class="ui-field-contain">
+                                        <div class="col-xs-9">
+                                            <input type="text" id="checklist_tag2_create" name="tag2" placeholder="Optional tag 2">
+                                        </div>
+                                         <div class="col-xs-2 col-xs-offset-1">
+                                            <a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <button type="button" class="ui-btn ui-corner-all ui-btn-a" onclick="addNewTag()">ADD TAG</button>
+                            </div>
                         </div>
-                         <div class="item">
-                            <h3>Create Checklist</h3>
-                           
-                            <ul id="checklist_listview_item" data-role="listview">
-                                <li>
-                                    <h4 style="text-align:center">ITEM1</h4>
-                                    <input type="text" id="item1_task" name"item" placeholder="Item/Task">
-                                    <input type="text" id="item1_respon" name="resopn" placeholder="Responsible entity">
-                                </li>
-                            </ul>
-                            
-                            <button type="button" class="ui-btn ui-corner-all ui-btn-a" onclick="addNewNote()">ADD NOTE</button>
+                        
+                        
+                         <div class="item container">
+                            <h3>Checklist Name</h3>
+                                <div class="row">
+                                    <ul id="checklist_listview_item" data-role="listview">
+                                        <li>
+                                            <h4 style="text-align:center">ITEM1</h4>
+                                                <div class="col-xs-9">
+                                                    <input type="text" id="item1_task" name"item" placeholder="Item/Task">
+                                                </div>
+                                                <div class="col-xs-2 col-xs-offset-1">
+                                                    <a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a>
+                                                </div>
+
+                                                <div class="col-xs-9">
+                                                    <input type="text" id="item1_respon" name"respon" placeholder="Responsible entity">
+                                                </div>
+                                                <div class="col-xs-2 col-xs-offset-1">
+                                                    <a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a>
+                                                </div>
+                                        </li>
+                                    </ul>
+                                    <button type="button" class="ui-btn ui-corner-all ui-btn-a" onclick="addNewNote()">ADD NOTE</button>
+                                </div>
+                        </div> 
+
+                        <div class="item container">
+                            <div class="checklist_user_assign">                       
+                                <ul data-role="listview" data-autodividers="true" data-filter="true" data-inset="true" data-filter-placeholder="Assign Checklist Name to">
+                                    <li data-icon="delete">
+                                        <a href="">
+                                            <img src="img/RedCross.png">
+                                            <h3>Stephen Morrissey</h3>
+                                            <p>M.20 Mar 1952</p>
+                                            <p>T.Lorem Ipsum</p>
+                                        </a>
+                                    </li>
+
+                                    <li data-icon="delete">
+                                        <a href="">
+                                            <img src="img/RedCross.png">
+                                            <h3>Claire O'Dwyer</h3>
+                                            <p>F.16 Apr 1952</p>
+                                            <p>Myelodysplastic Syndromes(MDS)</p>
+                                        </a>
+                                    </li>
+
+                                    <li data-icon="delete">
+                                        <a href="">
+                                            <img src="img/RedCross.png">
+                                            <h3>Tom O'Reilly</h3>
+                                            <p>M.3 July 1942</p>
+                                            <p>T.Lorem Ipsum</p>
+                                        </a>
+                                    </li>
+
+                                    <li data-icon="delete">
+                                        <a href="">
+                                            <img src="img/RedCross.png">
+                                            <h3>Rob Peters</h3>
+                                            <p>F.16 Apr 1952</p>
+                                            <p>Myelodysplastic Syndromes(MDS)</p>
+                                        </a>
+                                    </li>
+
+                                    <li data-icon="delete">
+                                        <a href="">
+                                            <img src="img/RedCross.png">
+                                            <h3>Tom O'Dwyer</h3>
+                                            <p>F.16 Jun 1952</p>
+                                            <p>Myelodysplastic Syndromes(MDS)</p>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
                         </div>
                     </div>
+                              <!-- controls -->
+                        <div class="carousel_controls">
+                            <div class="back_btn">
+                                <a class="left carousel-control" href="#checklist_slide" role="button" data-slide="prev">Back</a>
+                            </div>
+                            <div class="continue_btn">
+                                <a class="right carousel-control" href="#checklist_slide" role="button" data-slide="next">Continue</a>
+                            </div>
+                        </div>
 
-                    <!-- controls -->
-                    <div class="carousel_controls">
-                        <a class="left carousel-control" href="#checklist_slide" role="button" data-slide="prev">Back</a>
-                        <a class="right carousel-control" href="#checklist_slide" role="button" data-slide="next">Continue</a>
-                    </div>
-                
                 </div>
-
-            </div>
-            <!-- content end -->
+                <!-- content end -->
         
-        </div>
-        <!-- checlist page end -->
+            </div>
+            <!-- checlist page end -->
 
 
 <script type="text/javascript">
+// switch between singup content and login content
 function toggleLogInContent(hidden){
     if(hidden){
         $("#signup_content").slideUp('500');
@@ -369,49 +578,54 @@ function toggleLogInContent(hidden){
     } 
 }
 
+
 var tag_id = 3;
 function addNewTag()
 {
-    $('#checklist_listview_create').append('<li class="ui-field-contain"><div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="text" id="checklist_tag' + tag_id + '" name="tag' + tag_id + '" placeholder="Optional tag ' + tag_id + '"></div></li>').listview('refresh');
+    $('#checklist_listview_create').append('<li class="ui-field-contain"> <div class="col-xs-9"><div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="text" id="checklist_tag' + tag_id + '" name="tag' + tag_id + '" placeholder="Optional tag ' + tag_id + '"></div></div><div class="col-xs-2 col-xs-offset-1"><a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a></div></li>').listview('refresh');
+    
     tag_id ++;
+
+    var last_li = $("#checklist_listview_create li:last-child").offset().top;
 }
+
 
 var item_id = 2;
 function addNewNote()
 {
-    $('#checklist_listview_item').append(' <li><h4 style="text-align:center">ITEM' + item_id + '</h4><div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="text" id="item' + item_id + '_task" name"item" placeholder="Item/Task"></div><div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="text" id="item' + item_id + '"_respon" name="resopn" placeholder="Responsible entity"></div></li>').listview('refresh');
+    $('#checklist_listview_item').append(' <li><h4 style="text-align:center">ITEM' + item_id + '</h4><div class="col-xs-9"><div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="text" id="item' + item_id + '_task" name"item" placeholder="Item/Task"></div></div> <div class="col-xs-2 col-xs-offset-1"><a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a></div><div class="col-xs-9"><div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="text" id="item' + item_id + '"_respon" name="resopn" placeholder="Responsible entity"></div></div><div class="col-xs-2 col-xs-offset-1"><a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a></div></li>').listview('refresh');
     item_id ++;
 }
 
+//set up the height of ui-content once the page is loaded
 function setHeightofContent(){
 
     var screen = $.mobile.getScreenHeight();
-    console.log("screen height: "+screen);
     
     var header = $(".ui-page .ui-header").outerHeight();
-    console.log("header height:" +header);
     var  contentCurrent = screen - header;
     console.log(contentCurrent);
     //var content = screen - header  - contentCurrent;
     $(".ui-content").height(contentCurrent);
-    // $("#main_page .ui-content").height(content);
-    // $("#carpark_list_page_content").height(content);
-    // $("#setting_page_content").height(content);
-    // $("#graphics_page_content").height(content);
-    // $("#permit_page_content").height(content);
-    // $("#history_page_content").height(content);
+    
+
+
 
 }
 
-// function initialTriage(){
-//     $("#triage_page .carousel").carousel({
-//         interval: false,
-//         warp: false,
+//try to replace the buttons at the bottom when the carousel goes to the last item ..fails
+function initialTriageCarousel(){
+    $("#triage_slide").on('slide', '', function(){
+        if($('.carousel-inner .item:first').hasClass('active')){
+            $(this).find('.carousel_controls.left').hide();
+        }
+        else if($('.carousel-inner .item:last').hasClass('active')) {
+            $(this).find('.carousel_controls.right').hide();
+            $(this).find('.carousel_controls.add_btn').show();
 
-//     })
-
-// }
-
+        }
+    });
+}
 </script>
 
         <script type="text/javascript" src="cordova.js"></script>
