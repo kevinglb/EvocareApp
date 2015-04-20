@@ -41,16 +41,16 @@
         <script type="text/javascript" src="plugins/jquery.mobile-1.4.5.min.js"></script>
 
         <script type="text/javascript" src="plugins/bootstrap.min.js"></script>
+        <script type="text/javascript" src="plugins/d3.min.js"></script>
         <!-- date pikcer on mobile device trail version -->
         <script type="text/javascript" src="plugins/mobiscroll.custom-2.15.1.min.js" ></script>
         
-
         <title>Evocare</title>
 
         <script>
 
         $(function () {
-                // Date initialization
+                // Date picker initialization
                 $('.datepicker_input').mobiscroll().date({
                     theme: 'android-holo-light',
                     mode : 'scroller',
@@ -100,6 +100,7 @@
                     </div>
 
                 </div>
+
                 <div id="login_content" class="container">
                     <div class="row">
                         <!-- login form -->
@@ -132,8 +133,12 @@
                         <a href="#checklist_page" >Jump to checklist page</a>
                     </div>
 
-                     <div class="row text-center">
+                    <div class="row text-center">
                         <a href="#triage_page" >Jump to triage page</a>
+                    </div>
+
+                     <div class="row text-center">
+                        <a href="#event_schedule_page" >Jump to event schedule page</a>
                     </div>
                 </div>
             </div>
@@ -141,7 +146,6 @@
             <div data-role="footer">
             </div>
         </div>
-
         <!-- log in page end -->
 
         <!-- main page -->
@@ -236,18 +240,14 @@
                </div>
             </div>    
             <!-- content -->  
-
-      
         </div>
         <!-- main page end -->
-        
 
+        <!-- triage page -->
         <div id="triage_page" data-role="page">
             <!-- header -->
             <div date-role="header" class="ui-header" position="fixed">
-         <!--        <a href="#" data-role="button"></a> -->
                 <h1>Triage</h1>
-                <!-- <a href="#" data-role="button"><i class="fa fa-bar"></i></a> -->
             </div>
             <!-- header -->
             <!-- content -->
@@ -277,7 +277,7 @@
                                     <h3><strong>Triage Trend</strong></h3>
                                 </div>
                                 <div class="row">
-                                    <div id="chart_pie">here will be a pie chart</div>
+                                    <div id="pie_chart" class="text-center">here will be a pie chart</div>
                                 </div>
                                 <div class="row">
                                 </div>
@@ -359,32 +359,33 @@
                                 <div class="row">
                                     <h3>Symptom</h3>
                                     <ul id="symptom_list" data-role="listview">
-                                        <li>
+                                        <li id="symptom_li_1">
                                             <div class="col-xs-9">
-                                                <input type="text" placeholder="Symptom 1"></input>
+                                                <input type="text" name="symptom_1" placeholder="Symptom 1"></input>
                                             </div>
                                             <div class="col-xs-2 col-xs-offset-1">
-                                                <a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a>
+                                                <a href="#" class="close_link" onClick="removeSymptom()"><i class="fa fa-4x fa-close"></i></a>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="col-xs-9">
-                                                <input type="text" placeholder="Symptom 2"></input>
+                                                <input type="text" name="symptom_2" placeholder="Symptom 2"></input>
                                             </div>
                                             <div class="col-xs-2 col-xs-offset-1">
-                                                <a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a>
+                                                <a href="#" class="close_link" ><i class="fa fa-4x fa-close"></i></a>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="col-xs-9">
-                                                <input type="text" placeholder="Symptom 1"></input>
+                                                <input type="text" 
+                                                name="symptom_3" placeholder="Symptom 3"></input>
                                             </div>
                                             <div class="col-xs-2 col-xs-offset-1">
-                                                <a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a>
+                                                <a href="#" class="close_link" ><i class="fa fa-4x fa-close"></i></a>
                                             </div>
                                         </li>
                                     </ul>
-
+                                    <button type="button" class="ui-btn ui-corner-all ui-btn-a" onclick="addSymptom()">+ Symptom</button>
                                 </div>
                             </div>
 
@@ -393,12 +394,12 @@
                         <!-- controls -->
                         <div class="carousel_controls">
                             <div class="back_btn">
-                                <a class="left carousel-control" href="#triage_slide" role="button" data-slide="prev" onClick="initialCarousel()">Back</a>
-                                <a class="carousel-control" role="button" style="display:none">+Symptom</a>
+                                <a class="left carousel-control" href="#triage_slide" role="button" data-slide="prev" onClick="detectCarousel()" disabled="disabled">Back</a>
+                                <!-- <a class="carousel-control add_symptom" role="button" style="display:none">+Symptom</a> -->
                             </div>
                             <div class="continue_btn">
-                                <a class="right carousel-control" href="#triage_slide" role="button" data-slide="next" onClick="initialCarousel()">Continue</a>
-                                <a class="carousel-control add_btn" role="button" style="display:none;;">Add note</a>
+                                <a class="right carousel-control" href="#triage_slide" role="button" data-slide="next" onClick="detectCarousel()">Continue</a>
+                                <a class="carousel-control add_note" role="button" style="display:none;;">Add note</a>
                             </div>
                         </div>
                     </form>
@@ -410,7 +411,33 @@
         </div>
         <!-- triage page -->
 
+        <!-- event schedule page -->
+        <div id="event_schedule_page" data-role="page">
+            <!-- header -->
+            <div data-role="header" class="ui-header">
+                <h1>Event Schedule</h1>
+            </div>
+            <!-- header -->
+            <!-- content -->
+            <div data-role="main" class="ui-content">
+                <div class="switch_btn">
+                    <a href="#" onClick="ScheduleContentSwitch()" data-role="button">Clinic</a>
+                    <a href="#" onClick="ScheduleContentSwitch()" data-role="button">Individual</a>
+                </div>
 
+                <div class="clinic_content">
+                    <p>this is the clinic content page </p>
+                </div>
+
+                <div class="individual_content" style="display:none;">
+                    <p>this is the individual content page </p>
+                </div>
+            </div>
+            <!-- content -->
+
+
+        </div>
+        <!-- event schedule page -->
 
         <!-- checklist page -->
         <div id="checklist_page" data-role="page">
@@ -628,50 +655,130 @@ function setHeightofContent(){
     //var content = screen - header  - contentCurrent;
     $(".ui-content").height(contentCurrent);
     
-
-
-
 }
 
-//try to replace the buttons at the bottom when the carousel goes to the last item ..fails
-function initialTriageCarousel(){
-    $("#triage_slide").on('slide', '', function(){
-        if($('.carousel-inner .item:first').hasClass('active')){
-            $(this).find('.carousel_controls.left').hide();
-        }
-        else if($('.carousel-inner .item:last').hasClass('active')) {
-            $(this).find('.carousel_controls.right').hide();
-            $(this).find('.carousel_controls.add_btn').show();
-
-        }
-    });
+function addSymptom(){
+    var index = $("#symptom_list>li").length+1;
+    //console.log(index);
+    $("#symptom_list").append('<li><div class="col-xs-9"><div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="text" name="symptom_'+ index+ '"'+' placeholder="Symptom '+index+'"></input></div></div><div class="col-xs-2 col-xs-offset-1"><a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a></div></li>').listview('refresh');
 }
 
-function initialCarousel(){
-    if($('.carousel-inner .item:first').hasClass('active')){  
-            $('.carousel_controls .back_btn .left').attr('disabled',true);
-            console.log("the 1st item");
+function removeSymptom(){
+    var id = $(this).parent('div').parent().attr('id');
+    console.log(id);
+    // var target = document.getElementByName(name);
+    // target.remove();
+}
+//detect the current slide of the carousel and show/hide the buttons
+function detectCarousel(){
+    setTimeout(function(){
+        if($('.carousel-inner .item:first').hasClass('active')){  
+                $('.carousel_controls .left').attr('disabled',true);
+                console.log("the 1st item");
+            }
+
+        else if($('.carousel-inner .item:last-child').hasClass('active')) {
+                $('.carousel_controls .right').hide();
+                //$('.carousel_controls .left').hide();
+                $('.carousel_controls .add_note').show();
+                //$('.carousel_controls .add_symptom').show();
+                console.log("the last item");
+            }
+
+        else{
+            $('.carousel_controls .back_btn .left').attr('disabled',false);
+            $('.carousel_controls .add_note').hide();
+            $('.carousel_controls .right').show();
+            console.log("the rest items");
         }
+    },500);
+}
 
-    else if($('.carousel-inner .item:last').hasClass('active')) {
-            $('.carousel_controls continue_btn.right').hide();
-            $('.carousel_controls continue_btn.add_btn').show();
-            console.log("the last item");
-        }
-
-    else{
-        $('.carousel_controls .back_btn .left').attr('disabled',false);
-        $('.carousel_controls continue_btn.add_btn').hide();
-        $('.carousel_controls continue_btn.right').show();
-        console.log("the rest items");
-
+function ScheduleContentSwitch(){
+    if($(".clinic_content").is(":visible")){
+        console.log("clinic");
+        $(".clinic_content").hide();
+        $(".individual_content").show();
     }
+    else if($(".individual_content").is(":visible")){
+        console.log("individual");
+        $(".individual_content").hide();
+        $(".clinic_content").show();
+    }
+
 }
 
 $(function(){
-    initialCarousel();
+    showPercentDonut(10);
 
 });
+
+function showPercentDonut(percent) {
+
+    $("#pie_chart").empty();
+    //console.log('after empty ');
+    var width= 240;
+    //console.log(width);
+    var height = 240;
+    var radius = Math.min(width, height) / 2;
+    //console.log(radius);
+    var dig = radius/6;
+    var color = d3.scale.category20();
+    var centerX =  radius;
+    var centerY =  height/2;
+    var center = [centerX, centerY];
+    var dataset = {
+        lower: [0, 100],
+        upper: [percent, 100-percent]
+      },
+    
+      pie = d3.layout.pie().sort(null),
+      format = d3.format(".0%");
+
+    var arc = d3.svg.arc()
+        .innerRadius(radius - 2 - dig)
+        .outerRadius(radius -5);
+
+    var svg = d3.select("#pie_chart").append("svg")
+        .attr("width", width)
+        .attr("height", height)
+        .append("g")
+        .attr('transform', 'translate(' + center[0] + ', ' + center[1] + ')');
+
+    var path = svg.selectAll("path")
+        .data(pie(dataset.lower))
+        .enter().append("path")
+        .attr('fill', function (d, i) { return color(i); })
+        .attr("d", arc)
+        .each(function(d) { this._current = d; }); // store the initial values
+
+    var text = svg.append("text")
+        .attr("text-anchor", "middle")
+        .attr('fill',"#000")
+        .attr("font-size", "6vh")
+        .attr("dy",".35em");
+
+   if (typeof(percent) == "string")
+   {
+     text.text(percent);
+   }
+   else {
+     var progress = 0;
+     var timeout = setTimeout(function () {
+       clearTimeout(timeout);
+       path = path.data(pie(dataset.upper)); // update the data
+       path.transition().duration(1200).attrTween("d", function (a) {
+         var i  = d3.interpolate(this._current, a);
+         var i2 = d3.interpolate(progress, percent);
+         this._current = i(0);
+         return function(t) {
+           text.text( format(i2(t) / 100) );
+           return arc(i(t));
+         };
+      }); // redraw the arcs
+    }, 100);
+  }
+}
 
 
 </script>
