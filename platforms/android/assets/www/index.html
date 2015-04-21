@@ -1,22 +1,5 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
     <head>
         <meta charset="utf-8" />
@@ -78,16 +61,16 @@
                         <!-- signup form -->
                         <form id="signup_form" role="form">
                             <div class="form-group">
-                                <input type="text" id="signup_username" name="username" class="form-control no-border input-lg rounded text-center" placeholder="username" />
+                                <input type="text" id="signup_username" name="username" class="form-control no-border input-lg" placeholder="username" />
                             </div>
                             <div class="form-group">
-                                <input type="email" id="signup_email" name="email" class="form-control no-border input-lg rounded text-center" placeholder="email address"/>
-                            </div>
-                            <div class="form-group text-center">
-                                <input type="password" id="signup_password" name="password" class="form-control no-border input-lg rounded text-center" placeholder="password"/>
+                                <input type="email" id="signup_email" name="email" class="form-control no-border input-lg" placeholder="email address"/>
                             </div>
                             <div class="form-group">
-                                <input type="text" id="signup_birthday" name="birthday" class="form-control no-border input-lg rounded text-center" placeholder="birth date"/>
+                                <input type="password" id="signup_password" name="password" class="form-control no-border input-lg" placeholder="password"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="signup_birthday" name="birthday" class="form-control no-border input-lg" placeholder="birth date"/>
                             </div>
                             <div class="form-group">
                                 <a type="submit" id="signup_submit" value="sign up" name="signup_btn" class="btn btn-lg btn-presepctive btn-block">sign up</button>
@@ -151,7 +134,6 @@
         <!-- main page -->
         <div  id="main_page" data-role="page" class="ui-responsive-panel">
 
-
             <!-- left menu -->
             <div id="left_menu"  data-role="panel" data-position="left" data-display="push">
                 <h1>Left Menu</h1>
@@ -183,59 +165,66 @@
             <div data-role="main" class="ui-content">
                <div id="main_content" class="main_content">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <img src="img/RedCross.png">
+                    <a href="#virtual_clinic_page" data-transition="slide">
+                        <div class="row list_item">
+                            <div class="col-xs-3 text-center">
+                                <img src="img/RedCross.png">
+                            </div>
+                            <div class="col-xs-8 col-xs-offset-1">
+                                <p>VIRTUAL CLINIC</p>
+                            </div>
                         </div>
-                        <div class="col-xs-7 col-xs-offset-2">
-                            <p>VIRTUAL CLINIC</p>
+                    </a>
+                    <a href="#triage_page" data-transition="slide" onClick="SetUpTriagePage()">
+                        <div class="row list_item">
+                            <div class="col-xs-3 text-center">
+                                <img src="img/RedCross.png">
+                            </div>
+                            <div class="col-xs-8 col-xs-offset-1">
+                                <p>PATIENT TRIAGE</p>
+                            </div>
                         </div>
-                    </div>
-       
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <img src="img/RedCross.png">
+                    </a>
+                    <a href="#checklist_page" data-transition="slide">
+                        <div class="row list_item">
+                            <div class="col-xs-3 text-center">
+                                <img src="img/RedCross.png">
+                            </div>
+                            <div class="col-xs-8 col-xs-offset-1">
+                                <p>PATIENT CHECKLIST</p>
+                            </div>
                         </div>
-                        <div class="col-xs-7 col-xs-offset-2">
-                            <p>PATIENT TRIAGE</p>
+                    </a>
+                    <a href="#">
+                        <div class="row list_item">
+                            <div class="col-xs-3 text-center">
+                                <img src="img/RedCross.png">
+                            </div>
+                            <div class="col-xs-8 col-xs-offset-1">
+                                <p>CONSULTANT ON CALL</p>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <img src="img/RedCross.png">
+                    </a>
+                    <a href="#event_schedule_page" data-transition="slide">
+                        <div class="row list_item">
+                            <div class="col-xs-3 text-center">
+                                <img src="img/RedCross.png">
+                            </div>
+                            <div class="col-xs-8 col-xs-offset-1">
+                                <p>SCHEDULER</p>
+                            </div>
                         </div>
-                        <div class="col-xs-7 col-xs-offset-2">
-                            <p>PATIENT CHECKLIST</p>
+                    </a>
+                    <a href="#" data-transition="slide">
+                        <div class="row list_item">
+                           <div class="col-xs-3 text-center">
+                                <img src="img/RedCross.png">
+                            </div>
+                            <div class="col-xs-8 col-xs-offset-1">
+                                <p>PATIENTS</p>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <img src="img/RedCross.png">
-                        </div>
-                        <div class="col-xs-7 col-xs-offset-2">
-                            <p>CONSULTANT ON CALL</p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <img src="img/RedCross.png">
-                        </div>
-                        <div class="col-xs-7 col-xs-offset-2">
-                            <p>SCHEDULER</p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <img src="img/RedCross.png">
-                        </div>
-                        <div class="col-xs-7 col-xs-offset-2">
-                            <p>PATIENTS</p>
-                        </div>
-                    </div>
+                    </a>
                 </div>
                </div>
             </div>    
@@ -243,11 +232,40 @@
         </div>
         <!-- main page end -->
 
+        <!-- virtual clinic -->
+        <div id="virtual_clinic_page" data-role="page">
+            <!-- header-->
+            <div data-role="header" class="ui-header" position="fixed">
+                <a href="#" data-rel="back" data-transition="slide" data-role="button">back</a>
+                <h1>virtual clinic</h1>
+                <a href="#" data-role="button"></a>
+            </div>
+            <!-- header -->
+            <!-- content -->
+            <div data-role="main" class="ui-content">
+                <div class="container">
+                </div>
+            </div>
+            <!-- content -->
+
+        </div>
+        <!-- virtual clinic -->
+
         <!-- triage page -->
         <div id="triage_page" data-role="page">
+            <!-- right menu -->
+            <div id="triage_right_menu" data-role="panel" data-position="right" data-display="overlay">
+                <ul data-role="listview">
+                    <li></li>
+
+                </ul>
+            </div>
+            <!-- right menu -->
             <!-- header -->
-            <div date-role="header" class="ui-header" position="fixed">
+            <div data-role="header" class="ui-header" position="fixed">
+                <a href="#" data-rel="back" data-transition="slide" data-role="button">Back</a>
                 <h1>Triage</h1>
+                <a href="#triage_right_menu" data-role="button"><i class="fa fa-2x fa-bars"></i></a>
             </div>
             <!-- header -->
             <!-- content -->
@@ -359,29 +377,29 @@
                                 <div class="row">
                                     <h3>Symptom</h3>
                                     <ul id="symptom_list" data-role="listview">
-                                        <li id="symptom_li_1">
+                                        <li>
                                             <div class="col-xs-9">
-                                                <input type="text" name="symptom_1" placeholder="Symptom 1"></input>
+                                                <input type="text" name="symptom_1" placeholder="Symptom"></input>
                                             </div>
                                             <div class="col-xs-2 col-xs-offset-1">
-                                                <a href="#" class="close_link" onClick="removeSymptom()"><i class="fa fa-4x fa-close"></i></a>
+                                                <a href="#" class="close_link" onClick="removeSymptom(this)"><i class="fa fa-4x fa-close"></i></a>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="col-xs-9">
-                                                <input type="text" name="symptom_2" placeholder="Symptom 2"></input>
+                                                <input type="text" name="symptom_2" placeholder="Symptom"></input>
                                             </div>
                                             <div class="col-xs-2 col-xs-offset-1">
-                                                <a href="#" class="close_link" ><i class="fa fa-4x fa-close"></i></a>
+                                                <a href="#" class="close_link"onClick="removeSymptom(this)"><i class="fa fa-4x fa-close"></i></a>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="col-xs-9">
                                                 <input type="text" 
-                                                name="symptom_3" placeholder="Symptom 3"></input>
+                                                name="symptom_3" placeholder="Symptom"></input>
                                             </div>
                                             <div class="col-xs-2 col-xs-offset-1">
-                                                <a href="#" class="close_link" ><i class="fa fa-4x fa-close"></i></a>
+                                                <a href="#" class="close_link" onClick="removeSymptom(this)"><i class="fa fa-4x fa-close"></i></a>
                                             </div>
                                         </li>
                                     </ul>
@@ -394,11 +412,11 @@
                         <!-- controls -->
                         <div class="carousel_controls">
                             <div class="back_btn">
-                                <a class="left carousel-control" href="#triage_slide" role="button" data-slide="prev" onClick="detectCarousel()" disabled="disabled">Back</a>
+                                <a class="left carousel-control" href="#triage_slide" role="button" data-slide="prev" onClick="detectTriageCarousel()" disabled="disabled">Back</a>
                                 <!-- <a class="carousel-control add_symptom" role="button" style="display:none">+Symptom</a> -->
                             </div>
                             <div class="continue_btn">
-                                <a class="right carousel-control" href="#triage_slide" role="button" data-slide="next" onClick="detectCarousel()">Continue</a>
+                                <a class="right carousel-control" href="#triage_slide" role="button" data-slide="next" onClick="detectTriageCarousel()">Continue</a>
                                 <a class="carousel-control add_note" role="button" style="display:none;;">Add note</a>
                             </div>
                         </div>
@@ -463,7 +481,7 @@
             <div data-role="header" position="fixed" class="ui-header">
                 <a href="#left_menu" data-role="button"></a>
                 <a href="#right_menu" data-role="button" class="ui-btn ui-corner-all"></a>
-                <h3>CHECKLIST</h1>
+                <h3>CHECKLIST</3>
             </div>
             <!-- header -->
 
@@ -646,7 +664,6 @@ function addNewNote()
 
 //set up the height of ui-content once the page is loaded
 function setHeightofContent(){
-
     var screen = $.mobile.getScreenHeight();
     
     var header = $(".ui-page .ui-header").outerHeight();
@@ -660,35 +677,35 @@ function setHeightofContent(){
 function addSymptom(){
     var index = $("#symptom_list>li").length+1;
     //console.log(index);
-    $("#symptom_list").append('<li><div class="col-xs-9"><div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="text" name="symptom_'+ index+ '"'+' placeholder="Symptom '+index+'"></input></div></div><div class="col-xs-2 col-xs-offset-1"><a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a></div></li>').listview('refresh');
+    $("#symptom_list").append('<li><div class="col-xs-9"><div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="text" name="symptom_'+ index+ '"'+' placeholder="Symptom"></input></div></div><div class="col-xs-2 col-xs-offset-1"><a href="#" class="close_link" onClick="removeSymptom(this)"><i class="fa fa-4x fa-close"></i></a></div></li>').listview('refresh');
 }
 
-function removeSymptom(){
-    var id = $(this).parent('div').parent().attr('id');
-    console.log(id);
-    // var target = document.getElementByName(name);
-    // target.remove();
+function removeSymptom(element){
+    // var id = $(el).parent('div').parent('li').attr('id');
+    // console.log(id);
+    var target = $(element).parent('div').parent('li');
+    target.remove();
 }
 //detect the current slide of the carousel and show/hide the buttons
-function detectCarousel(){
+function detectTriageCarousel(){
     setTimeout(function(){
-        if($('.carousel-inner .item:first').hasClass('active')){  
-                $('.carousel_controls .left').attr('disabled',true);
+        if($('#triage_slide .carousel-inner .item:first').hasClass('active')){  
+                $('#triage_slide .carousel_controls .left').attr('disabled',true);
                 console.log("the 1st item");
             }
 
-        else if($('.carousel-inner .item:last-child').hasClass('active')) {
-                $('.carousel_controls .right').hide();
+        else if($('#triage_slide .carousel-inner .item:last-child').hasClass('active')) {
+                $('#triage_slide .carousel_controls .right').hide();
                 //$('.carousel_controls .left').hide();
-                $('.carousel_controls .add_note').show();
+                $('#triage_slide .carousel_controls .add_note').show();
                 //$('.carousel_controls .add_symptom').show();
                 console.log("the last item");
             }
 
         else{
-            $('.carousel_controls .back_btn .left').attr('disabled',false);
-            $('.carousel_controls .add_note').hide();
-            $('.carousel_controls .right').show();
+            $('#triage_slide .carousel_controls .back_btn .left').attr('disabled',false);
+            $('#triage_slide .carousel_controls .add_note').hide();
+            $('#triage_slide .carousel_controls .right').show();
             console.log("the rest items");
         }
     },500);
@@ -708,11 +725,9 @@ function ScheduleContentSwitch(){
 
 }
 
-$(function(){
+function SetUpTriagePage(){
     showPercentDonut(10);
-
-});
-
+}
 function showPercentDonut(percent) {
 
     $("#pie_chart").empty();
