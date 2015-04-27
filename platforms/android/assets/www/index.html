@@ -113,7 +113,7 @@
                     </div>
 
                     <div class="row text-center">
-                        <a href="#checklist_page" >Jump to checklist page</a>
+                        <a href="#checklist_page">Jump to checklist page</a>
                     </div>
 
                     <div class="row text-center">
@@ -303,7 +303,32 @@
                             
                             <div class="item container">
                                 <div class="row">
-                                    <p>Triage trend including the time line</p>
+                                    <ul class="timeline">
+                                        <li>
+                                            <div class="date col-xs-4">
+                                                24 April
+                                            </div>
+                                            <div class="arrow col-xs-4 col-xs-offset-4">
+                                                <i class="fa fa-close"></i>
+                                            </div>
+                                        </li>
+                                         <li>
+                                            <div class="date col-xs-4">
+                                                24 April
+                                            </div>
+                                            <div class="arrow col-xs-4 col-xs-offset-4">
+                                                <i class="fa fa-close"></i>
+                                            </div>
+                                        </li>
+                                         <li>
+                                            <div class="date col-xs-4">
+                                                24 April
+                                            </div>
+                                            <div class="arrow col-xs-4 col-xs-offset-4">
+                                                <i class="fa fa-close"></i>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
 
@@ -432,7 +457,8 @@
         <!-- event schedule page -->
         <div id="event_schedule_page" data-role="page">
             <!-- header -->
-            <div data-role="header" class="ui-header">
+            <div data-role="header" class="ui-header">  
+                <a href="#" data-rel="back" data-transition="slide">back</a>
                 <h1>Event Schedule</h1>
             </div>
             <!-- header -->
@@ -444,11 +470,54 @@
                 </div>
 
                 <div class="clinic_content">
-                    <p>this is the clinic content page </p>
+                    <p>this is the clinic content</p>
                 </div>
 
                 <div class="individual_content" style="display:none;">
-                    <p>this is the individual content page </p>
+                    <div class="container">
+                        <ul class="timeline">
+                            <li>
+                                <div class="col-xs-4 time text-center">
+                                    <p>10:00 today</p>
+                                     <img src="img/RedCross.png" class="img-circle"/>
+                                </div>
+                                <div class="col-xs-4 col-xs-offset-4 name text-center">
+                                    <p>Stephen moriiessy</p>
+                                    <img src="img/RedCross.png" class="img-circle"/>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="col-xs-4 time text-center">
+                                    <p>14:00 tomorrow</p>
+                                     <img src="img/RedCross.png" class="img-circle"/>
+                                </div>
+                                <div class="col-xs-4 col-xs-offset-4 name text-center">
+                                    <p>Mary Berry</p>
+                                    <img src="img/RedCross.png" class="img-circle"/>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="col-xs-4 time text-center">
+                                    <p>8:00 29th APR</p>
+                                     <img src="img/RedCross.png" class="img-circle"/>
+                                </div>
+                                <div class="col-xs-4 col-xs-offset-4 name text-center">
+                                    <p>Stephen moriiessy</p>
+                                    <img src="img/RedCross.png" class="img-circle"/>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="col-xs-4 time text-center">
+                                    <p>10:00 today</p>
+                                     <img src="img/RedCross.png" class="img-circle"/>
+                                </div>
+                                <div class="col-xs-4 col-xs-offset-4 name text-center">
+                                    <p>Stephen moriiessy</p>
+                                    <img src="img/RedCross.png" class="img-circle"/>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <!-- content -->
@@ -716,6 +785,7 @@ function ScheduleContentSwitch(){
         console.log("clinic");
         $(".clinic_content").hide();
         $(".individual_content").show();
+        // $(".individual_content .container .timeline").append('<li><div class="col-xs-4 time text-center"><p>10:00 today</p><img src="img/RedCross.png" class="img-circle"/></div><div class="col-xs-4 col-xs-offset-4 name text-center"><p>Stephen moriiessy</p><img src="img/RedCross.png" class="img-circle"/></div></li>');
     }
     else if($(".individual_content").is(":visible")){
         console.log("individual");
