@@ -22,7 +22,6 @@
 
         <script type="text/javascript" src="plugins/jquery-1.11.2.min.js"></script>
         <script type="text/javascript" src="plugins/jquery.mobile-1.4.5.min.js"></script>
-
         <script type="text/javascript" src="plugins/bootstrap.min.js"></script>
         <script type="text/javascript" src="plugins/d3.min.js"></script>
         <!-- date pikcer on mobile device trail version -->
@@ -167,60 +166,60 @@
                 <div class="container">
                     <a href="#virtual_clinic_page" data-transition="slide">
                         <div class="row list_item">
-                            <div class="col-xs-3 text-center">
+                            <div class="col-xs-3 vertical-middle text-center">
                                 <img src="img/RedCross.png">
                             </div>
-                            <div class="col-xs-8 col-xs-offset-1">
+                            <div class="col-xs-8 col-xs-offset-1 vertical-middle">
                                 <p>VIRTUAL CLINIC</p>
                             </div>
                         </div>
                     </a>
                     <a href="#triage_page" data-transition="slide" onClick="SetUpTriagePage()">
                         <div class="row list_item">
-                            <div class="col-xs-3 text-center">
+                            <div class="col-xs-3 text-center vertical-middle">
                                 <img src="img/RedCross.png">
                             </div>
-                            <div class="col-xs-8 col-xs-offset-1">
+                            <div class="col-xs-8 col-xs-offset-1 vertical-middle">
                                 <p>PATIENT TRIAGE</p>
                             </div>
                         </div>
                     </a>
                     <a href="#checklist_page" data-transition="slide">
                         <div class="row list_item">
-                            <div class="col-xs-3 text-center">
+                            <div class="col-xs-3 text-center vertical-middle">
                                 <img src="img/RedCross.png">
                             </div>
-                            <div class="col-xs-8 col-xs-offset-1">
+                            <div class="col-xs-8 col-xs-offset-1 vertical-middle">
                                 <p>PATIENT CHECKLIST</p>
                             </div>
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="#consultant_page" data-transition="slide">
                         <div class="row list_item">
-                            <div class="col-xs-3 text-center">
+                            <div class="col-xs-3 text-center vertical-middle">
                                 <img src="img/RedCross.png">
                             </div>
-                            <div class="col-xs-8 col-xs-offset-1">
+                            <div class="col-xs-8 col-xs-offset-1 vertical-middle">
                                 <p>CONSULTANT ON CALL</p>
                             </div>
                         </div>
                     </a>
                     <a href="#event_schedule_page" data-transition="slide">
                         <div class="row list_item">
-                            <div class="col-xs-3 text-center">
+                            <div class="col-xs-3 text-center vertical-middle">
                                 <img src="img/RedCross.png">
                             </div>
-                            <div class="col-xs-8 col-xs-offset-1">
+                            <div class="col-xs-8 col-xs-offset-1 vertical-middle">
                                 <p>SCHEDULER</p>
                             </div>
                         </div>
                     </a>
-                    <a href="#" data-transition="slide">
+                    <a href="#patient_page" data-transition="slide">
                         <div class="row list_item">
-                           <div class="col-xs-3 text-center">
+                           <div class="col-xs-3 text-center vertical-middle">
                                 <img src="img/RedCross.png">
                             </div>
-                            <div class="col-xs-8 col-xs-offset-1">
+                            <div class="col-xs-8 col-xs-offset-1 vertical-middle">
                                 <p>PATIENTS</p>
                             </div>
                         </div>
@@ -236,9 +235,9 @@
         <div id="virtual_clinic_page" data-role="page">
             <!-- header-->
             <div data-role="header" class="ui-header" position="fixed">
-                <a href="#" data-rel="back" data-transition="slide" data-role="button">back</a>
+                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse"><i class="fa fa-chevron-left"> </i>back</a>
                 <h1>virtual clinic</h1>
-                <a href="#" data-role="button"></a>
+                <a href="#"></a>
             </div>
             <!-- header -->
             <!-- content -->
@@ -256,25 +255,23 @@
             <!-- right menu -->
             <div id="triage_right_menu" data-role="panel" data-position="right" data-display="overlay">
                 <ul data-role="listview">
-                    <li></li>
-
                 </ul>
             </div>
             <!-- right menu -->
             <!-- header -->
             <div data-role="header" class="ui-header" position="fixed">
-                <a href="#" data-rel="back" data-transition="slide" data-role="button">Back</a>
+                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" data-role="button"><i class="fa fa-chevron-left"> </i>Back</a>
                 <h1>Triage</h1>
-                <a href="#triage_right_menu" data-role="button"><i class="fa fa-2x fa-bars"></i></a>
+                <a href="#triage_right_menu" ><i class="fa fa-2x fa-bars"></i></a>
             </div>
             <!-- header -->
             <!-- content -->
             <div role="main" class="ui-content">
                 <div id="triage_info">
-                    <div class="col-xs-3">
+                    <div class="col-xs-3 vertical-middle">
                         <img src="img/RedCross.png" class="img-circle img-responsive">
                     </div>
-                    <div class="col-xs-8 col-xs-offset-1">
+                    <div class="col-xs-8 col-xs-offset-1 vertical-middle">
                         <div class="row">
                             <p><strong>Claire O'Dwyer</strong> F. 16 APR 1950</p>
                         </div>
@@ -295,9 +292,16 @@
                                     <h3><strong>Triage Trend</strong></h3>
                                 </div>
                                 <div class="row">
-                                    <div id="pie_chart" class="text-center">here will be a pie chart</div>
+                                    <div id="pie_chart" class="text-center"></div>
                                 </div>
                                 <div class="row">
+                                    <div class="col-xs-4 text-center">10<span>Patient<br>Contacts</span></div>
+                                    <div class="col-xs-4 text-center">
+                                        <i class="fa fa-arrow-right"></i>
+                                    </div>
+                                    <div class="col-xs-4 text-center">1<span>Clinic<br> visit</span>
+                                    </div>
+
                                 </div>
                             </div>
                             
@@ -336,19 +340,19 @@
                                 <div class="row">
                                     <h3><strong>Symptoms</strong></h3>
                                     <div class="symptoms_checklist">
-                                        <input name="symptom_1" id="symptom_1" checked="" data-cacheval="true" type="checkbox">
+                                        <input name="symptom_1" id="symptom_1"  type="checkbox">
                                         <label for="symptom_1">Symptom 1</label>
                                      
-                                        <input name="symptom_2" id="symptom_2" checked="" data-cacheval="true" type="checkbox">
+                                        <input name="symptom_2" id="symptom_2" type="checkbox">
                                         <label for="symptom_2">Symptom 2</label>
                                      
-                                        <input name="symptom_3" id="symptom_3" checked=""  data-cacheval="true" type="checkbox">
+                                        <input name="symptom_3" id="symptom_3" type="checkbox">
                                         <label for="symptom_3">Symptom 3</label>
                                      
-                                        <input name="symptom_4" id="symptom_4" checked="" data-cacheval="true" type="checkbox">
+                                        <input name="symptom_4" id="symptom_4" type="checkbox">
                                         <label for="symptom_4">Symptom 4</label>
     
-                                        <input name="symptom_5" id="symptom_5" checked="" data-cacheval="true" type="checkbox">
+                                        <input name="symptom_5" id="symptom_5"  type="checkbox">
                                         <label for="symptom_5">Symptom 5</label>
                                     </div>
                                 </div>
@@ -359,7 +363,7 @@
                                     <h3>Title</h3>
                                     <div class="row">
                                         <p>Grade</p>
-                                        <input name="slider"id="grade_slider" data-highlight="true" min="0" max="10" value="5" type="range">
+                                        <input name="slider"id="grade_slider" data-highlight="true" min="0" max="5" value="3" type="range">
                                         <label for="slider" disabled="disabled"></label>
                                     </div>
                                     <div class="row">
@@ -454,19 +458,30 @@
         </div>
         <!-- triage page -->
 
+        <!-- consultant page -->
+        <div id="consultant_page" data-role="page">
+            <div data-role="header" class="ui-header">
+                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" data-role="button"><i class="fa fa-chevron-left"> </i>back</a>
+                <h1>Consultant</h1>
+            </div>
+            <div data-role="main" class="ui-content">
+            </div>
+        </div>
+        <!-- consultant page -->
+
         <!-- event schedule page -->
         <div id="event_schedule_page" data-role="page">
             <!-- header -->
             <div data-role="header" class="ui-header">  
-                <a href="#" data-rel="back" data-transition="slide">back</a>
+                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" data-role="button"><i class="fa fa-chevron-left"> </i>back</a>
                 <h1>Event Schedule</h1>
             </div>
             <!-- header -->
             <!-- content -->
             <div data-role="main" class="ui-content">
                 <div class="switch_btn">
-                    <a href="#" onClick="ScheduleContentSwitch()" data-role="button">Clinic</a>
-                    <a href="#" onClick="ScheduleContentSwitch()" data-role="button">Individual</a>
+                    <a href="#" onClick="ScheduleContentSwitch('clinic')" data-role="button">Clinic</a>
+                    <a href="#" onClick="ScheduleContentSwitch('individual')" data-role="button">Individual</a>
                 </div>
 
                 <div class="clinic_content">
@@ -526,6 +541,20 @@
         </div>
         <!-- event schedule page -->
 
+        <!-- patient page -->
+        <div id="patient_page" data-role="page">
+            <!-- header -->
+            <div data-role="header" position="fixed" class="ui-header">
+                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" data-role="button"><i class="fa fa-chevron-left"> </i>back</a>
+                <h1>Patients</h1>
+            </div>
+
+            <!-- content-->
+            <div data-role="main" class="ui-content">
+            </div>
+            <!-- content -->
+        </div>
+        <!-- patient page -->
         <!-- checklist page -->
         <div id="checklist_page" data-role="page">
 
@@ -548,9 +577,9 @@
 
             <!-- header -->
             <div data-role="header" position="fixed" class="ui-header">
-                <a href="#left_menu" data-role="button"></a>
+                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" data-role="button"><i class="fa fa-chevron-left"> </i>back</a>
                 <a href="#right_menu" data-role="button" class="ui-btn ui-corner-all"></a>
-                <h3>CHECKLIST</3>
+                <h1>CHECKLIST</h1>
             </div>
             <!-- header -->
 
@@ -780,14 +809,14 @@ function detectTriageCarousel(){
     },500);
 }
 
-function ScheduleContentSwitch(){
-    if($(".clinic_content").is(":visible")){
+function ScheduleContentSwitch(target){
+    if(target == "individual"){
         console.log("clinic");
         $(".clinic_content").hide();
         $(".individual_content").show();
         // $(".individual_content .container .timeline").append('<li><div class="col-xs-4 time text-center"><p>10:00 today</p><img src="img/RedCross.png" class="img-circle"/></div><div class="col-xs-4 col-xs-offset-4 name text-center"><p>Stephen moriiessy</p><img src="img/RedCross.png" class="img-circle"/></div></li>');
     }
-    else if($(".individual_content").is(":visible")){
+    else if(target == "clinic"){
         console.log("individual");
         $(".individual_content").hide();
         $(".clinic_content").show();

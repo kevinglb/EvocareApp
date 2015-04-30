@@ -60,6 +60,9 @@ h1 {
     text-align:center;
 }
 
+a {
+    text-shadow:none;
+}
 .event {
     border-radius:4px;
     -webkit-border-radius:4px;
@@ -99,28 +102,37 @@ h1 {
 
 /* ui-header ui-content ui-footer */
 .ui-header {
-    height: 4.5vh;
+    height: 44px;
+    background-color: #8FCDBE !important;
 }
+
 .ui-header .ui-title {
-    line-height: 4.5vh;
-    font-size: 2.5vh;
+    line-height: 44px;
+    font-size: 18px;
+    font-weight: 500;
     overflow: show;
     padding: 0;
+    text-shadow:none;
+    color: #FFF;
 }
 
 .ui-header a{
     background-color: transparent !important;
     border: none;
     box-shadow: none;
+    color: #FFF;
 }
 .ui-header, .ui-footer {
     border: none;
+
 }
 .ui-content {
     padding: 0;
     overflow-x: hidden;
     overflow-y: hidden;
+    background-color: #E6E6E6;   
 }
+
 /*login page css*/
 #login_page {
     height: 100%;
@@ -176,7 +188,7 @@ h1 {
     height: 15vh;
     padding: 0px 15px;
     vertical-align: middle;
-    display: table-cell;
+    
 }
 
 #triage_info div img{
@@ -227,11 +239,21 @@ h1 {
 }
 input.ui-slider-input {
     float: right;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    background-color: transparent !important;
+
 }
 .ui-slider-track {
     margin: 0px 70px 0px 5px;
 }
 
+.ui-listview li{
+    padding: 0;
+    background-color: transparent;
+    background: transparent;
+}
 
 /*time line*/
 
@@ -351,8 +373,7 @@ input.ui-slider-input {
 .main_content
 {
     height:100%;
-    padding-top: 5vh;
-
+    padding: 15px 0;
 }
 
 .main_content p
@@ -361,12 +382,24 @@ input.ui-slider-input {
 }
 
 .main_content .list_item{
-    height: 13vh;
-    line-height: 13vh;
-    margin: 1vh;
+    height: 14vh;
+    margin: 1vh 0;
     padding: 0;
-    font-size: 10vh;
-    border: 1px solid #4d4d4d;
+    border: none;
+    background-color: #FFFFFF;
+
+}
+
+/*set the child div of list_item verticle middle*/
+.vertical-middle{
+    position: relative;
+    top: 50%;
+     transform: translateY(-50%);
+}
+
+.main_content .list_item p{
+    padding: 0;
+    margin: 0;
 }
 /* main page end */
 
