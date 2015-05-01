@@ -62,7 +62,9 @@ h1 {
 
 a {
     text-shadow:none;
+    text-decoration: none;
 }
+
 .event {
     border-radius:4px;
     -webkit-border-radius:4px;
@@ -122,10 +124,34 @@ a {
     box-shadow: none;
     color: #FFF;
 }
+
+.ui-header .ui-btn-left, .ui-header .ui-btn-right{
+    height: 44px;
+    line-height: 44px;
+    min-width: 44px;
+    top: 0;
+    padding: 0;
+    text-shadow:none;
+    color:#FFF;
+}
+
+.ui-header .ui-btn-left {
+    left: 0.8em;
+}
+.ui-header .ui-btn-right{
+    right: 0.8em;
+}
+
+.ui-header .ui-btn-right *{
+    line-height: 44px;
+    float: right;
+}
+
 .ui-header, .ui-footer {
     border: none;
-
 }
+
+
 .ui-content {
     padding: 0;
     overflow-x: hidden;

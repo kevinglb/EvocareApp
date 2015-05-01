@@ -134,12 +134,12 @@
         <div  id="main_page" data-role="page" class="ui-responsive-panel">
 
             <!-- left menu -->
-            <div id="left_menu"  data-role="panel" data-position="left" data-display="push">
+            <div id="main_left_menu" class="right_menu" data-role="panel" data-position="left" data-display="push">
                 <h1>Left Menu</h1>
             </div>
 
             <!-- right menu -->
-            <div id="right_menu" data-role="panel" data-position="right" data-display="overlay">
+            <div id="main_right_menu" class="right_menu" data-role="panel" data-position="right" data-display="overlay">
                 <h3>Right Menu</h3>
                 <ul data-role="listview">
                     <li><a href="#">Edit patient details</a></li>
@@ -153,9 +153,9 @@
             
             <!-- header -->
             <div data-role="header"  class="ui-header" position="fixed">
-                <a href="#left_menu" data-role="button"></a>
+                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse"><i class="fa fa-chevron-left"> </i>back</a>
                 <h1>Evocare</h1>
-                <a href="#right_menu" data-role="button" class="ui-btn ui-corner-all">Menu</a>
+                <a href="#main_right_menu" class="ui-btn ui-corner-all">Menu</a>
             </div>
             <!-- header -->
 
@@ -233,11 +233,15 @@
 
         <!-- virtual clinic -->
         <div id="virtual_clinic_page" data-role="page">
+
+            <!-- menu -->
+            <div id="virtual_clinic_right_menu" class="right_menu" data-role="panel" data-position="right" data-display="overlay"> 
+            </div>
             <!-- header-->
             <div data-role="header" class="ui-header" position="fixed">
                 <a href="#" data-rel="back" data-transition="slide" data-direction="reverse"><i class="fa fa-chevron-left"> </i>back</a>
                 <h1>virtual clinic</h1>
-                <a href="#"></a>
+                <a href="#virtual_clinic_right_menu"><i class="fa fa-2x fa-bars"></i></a>
             </div>
             <!-- header -->
             <!-- content -->
@@ -253,7 +257,7 @@
         <!-- triage page -->
         <div id="triage_page" data-role="page">
             <!-- right menu -->
-            <div id="triage_right_menu" data-role="panel" data-position="right" data-display="overlay">
+            <div id="triage_right_menu" class="right_menu" data-role="panel" data-position="right" data-display="overlay">
                 <ul data-role="listview">
                 </ul>
             </div>
@@ -460,9 +464,15 @@
 
         <!-- consultant page -->
         <div id="consultant_page" data-role="page">
+
+            <!-- header -->
+            <div id="consultant_right_menu" class="right_menu" data-role="panel" data-position="right" data-display="overlay">
+            </div>
+
             <div data-role="header" class="ui-header">
                 <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" data-role="button"><i class="fa fa-chevron-left"> </i>back</a>
                 <h1>Consultant</h1>
+                <a href="#consultant_right_menu"><i class="fa fa-2x fa-bars"></i></a>
             </div>
             <div data-role="main" class="ui-content">
             </div>
@@ -472,9 +482,12 @@
         <!-- event schedule page -->
         <div id="event_schedule_page" data-role="page">
             <!-- header -->
+            <div id="schedule_right_menu" class="right_menu" data-role="panel" data-position="right" data-display="overlay">
+            </div>
             <div data-role="header" class="ui-header">  
                 <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" data-role="button"><i class="fa fa-chevron-left"> </i>back</a>
                 <h1>Event Schedule</h1>
+                <a href="#schedule_right_menu"><i class="fa fa-2x fa-bars"></i></a>
             </div>
             <!-- header -->
             <!-- content -->
@@ -559,12 +572,12 @@
         <div id="checklist_page" data-role="page">
 
              <!-- left menu -->
-            <div id="left_menu"  data-role="panel" data-position="left" data-display="push">
+            <div id="checklist_left_menu" class="left_menu" data-role="panel" data-position="left" data-display="push">
                 <h1>Left Menu</h1>
             </div>
 
             <!-- right menu -->
-            <div id="right_menu" data-role="panel" data-position="right" data-display="overlay">
+            <div id="checklist_right_menu" class="right_menu" data-role="panel" data-position="right" data-display="overlay">
                 <h3>Right Menu</h3>
                 <ul data-role="listview">
                     <li><a href="#">Edit patient details</a></li>
@@ -578,7 +591,7 @@
             <!-- header -->
             <div data-role="header" position="fixed" class="ui-header">
                 <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" data-role="button"><i class="fa fa-chevron-left"> </i>back</a>
-                <a href="#right_menu" data-role="button" class="ui-btn ui-corner-all"></a>
+                <a href="#checklist_right_menu" class="ui-btn ui-corner-all"><i class="fa fa-2x fa-bars"></i></a>
                 <h1>CHECKLIST</h1>
             </div>
             <!-- header -->
