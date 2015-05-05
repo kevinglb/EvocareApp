@@ -110,18 +110,6 @@
                     <div class="row text-center">
                         <a href="#" onClick="toggleLogInContent(false)">Register now</a>
                     </div>
-
-                    <div class="row text-center">
-                        <a href="#checklist_page">Jump to checklist page</a>
-                    </div>
-
-                    <div class="row text-center">
-                        <a href="#triage_page" >Jump to triage page</a>
-                    </div>
-
-                     <div class="row text-center">
-                        <a href="#event_schedule_page" >Jump to event schedule page</a>
-                    </div>
                 </div>
             </div>
             <!-- content -->
@@ -746,10 +734,10 @@
 // switch between singup content and login content
 function toggleLogInContent(hidden){
     if(hidden){
-        $("#signup_content").slideUp('500');
+        $("#signup_content").slideUp();
     }
     else{
-        $("#signup_content").slideDown('500');
+        $("#signup_content").slideDown();
    
     } 
 }

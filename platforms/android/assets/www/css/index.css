@@ -110,8 +110,8 @@ a {
 
 .ui-header .ui-title {
     line-height: 44px;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 700;
     overflow: show;
     padding: 0;
     text-shadow:none;
@@ -164,47 +164,73 @@ a {
     height: 100%;
 }
 
+#login_page .ui-header{
+    background-color: rgba(166, 181, 184,1) !important;
+}
+
+#login_page .ui-content{
+    background-color:  rgba(166, 181, 184,1) !important;
+}
 #login_page .login_header {
     height: 30%;
-    
 }
 
 #login_content, #signup_content{
     height: 70%;
 }
+
+#login_form .ui-input-text{
+    background-color: rgba(211, 218, 220, 1);
+    border: none;
+    text-shadow: none;
+    box-shadow: none;
+}
+
+#login_form .ui-input-text input[placeholder] {
+    color: #000;
+}
 .has-feedback .form-control {
     padding-right:  0;
-    padding-left: 45px;
+    padding-left: 56px;
 }
 
 .form-control-feedback {
     left: 0px;
     top: 0px;
-    width: 45px;
-    height: 45px;
+    width: 56px;
+    height: 56px;
+    line-height: 56px;
+    text-shadow:none;
 }
 
-.fa-user::before {
-    line-height: 45px;
+#login_submit{
+    background-color: rgba(154, 175, 176, 1);
+    color: rgba(44, 118, 108, 1);
+    font-weight: bold;
 }
 
-.fa-lock::before {
-    line-height: 45px;
+#login_page .ui-link{
+    color:#FFF;
+    text-decoration: none;
 }
-
 /*sign up form*/
 #signup_form .ui-input-text {
     border: none;
     background: transparent;
     box-shadow:none;
+    text-shadow:none;
+    color: #FFF;
 }
 
 
-#signup_form .ui-input-text input {
+#signup_form .ui-input-text input{
     text-align: center;
     border: none;
     box-shadow: none;
 } 
+#signup_form .ui-input-text input[placeholder]{
+    color: #FFF;
+}
 /*triage page */
 #triage_page {
     height: 100%;
@@ -232,6 +258,8 @@ a {
 
 .carousel-inner {
     height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 .carousel_controls{
     width: 100%;
@@ -348,7 +376,7 @@ input.ui-slider-input {
 
 }
 
-.timeline .arrow:after{
+/*.timeline .arrow:after{
     content: "";
     position: absolute;
     left: -50%;
@@ -359,7 +387,7 @@ input.ui-slider-input {
     border-bottom-color: rgb(255,255,255);
     border-width: 8px;
     pointer-events: none;
-}
+}*/
 
 .timeline .name:before{
     position: absolute;
@@ -376,7 +404,7 @@ input.ui-slider-input {
     z-index: 10;
 }
 
-.timeline .name:after{
+/*.timeline .name:after{
     content: "";
     position: absolute;
     left: -50%;
@@ -387,7 +415,7 @@ input.ui-slider-input {
     border-bottom-color: rgb(255,255,255);
     border-width: 8px;
     pointer-events: none;
-}
+}*/
 /* main page */
 .row
 {
@@ -471,3 +499,5 @@ input.ui-slider-input {
     height: 6vh;
     line-height: 6vh;
 }
+
+
