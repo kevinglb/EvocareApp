@@ -19,11 +19,10 @@ body {
     );
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
+    font-size:16px;
     height:100%;
     margin:0px;
     padding:0px;
-    text-transform:uppercase;
     width:100%;
 }
 
@@ -110,8 +109,8 @@ a {
 
 .ui-header .ui-title {
     line-height: 44px;
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 22px;
+    font-weight: normal;
     overflow: show;
     padding: 0;
     text-shadow:none;
@@ -135,16 +134,13 @@ a {
     color:#FFF;
 }
 
-.ui-header .ui-btn-left {
-    left: 0.8em;
+.ui-header .ui-btn-left *{
+    line-height: 44px;
+    font-size: 24px;
 }
-.ui-header .ui-btn-right{
-    right: 0.8em;
-}
-
 .ui-header .ui-btn-right *{
     line-height: 44px;
-    float: right;
+    font-size: 24px;
 }
 
 .ui-header, .ui-footer {
@@ -156,10 +152,14 @@ a {
     padding: 0;
     overflow-x: hidden;
     overflow-y: hidden;
-    background-color: #E6E6E6;   
+    background-color: #F2F2F2;   
 }
 
 /*login page css*/
+.form-group {
+    margin: 20px 0px;
+}
+
 #login_page {
     height: 100%;
 }
@@ -172,22 +172,69 @@ a {
     background-color:  rgba(166, 181, 184,1) !important;
 }
 #login_page .login_header {
-    height: 30%;
+    height: 20%;
 }
 
 #login_content, #signup_content{
-    height: 70%;
+    height: 80%;
 }
 
+#login_content {
+    padding-top: 10%;
+}
+.below_content {
+    margin-top: 4em;
+}
+.below_content .row{
+    margin-top: 20px; 
+}
+
+.below_content .lg_text_left{
+    float: left;
+    font-size: 60px;
+    line-height: 60px;
+    font-weight: bold;
+    padding-right: 5px;
+}
+
+.below_content .sm_text_left{
+    float: left;
+    text-align: left;
+    margin-top: 8px; 
+}
+
+.below_content .sm_text_right{
+    float: right;
+    text-align: left;
+    padding-right: 10px;
+    margin-top: 8px; 
+}
+.below_content .lg_text_right{
+    float: right;
+    font-size: 60px;
+    line-height: 60px;
+    font-weight: bold;
+    padding-right: 5px;
+}
+
+.below_content div i{
+    line-height: 60px;
+    font-size: 24px;
+}
 #login_form .ui-input-text{
     background-color: rgba(211, 218, 220, 1);
     border: none;
     text-shadow: none;
     box-shadow: none;
 }
-
-#login_form .ui-input-text input[placeholder] {
-    color: #000;
+#login_form .ui-input-text input {
+    color: #FFF;
+}
+#login_form .ui-input-text input::-moz-placeholder{
+    color: #FFF;
+} 
+#login_form .ui-input-text input:-webkit-placeholder{
+    color: #FFF;
 }
 .has-feedback .form-control {
     padding-right:  0;
@@ -201,21 +248,29 @@ a {
     height: 56px;
     line-height: 56px;
     text-shadow:none;
-}
-
-#login_submit{
-    background-color: rgba(154, 175, 176, 1);
     color: rgba(44, 118, 108, 1);
-    font-weight: bold;
 }
 
 #login_page .ui-link{
     color:#FFF;
     text-decoration: none;
 }
+
+#login_submit{
+    background-color: rgba(154, 175, 176, 1);
+    color: rgba(44, 118, 108, 1) !important;
+    font-weight: bold;
+    line-height: 58px;
+    font-size: 1.5em;
+    padding: 0;
+}
+
+
 /*sign up form*/
 #signup_form .ui-input-text {
     border: none;
+    border-bottom:  1px solid #FFF;
+    border-radius: 0px;
     background: transparent;
     box-shadow:none;
     text-shadow:none;
@@ -228,9 +283,23 @@ a {
     border: none;
     box-shadow: none;
 } 
-#signup_form .ui-input-text input[placeholder]{
+
+#signup_form .ui-input-text input::-moz-placeholder{
     color: #FFF;
 }
+#signup_form .ui-input-text input:webkit-placeholder{
+    color: #fff;
+}
+
+#signup_submit{
+    background-color: rgba(189, 201, 205, 1);
+    color: rgba(44, 118, 108, 1) !important;
+    font-weight: bold;
+    line-height: 58px;
+    font-size: 1.5em;
+    padding: 0;
+}
+
 /*triage page */
 #triage_page {
     height: 100%;
@@ -240,7 +309,7 @@ a {
     height: 15vh;
     padding: 0px 15px;
     vertical-align: middle;
-    
+    background: #FFF;
 }
 
 #triage_info div img{
@@ -248,7 +317,7 @@ a {
 }
 
 #triage_slide {
-    height: 80vh;
+    height: 82vh;
     overflow-y: auto;
 }
 
@@ -266,6 +335,9 @@ a {
     height: 60px;
     position: fixed;
     bottom: 0px;
+    font-weight: bold;
+    text-shadow: none !important;
+    text-transform: uppercase;
 }
 
 .carousel_controls div{
@@ -318,42 +390,42 @@ input.ui-slider-input {
     list-style-type: none;
 }
 
-.timeline:before {
+.timeline li:after {
     position: absolute;
     left: 50%;
-    top: 0;
     content: ' ';
     display: block;
-    width: 8px;
-    height: 100%;
-    margin-left: -3px;
-    background: rgb(80,80,80);
-    background: -moz-linear-gradient(top, rgba(80,80,80,0) 0%, rgb(80,80,80) 8%, rgb(80,80,80) 92%, rgba(80,80,80,0) 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30,87,153,1)), color-stop(100%,rgba(125,185,232,1)));
-    background: -webkit-linear-gradient(top, rgba(80,80,80,0) 0%, rgb(80,80,80) 8%, rgb(80,80,80) 92%, rgba(80,80,80,0) 100%);
-    background: -o-linear-gradient(top, rgba(80,80,80,0) 0%, rgb(80,80,80) 8%, rgb(80,80,80) 92%, rgba(80,80,80,0) 100%);
-    background: -ms-linear-gradient(top, rgba(80,80,80,0) 0%, rgb(80,80,80) 8%, rgb(80,80,80) 92%, rgba(80,80,80,0) 100%);
-    background: linear-gradient(to bottom, rgba(80,80,80,0) 0%, rgb(80,80,80) 8%, rgb(80,80,80) 92%, rgba(80,80,80,0) 100%);
-  
-  z-index: 5;
+    width: 2px;
+    height: 20%;
+    background: #333;
+    background: -moz-linear-gradient(top, rgba(132, 151, 157, 0.8) 0%, rgba(132, 151, 157, 0.8) 8%, rgba(132, 151, 157, 0.8) 92%, rgba(132, 151, 157, 0.8) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(132, 151, 157, 0.8)), color-stop(100%,rgba(132, 151, 157, 0.8)));
+    background: -webkit-linear-gradient(top,rgba(132, 151, 157, 0.8) 0%, rgba(132, 151, 157, 0.8) 8%,rgba(132, 151, 157, 0.8) 92%, rgba(132, 151, 157, 0.8) 100%);
+    background: -o-linear-gradient(top, rgba(132, 151, 157, 0.8) 0%, rgba(132, 151, 157, 0.8) 8%, rgba(132, 151, 157, 0.8) 92%, rgba(132, 151, 157, 0.8) 100%);
+    background: -ms-linear-gradient(top, rgba(132, 151, 157, 0.8) 0%, rgba(132, 151, 157, 0.8) 8%, rgba(132, 151, 157, 0.8) 92%, rgba(132, 151, 157, 0.8) 100%);
+    background: linear-gradient(to bottom, rgba(132, 151, 157, 0.8) 0%, rgba(132, 151, 157, 0.8) 8%, rgba(132, 151, 157, 0.8) 92%, rgba(132, 151, 157, 0.8) 100%);
 }
+
 
 .timeline li{
-    padding: 2.5em 0;
+    padding: 3.5em 0;
 }
 
-.timeline li:after{
+/*.timeline li:after{
     content: "";
     display: block;
     height: 0;
     clear: both;
     visibility: hidden;
-}
+}*/
 
 .timeline .date{
     position: relative;
     display: inline-block;
     text-align: center;
+    margin: 10px 0px;
+    font-size: 18px;
+    line-height: 18px;
 }
 
 .timeline .arrow {
@@ -364,18 +436,26 @@ input.ui-slider-input {
     position: absolute;
     top: 0px;
     left: -50%;
-    content: ' ';
+    content: " ";
     display: block;
-    width: 30px;
-    height: 30px;
-    margin-left: -14px;
-    background: #fff;
-    border-radius: 15px;
-    border: 5px solid rgb(255,80,80);
-    z-index: 10;
-
+    width: 36px;    
+    height: 36px;
+    margin-left: -17px;
+    background: rgba(132, 151, 157, 0.8);
+    border-radius: 18px;
+    border: 12px solid rgba(187, 196, 199, 0.9);
+    z-index: 5;
 }
 
+.timeline .arrow i{
+    line-height: 18px;
+    margin-top: 10px;
+    color: rgba(187, 196, 199, 1);
+}
+
+.timeline .arrow .fa-angle-right{
+    margin-right: 80px;
+}
 /*.timeline .arrow:after{
     content: "";
     position: absolute;
@@ -416,12 +496,28 @@ input.ui-slider-input {
     border-width: 8px;
     pointer-events: none;
 }*/
+/*checkbox and radio button */
+
+.ui-checkbox label, .ui-radio label{
+    border: none;
+    background-color: transparent !important;
+    margin:1em 0;
+}
+.ui-checkbox input, .ui-radio input{
+    display: none;
+}
+
+.ui-slider-track .ui-btn .ui-slider-handle{
+    background: none repeat scroll 0% 0% #228896;
+    border-radius: 14px;
+    border: 5px solid #BBC4C7;
+}
 /* main page */
 .row
 {
     margin-right: 15px;
     margin-left: 15px;
-    padding-bottom: 12px;
+    padding-bottom: 0px;
 }
 
 .main_content
