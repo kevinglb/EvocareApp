@@ -60,7 +60,10 @@
                         <!-- signup form -->
                         <form id="signup_form" role="form">
                             <div class="form-group">
-                                <input type="text" id="signup_username" name="username" class="form-control no-border input-lg" placeholder="username" />
+                                <input type="text" id="signup_firstname" name="firstname" class="form-control no-border input-lg" placeholder="first name" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="signup_lastname" name="lastname" class="form-control no-border input-lg" placeholder="last name" />
                             </div>
                             <div class="form-group">
                                 <input type="email" id="signup_email" name="email" class="form-control no-border input-lg" placeholder="email address"/>
@@ -69,15 +72,20 @@
                                 <input type="password" id="signup_password" name="password" class="form-control no-border input-lg" placeholder="password"/>
                             </div>
                             <div class="form-group">
+                                <input type="password" id="signup_password_confirm" name="password_confirm" class="form-control no-border input-lg" placeholder="confirm password"/>
+                            </div>
+                            <div class="form-group">
                                 <input type="text" id="signup_birthday" name="birthday" class="form-control no-border input-lg" placeholder="birth date"/>
                             </div>
                             <div class="form-group">
-                                <a type="submit" id="signup_submit" value="sign up" name="signup_btn" class="btn btn-lg btn-presepctive btn-block">sign up</button>
+                                <a type="submit" id="signup_submit" value="sign up" name="signup_btn" class="btn btn-lg btn-presepctive btn-block">SIGN UP</a>
                             </div>
 
                         </form>
-                        <div class="row text-center">
-                            <a href="#" onClick="toggleLogInContent(true)">Do you have an account?</a>
+                        <div class="below_content">
+                            <div class="row text-center">
+                                <a href="#" onClick="toggleLogInContent(true)">Do you have an account?</a>
+                            </div>
                         </div>
                     </div>
 
@@ -87,28 +95,28 @@
                     <div class="row">
                         <!-- login form -->
                         <form id="login_form" role="form">
-                            <div class="form-group has-feedback lg left-feedback no-label">
-                                <input type="text" id="login_username" name="username" class="form-control no-border input-lg rounded" placeholder="youremail@mail.com">
-                                    <span class="fa fa-2x fa-user form-control-feedback"></span></input>
+                            <div class="form-group has-feedback left-feedback no-label">
+                                <input type="text" id="login_username" name="username" class="form-control input-lg" placeholder="youremail@mail.com">
+                                    <span class="fa fa-user form-control-feedback"></span></input>
                             </div>
-                            <div class="form-group has-feedback lg left-feedback no-label">
-                                <input type="password" id="login_password" name="password" class="form-control no-border input-lg rounded" placeholder="password">
-                                <span class="fa fa-2x fa-lock form-control-feedback"></span></input>
+                            <div class="form-group has-feedback left-feedback no-label">
+                                <input type="password" id="login_password" name="password" class="form-control input-lg" placeholder="password">
+                                <span class="fa fa-lock form-control-feedback"></span></input>
                             </div>
 
                             <div class="form-group">
-
                                 <a id="login_submit" value="Log in" name="login_btn" class="btn btn-lg btn-perspective btn-block">LOG IN</a>
                             </div>
                         </form>
                     </div>
+                    <div class="below_content">
+                        <div class="row text-center">
+                            <a href="#">Forgot username or password?</a>
+                        </div>
 
-                    <div class="row text-center">
-                        <a href="#">Forgot username or password?</a>
-                    </div>
-
-                    <div class="row text-center">
-                        <a href="#" onClick="toggleLogInContent(false)">Register now</a>
+                        <div class="row text-center">
+                            <a href="#" onClick="toggleLogInContent(false)">Register now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -141,9 +149,9 @@
             
             <!-- header -->
             <div data-role="header"  class="ui-header" position="fixed">
-                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse"><i class="fa fa-chevron-left"> </i>back</a>
+                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" class="back_btn"><i class="fa fa-arrow-left"> </i></a>
                 <h1>Evocare</h1>
-                <a href="#main_right_menu" class="ui-btn ui-corner-all">Menu</a>
+                <a href="#main_right_menu" class="menu_btn"><i class="fa fa-bars"></i></a>
             </div>
             <!-- header -->
 
@@ -227,7 +235,7 @@
             </div>
             <!-- header-->
             <div data-role="header" class="ui-header" position="fixed">
-                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse"><i class="fa fa-chevron-left"> </i>back</a>
+                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" class="back_btn"><i class="fa fa-arrow-left"></i></a>
                 <h1>virtual clinic</h1>
                 <a href="#virtual_clinic_right_menu"><i class="fa fa-2x fa-bars"></i></a>
             </div>
@@ -252,9 +260,9 @@
             <!-- right menu -->
             <!-- header -->
             <div data-role="header" class="ui-header" position="fixed">
-                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" data-role="button"><i class="fa fa-chevron-left"> </i>Back</a>
+                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" class="back_btn"><i class="fa fa-arrow-left"></i></a>
                 <h1>Triage</h1>
-                <a href="#triage_right_menu" ><i class="fa fa-2x fa-bars"></i></a>
+                <a href="#triage_right_menu" class="menu_btn"><i class="fa fa-bars"></i></a>
             </div>
             <!-- header -->
             <!-- content -->
@@ -286,12 +294,19 @@
                                 <div class="row">
                                     <div id="pie_chart" class="text-center"></div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-xs-4 text-center">10<span>Patient<br>Contacts</span></div>
-                                    <div class="col-xs-4 text-center">
+                                <div class="row below_content">
+                                    <div class="col-xs-5">
+
+                                        <span class="lg_text_left">10</span>
+                                        <span class="sm_text_left">Patient <br>Contacts</span>
+                                    </div>
+                                    <div class="col-xs-2 text-center">
                                         <i class="fa fa-arrow-right"></i>
                                     </div>
-                                    <div class="col-xs-4 text-center">1<span>Clinic<br> visit</span>
+                                    <div class="col-xs-5">
+                                        <span class="sm_text_right">Clinic<br> visit</span>
+                                        <span class="lg_text_right">1</span>
+                                        
                                     </div>
 
                                 </div>
@@ -302,26 +317,47 @@
                                     <ul class="timeline">
                                         <li>
                                             <div class="date col-xs-4">
-                                                24 April
+                                                5 March
                                             </div>
                                             <div class="arrow col-xs-4 col-xs-offset-4">
-                                                <i class="fa fa-close"></i>
+                                                <i class="fa fa-2x fa-angle-right"></i>
+                                                <i class="fa fa-2x fa-close"></i>
                                             </div>
                                         </li>
                                          <li>
                                             <div class="date col-xs-4">
-                                                24 April
+                                                18 Feb
                                             </div>
                                             <div class="arrow col-xs-4 col-xs-offset-4">
-                                                <i class="fa fa-close"></i>
+                                                <i class="fa fa-2x fa-angle-right"></i>
+                                                <i class="fa  fa-2x fa-close"></i>
                                             </div>
                                         </li>
                                          <li>
                                             <div class="date col-xs-4">
-                                                24 April
+                                                11 Feb
                                             </div>
                                             <div class="arrow col-xs-4 col-xs-offset-4">
-                                                <i class="fa fa-close"></i>
+                                                <i class="fa fa-2x fa-angle-right"></i>
+                                                <i class="fa fa-2x fa-close"></i>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="date col-xs-4">
+                                                17 Jan
+                                            </div>
+                                            <div class="arrow col-xs-4 col-xs-offset-4">
+                                                <i class="fa fa-2x fa-angle-right"></i>
+                                                <i class="fa fa-2x fa-close"></i>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="date col-xs-4">
+                                               8 Jan
+                                            </div>
+                                            <div class="arrow col-xs-4 col-xs-offset-4">
+                                                <i class="fa fa-2x fa-angle-right"></i>
+                                                <i class="fa fa-2x fa-close"></i>
                                             </div>
                                         </li>
                                     </ul>
@@ -458,7 +494,7 @@
             </div>
 
             <div data-role="header" class="ui-header">
-                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" data-role="button"><i class="fa fa-chevron-left"> </i>back</a>
+               <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" class="back_btn"><i class="fa fa-arrow-left"></i></a>
                 <h1>Consultant</h1>
                 <a href="#consultant_right_menu"><i class="fa fa-2x fa-bars"></i></a>
             </div>
@@ -546,7 +582,7 @@
         <div id="patient_page" data-role="page">
             <!-- header -->
             <div data-role="header" position="fixed" class="ui-header">
-                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" data-role="button"><i class="fa fa-chevron-left"> </i>back</a>
+                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" class="back_btn"><i class="fa fa-arrow-left"></i></a>
                 <h1>Patients</h1>
             </div>
 
@@ -578,7 +614,8 @@
 
             <!-- header -->
             <div data-role="header" position="fixed" class="ui-header">
-                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" data-role="button"><i class="fa fa-chevron-left"> </i>back</a>
+                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" class="back_btn"><i class="fa fa-arrow-left"></i></a>
+                <h1>Checklist</h1>
                 <a href="#checklist_right_menu" class="ui-btn ui-corner-all"><i class="fa fa-2x fa-bars"></i></a>
                 <h1>CHECKLIST</h1>
             </div>
