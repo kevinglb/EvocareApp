@@ -584,16 +584,6 @@ input.ui-slider-input {
     overflow: auto;
 }
 
-/* overall input*/
-.ui-input-text{
-    height: 6vh;
-    line-height: 6vh;
-    font-size: 2.5vh;
-}
 
-.ui-input-text input{
-    height: 6vh;
-    line-height: 6vh;
-}
 
 
