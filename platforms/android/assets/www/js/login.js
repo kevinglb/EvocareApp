@@ -49,7 +49,7 @@ $('#login_submit') .click(function()
     		},
     		error: function (error)
     		{
-    			alert("Sorry, please check your network and try again later :(");
+    			alert("Sorry, please check your network and try again later";
     		}
 		});
 
@@ -60,22 +60,20 @@ $('#login_submit') .click(function()
 $('#signup_submit').click(function()
 {
 	// get user sign up info from input text fields
-	var firstname = $('#signup_firstname').val();
-	var lastname = $('#signup_lastname').val();
+	var fullname = $('#signup_fullname').val();
 	var email = $('#signup_email').val();
 	var password = $('#signup_password').val();
 	var password_confirm = $('#signup_password_confirm').val();
 	var dateOfBirth = $('#signup_birthday').val()
+	var contactNumber = $('#signup_contact_number').val();
+	var hospital = $('#signup_hospital').val();
+	var jobTitle = $('#signup_job_title').val();
+	var registrationNumber = $('#signup_registration_number').val();
+	var medical_insurance = $('#signup_medical_insurance').val();
 
-	if(!firstname.trim())
+	if(!fullname.trim())
 	{
-		alert("Plase input your firstname");
-		return;
-	}
-
-	if(!lastname.trim())
-	{
-		alert("Please input your lastname");
+		alert("Please input your fullname");
 		return;
 	}
 
@@ -115,18 +113,47 @@ $('#signup_submit').click(function()
 		return;
 	}
 
-	// only check if the input date is number or not. This need to be improved later.
-	if(isNaN(dateOfBirth))
+	if(!contactNumber.trim())
 	{
-		alert("Invalidate date format");
+		alert("Please input your contact number");
+		return;
+	}
+
+	if(isNaN(contactNumber))
+	{
+		alert("Invalidate contact number");
+		return;
+	}
+
+	if(!hospital.trim())
+	{
+		alert("Please input hospital name");
+		return;
+	}
+
+	if(!jobTitle.trim())
+	{
+		alert("Please input your job title");
+		return;
+	}
+
+	if(!registrationNumber.trim())
+	{
+		alert("Please input your ABA registration number");
+		return;
+	}
+
+	if(medical_insurance === "1")
+	{
+		alert("Please choose whether you have medical indemnity insurance or not");
 		return;
 	}
 
 	else
 	{
-		var registerData = {firstname: firstname, lastname: lastname, email: email,
-							 password: password, password_confirm: password_confirm, dateOfBirth: dateOfBirth};
-
+		var registerData = {fullname: fullname, email: email, password: password, password_confirm: password_confirm, 
+							dateOfBirth: dateOfBirth, contactNumber: contactNumber, hospital: hospital, jobTitle: jobTitle, 
+							registrationNumber: registrationNumber, medical_insurance: medical_insurance}; 
 		$.ajax(
 		{
     		url : register_url,
@@ -155,23 +182,27 @@ $('#signup_submit').click(function()
     				//navigate to login page
     				$.mobile.changePage("#login_page", 
     				{
-    					transition: "slide",
+    					transition: "slideup",
     					reverse: false,
    						changeHash: false
     				})
 
     				// clean the register form 
-    				$('#signup_firstname').val('');
-    				$('#signup_lastname').val('');
-    				$('#signup_email').val('');
-    				$('#signup_password').val('');
-    				$('#signup_password_confirm').val('');
-    				$('#signup_birthday').val('');
+    				$('#signup_fullname').val('');
+					$('#signup_email').val('');
+					$('#signup_password').val('');
+					$('#signup_password_confirm').val('');
+					$('#signup_birthday').val('')
+					$('#signup_contact_number').val('');
+					$('#signup_hospital').val('');
+					$('#signup_job_title').val('');
+					$('#signup_registration_number').val('');
+					$('#signup_medical_insurance').val('');
     			}
     		},
     		error: function (error)
     		{
-    			alert("Sorry, please check your network and try again later :(");
+    			alert("Sorry, please check your network and try again later");
     		}
 		});
 
@@ -184,4 +215,3 @@ function IsEmail(email)
   var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
   return regex.test(email);
 }
-
