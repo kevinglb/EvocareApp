@@ -648,6 +648,7 @@ input.ui-slider-input {
     overflow: auto;
 }
 
+
 #patient_list{
     padding: 15px 0px;
 }
@@ -656,6 +657,7 @@ input.ui-slider-input {
     background-color: #fff;
     margin:10px 0;
 }
+
 
 .patient_info p{
     margin: 0;
