@@ -12,8 +12,15 @@
         <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
-        <link rel="stylesheet" type="text/css" href="css/mobiscroll.custom-2.15.1.min.css"/>
 
+        <!-- mobiscroll css -->
+        <link rel="stylesheet" type="text/css" href="css/mobiscroll.animation.css"/>
+        <link rel="stylesheet" type="text/css" href="css/mobiscroll.icons.css"/>
+        <link rel="stylesheet" type="text/css" href="css/mobiscroll.frame.css"/>
+        <link rel="stylesheet" type="text/css" href="css/mobiscroll.android.css"/>
+         <link rel="stylesheet" type="text/css" href="css/mobiscroll.android-holo.css"/>
+        <link rel="stylesheet" type="text/css" href="css/mobiscroll.android-holo-light.css"/>
+        <link rel="stylesheet" type="text/css" href="css/mobiscroll.scroller.css"/>
          <!-- main css -->
         <link rel="stylesheet" type="text/css" href="css/index.css" />
 
@@ -25,21 +32,11 @@
         <script type="text/javascript" src="plugins/bootstrap.min.js"></script>
         <script type="text/javascript" src="plugins/d3.min.js"></script>
         <!-- date pikcer on mobile device trail version -->
-        <script type="text/javascript" src="plugins/mobiscroll.custom-2.15.1.min.js" ></script>
+        <!-- <script type="text/javascript" src="plugins/mobiscroll.custom-2.15.1.min.js" ></script> -->
         
         <title>Evocare</title>
 
-        <script>
-
-        $(function () {
-                // Date picker initialization
-                $('.datepicker_input').mobiscroll().date({
-                    theme: 'android-holo-light',
-                    mode : 'scroller',
-                    display: 'modal'
-                });
-        });
-        </script>
+        
     </head>
     <body onload="setHeightofContent()">
 
@@ -75,10 +72,10 @@
                                 <input type="password" id="signup_password_confirm" name="password_confirm" class="form-control no-border input-lg" placeholder="confirm password"/>
                             </div>
                             <div class="form-group">
-                                <input type="text" id="signup_birthday" name="birthday" class="form-control no-border input-lg" placeholder="birth date"/>
+                                <input type="text" id="signup_birthday" name="birthday" class="form-control no-border input-lg datepicker_input" placeholder="birth date"/>
                             </div>
                             <div class="form-group">
-                                <a type="submit" id="signup_submit" value="sign up" name="signup_btn" class="btn btn-lg btn-presepctive btn-block">SIGN UP</a>
+                                <a type="submit" id="signup_submit" value="sign up" name="signup_btn" class="btn btn-lg btn-presepctive btn-block">REGISTER</a>
                             </div>
 
                         </form>
@@ -120,15 +117,11 @@
                     </div>
                 </div>
             </div>
-            <!-- content -->
-            <div data-role="footer">
-            </div>
         </div>
         <!-- log in page end -->
 
         <!-- main page -->
         <div  id="main_page" data-role="page" class="ui-responsive-panel">
-
             <!-- left menu -->
             <div id="main_left_menu" class="right_menu" data-role="panel" data-position="left" data-display="push">
                 <h1>Left Menu</h1>
@@ -226,6 +219,71 @@
             <!-- content -->  
         </div>
         <!-- main page end -->
+
+        <!-- patient list page -->
+        <div id="patientlist_page" data-role="page">
+            <div data-role="header" class="ui-header">
+                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" class="back_btn"><i class="fa fa-arrow-left"></i></a>
+                <h1>Patient list</h1>
+                <a href="#"></a>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <div class="container">
+                    <div id="patient_list">
+                        <div class="row patient">
+                            <a href="#">
+                                <div class="col-xs-4 patient_photo vertical-middle text-center">
+                                    <img class="img-circle" src="img/RedCross.png">
+                                </div>
+                                <div class="col-xs-7 col-xs-offset-1 patient_info vertical-middle">
+                                    <p class="patient_name">Stephen Morrissey</p>
+                                    <p class="patient_date">M. 20 Mar 1952</p>
+                                    <p class="patient_issue">T.Lorem Ipsum</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="row patient">
+                            <a href="#">
+                                <div class="col-xs-4 patient_photo vertical-middle text-center">
+                                    <img class="img-circle" src="img/RedCross.png">
+                                </div>
+                                <div class="col-xs-7 col-xs-offset-1 patient_info vertical-middle">
+                                    <p class="patient_name">Claire O'Dwyer</p>
+                                    <p class="patient_date">F.16 Apr 1950</p>
+                                    <p class="patient_issue">Myelodysplastic Syndromes(MDS)</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="row patient">
+                            <a href="#">
+                                <div class="col-xs-4 patient_photo vertical-middle text-center">
+                                    <img class="img-circle" src="img/RedCross.png">
+                                </div>
+                                <div class="col-xs-7 col-xs-offset-1 patient_info vertical-middle">
+                                    <p class="patient_name">Tom O'Reilly</p>
+                                    <p class="patient_date">M. 2 Jul 1942</p>
+                                    <p class="patient_issue">T.Lorem Ipsum</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="row patient">
+                            <a href="#">
+                                <div class="col-xs-4 patient_photo vertical-middle text-center">
+                                    <img class="img-circle" src="img/RedCross.png">
+                                </div>
+                                <div class="col-xs-7 col-xs-offset-1 patient_info vertical-middle">
+                                    <p class="patient_name">Rob Peters</p>
+                                    <p class="patient_date">M. 9 Oct 1968</p>
+                                    <p class="patient_issue">T.Lorem Ipsum</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- patient list page -->
 
         <!-- virtual clinic -->
         <div id="virtual_clinic_page" data-role="page">
@@ -390,12 +448,12 @@
                                 <div class="row">
                                     <h3>Title</h3>
                                     <div class="row">
-                                        <p>Grade</p>
+                                        <p>Grade 1-4 NCI</p>
                                         <input name="slider"id="grade_slider" data-highlight="true" min="0" max="5" value="3" type="range">
                                         <label for="slider" disabled="disabled"></label>
                                     </div>
                                     <div class="row">
-                                        <label for="flip_checkbox">History:</label>
+                                        <label for="flip_checkbox">History of Pain:</label>
                                         <input id="history_switch" data-role="flipswitch" name="flip_chechbox" data-on-text="Yes" data-off-text="No" data-wrapper-class="custom-size-flipswitch" type="checkbox">
                                     </div>
                                     <div class="row">
@@ -766,8 +824,37 @@
             </div>
             <!-- checlist page end -->
 
+    <script type="text/javascript" src="plugins/mobiscroll.appframework.js"></script>
+    <script type="text/javascript" src="plugins/mobiscroll.core.js"></script>
+    <script type="text/javascript" src="plugins/mobiscroll.frame.js"></script>
+    <script type="text/javascript" src="plugins/mobiscroll.scroller.js"></script>
+    <script type="text/javascript" src="plugins/mobiscroll.util.datetime.js"></script>
+    <script type="text/javascript" src="plugins/mobiscroll.datetimebase.js"></script>
+    <script type="text/javascript" src="plugins/mobiscroll.datetime.js"></script>
+    <script type="text/javascript" src="plugins/mobiscroll.select.js"></script>
+    <script type="text/javascript" src="plugins/mobiscroll.listbase.js"></script>
+    <script type="text/javascript" src="plugins/mobiscroll.image.js"></script>
+    <script type="text/javascript" src="plugins/mobiscroll.treelist.js"></script>
+     <script type="text/javascript" src="plugins/mobiscroll.frame.android.js"></script>
+    <script type="text/javascript" src="plugins/mobiscroll.frame.android-holo.js"></script>
 
-<script type="text/javascript">
+
+    <script>
+
+        $(function () {
+                // Date picker initialization
+                $('.datepicker_input').mobiscroll().date({
+                    theme: 'android-holo-light',
+                    mode : 'scroller',
+                    display: 'modal',
+                    // dateOrder: 'dd mm yy',
+                    // dateFormat: 'dd-mm-yy'
+                });
+        });
+        </script>
+    <script type="text/javascript">
+
+
 // switch between singup content and login content
 function toggleLogInContent(hidden){
     if(hidden){
