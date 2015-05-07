@@ -49,7 +49,7 @@ $('#login_submit') .click(function()
     		},
     		error: function (error)
     		{
-    			alert("Sorry, please check your network and try again later";
+    			alert("Sorry, please check your network and try again later");
     		}
 		});
 
