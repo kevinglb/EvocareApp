@@ -346,10 +346,10 @@
                     </div>
                     <div class="col-xs-8 col-xs-offset-1 vertical-middle">
                         <div class="row">
-                            <p><strong>Claire O'Dwyer</strong> F. 16 APR 1950</p>
+                            <span class="blod-text">Claire O'Dwyer</span> <span class="light-text">F. 16 APR 1950</span>
                         </div>
                         <div class="row">
-                            <p>Myeloddysplastic Syndromes(MDS)</p>
+                            <p class="light-text">Myeloddysplastic Syndromes(MDS)</p>
                         </div>
                     </div>
 
@@ -371,13 +371,13 @@
                                     <div class="col-xs-5">
 
                                         <span class="lg_text_left">10</span>
-                                        <span class="sm_text_left">Patient <br>Contacts</span>
+                                        <span class="sm_text_left regular-text">Patient <br>Contacts</span>
                                     </div>
                                     <div class="col-xs-2 text-center">
                                         <i class="fa fa-arrow-right"></i>
                                     </div>
                                     <div class="col-xs-5">
-                                        <span class="sm_text_right">Clinic<br> visit</span>
+                                        <span class="sm_text_right regular-text">Clinic<br> visit</span>
                                         <span class="lg_text_right">1</span>
                                         
                                     </div>
@@ -462,24 +462,34 @@
                             <div class="item container">
                                 <div class="row">
                                     <h3>Title</h3>
-                                    <div class="row">
+                                    
+                                    <div class="form-group" id="grade_slider_group">
                                         <p>Grade 1-4 NCI</p>
-                                        <input name="slider"id="grade_slider" data-highlight="true" min="0" max="5" value="3" type="range">
+                                        <input name="slider" id="grade_slider" data-highlight="true" min="0" max="5" value="3" type="range">
                                         <label for="slider" disabled="disabled"></label>
                                     </div>
-                                    <div class="row">
-                                        <label for="flip_checkbox">History of Pain:</label>
-                                        <input id="history_switch" data-role="flipswitch" name="flip_chechbox" data-on-text="Yes" data-off-text="No" data-wrapper-class="custom-size-flipswitch" type="checkbox">
+
+                                    <div class="form-group" id="history_record">
+                                        <div class="col-xs-6">
+                                            <label for="flip-input">History of Pain:</label>
+                                        </div>
+                                        <div class="col-xs-4 col-xs-offset-2">
+                                            <select name="flip-input" id="history_slider" data-role="slider">
+                                            <option value="no">No</option>
+                                            <option value="yes">Yes</option>
+                                            </select>
+                                        </div>
+                                      
                                     </div>
-                                    <div class="row">
+                                    <div class="form-group">
                                         <p>Character of Pain</p>
                                         <fieldset>
                                             <input name="radio-choice-v-2" id="radio-choice-v-2a" value="on" checked="checked" type="radio">
-                                            <label for="radio-choice-v-2a">One</label>
+                                            <label for="radio-choice-v-2a" class="light-text">One</label>
                                             <input name="radio-choice-v-2" id="radio-choice-v-2b" value="off" type="radio">
-                                            <label for="radio-choice-v-2b">Two</label>
+                                            <label for="radio-choice-v-2b"  class="light-text">Two</label>
                                             <input name="radio-choice-v-2" id="radio-choice-v-2c" value="other" type="radio">
-                                            <label for="radio-choice-v-2c">Three</label>
+                                            <label for="radio-choice-v-2c" class="light-text">Three</label>
                                         </fieldset>
                                     </div>
                                 </div>
@@ -487,20 +497,27 @@
 
                             <div class="item container">
                                 <div class="row">
-                                    <label for="flip_checkbox">On   Treatment in Unit?</label>
-                                    <input id="treatment_switch" data-role="flipswitch" name="flip_chechbox" data-on-text="Yes" data-off-text="No" data-wrapper-class="custom-size-flipswitch" type="checkbox">
-                                
-                                    <label for="treatment_name">Name of the treatment</label>
-                                    <input type="text" id="treatment_name" name="treatment_name"></input>
+                                    <div class="form-group">
+                                        <label for="flip_checkbox">On   Treatment in Unit?</label>
+                                        <input id="treatment_switch" data-role="flipswitch" name="flip_chechbox" data-on-text="Yes" data-off-text="No" data-wrapper-class="custom-size-flipswitch" type="checkbox">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="treatment_name">Name of the treatment</label>
+                                        <input type="text" id="treatment_name" name="treatment_name" class="underline-input"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="treatement_date">Date of last treatment</label>
+                                        <input  id="treatment_last_date" class="datepicker_input" name="treatment_date" class="underline-input"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="blood_date">Last bloods done</label>
+                                        <input type="text" id="blood_last_date" name="blood_date" class="datepicker_input" class="underline-input"></input>
+                                    </div>
+                                    <div class="form-group">
 
-                                    <label for="treatement_date">Date of last treatment</label>
-                                    <input  id="treatment_last_date" class="datepicker_input" name="treatment_date"></input>
-
-                                    <label for="blood_date">Last bloods done</label>
-                                    <input type="text" id="blood_last_date" name="blood_date" class="datepicker_input"></input>
-
-                                    <label for="symptom">Symptom</label>
-                                    <input type="text" id="treatment_symptom" name="symptom"></input>
+                                        <label for="symptom">Symptom</label>
+                                        <input type="text" id="treatment_symptom" name="symptom" class="underline-input"></input>
+                                    </div>
                                 </div>
                             </div>
                             <div class="item container">
@@ -512,7 +529,7 @@
                                                 <input type="text" name="symptom_1" placeholder="Symptom"></input>
                                             </div>
                                             <div class="col-xs-2 col-xs-offset-1">
-                                                <a href="#" class="close_link" onClick="removeSymptom(this)"><i class="fa fa-4x fa-close"></i></a>
+                                                <a href="#" class="close_link" onClick="removeSymptom(this)"><i class="fa fa-2x fa-close"></i></a>
                                             </div>
                                         </li>
                                         <li>
@@ -520,7 +537,7 @@
                                                 <input type="text" name="symptom_2" placeholder="Symptom"></input>
                                             </div>
                                             <div class="col-xs-2 col-xs-offset-1">
-                                                <a href="#" class="close_link"onClick="removeSymptom(this)"><i class="fa fa-4x fa-close"></i></a>
+                                                <a href="#" class="close_link" onClick="removeSymptom(this)"><i class="fa fa-2x fa-close"></i></a>
                                             </div>
                                         </li>
                                         <li>
@@ -529,7 +546,7 @@
                                                 name="symptom_3" placeholder="Symptom"></input>
                                             </div>
                                             <div class="col-xs-2 col-xs-offset-1">
-                                                <a href="#" class="close_link" onClick="removeSymptom(this)"><i class="fa fa-4x fa-close"></i></a>
+                                                <a href="#" class="close_link" onClick="removeSymptom(this)"><i class="fa fa-2x fa-close"></i></a>
                                             </div>
                                         </li>
                                     </ul>
@@ -915,7 +932,7 @@ function setHeightofContent(){
 function addSymptom(){
     var index = $("#symptom_list>li").length+1;
     //console.log(index);
-    $("#symptom_list").append('<li><div class="col-xs-9"><div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="text" name="symptom_'+ index+ '"'+' placeholder="Symptom"></input></div></div><div class="col-xs-2 col-xs-offset-1"><a href="#" class="close_link" onClick="removeSymptom(this)"><i class="fa fa-4x fa-close"></i></a></div></li>').listview('refresh');
+    $("#symptom_list").append('<li><div class="col-xs-9"><div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="text" name="symptom_'+ index+ '"'+' placeholder="Symptom"></input></div></div><div class="col-xs-2 col-xs-offset-1"><a href="#" class="close_link" onClick="removeSymptom(this)"><i class="fa fa-2x fa-close"></i></a></div></li>').listview('refresh');
 }
 
 function removeSymptom(element){
