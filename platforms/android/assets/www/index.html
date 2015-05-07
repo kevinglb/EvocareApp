@@ -57,27 +57,42 @@
                         <!-- signup form -->
                         <form id="signup_form" role="form">
                             <div class="form-group">
-                                <input type="text" id="signup_firstname" name="firstname" class="form-control no-border input-lg" placeholder="first name" />
+                                <input type="text" id="signup_fullname" name="fullname" class="form-control no-border input-lg" placeholder="Full Name" />
                             </div>
                             <div class="form-group">
-                                <input type="text" id="signup_lastname" name="lastname" class="form-control no-border input-lg" placeholder="last name" />
+                                <input type="email" id="signup_email" name="email" class="form-control no-border input-lg" placeholder="Email Address"/>
                             </div>
                             <div class="form-group">
-                                <input type="email" id="signup_email" name="email" class="form-control no-border input-lg" placeholder="email address"/>
+                                <input type="password" id="signup_password" name="password" class="form-control no-border input-lg" placeholder="Password"/>
                             </div>
                             <div class="form-group">
-                                <input type="password" id="signup_password" name="password" class="form-control no-border input-lg" placeholder="password"/>
+                                <input type="password" id="signup_password_confirm" name="password_confirm" class="form-control no-border input-lg" placeholder="Confirm Password"/>
                             </div>
                             <div class="form-group">
-                                <input type="password" id="signup_password_confirm" name="password_confirm" class="form-control no-border input-lg" placeholder="confirm password"/>
+                                <input type="text" id="signup_birthday" name="birthday" class="form-control no-border input-lg datepicker_input" placeholder="Date of Birth"/>
                             </div>
                             <div class="form-group">
-                                <input type="text" id="signup_birthday" name="birthday" class="form-control no-border input-lg datepicker_input" placeholder="birth date"/>
+                                <input type="text" id="signup_contact_number" name="contact_number" class="form-control no-border input-lg" placeholder="Contact Number"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="signup_hospital" name="hospital" class="form-control no-border input-lg" placeholder="Hospital" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="signup_job_title" name="job_title" class="form-control no-border input-lg" placeholder="Current Job Title" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="signup_registration_number" name="registration_number" class="form-control no-border input-lg" placeholder="ABA registration number" />
+                            </div>
+                            <div class="form-group">
+                                <select name="signup_medical_insurance" id="signup_medical_insurance" data-native-menu="false">
+                                    <option value="1">Do you have medical indemnity insurance?</option>
+                                    <option value="true">YES</option>
+                                    <option value="false">No</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <a type="submit" id="signup_submit" value="sign up" name="signup_btn" class="btn btn-lg btn-presepctive btn-block">REGISTER</a>
                             </div>
-
                         </form>
                         <div class="below_content">
                             <div class="row text-center">
@@ -1034,6 +1049,20 @@ function showPercentDonut(percent) {
       }); // redraw the arcs
     }, 100);
   }
+}
+
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady(){
+    document.addEventListener("backbutton", function(e){
+       if($.mobile.activePage.is('#login_page')){
+           e.preventDefault();
+           navigator.app.exitApp();
+       }
+       else {
+           navigator.app.backHistory()
+       }
+    }, false);
 }
 
 
