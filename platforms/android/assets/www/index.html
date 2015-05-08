@@ -17,10 +17,11 @@
         <link rel="stylesheet" type="text/css" href="css/mobiscroll.animation.css"/>
         <link rel="stylesheet" type="text/css" href="css/mobiscroll.icons.css"/>
         <link rel="stylesheet" type="text/css" href="css/mobiscroll.frame.css"/>
-        <link rel="stylesheet" type="text/css" href="css/mobiscroll.android.css"/>
-         <link rel="stylesheet" type="text/css" href="css/mobiscroll.android-holo.css"/>
-        <link rel="stylesheet" type="text/css" href="css/mobiscroll.android-holo-light.css"/>
+        <link rel="stylesheet" type="text/css" href="css/mobiscroll.frame.android.css"/>
+        <link rel="stylesheet" type="text/css" href="css/mobiscroll.frame.android-holo.css"/>
         <link rel="stylesheet" type="text/css" href="css/mobiscroll.scroller.css"/>
+        <link rel="stylesheet" type="text/css" href="css/mobiscroll.scroller.android-holo.css"/>
+        <link rel="stylesheet" type="text/css" href="css/mobiscroll.android-holo-light.css"/>
          <!-- main css -->
         <link rel="stylesheet" type="text/css" href="css/index.css" />
 
@@ -172,8 +173,8 @@
                             <div class="col-xs-3 vertical-middle text-center">
                                 <img src="img/RedCross.png">
                             </div>
-                            <div class="col-xs-8 col-xs-offset-1 vertical-middle">
-                                <p>VIRTUAL CLINIC</p>
+                            <div class="col-xs-9 vertical-middle">
+                                <p class="lg-size">VIRTUAL CLINIC</p>
                             </div>
                         </div>
                     </a>
@@ -182,8 +183,8 @@
                             <div class="col-xs-3 text-center vertical-middle">
                                 <img src="img/RedCross.png">
                             </div>
-                            <div class="col-xs-8 col-xs-offset-1 vertical-middle">
-                                <p>PATIENT TRIAGE</p>
+                            <div class="col-xs-9 vertical-middle">
+                                <p class="lg-size">PATIENT TRIAGE</p>
                             </div>
                         </div>
                     </a>
@@ -192,8 +193,8 @@
                             <div class="col-xs-3 text-center vertical-middle">
                                 <img src="img/RedCross.png">
                             </div>
-                            <div class="col-xs-8 col-xs-offset-1 vertical-middle">
-                                <p>PATIENT CHECKLIST</p>
+                            <div class="col-xs-9 vertical-middle">
+                                <p class="lg-size">PATIENT CHECKLIST</p>
                             </div>
                         </div>
                     </a>
@@ -202,8 +203,8 @@
                             <div class="col-xs-3 text-center vertical-middle">
                                 <img src="img/RedCross.png">
                             </div>
-                            <div class="col-xs-8 col-xs-offset-1 vertical-middle">
-                                <p>CONSULTANT ON CALL</p>
+                            <div class="col-xs-9 vertical-middle">
+                                <p class="lg-size">CONSULTANT ON CALL</p>
                             </div>
                         </div>
                     </a>
@@ -212,8 +213,8 @@
                             <div class="col-xs-3 text-center vertical-middle">
                                 <img src="img/RedCross.png">
                             </div>
-                            <div class="col-xs-8 col-xs-offset-1 vertical-middle">
-                                <p>SCHEDULER</p>
+                            <div class="col-xs-9 vertical-middle">
+                                <p class="lg-size">SCHEDULER</p>
                             </div>
                         </div>
                     </a>
@@ -222,8 +223,8 @@
                            <div class="col-xs-3 text-center vertical-middle">
                                 <img src="img/RedCross.png">
                             </div>
-                            <div class="col-xs-8 col-xs-offset-1 vertical-middle">
-                                <p>PATIENTS</p>
+                            <div class="col-xs-9 vertical-middle">
+                                <p class="lg-size">PATIENTS</p>
                             </div>
                         </div>
                     </a>
@@ -343,12 +344,12 @@
                     <div class="col-xs-3 vertical-middle">
                         <img src="img/RedCross.png" class="img-circle img-responsive">
                     </div>
-                    <div class="col-xs-8 col-xs-offset-1 vertical-middle">
+                    <div class="col-xs-9 vertical-middle">
                         <div class="row">
-                            <span class="blod-text">Claire O'Dwyer</span> <span class="light-text">F. 16 APR 1950</span>
+                            <span class="blod-text patient_name md-size">Claire O'Dwyer</span> <span class="light-text birth_date">F. 16 APR 1950</span>
                         </div>
                         <div class="row">
-                            <p class="light-text">Myeloddysplastic Syndromes(MDS)</p>
+                            <span class="light-text disease_issue">Myeloddysplastic Syndromes(MDS)</span>
                         </div>
                     </div>
 
@@ -361,15 +362,14 @@
                         <div class="carousel-inner" role="listbox">
                             <div class="item active container">
                                 <div class="row">
-                                    <h3><strong>Triage Trend</strong></h3>
+                                    <h3>Triage Trend</h3>
                                 </div>
                                 <div class="row">
                                     <div id="pie_chart" class="text-center"></div>
                                 </div>
                                 <div class="row below_content">
                                     <div class="col-xs-5">
-
-                                        <span class="lg_text_left">10</span>
+                                        <span class="lg_text_left ">10</span>
                                         <span class="sm_text_left regular-text">Patient <br>Contacts</span>
                                     </div>
                                     <div class="col-xs-2 text-center">
@@ -387,8 +387,8 @@
                             <div class="item container">
                                 <div class="row">
                                     <ul class="timeline">
-                                        <li>
-                                            <div class="date col-xs-4">
+                                        <li class="timeline_item">
+                                            <div class="date col-xs-4 md-size">
                                                 5 March
                                             </div>
                                             <div class="arrow col-xs-4 col-xs-offset-4">
@@ -397,7 +397,7 @@
                                             </div>
                                         </li>
                                          <li>
-                                            <div class="date col-xs-4">
+                                            <div class="date col-xs-4 md-size">
                                                 18 Feb
                                             </div>
                                             <div class="arrow col-xs-4 col-xs-offset-4">
@@ -406,7 +406,7 @@
                                             </div>
                                         </li>
                                          <li>
-                                            <div class="date col-xs-4">
+                                            <div class="date col-xs-4 md-size">
                                                 11 Feb
                                             </div>
                                             <div class="arrow col-xs-4 col-xs-offset-4">
@@ -415,7 +415,7 @@
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="date col-xs-4">
+                                            <div class="date col-xs-4 md-size">
                                                 17 Jan
                                             </div>
                                             <div class="arrow col-xs-4 col-xs-offset-4">
@@ -424,7 +424,7 @@
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="date col-xs-4">
+                                            <div class="date col-xs-4 md-size">
                                                8 Jan
                                             </div>
                                             <div class="arrow col-xs-4 col-xs-offset-4">
@@ -460,35 +460,39 @@
                                 
                             <div class="item container">
                                 <div class="row">
-                                    <h3>Title</h3>
+                                    <h3>Pain</h3>
                                     
-                                    <div class="form-group" id="grade_slider_group">
+                                    <div class="form-group grade_slider_group">
                                         <p>Grade 1-4 NCI</p>
-                                        <input name="slider" id="grade_slider" data-highlight="true" min="0" max="5" value="3" type="range">
+                                        <input name="slider" id="nci_grade" data-highlight="true" min="0" max="5" value="3" type="range" >
                                         <label for="slider" disabled="disabled"></label>
                                     </div>
 
-                                    <div class="form-group" id="history_record">
+                                    <div class="form-group slider_group">
                                         <div class="col-xs-6">
                                             <label for="flip-input">History of Pain:</label>
                                         </div>
                                         <div class="col-xs-4 col-xs-offset-2">
-                                            <select name="flip-input" id="history_slider" data-role="slider">
+                                            <select name="flip-input" id="history_record" data-role="slider">
                                             <option value="no">No</option>
                                             <option value="yes">Yes</option>
                                             </select>
                                         </div>
-                                      
                                     </div>
                                     <div class="form-group">
-                                        <p>Character of Pain</p>
+                                        <p >Character of Pain</p>
                                         <fieldset>
-                                            <input name="radio-choice-v-2" id="radio-choice-v-2a" value="on" checked="checked" type="radio">
-                                            <label for="radio-choice-v-2a" class="light-text">One</label>
-                                            <input name="radio-choice-v-2" id="radio-choice-v-2b" value="off" type="radio">
-                                            <label for="radio-choice-v-2b"  class="light-text">Two</label>
-                                            <input name="radio-choice-v-2" id="radio-choice-v-2c" value="other" type="radio">
-                                            <label for="radio-choice-v-2c" class="light-text">Three</label>
+                                            <input name="radio-choice-v-2" id="radio-choice-v-2a" value="dull" checked="checked" type="radio">
+                                            <label for="radio-choice-v-2a" class="light-text">Dull</label>
+
+                                            <input name="radio-choice-v-2" id="radio-choice-v-2b" value="sharp" type="radio">
+                                            <label for="radio-choice-v-2b"  class="light-text">Sharp</label>
+
+                                            <input name="radio-choice-v-2" id="radio-choice-v-2c" value="Stabbing" type="radio">
+                                            <label for="radio-choice-v-2c" class="light-text">Stabbing</label>
+
+                                            <input name="radio-choice-v-2" id="radio-choice-v-2d" value="Ache" type="radio">
+                                            <label for="radio-choice-v-2d" class="light-text">Ache</label>
                                         </fieldset>
                                     </div>
                                 </div>
@@ -496,9 +500,16 @@
 
                             <div class="item container">
                                 <div class="row">
-                                    <div class="form-group">
-                                        <label for="flip_checkbox">On   Treatment in Unit?</label>
-                                        <input id="treatment_switch" data-role="flipswitch" name="flip_chechbox" data-on-text="Yes" data-off-text="No" data-wrapper-class="custom-size-flipswitch" type="checkbox">
+                                    <div class="form-group slider_group">
+                                        <div class="col-xs-6">
+                                            <label for="flip_input">On Treatment in Unit?</label>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <select name="flip-input" id="on_treatment" data-role="slider">
+                                            <option value="no">No</option>
+                                            <option value="yes">Yes</option>
+                                            </select>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="treatment_name">Name of the treatment</label>
@@ -558,7 +569,7 @@
                         <!-- controls -->
                         <div class="carousel_controls">
                             <div class="back_btn">
-                                <a class="left carousel-control" href="#triage_slide" role="button" data-slide="prev" onClick="detectTriageCarousel()" disabled="disabled">Back</a>
+                                <a class="left carousel-control" href="#triage_slide" role="button" data-slide="prev" onClick="detectTriageCarousel()" disabled="disabled" class="md-size">Back</a>
                                 <!-- <a class="carousel-control add_symptom" role="button" style="display:none">+Symptom</a> -->
                             </div>
                             <div class="continue_btn">
@@ -912,8 +923,8 @@
                     theme: 'android-holo-light',
                     mode : 'scroller',
                     display: 'modal',
-                    // dateOrder: 'dd mm yy',
-                    // dateFormat: 'dd-mm-yy'
+                    dateOrder: 'dd M yy',
+                    dateFormat: 'dd-M-yy'
                 });
         });
         </script>

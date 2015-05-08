@@ -1,5 +1,5 @@
 
-var login_url = "http://clinic.evocare.co/api/authenticate";
+var login_url = "http://securion.systems/api/authenticate";
 var register_url = "http://clinic.evocare.co/api/register";
 
 var api_key;

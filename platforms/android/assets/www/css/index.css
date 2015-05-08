@@ -47,7 +47,7 @@ body {
     );
     background-attachment:fixed;
     font-family: 'Bendons-Regular';
-    font-size:16px;
+    font-size:18px;
     height:100%;
     margin:0px;
     padding:0px;
@@ -222,8 +222,10 @@ input[type=number]{
 }*/
 
 #login_content, #signup_content{
+
     height: 100%;
-    max-width:  1280px;
+    max-width:  1080px;
+
 }
 
 #login_content {
@@ -247,14 +249,14 @@ input[type=number]{
 .below_content .sm_text_left{
     float: left;
     text-align: left;
-    margin-top: 8px; 
+   
 }
 
 .below_content .sm_text_right{
     float: right;
     text-align: left;
     padding-right: 10px;
-    margin-top: 8px; 
+    
 }
 .below_content .lg_text_right{
     float: right;
@@ -468,7 +470,7 @@ input[type=number]{
 
 
 .timeline li{
-    padding: 3.5em 0;
+    padding: 3em 0;
 }
 
 /*.timeline li:after{
@@ -484,7 +486,6 @@ input[type=number]{
     display: inline-block;
     text-align: center;
     margin: 10px 0px;
-    font-size: 18px;
     line-height: 18px;
 }
 
@@ -563,38 +564,58 @@ input[type=number]{
 .ui-checkbox label, .ui-radio label{
     border: none;
     background-color: transparent !important;
-    margin:1em 0;
+    margin: 0;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
 }
 .ui-checkbox input, .ui-radio input{
     display: none;
+}
+
+.ui-checkbox label, .ui-radio label {
+    font-size: 1.2em;
 }
 
 .ui-checkbox-on::after{
     content: "\221A";
     display: block;
     color:#FFF;
+    width: 1.2em !important;
+    height: 1.2em !important;
+    margin: -0.5em 2px 0px !important;
     background-color: rgba(34, 136, 150, 0.9) !important;
     padding-left: 2px;
-    border:2px solid rgba(34, 136, 150, 0.9);
-
+    border: 2px solid rgba(34, 136, 150, 0.9) !important;
 }
+
 .ui-checkbox-off::after{
     background-color: transparent !important;
     border: 2px solid #333;
+    width: 1.2em !important;
+    height: 1.2em !important;
 }
+
 .ui-radio-off::after{
     background-color: #fff !important;
-    border: 1px solid #333; 
+    border: 3px solid #333; 
+    width: 1.2em !important;
+    height: 1.2em !important;
+    border-radius: 0.6em !important;
+    margin: -0.7em 5px 0 !important; 
 }
 
 .ui-radio-on::after {
     content: "\2022";
     font-family: sans-serif;
     display: block;
-    line-height: 14px;
-    font-size: 18px;
+    width: 1.2em !important;
+    height: 1.2em !important;
+    border-radius: 0.6em !important;
+    line-height: 0.9em;
+    margin: -0.7em 5px 0 !important; 
     color: rgba(34, 136, 150, 0.9);
-    background-color: #FFF !important; 
+    background-color: #FFF !important;
+    padding-left: 2px; 
     border:4px solid rgba(34, 136, 150, 0.9) !important; 
 
 }
@@ -606,7 +627,8 @@ input.ui-slider-input {
     background-color: transparent !important;
 
 }
-#grade_slider_group .ui-slider-track {
+
+.grade_slider_group .ui-slider-track {
     margin: 0px 70px 0px 5px;
 }
 
@@ -616,22 +638,28 @@ input.ui-slider-input {
 .ui-slider-track .ui-btn.ui-slider-handle{
     background-color: rgba(34, 136, 150, 0.9) !important;
     border-radius: 14px !important;
-    border: 8px solid rgba(187, 196, 199, 0.9) !important;
+    border: 5px solid rgba(187, 196, 199, 0.9) !important;
 }
 
 
-#history_record {
-    height: 35px;
-    line-height: 32px;
+.slider_group {
+    height: 2.4em;
+    line-height: 2.2em;
+    margin-top: 30px;
 }
-#history_record div{
+
+.slider_group div{
     padding: 0;
 }
-#history_record .ui-slider-track {
+
+.slider_group .ui-slider-track {
     border-radius: 1em;
     margin:0;
     float: right;
     right: 10px;
+}
+.slider_group .ui-slider-track:after{
+    clear: both;
 }
 
 #triage_form .ui-input-text {
@@ -665,10 +693,6 @@ input.ui-slider-input {
     padding: 15px 0;
 }
 
-.main_content p
-{
-    font-size: 4vw;
-}
 
 .main_content .list_item{
     height: 14vh;
@@ -738,3 +762,23 @@ input.ui-slider-input {
     margin: 0;
 }
 
+
+@media screen and (max-height: 960px){
+    .lg-size{
+        font-size: 1.8em;
+    }
+    .md-size {
+        font-size: 1.4em;
+    }
+    .sm-size {
+        font-size: 1em;
+    }
+
+}
+
+
+
+/*font color on datepicker*/
+.dwb0, .dwb1{
+    color: #FFF !important;
+}

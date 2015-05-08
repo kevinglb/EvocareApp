@@ -219,7 +219,8 @@
             if (!that._isFullScreen && /modal|bubble/.test(s.display)) {
                 $wrapper.width('');
                 $('.mbsc-w-p', $markup).each(function () {
-                    w = $(this).outerWidth(true);
+                    // w = $(this).outerWidth(true);
+                    w = $(window).width()*0.85; //set the w as the 0.85 of the window's width
                     totalw += w;
                     minw = (w > minw) ? w : minw;
                 });
@@ -234,7 +235,7 @@
             that.scrollLock = scrollLock;
 
             if (s.display == 'modal') {
-                l = Math.max(0, sl + (nw - modalWidth) / 2);
+                l = Math.max(0, sl + (nw - modalWidth) / 2);     
                 t = st + (nh - modalHeight) / 2;
             } else if (s.display == 'bubble') {
                 scroll = true;
@@ -245,7 +246,9 @@
 
                 // horizontal positioning
                 aw = anchor.outerWidth();
+               
                 ah = anchor.outerHeight();
+       
                 l = constrain(al - ($popup.outerWidth(true) - aw) / 2, sl + 3, sl + nw - modalWidth - 3);
 
                 // vertical positioning

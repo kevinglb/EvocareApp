@@ -632,7 +632,8 @@
         that._processSettings = function () {
             s = that.settings;
             trigger = that.trigger;
-            itemHeight = s.height;
+            //itemHeight = s.height;
+            itemHeight = 45; 
             lines = s.multiline;
 
             that._isLiquid = (s.layout || (/top|bottom/.test(s.display) && s.wheels.length == 1 ? 'liquid' : '')) === 'liquid';
