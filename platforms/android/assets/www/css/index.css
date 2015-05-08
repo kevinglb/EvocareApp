@@ -217,12 +217,12 @@ input[type=number]{
 #login_page .ui-content{
     background-color:  rgba(166, 181, 184,1) !important;
 }
-#login_page .login_header {
+/*#login_page .login_header {
     height: 20%;
-}
+}*/
 
 #login_content, #signup_content{
-    height: 80%;
+    height: 100%;
     max-width:  1280px;
 }
 

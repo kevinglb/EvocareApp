@@ -151,9 +151,11 @@ $('#signup_submit').click(function()
 
 	else
 	{
-		var registerData = {fullname: fullname, email: email, password: password, password_confirm: password_confirm, 
-							dateOfBirth: dateOfBirth, contactNumber: contactNumber, hospital: hospital, jobTitle: jobTitle, 
-							registrationNumber: registrationNumber, medical_insurance: medical_insurance}; 
+		dateOfBirth = convertDateFormat(dateOfBirth);
+
+		var registerData = {full_name: fullname, email: email, password: password, password_confirm: password_confirm, 
+							date_of_birth: dateOfBirth, telephone: contactNumber, hospital: hospital, job_title: jobTitle, 
+							registration_number: registrationNumber, medical_insurance: medical_insurance}; 
 		$.ajax(
 		{
     		url : register_url,
@@ -162,30 +164,10 @@ $('#signup_submit').click(function()
     		dataType: 'json',
     		success: function(response)
     		{
-    			// registration failed 
-    			if(response.status == "100")
-    			{
-    				alert(response.message);	
-    				return;
-    			}
-
-    			if(response.status == "101")
-    			{
-    				alert(response.message);
-    			}
-
     			// registration successful
     			if(response.status == "1")
     			{
     				alert(response.message);
-
-    				//navigate to login page
-    				$.mobile.changePage("#login_page", 
-    				{
-    					transition: "slideup",
-    					reverse: false,
-   						changeHash: false
-    				})
 
     				// clean the register form 
     				$('#signup_fullname').val('');
@@ -198,6 +180,14 @@ $('#signup_submit').click(function()
 					$('#signup_job_title').val('');
 					$('#signup_registration_number').val('');
 					$('#signup_medical_insurance').val('');
+
+					// back to login page
+					$("#signup_content").slideUp();
+    			}
+    			else
+    			{
+    				alert(response.message);
+    				return;
     			}
     		},
     		error: function (error)
@@ -214,4 +204,21 @@ function IsEmail(email)
 {
   var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
   return regex.test(email);
+}
+
+function convertDateFormat(current_date)
+{
+	var date = new Date(current_date);
+	var year = date.getFullYear();
+	var month = date.getMonth();
+	var day = date.getDate();
+
+	var monthsArray = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JULY", "AUG", "SEP", "OCT", "NOV", "DEC"];
+	month = monthsArray[month];
+
+	var correct_date_format = ('0' + day).slice(-2) + '-'
+             + month + '-'
+             + year;
+    
+    return correct_date_format;
 }
