@@ -160,6 +160,10 @@
     display: table-cell;
     position: relative;
     z-index: 5;
+    text-transform: uppercase;
+    background: #8CA0A7;
+    padding: 0.375em 0;
+    font-weight: bold;
 }
 .dwbw .dwb:before {
     padding: .375em;

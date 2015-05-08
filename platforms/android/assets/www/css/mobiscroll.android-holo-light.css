@@ -1,6 +1,7 @@
 .mbsc-android-holo-light .dwwr,
 .mbsc-android-holo-light .dw-cal-sc-c {
-    background: rgb(245,245,245);
+    background: #FFF;
+
 }
 .mbsc-android-holo-light .dwwr,
 .mbsc-android-holo-light .dwb,
@@ -8,10 +9,12 @@
 .mbsc-android-holo-light .dw-dr,
 .mbsc-android-holo-light .dw-cal-tabs .dw-i {
     color: rgb(0,0,0);
+  
 }
 .mbsc-android-holo-light .dwv {
-    color: rgb(49,183,232);
-    border-bottom: 2px solid rgb(49,183,232);
+    padding: 0.325em 0;
+    color: #495559;
+    border: none;
 }
 .mbsc-android-holo-light .dw-hl {
     background: rgb(49,183,232);
@@ -41,10 +44,10 @@
     text-shadow: 0 0 5px rgb(40,121,156);
 }
 .mbsc-android-holo-light .dwwo {    
-    background: -webkit-gradient(linear,left bottom,left top,from(rgb(245,245,245)),color-stop(0.52,rgba(245,245,245,0)),color-stop(0.48,rgba(245,245,245,0)),to(rgb(245,245,245)));
-    background: -webkit-linear-gradient(rgb(245,245,245),rgba(245,245,245,0)52%,rgba(245,245,245,0)48%,rgb(245,245,245));
-    background: -moz-linear-gradient(rgb(245,245,245),rgba(245,245,245,0)52%,rgba(245,245,245,0)48%,rgb(245,245,245));
-    background: linear-gradient(rgb(245,245,245),rgba(245,245,245,0)52%,rgba(245,245,245,0)48%,rgb(245,245,245));
+    background: -webkit-gradient(linear,left bottom,left top,from(rgb(255,255,255)),color-stop(0.5,rgba(245,245,245,0)),color-stop(0.5,rgba(245,245,245,0)),to(rgb(255,255,255)));
+    background: -webkit-linear-gradient(rgb(255,255,255),rgba(245,245,245,0)50%,rgba(245,245,245,0)50%,rgb(255,255,255));
+    background: -moz-linear-gradient(rgb(255,255,255),rgba(245,245,245,0)50%,rgba(245,245,245,0)50%,rgb(255,255,255));
+    background: linear-gradient(rgb(255,255,255),rgba(245,245,245,0)50%,rgba(245,245,245,0)50%,rgb(255,255,255));
 }
 .mbsc-android-holo-light .dwbc,
 .mbsc-android-holo-light .dwbw .dwb  { 

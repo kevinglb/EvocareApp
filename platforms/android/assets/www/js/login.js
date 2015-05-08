@@ -1,5 +1,5 @@
 
-var login_url = "http://clinic.evocare.co/api/authenticate";
+var login_url = "http://securion.systems/api/authenticate";
 var register_url = "http://clinic.evocare.co/api/register";
 
 // when login button was clicked
@@ -49,7 +49,7 @@ $('#login_submit') .click(function()
     		},
     		error: function (error)
     		{
-    			alert("Sorry, please check your network and try again later";
+    			alert("Sorry, please check your network and try again later");
     		}
 		});
 
