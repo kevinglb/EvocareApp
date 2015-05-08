@@ -2,6 +2,8 @@
 var login_url = "http://clinic.evocare.co/api/authenticate";
 var register_url = "http://clinic.evocare.co/api/register";
 
+var api_key;
+
 // when login button was clicked
 $('#login_submit') .click(function()
 {
@@ -35,6 +37,8 @@ $('#login_submit') .click(function()
     			if(response.status == "1")
     			{
     				//navigate to main page
+    				api_key = response.api_key;
+
     				$.mobile.changePage("#main_page", 
     				{
     					transition: "pop",
@@ -151,7 +155,7 @@ $('#signup_submit').click(function()
 
 	else
 	{
-		dateOfBirth = convertDateFormat(dateOfBirth);
+		// dateOfBirth = convertDateFormat(dateOfBirth);
 
 		var registerData = {full_name: fullname, email: email, password: password, password_confirm: password_confirm, 
 							date_of_birth: dateOfBirth, telephone: contactNumber, hospital: hospital, job_title: jobTitle, 
@@ -206,19 +210,19 @@ function IsEmail(email)
   return regex.test(email);
 }
 
-function convertDateFormat(current_date)
-{
-	var date = new Date(current_date);
-	var year = date.getFullYear();
-	var month = date.getMonth();
-	var day = date.getDate();
+// function convertDateFormat(current_date)
+// {
+// 	var date = new Date(current_date);
+// 	var year = date.getFullYear();
+// 	var month = date.getMonth();
+// 	var day = date.getDate();
 
-	var monthsArray = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JULY", "AUG", "SEP", "OCT", "NOV", "DEC"];
-	month = monthsArray[month];
+// 	var monthsArray = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JULY", "AUG", "SEP", "OCT", "NOV", "DEC"];
+// 	month = monthsArray[month];
 
-	var correct_date_format = ('0' + day).slice(-2) + '-'
-             + month + '-'
-             + year;
+// 	var correct_date_format = ('0' + day).slice(-2) + '-'
+//              + month + '-'
+//              + year;
     
-    return correct_date_format;
-}
+//     return correct_date_format;
+// }
