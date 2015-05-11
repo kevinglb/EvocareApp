@@ -36,6 +36,7 @@
 }
 .dwwr {
     min-width: 170px;
+    max-width: 640px;
     zoom: 1;
     overflow: hidden;
     text-align: center;
