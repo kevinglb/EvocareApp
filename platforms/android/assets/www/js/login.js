@@ -1,6 +1,8 @@
 
-var login_url = "http://securion.systems/api/authenticate";
+// set up global URLs  
+var login_url = "http://clinic.evocare.co/api/authenticate";
 var register_url = "http://clinic.evocare.co/api/register";
+var patientList_url = "http://clinic.evocare.co/api/list_patients"
 
 var api_key;
 
@@ -43,8 +45,8 @@ $('#login_submit') .click(function()
     				{
     					transition: "pop",
     					reverse: false,
-   						changeHash: false
-    				})
+   						changeHash: true
+    				});
 
     				// delete username and password data
     				$('#login_username').val('');
