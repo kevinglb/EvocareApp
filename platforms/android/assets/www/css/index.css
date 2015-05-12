@@ -98,16 +98,19 @@ input[type=number]{
     -webkit-appearance: textfield;
 }
 
-.regular-text {
-    font-family: "Bendons-Regular";
-}
-.light-text{
-    font-family: "Bendons-Light";
-}
-.medium-text {
+input{
     font-family: "Bendons-Medium";
 }
-.bold-text {
+.regular-font {
+    font-family: "Bendons-Regular";
+}
+.light-font{
+    font-family: "Bendons-Light";
+}
+.md-font {
+    font-family: "Bendons-Medium";
+}
+.bold-font {
     font-family: "Bendons-Bold";
 }
 .event {
@@ -149,17 +152,20 @@ input[type=number]{
 
 /* ui-header ui-content ui-footer */
 .ui-header {
-    height: 44px;
+    height: 50px;
     background-color: #8FCDBE !important;
 }
 
 .ui-header .ui-title {
-    line-height: 44px;
+    line-height: 50px;
     font-size: 22px;
-    font-weight: normal;
+    font-family: "Bendons-Medium";
     overflow: show;
+    text-align: left;
+    margin-left: 15%;
     padding: 0;
     text-shadow:none;
+    text-transform: uppercase;
     color: #FFF;
 }
 
@@ -180,20 +186,26 @@ input[type=number]{
     color:#FFF;
 }
 
-.ui-header .ui-btn-left *{
-    line-height: 44px;
-    font-size: 24px;
+.ui-header .ui-btn-left{
+    margin-left: 10px;
 }
-.ui-header .ui-btn-right *{
-    line-height: 44px;
-    font-size: 24px;
+.ui-header .ui-btn-right{
+    margin-right: 10px;
+}
+/* div includes multiply icons*/
+.ui-header .multi-icons{
+    margin-right: 0px;
 }
 
+.ui-header .multi-icons a{
+    min-width: 44px;
+    height: 44px;
+    float: right;
+    margin-right: 5px;
+}
 .ui-header, .ui-footer {
     border: none;
 }
-
-
 .ui-content {
     padding: 0;
     overflow-x: hidden;
@@ -320,7 +332,7 @@ input[type=number]{
 #login_submit{
     background-color: rgba(154, 175, 176, 1);
     color: rgba(44, 118, 108, 1) !important;
-    font-weight: bold;
+    font-family: "Bendons-Medium";
     line-height: 58px;
     font-size: 1.5em;
     padding: 0;
@@ -355,7 +367,7 @@ input[type=number]{
 #signup_submit{
     background-color: rgba(189, 201, 205, 1);
     color: rgba(44, 118, 108, 1) !important;
-    font-weight: bold;
+    font-family: "Bendons-Medium";
     line-height: 58px;
     font-size: 1.5em;
     padding: 0;
@@ -368,8 +380,6 @@ input[type=number]{
 }
 #triage_info  {
     height: 15vh;
-    padding: 0px 15px;
-    vertical-align: middle;
     background: #FFF;
 }
 
@@ -446,6 +456,13 @@ input[type=number]{
 
 #symptom_list li div i{
     line-height: 55px;
+    color: #BBC4C7;
+}
+
+#symptom_list li .ui-input-text input:webkit-placeholder{
+    color: #BBC4C7;
+}
+#symptom_list li .ui-input-text input::moz-placeholder{
     color: #BBC4C7;
 }
 /*time line*/
@@ -550,6 +567,7 @@ input[type=number]{
     z-index: 10;
 }
 
+
 /*.timeline .name:after{
     content: "";
     position: absolute;
@@ -562,6 +580,11 @@ input[type=number]{
     border-width: 8px;
     pointer-events: none;
 }*/
+
+/*symptom choose list */
+.symptom_chooselist .ui-checkbox{
+    padding:    1em 0;
+}
 /*checkbox and radio button */
 .ui-checkbox, .ui-radio{
     margin: 1vh 0;
@@ -626,7 +649,7 @@ input[type=number]{
 
 }
 .grade_slider_group {
-    padding-bottom: 20px;
+    padding-bottom: 30px;
 }
 
 .grade_slider_group input.ui-slider-input {
@@ -741,8 +764,29 @@ input[type=number]{
 .main_content
 {
     height:100%;
-    padding: 15px 0;
+    padding: 10px 0;
+    font-family: "Bendons-Medium";
 }
+
+.main_content .container a:first-child{
+    color:  #035b67;
+}
+.main_content .container a:nth-child(2){
+    color: #A21814;
+}
+.main_content .container a:nth-child(3){
+    color: #3A8F7A;
+}
+.main_content .container a:nth-child(4){
+    color: #A76A00;
+}
+.main_content .container a:nth-child(5){
+    color: #B08A00
+}
+.main_content .container a:last-child{
+    color: #6d810c
+}
+
 
 
 .main_content .list_item{
@@ -801,6 +845,7 @@ input[type=number]{
 
 #patient_list{
     padding: 15px 0px;
+    overflow-y:auto;
 }
 #patient_list .patient{
     height: 120px;
@@ -824,13 +869,13 @@ input[type=number]{
 
 @media screen and (max-height: 960px){
     .lg-size{
-        font-size: 1.8em;
+        font-size: 1.5em;
     }
     .md-size {
-        font-size: 1.4em;
+        font-size: 1.2em;
     }
     .sm-size {
-        font-size: 1em;
+        font-size: 0.8em;
     }
 
 }
@@ -840,4 +885,100 @@ input[type=number]{
 /*font color on datepicker*/
 .dwb0, .dwb1{
     color: #FFF !important;
+}
+
+/*switch toggle button */
+.switch_group {
+  position: relative;
+  margin: 30px auto;
+  padding: 10px 10px;
+  background:#fff;
+  width: 95%;
+  max-width: 580px;
+  border-radius: 10px;
+}
+
+.switch {
+  position: relative;
+  border: 0;
+  padding: 0;
+  width: 100%;  
+  font-family: helvetica;
+  font-weight: bold;
+  font-size: 22px; 
+}
+.switch .ui-radio {margin:0;}
+.switch .ui-radio-on:after {position: absolute; opacity:0;}
+.switch .ui-radio-off:after{position: absolute; opacity:0;}
+.switch .ui-radio label {
+  position: relative;
+  z-index: 2;
+  float:left;
+  width:50%;
+  padding: 5px 0px 5px 0px;
+  text-align: center;
+  transition: color 0s ease .1s;
+}
+
+.switch .ui-radio label[class*="ui-radio-on"] {
+  color: #fff;
+}
+.switch .ui-radio label[class*="ui-radio-off"] {
+    color: #524f52;
+}
+
+.switch .ui-radio input:focus + label {outline: none;}
+
+.switch .switch-button {
+  clear: both;
+  position: absolute;
+  top: 0px;
+  left: 0%;
+  z-index: 1;
+  width:50%;
+  height: 100%;
+  background-color: #228896;
+  border-radius:10px;
+  transition: all .2s ease-out;
+}
+.switch-button.toggle{
+    left: 50%;
+}
+/*.switch.ui-radio:last-child label[class*="ui-radio-on"] ~.switch-button {left: 50%;}*/
+
+
+/*search input*/
+/*.ui-input-search input{
+    padding-left: 0;
+    padding-right: 1.75em;
+}
+
+.ui-input-search::after{
+    right: 0.3215em;
+    
+    background-image: url("../icon/icon-search-g.png");
+    background-position: center center;
+    background-size: cover;
+}*/
+/*icons setting*/
+
+.icon{
+    height: 100%;
+    width: 100%;
+    display: block;
+    margin-top: 2px;
+    background-position: center center;
+    background-size: cover;
+}
+.icon-arrow-left{
+    background-image: url("../icon/icon-arrow-left.png");
+}
+.icon-add-patient{
+    background-image: url("../icon/icon-add-patient.png");
+}
+.icon-bars{
+    background-image: url("../icon/icon-bars-w.png");
+}
+.icon-dots{
+    background-image: url("../icon/icon-dots-w.png");
 }
