@@ -487,7 +487,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="item container">
+                 <!--            <div class="item container">
                                 <div class="row">
                                     <h3 class="md-font">Symptom</h3>
                                     <ul id="symptom_list" data-role="listview">
@@ -518,16 +518,17 @@
                                         </li>
                                     </ul>
                                     <!-- <button type="button" class="ui-btn ui-corner-all ui-btn-a" onclick="addSymptom()">+ Symptom</button> -->
-                                </div>
-                            </div>
+                            <!--     </div>
+                            </div>  -->
 
                         </div>
                         <!-- carousel inner -->
                         <!-- controls -->
                         <div class="carousel_controls">
                             <div class="back_btn">
-                                <a class="left carousel-control" href="#triage_slide" role="button" data-slide="prev" onClick="detectTriageCarousel()" disabled="disabled" class="md-size">Back</a>
-                                <a class="carousel-control add_symptom" onClick="addSymptom()" role="button" style="display:none">+Symptom</a>
+                                <a class="left carousel-control" href="#triage_slide" role="button" data-slide="prev" 
+                                onClick="detectTriageCarousel()" disabled="disabled" class="md-size">Back</a>
+                                <!-- <a class="carousel-control add_symptom" onClick="addSymptom()" role="button" style="display:none">+Symptom</a> -->
                             </div>
                             <div class="continue_btn">
                                 <a class="right carousel-control" href="#triage_slide" role="button" data-slide="next" onClick="detectTriageCarousel()">Continue</a>
@@ -995,9 +996,9 @@ function detectTriageCarousel(){
 
         else if($('#triage_slide .carousel-inner .item:last-child').hasClass('active')) {
                 $('#triage_slide .carousel_controls .right').hide();
-                $('.carousel_controls .left').hide();
+                // $('.carousel_controls .left').hide();
                 $('#triage_slide .carousel_controls .add_note').show();
-                $('.carousel_controls .add_symptom').show();
+                // $('.carousel_controls .add_symptom').show();
                 console.log("the last item");
             }
 

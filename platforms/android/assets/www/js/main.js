@@ -300,7 +300,19 @@ function createNewTriage()
           if(response.status == "1")
           {
             alert(response.message);
+            
+            // reset triage form after create a new triage successfully
             resetTriagePage();
+            $('#triage_slide .carousel_controls .add_note').hide();
+            $('#triage_slide .carousel_controls .right').show();
+            
+            
+            $.mobile.changePage("#patientlist_page", 
+            {
+              transition: "pop",
+              reverse: false,
+              changeHash: false
+            });
           }
           else
           {
