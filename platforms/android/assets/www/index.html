@@ -30,7 +30,7 @@
         <script type="text/javascript" src="plugins/jquery.mobile-1.4.5.min.js"></script>
         <script type="text/javascript" src="plugins/bootstrap.min.js"></script>
         <script type="text/javascript" src="plugins/d3.min.js"></script>
-         <script type="text/javascript" src="plugins/countries.js"></script>
+        <script type="text/javascript" src="plugins/countries.js"></script>
         <!-- date pikcer on mobile device trail version -->
         <!-- <script type="text/javascript" src="plugins/mobiscroll.custom-2.15.1.min.js" ></script> -->
         
@@ -179,7 +179,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" onClick="enterPatientTriage();" data-transition="slide" onClick="SetUpTriagePage()">
+                    <a href="#" onClick="enterPatientTriage()">
                         <div class="row list_item">
                             <div class="col-xs-3 text-center vertical-middle">
                                 <img src="img/RedCross.png">
@@ -248,60 +248,6 @@
                 <div class="container">
                     <div id="patient_list">
                         <ul data-role="listview"  data-filter="true" data-inset="true" data-filter-placeholder="">
-                            <li class="patient" data-icon="false">
-                                <a href="#">
-                                <div class="col-xs-3 patient_photo  text-center">
-                                    <img class="img-circle" src="img/RedCross.png">
-                                </div>
-                                <div class="col-xs-9 patient_info">
-                                    <div class="row">
-                                        <p class="patient_name">Stephen Morrissey</p>
-                                    </div>
-                                    <div class="row">
-                                        <p class="patient_date">M. 20 Mar 1952</p>
-                                    </div>
-                                    <div class="row">
-                                        <p class="patient_issue">T.Lorem Ipsum</p>
-                                    </div>
-                                </div>
-                            </a>
-                            </li>
-                            <li class="patient" data-icon="false">
-                                <a href="#">
-                                    <div class="col-xs-3 patient_photo text-center">
-                                        <img class="img-circle" src="img/RedCross.png">
-                                    </div>
-                                    <div class="col-xs-9 patient_info">
-                                        <div class="row">
-                                            <p class="patient_name">Claire O'Dwyer</p>
-                                        </div>
-                                        <div class="row">
-                                            <p class="patient_date">F.16 Apr 1950</p>
-                                        </div>
-                                        <div class="row">
-                                            <p class="patient_issue">Myelodysplastic Syndromes(MDS)</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="patient" data-icon="false">
-                                <a href="#">
-                                <div class="col-xs-3 patient_photo text-center">
-                                    <img class="img-circle" src="img/RedCross.png">
-                                </div>
-                                <div class="col-xs-9  patient_info">
-                                    <div class="row">
-                                        <p class="patient_name">Tom O'Reilly</p>
-                                    </div>
-                                    <div class="row">
-                                        <p class="patient_date">M. 2 Jul 1942</p>
-                                    </div>
-                                    <div class="row">
-                                        <p class="patient_issue">T.Lorem Ipsum</p>
-                                    </div>
-                                </div>
-                            </a>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -350,17 +296,6 @@
             <!-- content -->
             <div role="main" class="ui-content">
                 <div id="triage_info">
-                    <div class="col-xs-3 vertical-middle">
-                        <img src="img/RedCross.png" class="img-circle img-responsive">
-                    </div>
-                    <div class="col-xs-9 vertical-middle">
-                        <div class="row">
-                            <span class="blod-text patient_name md-size">Claire O'Dwyer</span> <span class="light-text birth_date">F. 16 APR 1950</span>
-                        </div>
-                        <div class="row">
-                            <span class="light-text disease_issue">Myeloddysplastic Syndromes(MDS)</span>
-                        </div>
-                    </div>
 
                 </div>
                 <!-- caoursel -->
@@ -378,7 +313,7 @@
                                 </div>
                                 <div class="row below_content">
                                     <div class="col-xs-5">
-                                        <span class="lg_text_left ">10</span>
+                                        <span id="patient_contacts" class="lg_text_left "></span>
                                         <span class="sm_text_left regular-text">Patient <br>Contacts</span>
                                     </div>
                                     <div class="col-xs-2 text-center">
@@ -386,7 +321,7 @@
                                     </div>
                                     <div class="col-xs-5">
                                         <span class="sm_text_right regular-text">Clinic<br> visit</span>
-                                        <span class="lg_text_right">1</span>
+                                        <span id="clinic_visit" class="lg_text_right"></span>
                                         
                                     </div>
 
@@ -925,7 +860,7 @@
     <script type="text/javascript" src="plugins/mobiscroll.frame.android-holo.js"></script>
 
 
-    <script>
+<script>
 
         $(function () {
                 // Date picker initialization
@@ -1020,7 +955,8 @@ function detectTriageCarousel(){
     },500);
 }
 
-function ScheduleContentSwitch(target){
+function ScheduleContentSwitch(target)
+{
     if(target == "individual"){
         console.log("clinic");
         $(".clinic_content").hide();
@@ -1033,78 +969,6 @@ function ScheduleContentSwitch(target){
         $(".clinic_content").show();
     }
 
-}
-
-//load data and fill in the Triage Page
-function SetUpTriagePage(){
-    showPercentDonut(10);
-}
-
-function showPercentDonut(percent) {
-
-    $("#pie_chart").empty();
-    //console.log('after empty ');
-    var width= 240;
-    //console.log(width);
-    var height = 240;
-    var radius = Math.min(width, height) / 2;
-    //console.log(radius);
-    var dig = radius/6;
-    var color = d3.scale.category20();
-    var centerX =  radius;
-    var centerY =  height/2;
-    var center = [centerX, centerY];
-    var dataset = {
-        lower: [0, 100],
-        upper: [percent, 100-percent]
-      },
-    
-      pie = d3.layout.pie().sort(null),
-      format = d3.format(".0%");
-
-    var arc = d3.svg.arc()
-        .innerRadius(radius - 2 - dig)
-        .outerRadius(radius -5);
-
-    var svg = d3.select("#pie_chart").append("svg")
-        .attr("width", width)
-        .attr("height", height)
-        .append("g")
-        .attr('transform', 'translate(' + center[0] + ', ' + center[1] + ')');
-
-    var path = svg.selectAll("path")
-        .data(pie(dataset.lower))
-        .enter().append("path")
-        .attr('fill', function (d, i) { return color(i); })
-        .attr("d", arc)
-        .each(function(d) { this._current = d; }); // store the initial values
-
-    var text = svg.append("text")
-        .attr("text-anchor", "middle")
-        .attr('fill',"#000")
-        .attr("font-size", "6vh")
-        .attr("dy",".35em");
-
-   if (typeof(percent) == "string")
-   {
-     text.text(percent);
-   }
-   else {
-     var progress = 0;
-     var timeout = setTimeout(function () {
-       clearTimeout(timeout);
-       path = path.data(pie(dataset.upper)); // update the data
-       path.transition().duration(1200).attrTween("d", function (a) {
-         var i  = d3.interpolate(this._current, a);
-         var i2 = d3.interpolate(progress, percent);
-         this._current = i(0);
-         return function(t) {
-           text.text( format(i2(t) / 100) );
-           return arc(i(t));
-         };
-      }); // redraw the arcs
-    }, 100);
-  }
 }
 
 function SliderChange(){
@@ -1152,8 +1016,6 @@ function onDeviceReady()
            navigator.app.backHistory()
        }
     }, false);
-}
-
 }
 
 </script>

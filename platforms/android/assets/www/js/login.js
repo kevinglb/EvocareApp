@@ -2,7 +2,8 @@
 // set up global URLs  
 var login_url = "http://clinic.evocare.co/api/authenticate";
 var register_url = "http://clinic.evocare.co/api/register";
-var patientList_url = "http://clinic.evocare.co/api/list_patients"
+var patientList_url = "http://clinic.evocare.co/api/list_patients";
+var patientTriageHistory_url = "http://clinic.evocare.co/api/patient_triage_history";
 
 var api_key;
 
@@ -228,3 +229,5 @@ function IsEmail(email)
     
 //     return correct_date_format;
 // }
+
+
