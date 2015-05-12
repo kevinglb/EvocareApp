@@ -1,4 +1,5 @@
 var patients_list;
+var global_patient_id;
 
 function loadPatientInfo(page_id)
 {
@@ -29,7 +30,7 @@ function getPatientList(page_id)
            {
               $.each(response.patients, function(index, value)
               {
-                output += '<li class="patient" data-icon="false"><div id="' + value.id + '" onClick="SetUpTriagePage(this.id)"><div class="col-xs-3 patient_photo text-center"><img class="img-circle" src="' + value.avatar + '"></div><div class="col-xs-9 patient_info"><div class="row"><p class="patient_name">' + value.full_name + '</p></div><div class="row"><p class="patient_date">' + value.date_of_birth + '</p></div><div class="row"><p class="patient_issue">' +value.condition + '</p></div></div></div></li>';
+                output += '<li class="patient" data-icon="false"><div id="' + value.id + '" onClick="setUpTriagePage(this.id)"><div class="col-xs-3 patient_photo text-center"><img class="img-circle" src="' + value.avatar + '"></div><div class="col-xs-9 patient_info"><div class="row"><p class="patient_name">' + value.full_name + '</p></div><div class="row"><p class="patient_date">' + value.gender.substring(0,1).toUpperCase() + ' . ' + value.date_of_birth + '</p></div><div class="row"><p class="patient_issue">' +value.condition + '</p></div></div></div></li>';
               });
 
               $('#patient_list').children('ul').empty();
@@ -51,9 +52,9 @@ function getPatientList(page_id)
               $('#onboarding_btn').show();
 
 
-              $.each(response.patients, function(index, value)
+               $.each(response.patients, function(index, value)
               {
-                output += '<li class="patient" data-icon="false"><div id="' + value.id + '" onClick="patientSelected(this.id)"><div class="col-xs-3 patient_photo text-center"><img class="img-circle" src="' + value.avatar + '"></div><div class="col-xs-9 patient_info"><div class="row"><p class="patient_name">' + value.full_name + '</p></div><div class="row"><p class="patient_date">' + value.date_of_birth + '</p></div><div class="row"><p class="patient_issue">' +value.condition + '</p></div></div></div></li>';
+                output += '<li class="patient" data-icon="false"><div id="' + value.id + '" onClick="patientSelected(this.id)"><div class="col-xs-3 patient_photo text-center"><img class="img-circle" src="' + value.avatar + '"></div><div class="col-xs-9 patient_info"><div class="row"><p class="patient_name">' + value.full_name + '</p></div><div class="row"><p class="patient_date">' + value.gender.substring(0,1).toUpperCase() + ' . ' + value.date_of_birth + '</p></div><div class="row"><p class="patient_issue">' +value.condition + '</p></div></div></div></li>';
               });
 
               $('#patient_list').children('ul').empty();
@@ -82,8 +83,10 @@ function getPatientList(page_id)
 
 
 //load data and fill in the Triage Page
-function SetUpTriagePage(patient_id)
+function setUpTriagePage(patient_id)
 {
+    global_patient_id = patient_id;
+
     // get single patient info by id
     var single_patient = getSinglePatientInfo(patient_id);
 
@@ -114,8 +117,6 @@ function SetUpTriagePage(patient_id)
           alert("Sorry, failed to load patient triage history. Please check your network and try again later");
         }
     });
-
-
 }
 
 function setUpPatientTriageContent(response)
@@ -233,6 +234,85 @@ function showPercentDonut(percent)
   }
 }
 
+function createNewTriage()
+{
 
+  var on_treatment = $('#on_treatment').children().children('label').attr('class').split(' ').pop();
+  if(on_treatment == "ui-radio-on")
+  {
+    on_treatment = false;
+  }
+  else
+  {
+    on_treatment = true;
+  }
+
+  var treatment_name = $('#treatment_name').val();
+  var treatment_last_date = $('#treatment_last_date').val();
+  var blood_last_date = $('#blood_last_date').val();
+
+  var symptoms = new Array();
+  
+  var treatment_symptom = $('#treatment_symptom').val();
+  if(treatment_symptom.trim())
+  {
+    symptoms.push(treatment_symptom);
+  }
+
+  $('.symptom_chooselist input:checked').each(function() 
+  {
+    symptoms.push($(this).val());
+  });
+
+  var pain_grade = $("#nci_grade").val();
+
+  var history_pain = $('#history_record').children().children('label').attr('class').split(' ').pop();
+  if(history_pain == "ui-radio-on")
+  {
+    on_treatment = false;
+  }
+  else
+  {
+    history_pain = true;
+  }
+
+  var pain_character = ""
+  $('#pain_character input:checked').each(function() 
+  {
+    pain_character = $(this).val();
+  });
+
+  var new_triage_data = {key: api_key, patient: global_patient_id, on_treatment: on_treatment, treatment: treatment_name, 
+                        date_last_treatment: treatment_last_date, last_bloods: blood_last_date, symptoms: symptoms, pain_grade: pain_grade,
+                        has_history_of_pain: history_pain, character_of_pain: pain_character};
+
+  console.log(new_triage_data);
+
+  //get patient triage history
+  $.ajax(
+    {
+        url : crateNewTriage_url,
+        type: "POST",
+        data : new_triage_data,
+        dataType: 'json',
+        success: function(response)
+        {
+          if(response.status == "1")
+          {
+            alert(response.message);
+            resetTriagePage();
+          }
+          else
+          {
+            alert("Sorry, cannot create new triage");
+          }
+        },
+        error: function (error)
+        {
+          alert("Sorry, failed to create new triage. Please check your network and try again later");
+        }
+    });
+
+}
 
 

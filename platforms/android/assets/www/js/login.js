@@ -1,18 +1,11 @@
-
-// set up global URLs  
-var login_url = "http://clinic.evocare.co/api/authenticate";
-var register_url = "http://clinic.evocare.co/api/register";
-var patientList_url = "http://clinic.evocare.co/api/list_patients";
-var patientTriageHistory_url = "http://clinic.evocare.co/api/patient_triage_history";
-
-var api_key;
-
 // when login button was clicked
 $('#login_submit') .click(function()
 {
 	// get username and password from 
-	var username = $('#login_username').val();
-	var password = $('#login_password').val();
+	// var username = $('#login_username').val();
+	// var password = $('#login_password').val();
+	var username = "123@123.com";
+	var password = "123";
 
 	// check whether username or password is empty
 	if(!username.trim() || !password.trim())

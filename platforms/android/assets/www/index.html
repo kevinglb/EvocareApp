@@ -292,7 +292,7 @@
             <!-- right menu -->
             <!-- header -->
             <div data-role="header" class="ui-header" position="fixed">
-                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" class="header_back"><i class="icon icon-arrow-left"></i></a>
+                <a href="#" onclick="resetTriagePage()" data-rel="back" data-transition="slide" data-direction="reverse" class="header_back"><i class="icon icon-arrow-left"></i></a>
                 <h1>Triage Manager</h1>
                 <a href="#triage_right_menu" class="menu_btn"><i class="icon icon-dots"></i></a>
             </div>
@@ -388,22 +388,22 @@
                                 <div class="row">
                                     <h3 class="md-font">Symptoms</h3>
                                     <div class="symptom_chooselist">
-                                        <input name="symptom_1" id="symptom_1"  type="checkbox">
+                                        <input name="symptom_1" id="symptom_1" value="Breathlessness" type="checkbox">
                                         <label for="symptom_1">Breathlessness</label>
                                      
-                                        <input name="symptom_2" id="symptom_2" type="checkbox">
+                                        <input name="symptom_2" id="symptom_2" value="Pain" type="checkbox">
                                         <label for="symptom_2">Pain</label>
                                      
-                                        <input name="symptom_3" id="symptom_3" type="checkbox">
+                                        <input name="symptom_3" id="symptom_3" value="Symptom 3" type="checkbox">
                                         <label for="symptom_3">Symptom 3</label>
                                      
-                                        <input name="symptom_4" id="symptom_4" type="checkbox">
+                                        <input name="symptom_4" id="symptom_4" value="Symptom 4" type="checkbox">
                                         <label for="symptom_4">Symptom 4</label>
     
-                                        <input name="symptom_5" id="symptom_5"  type="checkbox">
+                                        <input name="symptom_5" id="symptom_5" value="Symptom 5" type="checkbox">
                                         <label for="symptom_5">Symptom 5</label>
 
-                                        <input name="symptom_6" id="symptom_6"  type="checkbox">
+                                        <input name="symptom_6" id="symptom_6" value="Symptom 6" type="checkbox">
                                         <label for="symptom_6">Symptom 6</label>
                                     </div>
                                 </div>
@@ -433,7 +433,7 @@
                                             </fieldset>
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                    <div id="pain_character" class="form-group">
                                         <p>Character of Pain</p>
                                         <fieldset>
                                             <input name="radio-choice-v-2" id="radio-choice-v-2a" value="dull" checked="checked" type="radio">
@@ -531,7 +531,7 @@
                             </div>
                             <div class="continue_btn">
                                 <a class="right carousel-control" href="#triage_slide" role="button" data-slide="next" onClick="detectTriageCarousel()">Continue</a>
-                                <a class="carousel-control add_note" role="button" style="display:none;;">Add note</a>
+                                <a class="carousel-control add_note" role="button" onClick="createNewTriage()" style="display:none;">Add note</a>
                             </div>
                         </div>
                     </form>
@@ -1068,28 +1068,11 @@ function SwitchToggle(status,element){
     }
 }
 
-document.addEventListener("deviceready", onDeviceReady, false);
-
-function onDeviceReady()
-{
-    document.addEventListener("backbutton", function(e)
-    {
-
-       if($.mobile.activePage.is('#login_page'))
-       {
-           e.preventDefault();
-           navigator.app.exitApp();
-       }
-       else 
-       {
-           navigator.app.backHistory()
-       }
-    }, false);
-}
 
 </script>
         <script type="text/javascript" src="cordova.js"></script>
         <script src="plugins/com.phonegap.plugins.sqlite/www/SQLitePlugin.js"></script>
+        <script type="text/javascript" src="js/global.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/login.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
