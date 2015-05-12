@@ -178,7 +178,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" onClick="enterPatientTriage()">
+                    <a id="patient_triage_page" onClick="loadPatientInfo(this.id)">
                         <div class="row list_item">
                             <div class="col-xs-3 text-center vertical-middle">
                                 <img src="img/RedCross.png">
@@ -218,7 +218,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#patientlist_page" data-transition="slide">
+                    <a id="patients_page" href="#" onClick="loadPatientInfo(this.id)" data-transition="slide">
                         <div class="row list_item">
                            <div class="col-xs-3 text-center vertical-middle">
                                 <img src="img/RedCross.png">
@@ -244,14 +244,14 @@
                 <!-- <a href="#"><i class="icon icon-filter icon-right"></i></a> -->
                     
                     <a href="#" data-transition="slide"><i class="icon icon-dots"></i></a>
-                    <a href="#onborading_page" data-transition="slide"><i class="icon icon-add-patient icon-right"></i></a>
+                    <a id="onboarding_btn" href="#onborading_page" data-transition="slide"><i class="icon icon-add-patient icon-right"></i></a>
                 </div>
             </div>
 
             <div data-role="main" class="ui-content">
                 <div class="container">
                     <div id="patient_list">
-                        <ul data-role="listview"  data-filter="true" data-inset="true" data-filter-placeholder="">
+                        <ul id="patient_list_view" data-role="listview"  data-filter="true" data-inset="true" data-filter-placeholder="">
                         </ul>
                     </div>
                 </div>
@@ -310,7 +310,7 @@
                         <div class="carousel-inner" role="listbox">
                             <div class="item active container">
                                 <div class="row">
-                                    <h3>Triage Trend</h3>
+                                    <h3 class="md-font">Triage Trend</h3>
                                 </div>
                                 <div class="row">
                                     <div id="pie_chart" class="text-center"></div>
@@ -664,9 +664,6 @@
                                 <input type="text" id="onboarding_contact_number" name="contact_number" class="form-control no-border input-lg" placeholder="Number-home/mobile"/>
                             </div>
                             <div class="form-group">
-                                 <select id="onboarding_nationality" name="nationality"></select>
-                            </div>
-                            <div class="form-group">
                                 <input type="text" id="onboarding_occupation" name="occupation" class="form-control no-border input-lg" placeholder="Occupation">
                             </div>
                             <div class="form-group">
@@ -710,9 +707,6 @@
                             </div>
                             <div class="form-group">
                                 <input type="text" id="onboarding_contact_number" name="contact_number" class="form-control no-border input-lg" placeholder="Number-home/mobile"/>
-                            </div>
-                            <div class="form-group">
-                                 <select id="onboarding_nationality" name="nationality"></select>
                             </div>
                             <div class="form-group">
                                 <input type="text" id="onboarding_occupation" name="occupation" class="form-control no-border input-lg" placeholder="Occupation">
@@ -1073,12 +1067,6 @@ function SwitchToggle(status,element){
         target.addClass('toggle');
     }
 }
-
-$(document).ready(function()
-{
-    print_country("onboarding_nationality");
-});
-
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
