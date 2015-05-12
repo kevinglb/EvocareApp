@@ -7,7 +7,7 @@ var patientTriageHistory_url = "http://clinic.evocare.co/api/patient_triage_hist
 var crateNewTriage_url = "http://clinic.evocare.co/api/create_triage";
 
 
-var api_key;
+var api_key = "";
 
 document.addEventListener("deviceready", onDeviceReady, false);
 

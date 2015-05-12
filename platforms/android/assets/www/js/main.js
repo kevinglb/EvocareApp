@@ -1,5 +1,5 @@
-var patients_list;
-var global_patient_id;
+var patients_list = "";
+var global_patient_id = "";
 
 function loadPatientInfo(page_id)
 {
@@ -306,7 +306,7 @@ function createNewTriage()
             $('#triage_slide .carousel_controls .add_note').hide();
             $('#triage_slide .carousel_controls .right').show();
             
-            
+
             $.mobile.changePage("#patientlist_page", 
             {
               transition: "pop",

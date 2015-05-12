@@ -386,6 +386,42 @@
 
                             <div class="item container">
                                 <div class="row">
+                                    <div class="form-group ">
+                                        <p class="md-font">On treatment in Unit?</p>
+                                        <div class="switch_group">
+                                            <fieldset id="on_treatment" class="switch" onload="setupSwitch(this)">
+                                                <input id="treatment_no" name="treatment_switch" value="no" type="radio" checked="checked" onClick="SwitchToggle('no',this)">
+                                                <label for="treatment_no">No</label>
+
+                                                <input id="treatment_yes" name="treatment_switch" value="yes" type="radio" onClick="SwitchToggle('yes',this)">    
+                                                <label for="treatment_yes">Yes</label>
+    
+                                                <span class="switch-button"></span>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="treatment_name" class="md-font">Name of the treatment</label>
+                                        <input type="text" id="treatment_name" name="treatment_name" class="underline-input"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="treatement_date" class="md-font">Date of last treatment</label>
+                                        <input  id="treatment_last_date" class="datepicker_input" name="treatment_date" class="underline-input"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="blood_date" class="md-font">Last bloods done</label>
+                                        <input type="text" id="blood_last_date" name="blood_date" class="datepicker_input" class="underline-input"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="symptom" class="md-font">Symptom</label>
+                                        <input type="text" id="treatment_symptom" name="symptom" class="underline-input"></input>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item container">
+                                <div class="row">
                                     <h3 class="md-font">Symptoms</h3>
                                     <div class="symptom_chooselist">
                                         <input name="symptom_1" id="symptom_1" value="Breathlessness" type="checkbox">
@@ -452,41 +488,6 @@
                                 </div>
                             </div>
 
-                            <div class="item container">
-                                <div class="row">
-                                    <div class="form-group ">
-                                        <p class="md-font">On treatment in Unit?</p>
-                                        <div class="switch_group">
-                                            <fieldset id="on_treatment" class="switch" onload="setupSwitch(this)">
-                                                <input id="treatment_no" name="treatment_switch" value="no" type="radio" checked="checked" onClick="SwitchToggle('no',this)">
-                                                <label for="treatment_no">No</label>
-
-                                                <input id="treatment_yes" name="treatment_switch" value="yes" type="radio" onClick="SwitchToggle('yes',this)">    
-                                                <label for="treatment_yes">Yes</label>
-    
-                                                <span class="switch-button"></span>
-                                            </fieldset>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <label for="treatment_name" class="md-font">Name of the treatment</label>
-                                        <input type="text" id="treatment_name" name="treatment_name" class="underline-input"></input>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="treatement_date" class="md-font">Date of last treatment</label>
-                                        <input  id="treatment_last_date" class="datepicker_input" name="treatment_date" class="underline-input"></input>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="blood_date" class="md-font">Last bloods done</label>
-                                        <input type="text" id="blood_last_date" name="blood_date" class="datepicker_input" class="underline-input"></input>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="symptom" class="md-font">Symptom</label>
-                                        <input type="text" id="treatment_symptom" name="symptom" class="underline-input"></input>
-                                    </div>
-                                </div>
-                            </div>
                  <!--            <div class="item container">
                                 <div class="row">
                                     <h3 class="md-font">Symptom</h3>
