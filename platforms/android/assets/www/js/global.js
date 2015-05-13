@@ -47,4 +47,5 @@ function resetTriagePage()
 function resetOnBoardingPage()
 {
   $('#onboarding_form').trigger('reset'); 
+  $('#onboarding_birthday').val('');
 }

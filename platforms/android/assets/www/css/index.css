@@ -402,7 +402,7 @@ input{
 }
 #triage_slide {
     height: 82vh;
-    overflow-y: auto;
+    
 }
 
 #triage_form {

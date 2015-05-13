@@ -134,7 +134,11 @@ function setUpPatientTriageContent(response)
   $('#patient_contacts').text(total_patients);
   $('#clinic_visit').text(total_clinic_visits);
 
-  showPercentDonut(total_trend);
+   setTimeout(function()
+   {
+      showPercentDonut(total_trend);
+   }, 1000);
+
 
   // set up triage timeline
   var triage_time_data = [];
@@ -189,6 +193,7 @@ function showPercentDonut(percent)
 {
 
     var target = $("#pie_chart");
+    target.empty();
     var width= target.width(),
         height = target.height(),
         radius = Math.min(width, height)/2,
