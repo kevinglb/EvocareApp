@@ -99,7 +99,7 @@ input[type=number]{
 }
 
 input{
-    font-family: "Bendons-Medium";
+   /* font-family: "Bendons-Medium";*/
 }
 .clear{
     clear: both;
@@ -435,6 +435,7 @@ input{
     background-color: #495559;
     color: #FFFFFF;
     line-height: 60px;
+    z-index: 5;
 
 
 }
@@ -1160,7 +1161,31 @@ div#onborading_content
 {
   overflow-y: auto;
   height: 100%;
+
+}
+#onboarding_form{
+    margin-bottom: 120px;
+}
+#onborading_content .form-control{
+    box-shadow: none;
+}
+#onborading_content .form-group .ui-input-text{
+    background: transparent !important;
+    border: none;
+    border-bottom: 1px solid #BBC4C7;
+    border-radius: 0;
+    box-shadow: none;
 }
 
+#onborading_content .form-group .ui-input-text input{
+    border: none;
+    color: #495559;
+}
 
+#onborading_content .ui-input-text input::moz-placeholder{
+color: #495559;
+}
 
+#onborading_content .ui-input-text input:webkit-placeholder{
+    color: #495559;
+}
