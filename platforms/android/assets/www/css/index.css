@@ -152,12 +152,12 @@ input{
 
 /* ui-header ui-content ui-footer */
 .ui-header {
-    height: 50px;
+    height: 56px;
     background-color: #8FCDBE !important;
 }
 
 .ui-header .ui-title {
-    line-height: 50px;
+    line-height: 58px;
     font-size: 22px;
     font-family: "Bendons-Medium";
     overflow: show;
@@ -177,13 +177,14 @@ input{
 }
 
 .ui-header .ui-btn-left, .ui-header .ui-btn-right{
-    height: 44px;
-    line-height: 44px;
-    min-width: 44px;
+    height: 40px;
+    line-height: 40px;
+    min-width: 40px;
     top: 0;
     padding: 0;
     text-shadow:none;
     color:#FFF;
+    margin-top: 6px;
 }
 
 .ui-header .ui-btn-left{
@@ -198,8 +199,9 @@ input{
 }
 
 .ui-header .multi-icons a{
-    min-width: 44px;
-    height: 44px;
+    min-width: 36px;
+    width: 36px;
+    height: 36px;
     float: right;
     margin-right: 5px;
 }
@@ -269,6 +271,7 @@ input{
 .below_content .sm_text_left{
     float: left;
     text-align: left;
+    margin-left: 10px;
    
 }
 
@@ -283,7 +286,7 @@ input{
     font-size: 60px;
     line-height: 60px;
     font-weight: bold;
-    padding-right: 5px;
+    padding-right: 10px;
 }
 
 .below_content div i{
@@ -390,6 +393,9 @@ input{
     margin: 0 auto;
 }
 
+#triage_info .gender {
+    text-transform: uppercase;
+}
 #triage_slide {
     height: 82vh;
     overflow-y: auto;
@@ -880,24 +886,51 @@ input{
 
 #patient_list{
     padding: 15px 0px;
-    overflow-y:auto;
+}
+
+#patient_list_view{
+    overflow-y: auto; 
+    box-shadow: none;
 }
 
 #patient_list .patient{
-    height: 120px;
-    background-color: #fff;
+    background-color: #fff !important;
     margin:15px 0;
-}
-
-#patient_list .patient a{
-    border:none;
-}
-#patient_list .patient *{
-    background-color: #FFF;
     line-height: 1em;
     font-size: 1em;
+
 }
 
+
+.patient_info .patient_name
+{
+    
+    font-size: 1.2em !important;
+    line-height: 1.2em;
+}
+.patient_info .patient_date, .patient_info .patient_issue
+{
+    font-family: "Bendons-Light";
+    font-size: 1em !important;
+}
+
+/*#patient_list .patient a{
+    border:none;
+}
+*/
+
+.patient_info{
+    padding-top: 1.5em;
+    padding-bottom: 0.5em;
+}
+ .patient_photo{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+ }
+.patient_photo img{
+    height: 120px;
+    width: 120px;
+}
 .patient .patient_info p{
     margin: 0 0 10px 0;
 }

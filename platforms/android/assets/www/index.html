@@ -30,7 +30,7 @@
         <script type="text/javascript" src="plugins/jquery.mobile-1.4.5.min.js"></script>
         <script type="text/javascript" src="plugins/bootstrap.min.js"></script>
         <script type="text/javascript" src="plugins/d3.min.js"></script>
-         <script type="text/javascript" src="plugins/countries.js"></script>
+        <script type="text/javascript" src="plugins/countries.js"></script>
         <!-- date pikcer on mobile device trail version -->
         <!-- <script type="text/javascript" src="plugins/mobiscroll.custom-2.15.1.min.js" ></script> -->
         
@@ -178,7 +178,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" onClick="enterPatientTriage();" data-transition="slide" onClick="SetUpTriagePage()">
+                    <a id="patient_triage_page" onClick="loadPatientInfo(this.id)">
                         <div class="row list_item">
                             <div class="col-xs-3 text-center vertical-middle">
                                 <img src="img/RedCross.png">
@@ -218,7 +218,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#patientlist_page" data-transition="slide">
+                    <a id="patients_page" href="#" onClick="loadPatientInfo(this.id)" data-transition="slide">
                         <div class="row list_item">
                            <div class="col-xs-3 text-center vertical-middle">
                                 <img src="img/RedCross.png">
@@ -244,68 +244,14 @@
                 <!-- <a href="#"><i class="icon icon-filter icon-right"></i></a> -->
                     
                     <a href="#" data-transition="slide"><i class="icon icon-dots"></i></a>
-                    <a href="#onborading_page" data-transition="slide"><i class="icon icon-add-patient icon-right"></i></a>
+                    <a id="onboarding_btn" href="#onborading_page" data-transition="slide"><i class="icon icon-add-patient icon-right"></i></a>
                 </div>
             </div>
 
             <div data-role="main" class="ui-content">
                 <div class="container">
                     <div id="patient_list">
-                        <ul data-role="listview"  data-filter="true" data-inset="true" data-filter-placeholder="">
-                            <li class="patient" data-icon="false">
-                                <a href="#">
-                                <div class="col-xs-3 patient_photo  text-center">
-                                    <img class="img-circle" src="img/RedCross.png">
-                                </div>
-                                <div class="col-xs-9 patient_info">
-                                    <div class="row">
-                                        <p class="patient_name">Stephen Morrissey</p>
-                                    </div>
-                                    <div class="row">
-                                        <p class="patient_date">M. 20 Mar 1952</p>
-                                    </div>
-                                    <div class="row">
-                                        <p class="patient_issue">T.Lorem Ipsum</p>
-                                    </div>
-                                </div>
-                            </a>
-                            </li>
-                            <li class="patient" data-icon="false">
-                                <a href="#">
-                                    <div class="col-xs-3 patient_photo text-center">
-                                        <img class="img-circle" src="img/RedCross.png">
-                                    </div>
-                                    <div class="col-xs-9 patient_info">
-                                        <div class="row">
-                                            <p class="patient_name">Claire O'Dwyer</p>
-                                        </div>
-                                        <div class="row">
-                                            <p class="patient_date">F.16 Apr 1950</p>
-                                        </div>
-                                        <div class="row">
-                                            <p class="patient_issue">Myelodysplastic Syndromes(MDS)</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="patient" data-icon="false">
-                                <a href="#">
-                                <div class="col-xs-3 patient_photo text-center">
-                                    <img class="img-circle" src="img/RedCross.png">
-                                </div>
-                                <div class="col-xs-9  patient_info">
-                                    <div class="row">
-                                        <p class="patient_name">Tom O'Reilly</p>
-                                    </div>
-                                    <div class="row">
-                                        <p class="patient_date">M. 2 Jul 1942</p>
-                                    </div>
-                                    <div class="row">
-                                        <p class="patient_issue">T.Lorem Ipsum</p>
-                                    </div>
-                                </div>
-                            </a>
-                            </li>
+                        <ul id="patient_list_view" data-role="listview"  data-filter="true" data-inset="true" data-filter-placeholder="">
                         </ul>
                     </div>
                 </div>
@@ -346,7 +292,7 @@
             <!-- right menu -->
             <!-- header -->
             <div data-role="header" class="ui-header" position="fixed">
-                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" class="header_back"><i class="icon icon-arrow-left"></i></a>
+                <a href="#" onclick="resetTriagePage()" data-rel="back" data-transition="slide" data-direction="reverse" class="header_back"><i class="icon icon-arrow-left"></i></a>
                 <h1>Triage Manager</h1>
                 <a href="#triage_right_menu" class="menu_btn"><i class="icon icon-dots"></i></a>
             </div>
@@ -354,7 +300,8 @@
             <!-- content -->
             <div role="main" class="ui-content">
                 <div id="triage_info">
-                    <div class="col-xs-3 vertical-middle">
+
+                   <!--  <div class="col-xs-3 vertical-middle">
                         <img src="img/RedCross.png" class="img-circle img-responsive">
                     </div>
                     <div class="col-xs-9 vertical-middle">
@@ -364,7 +311,8 @@
                         <div class="row">
                             <span class="light-font disease_issue">Myeloddysplastic Syndromes(MDS)</span>
                         </div>
-                    </div>
+                    </div> -->
+
 
                 </div>
                 <!-- caoursel -->
@@ -375,14 +323,14 @@
                         <div class="carousel-inner" role="listbox">
                             <div class="item active container">
                                 <div class="row">
-                                    <h3>Triage Trend</h3>
+                                    <h3 class="md-font">Triage Trend</h3>
                                 </div>
                                 <div class="row">
                                     <div id="pie_chart" class="text-center"></div>
                                 </div>
                                 <div class="row below_content">
                                     <div class="col-xs-5">
-                                        <span class="lg_text_left ">10</span>
+                                        <span id="patient_contacts" class="lg_text_left "></span>
                                         <span class="sm_text_left regular-text">Patient <br>Contacts</span>
                                     </div>
                                     <div class="col-xs-2 text-center">
@@ -390,7 +338,12 @@
                                     </div>
                                     <div class="col-xs-5">
                                         <span class="sm_text_right regular-text">Clinic<br> visit</span>
+
                                         <span class="lg_text_right">1</span>
+
+                                        <span id="clinic_visit" class="lg_text_right"></span>
+                                        
+
                                     </div>
 
                                 </div>
@@ -486,24 +439,60 @@
                             </div>
                             <div class="item container">
                                 <div class="row">
+                                    <div class="form-group ">
+                                        <p class="md-font">On treatment in Unit?</p>
+                                        <div class="switch_group">
+                                            <fieldset id="on_treatment" class="switch" onload="setupSwitch(this)">
+                                                <input id="treatment_no" name="treatment_switch" value="no" type="radio" checked="checked" onClick="SwitchToggle('no',this)">
+                                                <label for="treatment_no">No</label>
+
+                                                <input id="treatment_yes" name="treatment_switch" value="yes" type="radio" onClick="SwitchToggle('yes',this)">    
+                                                <label for="treatment_yes">Yes</label>
+    
+                                                <span class="switch-button"></span>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="treatment_name" class="md-font">Name of the treatment</label>
+                                        <input type="text" id="treatment_name" name="treatment_name" class="underline-input"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="treatement_date" class="md-font">Date of last treatment</label>
+                                        <input  id="treatment_last_date" class="datepicker_input" name="treatment_date" class="underline-input"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="blood_date" class="md-font">Last bloods done</label>
+                                        <input type="text" id="blood_last_date" name="blood_date" class="datepicker_input" class="underline-input"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="symptom" class="md-font">Symptom</label>
+                                        <input type="text" id="treatment_symptom" name="symptom" class="underline-input"></input>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item container">
+                                <div class="row">
                                     <h3 class="md-font">Symptoms</h3>
                                     <div class="symptom_chooselist">
-                                        <input name="symptom_1" id="symptom_1"  type="checkbox">
+                                        <input name="symptom_1" id="symptom_1" value="Breathlessness" type="checkbox">
                                         <label for="symptom_1">Breathlessness</label>
                                      
-                                        <input name="symptom_2" id="symptom_2" type="checkbox">
+                                        <input name="symptom_2" id="symptom_2" value="Pain" type="checkbox">
                                         <label for="symptom_2">Pain</label>
                                      
-                                        <input name="symptom_3" id="symptom_3" type="checkbox">
+                                        <input name="symptom_3" id="symptom_3" value="Symptom 3" type="checkbox">
                                         <label for="symptom_3">Symptom 3</label>
                                      
-                                        <input name="symptom_4" id="symptom_4" type="checkbox">
+                                        <input name="symptom_4" id="symptom_4" value="Symptom 4" type="checkbox">
                                         <label for="symptom_4">Symptom 4</label>
     
-                                        <input name="symptom_5" id="symptom_5"  type="checkbox">
+                                        <input name="symptom_5" id="symptom_5" value="Symptom 5" type="checkbox">
                                         <label for="symptom_5">Symptom 5</label>
 
-                                        <input name="symptom_6" id="symptom_6"  type="checkbox">
+                                        <input name="symptom_6" id="symptom_6" value="Symptom 6" type="checkbox">
                                         <label for="symptom_6">Symptom 6</label>
                                     </div>
                                 </div>
@@ -533,7 +522,7 @@
                                             </fieldset>
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                    <div id="pain_character" class="form-group">
                                         <p>Character of Pain</p>
                                         <fieldset>
                                             <input name="radio-choice-v-2" id="radio-choice-v-2a" value="dull" checked="checked" type="radio">
@@ -552,8 +541,12 @@
                                 </div>
                             </div>
 
+
                             
                            <!--  <div class="item container">
+
+                 <!--            <div class="item container">
+
                                 <div class="row">
                                     <h3 class="md-font">Symptom</h3>
                                     <ul id="symptom_list" data-role="listview">
@@ -583,21 +576,37 @@
                                             </div>
                                         </li>
                                     </ul>
+<<<<<<< HEAD
                                     
                                 </div> -->
                             </div>
+
+                                    <!-- <button type="button" class="ui-btn ui-corner-all ui-btn-a" onclick="addSymptom()">+ Symptom</button> -->
+                            <!--     </div>
+                            </div>  -->
+
 
                         </div>
                         <!-- carousel inner -->
                         <!-- controls -->
                         <div class="carousel_controls">
                             <div class="back_btn">
+
                                 <a class="left carousel-control" href="#triage_slide" role="button" data-slide="prev"  disabled="disabled" class="md-size">Back</a>
                                 <a class="carousel-control add_symptom" onClick="addSymptom()" role="button" style="display:none">+Symptom</a>
                             </div>
                             <div class="continue_btn">
                                 <a class="right carousel-control" href="#triage_slide" role="button" data-slide="next">Continue</a>
                                 <a class="carousel-control add_note" role="button" style="display:none;;">Add note</a>
+
+                                <a class="left carousel-control" href="#triage_slide" role="button" data-slide="prev" 
+                                onClick="detectTriageCarousel()" disabled="disabled" class="md-size">Back</a>
+                                <!-- <a class="carousel-control add_symptom" onClick="addSymptom()" role="button" style="display:none">+Symptom</a> -->
+                            </div>
+                            <div class="continue_btn">
+                                <a class="right carousel-control" href="#triage_slide" role="button" data-slide="next" onClick="detectTriageCarousel()">Continue</a>
+                                <a class="carousel-control add_note" role="button" onClick="createNewTriage()" style="display:none;">Add note</a>
+>>>>>>> ddde1f3f76c9f83b8efa3003a5e5c89d60200541
                             </div>
                         </div>
                     </form>
@@ -730,9 +739,6 @@
                                 <input type="text" id="onboarding_contact_number" name="contact_number" class="form-control no-border input-lg" placeholder="Number-home/mobile"/>
                             </div>
                             <div class="form-group">
-                                 <select id="onboarding_nationality" name="nationality"></select>
-                            </div>
-                            <div class="form-group">
                                 <input type="text" id="onboarding_occupation" name="occupation" class="form-control no-border input-lg" placeholder="Occupation">
                             </div>
                             <div class="form-group">
@@ -776,9 +782,6 @@
                             </div>
                             <div class="form-group">
                                 <input type="text" id="onboarding_contact_number" name="contact_number" class="form-control no-border input-lg" placeholder="Number-home/mobile"/>
-                            </div>
-                            <div class="form-group">
-                                 <select id="onboarding_nationality" name="nationality"></select>
                             </div>
                             <div class="form-group">
                                 <input type="text" id="onboarding_occupation" name="occupation" class="form-control no-border input-lg" placeholder="Occupation">
@@ -987,7 +990,7 @@
     <script type="text/javascript" src="plugins/mobiscroll.frame.android-holo.js"></script>
 
 
-    <script>
+<script>
 
         $(function () {
                 // Date picker initialization
@@ -1067,9 +1070,9 @@ function detectTriageCarousel(){
 
         else if($('#triage_slide .carousel-inner .item:last-child').hasClass('active')) {
                 $('#triage_slide .carousel_controls .right').hide();
-                $('.carousel_controls .left').hide();
+                // $('.carousel_controls .left').hide();
                 $('#triage_slide .carousel_controls .add_note').show();
-                $('.carousel_controls .add_symptom').show();
+                // $('.carousel_controls .add_symptom').show();
                 console.log("the last item");
             }
 
@@ -1082,7 +1085,8 @@ function detectTriageCarousel(){
     },500);
 }
 
-function ScheduleContentSwitch(target){
+function ScheduleContentSwitch(target)
+{
     if(target == "individual"){
         console.log("clinic");
         $(".clinic_content").hide();
@@ -1097,6 +1101,7 @@ function ScheduleContentSwitch(target){
 
 }
 
+<<<<<<< HEAD
 //load data and fill in the Triage Page
 function SetUpTriagePage(){
     showPercentDonut(10);
@@ -1210,6 +1215,7 @@ function SwitchToggle(status,element){
     }
 }
 
+<<<<<<< HEAD
 $(document).ready(function()
 {
     print_country("onboarding_nationality");
@@ -1237,9 +1243,11 @@ function onDeviceReady()
 
 
 
+
 </script>
         <script type="text/javascript" src="cordova.js"></script>
         <script src="plugins/com.phonegap.plugins.sqlite/www/SQLitePlugin.js"></script>
+        <script type="text/javascript" src="js/global.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/login.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
