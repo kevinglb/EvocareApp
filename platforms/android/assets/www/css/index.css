@@ -793,7 +793,10 @@ input{
     border-bottom: 1px solid #BBC4C7;
     border-radius: 0;
 }
-
+#triage_form textarea{
+    min-height: 120px;
+    max-height: 60vh;
+}
 #symptom_list li .ui-input-text input::-moz-placeholder {
     color: #BBC4C7;
 }
