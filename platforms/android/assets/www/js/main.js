@@ -167,6 +167,7 @@ function showPercentDonut(percent)
 
     $("#pie_chart").empty();
     //console.log('after empty ');
+
     var target = $("#pie_chart");
     var width= target.width(),
         height = target.height()*0.8,

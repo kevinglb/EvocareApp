@@ -356,19 +356,6 @@
             <div role="main" class="ui-content">
                 <div id="triage_info">
 
-                   <!--  <div class="col-xs-3 vertical-middle">
-                        <img src="img/RedCross.png" class="img-circle img-responsive">
-                    </div>
-                    <div class="col-xs-9 vertical-middle">
-                        <div class="row">
-                            <span class="patient_name md-size">Claire O'Dwyer</span> <span class="light-font birth_date">F. 16 APR 1950</span>
-                        </div>
-                        <div class="row">
-                            <span class="light-font disease_issue">Myeloddysplastic Syndromes(MDS)</span>
-                        </div>
-                    </div> -->
-
-
                 </div>
                 <!-- caoursel -->
                 <div id="triage_slide" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
@@ -393,22 +380,17 @@
                                     </div>
                                     <div class="col-xs-5">
                                         <span class="sm_text_right regular-text">Clinic<br> visit</span>
-
-                                        <span class="lg_text_right">1</span>
-
                                         <span id="clinic_visit" class="lg_text_right"></span>
                                         
-
                                     </div>
 
                                 </div>
-
                             </div>
                             
-                            <div class="item container">
+                                <div class="item container">
                                 <div class="row">
                                     <ul class="timeline">
-                                        <li class="timeline_item">
+                                        <!-- <li class="timeline_item">
                                             <div class="date col-xs-4 md-size">
                                                 5 March
                                             </div>
@@ -432,7 +414,7 @@
                                             </div>
                                             <div class="status col-xs-4 col-xs-offset-4">
                                                 <i class="fa fa-2x fa-angle-right"></i>
-                                                <!-- <i class="fa fa-2x fa-close"></i> -->
+                                               
                                                 <div class="visited"><span>Clinic<br>visit</span></div>
                                             </div>
                                         </li>
@@ -453,10 +435,11 @@
                                                 <i class="fa fa-2x fa-angle-right"></i>
                                                 <i class="fa fa-2x fa-close"></i>
                                             </div>
-                                        </li>
+                                        </li> -->
                                     </ul>
                                 </div>
                             </div>
+
                             <div class="item container">
                                 <div class="row">
                                     <div class="form-group ">
@@ -493,6 +476,7 @@
                                 </div>
                             </div>
                           
+
 
                             <div class="item container">
                                 <div class="row">
@@ -562,12 +546,42 @@
                                 </div>
                             </div>
 
+                            <div class="item container">
+                                <div class="row">
+                                    <div class="form-group ">
+                                        <p class="md-font">On treatment in Unit?</p>
+                                        <div class="switch_group">
+                                            <fieldset id="on_treatment" class="switch" onload="setupSwitch(this)">
+                                                <input id="treatment_no" name="treatment_switch" value="no" type="radio" checked="checked" onClick="SwitchToggle('no',this)">
+                                                <label for="treatment_no">No</label>
 
-                            
-                           <!--  <div class="item container">
-
+                                                <input id="treatment_yes" name="treatment_switch" value="yes" type="radio" onClick="SwitchToggle('yes',this)">    
+                                                <label for="treatment_yes">Yes</label>
+    
+                                                <span class="switch-button"></span>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="treatment_name" class="md-font">Name of the treatment</label>
+                                        <input type="text" id="treatment_name" name="treatment_name" class="underline-input"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="treatement_date" class="md-font">Date of last treatment</label>
+                                        <input  id="treatment_last_date" class="datepicker_input" name="treatment_date" class="underline-input"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="blood_date" class="md-font">Last bloods done</label>
+                                        <input type="text" id="blood_last_date" name="blood_date" class="datepicker_input" class="underline-input"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="symptom" class="md-font">Symptom</label>
+                                        <input type="text" id="treatment_symptom" name="symptom" class="underline-input"></input>
+                                    </div>
+                                </div>
+                            </div>
                  <!--            <div class="item container">
-
                                 <div class="row">
                                     <h3 class="md-font">Symptom</h3>
                                     <ul id="symptom_list" data-role="listview">
@@ -597,6 +611,7 @@
                                             </div>
                                         </li>
                                     </ul>
+<<<<<<< HEAD
                                     
                                 </div> -->
                             </div>
@@ -605,20 +620,11 @@
                             <!--     </div>
                             </div>  -->
 
-
                         </div>
                         <!-- carousel inner -->
                         <!-- controls -->
                         <div class="carousel_controls">
                             <div class="back_btn">
-
-                                <a class="left carousel-control" href="#triage_slide" role="button" data-slide="prev"  disabled="disabled" class="md-size">Back</a>
-                                <a class="carousel-control add_symptom" onClick="addSymptom()" role="button" style="display:none">+Symptom</a>
-                            </div>
-                            <div class="continue_btn">
-                                <a class="right carousel-control" href="#triage_slide" role="button" data-slide="next">Continue</a>
-                                <a class="carousel-control add_note" role="button" style="display:none;;">Add note</a>
-
                                 <a class="left carousel-control" href="#triage_slide" role="button" data-slide="prev" 
                                 onClick="detectTriageCarousel()" disabled="disabled" class="md-size">Back</a>
                                 <!-- <a class="carousel-control add_symptom" onClick="addSymptom()" role="button" style="display:none">+Symptom</a> -->
@@ -964,7 +970,6 @@
 
 
 <script>
-
         $(function () {
                 // Date picker initialization
                 $('.datepicker_input').mobiscroll().date({
@@ -977,8 +982,6 @@
         });
         </script>
     <script type="text/javascript">
-
-
 // switch between singup content and login content
 function toggleLogInContent(hidden){
     if(hidden){
@@ -989,26 +992,20 @@ function toggleLogInContent(hidden){
    
     } 
 }
-
-
 var tag_id = 3;
 function addNewTag()
 {
     $('#checklist_listview_create').append('<li class="ui-field-contain"> <div class="col-xs-9"><div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="text" id="checklist_tag' + tag_id + '" name="tag' + tag_id + '" placeholder="Optional tag ' + tag_id + '"></div></div><div class="col-xs-2 col-xs-offset-1"><a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a></div></li>').listview('refresh');
     
     tag_id ++;
-
     var last_li = $("#checklist_listview_create li:last-child").offset().top;
 }
-
-
 var item_id = 2;
 function addNewNote()
 {
     $('#checklist_listview_item').append(' <li><h4 style="text-align:center">ITEM' + item_id + '</h4><div class="col-xs-9"><div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="text" id="item' + item_id + '_task" name"item" placeholder="Item/Task"></div></div> <div class="col-xs-2 col-xs-offset-1"><a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a></div><div class="col-xs-9"><div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="text" id="item' + item_id + '"_respon" name="resopn" placeholder="Responsible entity"></div></div><div class="col-xs-2 col-xs-offset-1"><a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a></div></li>').listview('refresh');
     item_id ++;
 }
-
 //set up the height of ui-content once the page is loaded
 function setHeightofContent(){
     var screen = $.mobile.getScreenHeight();
@@ -1020,13 +1017,11 @@ function setHeightofContent(){
     $(".ui-content").height(contentCurrent);
     
 }
-
 function addSymptom(){
     var index = $("#symptom_list>li").length+1;
     //console.log(index);
     $("#symptom_list").append('<li><div class="col-xs-9"><div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="text" name="symptom_'+ index+ '"'+' placeholder="Symptom"></input></div></div><div class="col-xs-2 col-xs-offset-1"><a href="#" class="close_link" onClick="removeSymptom(this)"><i class="fa fa-2x fa-close"></i></a></div></li>').listview('refresh');
 }
-
 function removeSymptom(element){
     // var id = $(el).parent('div').parent('li').attr('id');
     // console.log(id);
@@ -1040,7 +1035,6 @@ function detectTriageCarousel(){
                 $('#triage_slide .carousel_controls .left').attr('disabled',true);
                 console.log("the 1st item");
             }
-
         else if($('#triage_slide .carousel-inner .item:last-child').hasClass('active')) {
                 $('#triage_slide .carousel_controls .right').hide();
                 // $('.carousel_controls .left').hide();
@@ -1048,7 +1042,6 @@ function detectTriageCarousel(){
                 // $('.carousel_controls .add_symptom').show();
                 console.log("the last item");
             }
-
         else{
             $('#triage_slide .carousel_controls .back_btn .left').attr('disabled',false);
             $('#triage_slide .carousel_controls .add_note').hide();
@@ -1057,7 +1050,6 @@ function detectTriageCarousel(){
         }
     },500);
 }
-
 function ScheduleContentSwitch(target)
 {
     if(target == "individual"){
@@ -1071,19 +1063,7 @@ function ScheduleContentSwitch(target)
         $(".individual_content").hide();
         $(".clinic_content").show();
     }
-
 }
-
-
-//load data and fill in the Triage Page
-function SetUpTriagePage(){
-    showPercentDonut(10);
-}
-
-
-
-/*show the nci grade and percentage when change made on the slder */
-
 function SliderChange(){
     //alert("slider change");
     var grade = $("#nci_grade").val();
@@ -1098,12 +1078,9 @@ function SliderChange(){
     else if(grade > 2){
         $(".grade_slider_group .ui-slider-track .ui-btn-active").removeClass("green orange").addClass('red');
         //$(".grade_slider_group .ui-slider-track .ui-btn.ui-slider-handle").removeClass("orange green").addClass('red');
-
     }
-
     $('.grade_slider_group .nci_percent').text(grade/4*100+"%");
 }
-
 function setupSwitch(element){
     console.log('load success');
     var first = $element.first('.ui-radio');
@@ -1125,35 +1102,6 @@ function SwitchToggle(status,element){
         target.addClass('toggle');
     }
 }
-
-$(document).ready(function()
-{
-    print_country("onboarding_nationality");
-});
-
-
-document.addEventListener("deviceready", onDeviceReady, false);
-
-function onDeviceReady()
-{
-    document.addEventListener("backbutton", function(e)
-    {
-
-       if($.mobile.activePage.is('#login_page'))
-       {
-           e.preventDefault();
-           navigator.app.exitApp();
-       }
-       else 
-       {
-           navigator.app.backHistory()
-       }
-    }, false);
-}
-
-
-
-
 </script>
         <script type="text/javascript" src="cordova.js"></script>
         <script src="plugins/com.phonegap.plugins.sqlite/www/SQLitePlugin.js"></script>
