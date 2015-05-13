@@ -167,19 +167,23 @@ function showPercentDonut(percent)
 
     $("#pie_chart").empty();
     //console.log('after empty ');
-    var target = $("#pie_chart");
-    var width= target.width(),
-        height = target.height(),
-        radius = Math.min(width, height)/2,
-        dig = radius/6,
-        color = d3.scale.category20(),
-        center = [width/2, height/2],
-        dataset = {
-            lower: [0, 100],
-            upper: [percent, 100-percent]
-        },
-        pie = d3.layout.pie().sort(null),
-        format = d3.format(".0%");
+    var width= 240;
+    //console.log(width);
+    var height = 240;
+    var radius = Math.min(width, height) / 2;
+    //console.log(radius);
+    var dig = radius/6;
+    var color = d3.scale.category20();
+    var centerX =  radius;
+    var centerY =  height/2;
+    var center = [centerX, centerY];
+    var dataset = {
+        lower: [0, 100],
+        upper: [percent, 100-percent]
+      },
+    
+      pie = d3.layout.pie().sort(null),
+      format = d3.format(".0%");
 
     var arc = d3.svg.arc()
         .innerRadius(radius - 2 - dig)
