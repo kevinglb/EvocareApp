@@ -571,7 +571,7 @@
 <<<<<<< HEAD
                                     
                                 </div> -->
-                            </div>
+                           <!--  </div> -->
 
                                     <!-- <button type="button" class="ui-btn ui-corner-all ui-btn-a" onclick="addSymptom()">+ Symptom</button> -->
                             <!--     </div>
@@ -721,7 +721,7 @@
                                     <input name="onboarding_gender" id="onboarding_male" value="male" checked="checked" type="radio">
                                     <label for="onboarding_male" class="light-font">Male</label>
                                     
-                                    <input name="ronboarding_gender" id="onboarding_female" value="female" type="radio">
+                                    <input name="onboarding_gender" id="onboarding_female" value="female" type="radio">
                                     <label for="onboarding_female" class="light-font">Female</label>
                                 </fieldset>
                             </div>
@@ -729,7 +729,7 @@
                                  <input type="email" id="onboarding_email" name="email" class="form-control no-border input-lg" placeholder="Email Address"/>
                             </div>
                             <div class="form-group">
-                                <input type="text" id="onboarding_contact_number" name="contact_number" class="form-control no-border input-lg" placeholder="Number-home/mobile"/>
+                                <input type="number" id="onboarding_contact_number" name="contact_number" class="form-control no-border input-lg" placeholder="Number-home/mobile"/>
                             </div>
                             <div class="form-group">
                                 <div class="form-item">
@@ -752,10 +752,16 @@
                                 <input type="text" id="onboarding_kin1_address" name="kin1_address" class="form-control no-border input-lg" placeholder="Kin1 address"/>
                             </div>
                             <div class="form-group">
+                                <input type="number" id="onboarding_kin1_phone" name="kin1_phone" class="form-control no-border input-lg" placeholder="Kin1 phone number"/>
+                            </div>
+                            <div class="form-group">
                                 <input type="text" id="onboarding_kin2_fullname" name="kin2_fullname" class="form-control no-border input-lg" placeholder="Kin2 full name"/>
                             </div>
                             <div class="form-group">
                                 <input type="text" id="onboarding_kin2_address" name="kin2_address" class="form-control no-border input-lg" placeholder="Kin2 address"/>
+                            </div>
+                             <div class="form-group">
+                                <input type="number" id="onboarding_kin2_phone" name="kin1_phone" class="form-control no-border input-lg" placeholder="Kin2 phone number"/>
                             </div>
                             <div class="form-group">
                                 <p>Do you have a medical card?</p>
@@ -799,6 +805,120 @@
                             <div class="form-group">
                                 <input name="onboarding_problem_period" id="onboarding_problem_period" class="form-control no-border input-lg" placeholder="How long has it been a problem?"/>
                             </div>
+                            <div class="form-group">
+                                <input name="onboarding_religious" id="onboarding_religious" class="form-control no-border input-lg" placeholder="Religious beliefs"/>
+                            </div>
+                            <div class="form-group">
+                                <label>GP</label>
+                                 
+                                <input name="onboarding_gp_full_name" id="onboarding_gp_full_name" class="form-control no-border input-lg" placeholder="Name"/>
+                                  
+                                <input name="onboarding_gp_address" id="onboarding_gp_address" class="form-control no-border input-lg" placeholder
+                                  ="Address">
+                                  
+                                <input type="number" name="onboarding_gp_phoneNo" id="onboarding_gp_phoneNo" class="form-control no-border input-lg" placeholder="Phone number"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Preferred pharmacy</label>
+                                 
+                                <input name="onboarding__pharmacy_name" id="onboarding__pharmacy_name" class="form-control no-border input-lg" placeholder="Name"/>
+                                  
+                                <input name="onboarding__pharmacy_address" id="onboarding__pharmacy_address" class="form-control no-border input-lg" placeholder
+                                  ="Address">
+                                  
+                                <input type="number" name="onboarding__pharmacy_phoneNo" id="onboarding__pharmacy_phoneNo" class="form-control no-border input-lg" placeholder="Phone number"/>
+                            </div>
+                            <div id="onboarding_family_history" class="form-group">
+                                <label>FAMILY HISTORY</label>
+                                <p>Do any of your close family members (parents, brothers, sisters, grandparents, uncles or aunts) have any of the following?</p>
+                                
+                                <p>Diabetes</p>
+                                <div class="switch_group">
+                                    <fieldset id="onboarding_diabetes" class="switch" onload="setupSwitch(this)">
+                                        <input id="onboarding_diabetes_no" name="history_switch" value="no" type="radio" checked="checked" onClick="SwitchToggle('no',this)">
+                                        <label for="onboarding_diabetes_no">No</label>
+
+                                        <input id="onboarding_diabetes_yes" name="history_switch" value="yes" type="radio" onClick="SwitchToggle('yes',this)">    
+                                        <label for="onboarding_diabetes_yes">Yes</label>
+    
+                                        <span class="switch-button"></span>
+                                    </fieldset>
+                                </div>
+
+                                <p>High Blood Pressure</p>
+                                <div class="switch_group">
+                                    <fieldset id="onboarding_blood_pressure" class="switch" onload="setupSwitch(this)">
+                                        <input id="onboarding_blood_pressure_no" name="history_switch" value="no" type="radio" checked="checked" onClick="SwitchToggle('no',this)">
+                                        <label for="onboarding_blood_pressure_no">No</label>
+
+                                        <input id="onboarding_blood_pressure_yes" name="history_switch" value="yes" type="radio" onClick="SwitchToggle('yes',this)">    
+                                        <label for="onboarding_blood_pressure_yes">Yes</label>
+    
+                                        <span class="switch-button"></span>
+                                    </fieldset>
+                                </div>
+
+                                <p>Heart Disease</p>
+                                <div class="switch_group">
+                                    <fieldset id="onboarding_heart_disease" class="switch" onload="setupSwitch(this)">
+                                        <input id="onboarding_heart_disease_no" name="history_switch" value="no" type="radio" checked="checked" onClick="SwitchToggle('no',this)">
+                                        <label for="onboarding_heart_disease_no">No</label>
+
+                                        <input id="onboarding_heart_disease_yes" name="history_switch" value="yes" type="radio" onClick="SwitchToggle('yes',this)">    
+                                        <label for="onboarding_heart_disease_yes">Yes</label>
+    
+                                        <span class="switch-button"></span>
+                                    </fieldset>
+                                </div>
+
+                                <p>Asthma</p>
+                                <div class="switch_group">
+                                    <fieldset id="onboarding_asthma" class="switch" onload="setupSwitch(this)">
+                                        <input id="onboarding_asthma_no" name="history_switch" value="no" type="radio" checked="checked" onClick="SwitchToggle('no',this)">
+                                        <label for="onboarding_asthma_no">No</label>
+
+                                        <input id="onboarding_asthma_yes" name="history_switch" value="yes" type="radio" onClick="SwitchToggle('yes',this)">    
+                                        <label for="onboarding_asthma_yes">Yes</label>
+    
+                                        <span class="switch-button"></span>
+                                    </fieldset>
+                                </div>
+
+                                <p>Epilepsy</p>
+                                <div class="switch_group">
+                                    <fieldset id="onboarding_epilepsy" class="switch" onload="setupSwitch(this)">
+                                        <input id="onboarding_epilepsy_no" name="history_switch" value="no" type="radio" checked="checked" onClick="SwitchToggle('no',this)">
+                                        <label for="onboarding_epilepsy_no">No</label>
+
+                                        <input id="onboarding_epilepsy_yes" name="history_switch" value="yes" type="radio" onClick="SwitchToggle('yes',this)">    
+                                        <label for="onboarding_epilepsy_yes">Yes</label>
+    
+                                        <span class="switch-button"></span>
+                                    </fieldset>
+                                </div>
+
+                                <p>Cancer</p>
+                                <div class="switch_group">
+                                    <fieldset id="onboarding_cancer" class="switch" onload="setupSwitch(this)">
+                                        <input id="onboarding_cancer_no" name="history_switch" value="no" type="radio" checked="checked" onClick="SwitchToggle('no',this)">
+                                        <label for="onboarding_cancer_no">No</label>
+
+                                        <input id="onboarding_cancer_yes" name="history_switch" value="yes" type="radio" onClick="SwitchToggle('yes',this)">    
+                                        <label for="onboarding_cancer_yes">Yes</label>
+    
+                                        <span class="switch-button"></span>
+                                    </fieldset>
+                                </div>                               
+                                </div>
+                            </div>
+                            <div class="carousel_controls">
+                                <div class="back_btn">
+                                    <a class="left carousel-control" role="button" data-slide="prev" 
+                                    onClick="" disabled="disabled" class="md-size">Back</a>
+                                </div>
+                                <div class="continue_btn">
+                                    <a class="right carousel-control" role="button" data-slide="next" onClick="onBoardingSave()">Save</a>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -1135,7 +1255,7 @@ function SwitchToggle(status,element){
 $("#country_selector").countrySelect({
                 //defaultCountry: "jp",
                 //onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
-                preferredCountries: ['ca', 'gb', 'us']
+                preferredCountries: ['ie', 'cn', 'us']
             });
 
 </script>
