@@ -157,13 +157,14 @@ input{
 }
 
 .ui-page .ui-header .ui-title {
-    line-height: 58px;
+    line-height: 22px;
     font-size: 22px;
+
     font-family: "Bendons-Medium";
     overflow: show;
     text-align: left;
     margin-left: 15%;
-    padding: 0;
+    padding: 18px 0;
     text-shadow:none;
     text-transform: uppercase;
     color: #FFF;
@@ -199,11 +200,11 @@ input{
 }
 
 .ui-header .multi-icons a{
-    min-width: 36px;
-    width: 36px;
-    height: 36px;
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
     float: right;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 .ui-header, .ui-footer {
     border: none;
@@ -831,7 +832,7 @@ input{
 }
 .main_page_logo{
     height: auto;
-    width: 90%;
+    width: 80%;
 }
 /*set the child div of list_item verticle middle*/
 .vertical-middle{
@@ -933,6 +934,21 @@ input{
      background-color: #f2f2f2 !important;
      height: 100vh;
 }
+#patientlist_menu .ui-panel-inner .ui-footer{
+    border-top: 1px solid #A0B2B7;
+}
+#patientlist_menu .ui-panel-inner .ui-footer div {
+    padding: 20px 0;
+    color: #A0B2B7;
+    text-transform: uppercase;
+}
+
+#patientlist_menu .ui-panel-inner .ui-footer div:first-child{
+    border-right: 1px solid #A0B2B7;
+}
+#patientlist_menu .ui-panel-inner .ui-footer div:last-child{
+    border-left: 1px solid #A0B2B7;
+}
 #patientlist_menu .ui-panel-inner .ui-header{
     background-color: #f2f2f2 !important;
 }
@@ -955,7 +971,12 @@ input{
     color: #495559;
     line-height: 1.5em;
     font-size: 1.2em;
-    
+}
+#patientlist_menu_list li a > div{
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    line-height: 1.5em;
+    font-size: 1.2em;
 }
 
 @media screen and (max-height: 960px){
@@ -984,7 +1005,14 @@ input{
     width: 90vw;
     max-width: 1080px;
 }
-
+.ui-panel .ui-footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0;
+    min-height: 50px;
+    text-align: center;
+}
 /*font color on datepicker*/
 .dwb0, .dwb1{
     color: #FFF !important;
@@ -1090,4 +1118,7 @@ input{
 }
 .icon-dots-g{
     background-image: url("../icon/icon-dots-g.png");
+}
+.icon-filter{
+    background-image: url("../icon/icon-filter.png");
 }
