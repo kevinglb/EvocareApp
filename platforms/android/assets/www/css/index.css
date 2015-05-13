@@ -249,7 +249,10 @@ input{
     width: 60%;
 }
 .below_content {
-    margin-top: 4em;
+    margin-top: 5vh;
+}
+.below_content *:after{
+    clear: both;
 }
 .below_content .row{
     margin-top: 20px; 
@@ -437,7 +440,17 @@ input{
 }
 
 
+#pie_chart{
+    height: 30vh;
+    padding: 15px 0;
+}
 
+/*#triage_form .carousel-inner .item:first-child:after{
+    content: "↓";
+    display: block;
+    text-align:center;
+    margin: 0 auto; 
+}*/
 .ui-listview {
     margin:0;
 }
@@ -474,13 +487,17 @@ input{
     list-style-type: none;
 }
 
+.timeline *{
+    padding-left: 0;
+
+}
 .timeline li:after {
     position: absolute;
     left: 50%;
     content: ' ';
     display: block;
     width: 2px;
-    height: 20%;
+    height:12vh;
     background: #333;
     background: -moz-linear-gradient(top, rgba(132, 151, 157, 0.8) 0%, rgba(132, 151, 157, 0.8) 8%, rgba(132, 151, 157, 0.8) 92%, rgba(132, 151, 157, 0.8) 100%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(132, 151, 157, 0.8)), color-stop(100%,rgba(132, 151, 157, 0.8)));
@@ -492,7 +509,10 @@ input{
 
 
 .timeline li{
-    padding: 3em 0;
+    padding: 6vh 0;
+}
+.timeline li:first-child{
+    padding-top: 2vh;
 }
 
 /*.timeline li:after{
@@ -515,30 +535,45 @@ input{
     text-align: right;
 }
 
-.timeline .arrow:before{
+.timeline .status:before{
     position: absolute;
     top: 0px;
     left: -50%;
     content: " ";
     display: block;
-    width: 36px;    
-    height: 36px;
-    margin-left: -17px;
+    width: 40px;    
+    height: 40px;
+    margin-left: -19px;
     background: rgba(132, 151, 157, 0.8);
-    border-radius: 18px;
-    border: 12px solid rgba(187, 196, 199, 0.9);
+    border-radius: 20px;
+    border: 14px solid rgba(187, 196, 199, 0.9);
     z-index: 5;
 }
 
-.timeline .arrow i{
-    line-height: 18px;
-    margin-top: 10px;
+.timeline .status:after{
+    clear: both;
+}
+.timeline .status i{
+    line-height: 1em;
     color: rgba(187, 196, 199, 1);
 }
 
-.timeline .arrow .fa-angle-right{
-    margin-right: 80px;
+.timeline .status i:last-child{
+    float: right;
+    margin-right: 15px;
 }
+.timeline .status div:last-child{
+    float: right;
+    margin-top: -5px;
+}
+.timeline .status .fa-angle-right{
+    float: left;
+}
+.timeline .status .visited span{
+    text-align: left;
+    text-transform: uppercase;
+}
+
 /*.timeline .arrow:after{
     content: "";
     position: absolute;
@@ -847,6 +882,7 @@ input{
     padding: 15px 0px;
     overflow-y:auto;
 }
+
 #patient_list .patient{
     height: 120px;
     background-color: #fff;
@@ -944,8 +980,8 @@ input{
 .switch-button.toggle{
     left: 50%;
 }
-/*.switch.ui-radio:last-child label[class*="ui-radio-on"] ~.switch-button {left: 50%;}*/
-
+/*.switch.ui-radio:last-child >label[class*="ui-radio-on"] ~.switch-button{left: 50%;}
+*/
 
 /*search input*/
 /*.ui-input-search input{
