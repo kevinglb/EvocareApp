@@ -504,6 +504,7 @@ input{
     display: block;
     width: 2px;
     height:12vh;
+    margin-top: 40px;
     background: #333;
     background: -moz-linear-gradient(top, rgba(132, 151, 157, 0.8) 0%, rgba(132, 151, 157, 0.8) 8%, rgba(132, 151, 157, 0.8) 92%, rgba(132, 151, 157, 0.8) 100%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(132, 151, 157, 0.8)), color-stop(100%,rgba(132, 151, 157, 0.8)));
@@ -515,7 +516,8 @@ input{
 
 
 .timeline li{
-    padding: 6vh 0;
+    padding: 0 !important;
+    padding-bottom: 5vh !important;
 }
 .timeline li:first-child{
     padding-top: 2vh;
@@ -534,7 +536,7 @@ input{
     display: inline-block;
     text-align: center;
     margin: 10px 0px;
-    line-height: 18px;
+    line-height: 1.5em;
 }
 
 .timeline .arrow {
@@ -553,14 +555,14 @@ input{
     background: rgba(132, 151, 157, 0.8);
     border-radius: 20px;
     border: 14px solid rgba(187, 196, 199, 0.9);
-    z-index: 5;
+    z-index: 1;
 }
 
 .timeline .status:after{
     clear: both;
 }
 .timeline .status i{
-    line-height: 1em;
+    line-height: 1.2em;
     color: rgba(187, 196, 199, 1);
 }
 
@@ -570,12 +572,13 @@ input{
 }
 .timeline .status div:last-child{
     float: right;
-    margin-top: -5px;
+    
 }
 .timeline .status .fa-angle-right{
     float: left;
 }
 .timeline .status .visited span{
+    line-height: 1.5em;
     text-align: left;
     text-transform: uppercase;
 }
@@ -883,7 +886,9 @@ input{
     overflow: auto;
 }
 
-
+#patientlist_page .ui-content{
+    overflow-y : auto !important;
+}
 #patient_list{
     padding: 15px 0px;
 }
@@ -1050,3 +1055,11 @@ input{
 .icon-dots{
     background-image: url("../icon/icon-dots-w.png");
 }
+
+div#onborading_content
+{
+  overflow-y: auto;
+  height: 100%;
+}
+
+
