@@ -101,6 +101,9 @@ input[type=number]{
 input{
     font-family: "Bendons-Medium";
 }
+.clear{
+    clear: both;
+}
 .regular-font {
     font-family: "Bendons-Regular";
 }
@@ -975,7 +978,7 @@ input{
 }
 
 #patientlist_menu .patient_info{
-    margin: 3vh 0 4vh 0;
+    margin: 4vh 0 0 0;
 }
 #patientlist_menu .patient_info .patient_name{
     font-size: 1em !important;
@@ -987,6 +990,9 @@ input{
     list-style-type: none;
     padding-left: 0;
     text-transform: uppercase;
+}
+#patientlist_menu_list li{
+    padding-top: 1em;
 }
 #patientlist_menu_list li a{
     color: #495559;
@@ -1025,6 +1031,10 @@ input{
 .ui-panel{
     width: 90vw;
     max-width: 1080px;
+}
+.ui-panel-animate.ui-panel-position-right.ui-panel-display-overlay, .ui-panel-animate.ui-panel-position-right.ui-panel-display-push{
+    right: 0px;
+    transform: translate3d(90vw, 0px, 0px);
 }
 .ui-panel .ui-footer{
     position: absolute;
@@ -1099,19 +1109,6 @@ input{
 /*.switch.ui-radio:last-child >label[class*="ui-radio-on"] ~.switch-button{left: 50%;}
 */
 
-/*search input*/
-/*.ui-input-search input{
-    padding-left: 0;
-    padding-right: 1.75em;
-}
-
-.ui-input-search::after{
-    right: 0.3215em;
-    
-    background-image: url("../icon/icon-search-g.png");
-    background-position: center center;
-    background-size: cover;
-}*/
 /*icons setting*/
 
 .icon{
