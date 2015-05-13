@@ -435,8 +435,7 @@ input{
 
 
 }
-.carousel_controls .add_note{
-
+.carousel_controls .save_note{
     left: auto;
 }
 .carousel_controls .back_btn a{
@@ -521,7 +520,8 @@ input{
 
 
 .timeline li{
-    padding: 6vh 0;
+    padding: 0 !important;
+    padding-bottom: 5vh !important;
 }
 .timeline li:first-child{
     padding-top: 2vh;
@@ -540,7 +540,7 @@ input{
     display: inline-block;
     text-align: center;
     margin: 10px 0px;
-    line-height: 18px;
+    line-height: 1.5em;
 }
 
 .timeline .arrow {
@@ -580,7 +580,7 @@ input{
     clear: both;
 }
 .timeline .status i{
-    line-height: 1em;
+    line-height: 1.2em;
     color: rgba(187, 196, 199, 1);
 }
 
@@ -590,12 +590,13 @@ input{
 }
 .timeline .status div:last-child{
     float: right;
-    margin-top: -5px;
+    
 }
 .timeline .status .fa-angle-right{
     float: left;
 }
 .timeline .visited .status span{
+    line-height: 1.5em;
     text-align: left;
     text-transform: uppercase;
 }
@@ -847,7 +848,7 @@ input{
 }
 .main_page_logo{
     height: auto;
-    width: 80%;
+    width: 50%;
 }
 /*set the child div of list_item verticle middle*/
 .vertical-middle{
@@ -893,7 +894,9 @@ input{
     overflow: auto;
 }
 
-
+#patientlist_page .ui-content{
+    overflow-y : auto !important;
+}
 #patient_list{
     padding: 15px 0px;
 }
@@ -1131,6 +1134,14 @@ input{
 .icon-dots{
     background-image: url("../icon/icon-dots-w.png");
 }
+
+div#onborading_content
+{
+  overflow-y: auto;
+  height: 100%;
+}
+
+
 .icon-dots-g{
     background-image: url("../icon/icon-dots-g.png");
 }

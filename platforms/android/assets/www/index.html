@@ -22,6 +22,7 @@
         <link rel="stylesheet" type="text/css" href="css/mobiscroll.scroller.css"/>
         <link rel="stylesheet" type="text/css" href="css/mobiscroll.scroller.android-holo.css"/>
         <link rel="stylesheet" type="text/css" href="css/mobiscroll.android-holo-light.css"/>
+        <link rel="stylesheet" type="text/css" href="css/countrySelect.min.css"/>
          <!-- main css -->
         <link rel="stylesheet" type="text/css" href="css/index.css" />
 
@@ -30,7 +31,7 @@
         <script type="text/javascript" src="plugins/jquery.mobile-1.4.5.min.js"></script>
         <script type="text/javascript" src="plugins/bootstrap.min.js"></script>
         <script type="text/javascript" src="plugins/d3.min.js"></script>
-        <script type="text/javascript" src="plugins/countries.js"></script>
+        <script type="text/javascript" src="plugins/countrySelect.min.js"></script>
         <!-- date pikcer on mobile device trail version -->
         <!-- <script type="text/javascript" src="plugins/mobiscroll.custom-2.15.1.min.js" ></script> -->
         
@@ -421,9 +422,10 @@
                                 </div>
                             </div>
                             
-                                <div class="item container">
+                            <div class="item container">
                                 <div class="row">
-                                    <ul class="timeline">
+
+                                    <!-- <ul class="timeline">
                                         <li class="timeline_item">
                                             <div class="date col-xs-4 md-size">
                                                 5 March
@@ -470,6 +472,12 @@
                                                 <i class="fa fa-2x fa-close"></i>
                                             </div>
                                         </li>
+                                    </ul> -->
+
+
+                                    <ul id="triage_timeline" class="timeline">
+
+
                                     </ul>
                                 </div>
                             </div>
@@ -580,6 +588,14 @@
                                 </div>
                             </div>
                            
+                           <div class="item container">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label for="triage_note">Edit your note:</label>
+                                        <input type="text" name="triage_note" id="triage_note"></input>
+                                    </div>
+                                </div>
+                           </div>
 
                                     <!-- <button type="button" class="ui-btn ui-corner-all ui-btn-a" onclick="addSymptom()">+ Symptom</button> -->
                             <!--     </div>
@@ -596,7 +612,7 @@
                             </div>
                             <div class="continue_btn">
                                 <a class="right carousel-control" href="#triage_slide" role="button" data-slide="next" onClick="detectTriageCarousel()">Continue</a>
-                                <a class="carousel-control add_note" role="button" onClick="createNewTriage()" style="display:none;">Add note</a>
+                                <a class="carousel-control save_note" role="button" onClick="createNewTriage()" style="display:none;">Save</a>
                             </div>
                         </div>
                     </form>
@@ -698,7 +714,6 @@
         </div>
         <!-- event schedule page -->
 
-
         <!-- onborading page -->
         <div id="onborading_page" data-role="page">
             <div data-role="header" class="ui-header">
@@ -713,6 +728,9 @@
                         <!-- onboarding form -->
                         <form id ="onboarding_form" role="form">
                             <div class="form-group">
+                                <h2 id="onboarding_title">Onboarding new patient</h2>
+                            </div>
+                            <div class="form-group">
                                 <input type="text" id="onboarding_fullname" name="fullname" class="form-control no-border input-lg" placeholder="Full Name"/>
                             </div>
                             <div class="form-group">
@@ -721,6 +739,16 @@
                             <div class="form-group">
                                 <input type="text" id="onboarding_address" name="address" class="form-control no-border input-lg" placeholder="Address"/>
                             </div>
+                            <div id="onboarding_gender" class="form-group">
+                                <p>Gender</p>
+                                <fieldset>
+                                    <input name="onboarding_gender" id="onboarding_male" value="male" checked="checked" type="radio">
+                                    <label for="onboarding_male" class="light-font">Male</label>
+                                    
+                                    <input name="ronboarding_gender" id="onboarding_female" value="female" type="radio">
+                                    <label for="onboarding_female" class="light-font">Female</label>
+                                </fieldset>
+                            </div>
                             <div class="form-group">
                                  <input type="email" id="onboarding_email" name="email" class="form-control no-border input-lg" placeholder="Email Address"/>
                             </div>
@@ -728,13 +756,73 @@
                                 <input type="text" id="onboarding_contact_number" name="contact_number" class="form-control no-border input-lg" placeholder="Number-home/mobile"/>
                             </div>
                             <div class="form-group">
-                                <input type="text" id="onboarding_occupation" name="occupation" class="form-control no-border input-lg" placeholder="Occupation">
+                                <div class="form-item">
+                                    <input id="country_selector" type="text">
+                                </div>
+                                <div class="form-item" style="display:none;">
+                                    <input type="text" id="country_selector_code" name="country_selector_code" data-countrycodeinput="1" readonly="readonly" placeholder="Selected country code will appear here" />
+                                </div>
                             </div>
                             <div class="form-group">
-                                <input type="text" id="onboarding_pps" name="pps" class="form-control no-border input-lg" placeholder="PPS number">
+                                <input type="text" id="onboarding_occupation" name="occupation" class="form-control no-border input-lg" placeholder="Occupation"/>
                             </div>
                             <div class="form-group">
-                                <a type="submit" id="onboarding_submit" value="sign up" name="signup_btn" class="btn btn-lg btn-presepctive btn-block">REGISTER</a>
+                                <input type="text" id="onboarding_pps" name="pps" class="form-control no-border input-lg" placeholder="PPS number"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="onboarding_kin1_fullname" name="kin1_fullname" class="form-control no-border input-lg" placeholder="Kin1 full name"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="onboarding_kin1_address" name="kin1_address" class="form-control no-border input-lg" placeholder="Kin1 address"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="onboarding_kin2_fullname" name="kin2_fullname" class="form-control no-border input-lg" placeholder="Kin2 full name"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="onboarding_kin2_address" name="kin2_address" class="form-control no-border input-lg" placeholder="Kin2 address"/>
+                            </div>
+                            <div class="form-group">
+                                <p>Do you have a medical card?</p>
+                                <div class="switch_group">
+                                    <fieldset id="onboarding_medical_card" class="switch" onload="setupSwitch(this)">
+                                        <input id="onboarding_medical_no" name="history_switch" value="no" type="radio" checked="checked" onClick="SwitchToggle('no',this)">
+                                        <label for="onboarding_medical_no">No</label>
+
+                                        <input id="onboarding_medical_yes" name="history_switch" value="yes" type="radio" onClick="SwitchToggle('yes',this)">    
+                                        <label for="onboarding_medical_yes">Yes</label>
+    
+                                        <span class="switch-button"></span>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div id="onboarding_insurance" class="form-group">
+                                <p>Do you have private health insurance?</p>
+                                <fieldset>
+                                    <input name="onboarding_insurance" id="no_insurance" value="no_insurance" checked="checked" type="radio">
+                                    <label for="no_insurance" class="light-font">No</label>
+
+                                    <input name="onboarding_insurance" id="vhi" value="vhi" checked="checked" type="radio">
+                                    <label for="vhi" class="light-font">VHI</label>
+                                    
+                                    <input name="onboarding_insurance" id="aviva" value="aviva" type="radio">
+                                    <label for="aviva" class="light-font">AVIVA</label>
+
+                                    <input name="onboarding_insurance" id="laya" value="laya" type="radio">
+                                    <label for="laya" class="light-font">LAYA</label>
+
+                                    <input name="onboarding_insurance" id="glo" value="glo" type="radio">
+                                    <label for="glo" class="light-font">GLO HEALTH</label>
+
+                                    <input name="onboarding_insurance" id="other" value="other" type="radio">
+                                    <label for="other" class="light-font">OTHER + POLICY NUMBER</label>
+                                </fieldset>                   
+                            </div>
+                            <div class="form-group">
+                                <input name="onboarding_medication_history" id="onboarding_medication_history" class="form-control no-border input-lg" placeholder="Do you have any allergies e.g. food or medication?"/>
+                            </div>
+                            <div class="form-group">
+                                <input name="onboarding_problem_period" id="onboarding_problem_period" class="form-control no-border input-lg" placeholder="How long has it been a problem?"/>
+                            </div>
                             </div>
                         </form>
                     </div>
@@ -1002,13 +1090,19 @@ function detectTriageCarousel(){
         else if($('#triage_slide .carousel-inner .item:last-child').hasClass('active')) {
                 $('#triage_slide .carousel_controls .right').hide();
                 // $('.carousel_controls .left').hide();
-                $('#triage_slide .carousel_controls .add_note').show();
+                $('#triage_slide .carousel_controls .save_note').show();
                 // $('.carousel_controls .add_symptom').show();
                 console.log("the last item");
             }
+        else if($('#triage_slide .carousel-inner .item:nth-last-child(2)').hasClass('active')){
+                $('#triage_slide .carousel_controls .right').text("Add Note");
+                $('#triage_slide .carousel_controls .save_note').hide();
+                $('#triage_slide .carousel_controls .right').show();
+            }
         else{
+            $('#triage_slide .carousel_controls .right').text("Continue");
             $('#triage_slide .carousel_controls .back_btn .left').attr('disabled',false);
-            $('#triage_slide .carousel_controls .add_note').hide();
+            $('#triage_slide .carousel_controls .save_note').hide();
             $('#triage_slide .carousel_controls .right').show();
             console.log("the rest items");
         }
@@ -1066,6 +1160,13 @@ function SwitchToggle(status,element){
         target.addClass('toggle');
     }
 }
+
+$("#country_selector").countrySelect({
+                //defaultCountry: "jp",
+                //onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+                preferredCountries: ['ca', 'gb', 'us']
+            });
+
 </script>
         <script type="text/javascript" src="cordova.js"></script>
         <script src="plugins/com.phonegap.plugins.sqlite/www/SQLitePlugin.js"></script>
