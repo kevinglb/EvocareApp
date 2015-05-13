@@ -111,11 +111,11 @@
                         <form id="login_form" role="form">
                             <div class="form-group has-feedback left-feedback no-label">
                                 <input type="text" id="login_username" name="username" class="form-control input-lg" placeholder="youremail@mail.com">
-                                    <span class="fa fa-user form-control-feedback"></span></input>
+                                    <span class="icon-user form-control-feedback"></span></input>
                             </div>
                             <div class="form-group has-feedback left-feedback no-label">
                                 <input type="password" id="login_password" name="password" class="form-control input-lg" placeholder="password">
-                                <span class="fa fa-lock form-control-feedback"></span></input>
+                                <span class="icon-locker form-control-feedback"></span></input>
                             </div>
 
                             <div class="form-group">
@@ -411,7 +411,7 @@
                                         <span class="sm_text_left regular-text">Patient <br>Contacts</span>
                                     </div>
                                     <div class="col-xs-2 text-center">
-                                        <i class="fa fa-arrow-right"></i>
+                                        <i class="icon icon-arrow-left-g icon-reverse"></i>
                                     </div>
                                     <div class="col-xs-5">
                                         <span class="sm_text_right regular-text">Clinic<br> visit</span>
@@ -425,7 +425,58 @@
                             <div class="item container">
                                 <div class="row">
 
+                                    <!-- <ul class="timeline">
+                                        <li class="timeline_item">
+                                            <div class="date col-xs-4 md-size">
+                                                5 March
+                                            </div>
+                                            <div class="status col-xs-4 col-xs-offset-4">
+                                                <i class="fa fa-2x fa-angle-right"></i>
+                                                <i class="fa fa-2x fa-close"></i>
+                                            </div>
+                                        </li>
+                                         <li>
+                                            <div class="date col-xs-4 md-size">
+                                                18 Feb
+                                            </div>
+                                            <div class="status col-xs-4 col-xs-offset-4">
+                                                <i class="fa fa-2x fa-angle-right"></i>
+                                                <i class="fa  fa-2x fa-close"></i>
+                                            </div>
+                                        </li>
+                                         <li class="visited">
+                                            <div class="date col-xs-4 md-size">
+                                                11 Feb
+                                            </div>
+                                            <div class="status col-xs-4 col-xs-offset-4">
+                                                <i class="fa fa-2x fa-angle-right"></i>
+                                               
+                                                <div class="visited"><span>Clinic<br>visit</span></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="date col-xs-4 md-size">
+                                                17 Jan
+                                            </div>
+                                            <div class="status col-xs-4 col-xs-offset-4">
+                                                <i class="fa fa-2x fa-angle-right"></i>
+                                                <i class="fa fa-2x fa-close"></i>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="date col-xs-4 md-size">
+                                               8 Jan
+                                            </div>
+                                            <div class="status col-xs-4 col-xs-offset-4">
+                                                <i class="fa fa-2x fa-angle-right"></i>
+                                                <i class="fa fa-2x fa-close"></i>
+                                            </div>
+                                        </li>
+                                    </ul> -->
+
+
                                     <ul id="triage_timeline" class="timeline">
+
 
                                     </ul>
                                 </div>
@@ -536,42 +587,17 @@
                                     </div>
                                 </div>
                             </div>
-
                            
-                 <!--            <div class="item container">
+                           <div class="item container">
                                 <div class="row">
-                                    <h3 class="md-font">Symptom</h3>
-                                    <ul id="symptom_list" data-role="listview">
-                                        <li>
-                                            <div class="col-xs-9">
-                                                <input type="text" name="symptom_1" placeholder="Symptom"></input>
-                                            </div>
-                                            <div class="col-xs-2 col-xs-offset-1">
-                                                <a href="#" class="close_link" onClick="removeSymptom(this)"><i class="fa fa-2x fa-close"></i></a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="col-xs-9">
-                                                <input type="text" name="symptom_2" placeholder="Symptom"></input>
-                                            </div>
-                                            <div class="col-xs-2 col-xs-offset-1">
-                                                <a href="#" class="close_link" onClick="removeSymptom(this)"><i class="fa fa-2x fa-close"></i></a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="col-xs-9">
-                                                <input type="text" 
-                                                name="symptom_3" placeholder="Symptom"></input>
-                                            </div>
-                                            <div class="col-xs-2 col-xs-offset-1">
-                                                <a href="#" class="close_link" onClick="removeSymptom(this)"><i class="fa fa-2x fa-close"></i></a>
-                                            </div>
-                                        </li>
-                                    </ul>
-<<<<<<< HEAD
-                                    
-                                </div> -->
-                           <!--  </div> -->
+
+                                    <div class="form-group">
+                                        <label for="triage_note">Edit your note:</label>
+                                        <textarea  name="triage_note" id="triage_note"></textarea>
+                                    </div>
+                                </div>
+                           </div>
+
 
                                     <!-- <button type="button" class="ui-btn ui-corner-all ui-btn-a" onclick="addSymptom()">+ Symptom</button> -->
                             <!--     </div>
@@ -588,7 +614,7 @@
                             </div>
                             <div class="continue_btn">
                                 <a class="right carousel-control" href="#triage_slide" role="button" data-slide="next" onClick="detectTriageCarousel()">Continue</a>
-                                <a class="carousel-control add_note" role="button" onClick="createNewTriage()" style="display:none;">Add note</a>
+                                <a class="carousel-control save_note" role="button" onClick="createNewTriage()" style="display:none;">Save</a>
                             </div>
                         </div>
                     </form>
@@ -954,7 +980,6 @@
                 <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" class="head_back"><i class="icon icon-arrow-left"></i></a>
                 <h1>Checklist</h1>
                 <a href="#checklist_right_menu" class="ui-btn ui-corner-all"><i class="icon icon-dots"></i></a>
-                <h1>CHECKLIST</h1>
             </div>
             <!-- header -->
 
@@ -1187,13 +1212,19 @@ function detectTriageCarousel(){
         else if($('#triage_slide .carousel-inner .item:last-child').hasClass('active')) {
                 $('#triage_slide .carousel_controls .right').hide();
                 // $('.carousel_controls .left').hide();
-                $('#triage_slide .carousel_controls .add_note').show();
+                $('#triage_slide .carousel_controls .save_note').show();
                 // $('.carousel_controls .add_symptom').show();
                 console.log("the last item");
             }
+        else if($('#triage_slide .carousel-inner .item:nth-last-child(2)').hasClass('active')){
+                $('#triage_slide .carousel_controls .right').text("Add Note");
+                $('#triage_slide .carousel_controls .save_note').hide();
+                $('#triage_slide .carousel_controls .right').show();
+            }
         else{
+            $('#triage_slide .carousel_controls .right').text("Continue");
             $('#triage_slide .carousel_controls .back_btn .left').attr('disabled',false);
-            $('#triage_slide .carousel_controls .add_note').hide();
+            $('#triage_slide .carousel_controls .save_note').hide();
             $('#triage_slide .carousel_controls .right').show();
             console.log("the rest items");
         }
