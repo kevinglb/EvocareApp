@@ -188,24 +188,20 @@ function getSinglePatientInfo(patient_id)
 function showPercentDonut(percent) 
 {
 
-    $("#pie_chart").empty();
-    //console.log('after empty ');
-
     var target = $("#pie_chart");
     var width= target.width(),
-        height = target.height()*0.8,
-        radius = Math.min(width, height)/2,
-        dig = radius/6,
-        color = d3.scale.ordinal()
-                  .range(["#A0b2b7","#228896"]),
-        center = [width/2, height/2],
-        dataset = {
-            lower: [0, 100],
-            upper: [percent, 100-percent]
-        },
-        pie = d3.layout.pie().sort(null),
-        format = d3.format(".0%");
-
+    height = target.height(),
+    radius = Math.min(width, height)/2,
+    dig = radius/6,
+    color = d3.scale.category20(),
+    center = [width/2, height/2],
+    dataset = 
+    {
+      lower: [0, 100],
+      upper: [percent, 100-percent]
+    },
+    pie = d3.layout.pie().sort(null),
+    format = d3.format(".0%");
     var arc = d3.svg.arc()
         .innerRadius(radius - 2 - dig)
         .outerRadius(radius -5);
@@ -225,9 +221,9 @@ function showPercentDonut(percent)
 
     var text = svg.append("text")
         .attr("text-anchor", "middle")
-        .attr("class", "pie_chart_text")
-        .attr("fill", "#A0b2b7")
-        .attr("dy",".4em");
+        .attr('fill',"#000")
+        .attr("font-size", "6vh")
+        .attr("dy",".35em");
 
    if (typeof(percent) == "string")
    {
