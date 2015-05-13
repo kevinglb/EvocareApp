@@ -311,9 +311,10 @@ input{
 }
 .has-feedback .form-control {
     padding-right:  0;
-    padding-left: 56px;
+    padding-left: 54px;
     height: 56px;
     line-height: 56px;
+    font-size: 1.1em;
 }
 
 .form-control[readonly]{
@@ -321,14 +322,13 @@ input{
 }
 
 .form-control-feedback {
-    left: 0px;
-    top: 0px;
-    width: 56px;
-    height: 56px;
-    line-height: 56px;
-    font-size: 24px;
-    text-shadow:none;
-    color: rgba(44, 118, 108, 1);
+
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 11px;
+    top: 11px;
 }
 
 #login_page .ui-link{
@@ -1137,7 +1137,18 @@ input{
 .icon-dots{
     background-image: url("../icon/icon-dots-w.png");
 }
-
+.icon-dots-g{
+    background-image: url("../icon/icon-dots-g.png");
+}
+.icon-filter{
+    background-image: url("../icon/icon-filter.png");
+}
+.icon-user{
+    background-image: url("../icon/icon-user-bg.png");
+}
+.icon-locker{
+    background-image: url("../icon/icon-locker-bg.png");
+}
 div#onborading_content
 {
   overflow-y: auto;
@@ -1145,9 +1156,4 @@ div#onborading_content
 }
 
 
-.icon-dots-g{
-    background-image: url("../icon/icon-dots-g.png");
-}
-.icon-filter{
-    background-image: url("../icon/icon-filter.png");
-}
+
