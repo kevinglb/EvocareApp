@@ -169,10 +169,11 @@ function showPercentDonut(percent)
     //console.log('after empty ');
     var target = $("#pie_chart");
     var width= target.width(),
-        height = target.height(),
+        height = target.height()*0.8,
         radius = Math.min(width, height)/2,
         dig = radius/6,
-        color = d3.scale.category20(),
+        color = d3.scale.ordinal()
+                  .range(["#A0b2b7","#228896"]),
         center = [width/2, height/2],
         dataset = {
             lower: [0, 100],
@@ -200,9 +201,9 @@ function showPercentDonut(percent)
 
     var text = svg.append("text")
         .attr("text-anchor", "middle")
-        .attr('fill',"#000")
-        .attr("font-size", "6vh")
-        .attr("dy",".35em");
+        .attr("class", "pie_chart_text")
+        .attr("fill", "#A0b2b7")
+        .attr("dy",".4em");
 
    if (typeof(percent) == "string")
    {

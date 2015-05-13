@@ -171,7 +171,7 @@
                     <a href="#virtual_clinic_page" data-transition="slide">
                         <div class="row list_item">
                             <div class="col-xs-3 vertical-middle text-center">
-                                <img src="img/RedCross.png">
+                                <img class="main_page_logo" src="img/virtual-clinic-logo.png">
                             </div>
                             <div class="col-xs-9 vertical-middle">
                                 <p class="lg-size">VIRTUAL CLINIC</p>
@@ -181,7 +181,7 @@
                     <a id="patient_triage_page" onClick="loadPatientInfo(this.id)">
                         <div class="row list_item">
                             <div class="col-xs-3 text-center vertical-middle">
-                                <img src="img/RedCross.png">
+                                <img class="main_page_logo" src="img/triage-logo.png">
                             </div>
                             <div class="col-xs-9 vertical-middle">
                                 <p class="lg-size">PATIENT TRIAGE</p>
@@ -191,7 +191,7 @@
                     <a href="#checklist_page" data-transition="slide">
                         <div class="row list_item">
                             <div class="col-xs-3 text-center vertical-middle">
-                                <img src="img/RedCross.png">
+                                <img class="main_page_logo" src="img/checklist-logo.png">
                             </div>
                             <div class="col-xs-9 vertical-middle">
                                 <p class="lg-size">PATIENT CHECKLIST</p>
@@ -201,7 +201,7 @@
                     <a href="#consultant_page" data-transition="slide">
                         <div class="row list_item">
                             <div class="col-xs-3 text-center vertical-middle">
-                                <img src="img/RedCross.png">
+                                <img class="main_page_logo" src="img/consultant-logo.png">
                             </div>
                             <div class="col-xs-9 vertical-middle">
                                 <p class="lg-size">CONSULTANT ON CALL</p>
@@ -211,7 +211,7 @@
                     <a href="#event_schedule_page" data-transition="slide">
                         <div class="row list_item">
                             <div class="col-xs-3 text-center vertical-middle">
-                                <img src="img/RedCross.png">
+                                <img class="main_page_logo" src="img/scheduler-logo.png">
                             </div>
                             <div class="col-xs-9 vertical-middle">
                                 <p class="lg-size">SCHEDULER</p>
@@ -221,7 +221,7 @@
                     <a id="patients_page" href="#" onClick="loadPatientInfo(this.id)" data-transition="slide">
                         <div class="row list_item">
                            <div class="col-xs-3 text-center vertical-middle">
-                                <img src="img/RedCross.png">
+                                <img class="main_page_logo" src="img/patient-logo.png">
                             </div>
                             <div class="col-xs-9 vertical-middle">
                                 <p class="lg-size">PATIENTS</p>
@@ -237,13 +237,68 @@
 
         <!-- patient list page -->
         <div id="patientlist_page" data-role="page">
+            <!-- patient list menu -->
+            
+            <div id="patientlist_menu" class="right_menu" data-role="panel" data-position="right" data-display="overlay">
+                <div data-role="header">
+                    <a href="#"><i class="icon icon-bars-g"></i></a>
+                    <a href="#"><i class="icon icon-dots-g"></i></a>
+                </div>
+                <div class="patient_info">
+                    <div class="col-xs-2 vertical-middle">
+                        <img src="img/RedCross.png" class="img-circle img-responsive">
+                    </div>
+                    <div class="col-xs-10 vertical-middle">
+                        <div class="row">
+                            <span class="sm-size patient_name md-size">Claire O'Dwyer</span> <span class="sm-size light-font birth_date">F. 16 APR 1950</span>
+                        </div>
+                        <div class="row">
+                            <span class="sm-size light-font disease_issue">Myeloddysplastic Syndromes(MDS)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <ul id="patientlist_menu_list">
+                    <li data-icon="false">
+                        <a href="#">
+                            <div class="row">
+                                Edit patient details
+                            </div>
+                        </a>
+                    </li>
+
+                    <li data-icon="false">
+                        <a href="#">
+                            <div class="row">
+                                Add virtual clinic record
+                            </div>
+                        </a>
+                    </li>
+                    <li data-icon="false">
+                        <a href="#">
+                            <div class="row">
+                                carry out triage
+                            </div>
+                        </a>
+                    </li>
+                    <li data-icon="false">
+                        <a href="#">
+                            <div class="row">
+                                manage patient checklist
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+
+            </div> 
+
             <div data-role="header" class="ui-header">
                 <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" class="header_back"><i class="icon icon-arrow-left"></i></a>
                 <h1>Patient list</h1>
                 <div class="ui-btn-right multi-icons">
                 <!-- <a href="#"><i class="icon icon-filter icon-right"></i></a> -->
                     
-                    <a href="#" data-transition="slide"><i class="icon icon-dots"></i></a>
+                    <a href="#patientlist_menu" data-transition="slide"><i class="icon icon-dots"></i></a>
                     <a id="onboarding_btn" href="#onborading_page" data-transition="slide"><i class="icon icon-add-patient icon-right"></i></a>
                 </div>
             </div>
@@ -437,41 +492,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="item container">
-                                <div class="row">
-                                    <div class="form-group ">
-                                        <p class="md-font">On treatment in Unit?</p>
-                                        <div class="switch_group">
-                                            <fieldset id="on_treatment" class="switch" onload="setupSwitch(this)">
-                                                <input id="treatment_no" name="treatment_switch" value="no" type="radio" checked="checked" onClick="SwitchToggle('no',this)">
-                                                <label for="treatment_no">No</label>
-
-                                                <input id="treatment_yes" name="treatment_switch" value="yes" type="radio" onClick="SwitchToggle('yes',this)">    
-                                                <label for="treatment_yes">Yes</label>
-    
-                                                <span class="switch-button"></span>
-                                            </fieldset>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <label for="treatment_name" class="md-font">Name of the treatment</label>
-                                        <input type="text" id="treatment_name" name="treatment_name" class="underline-input"></input>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="treatement_date" class="md-font">Date of last treatment</label>
-                                        <input  id="treatment_last_date" class="datepicker_input" name="treatment_date" class="underline-input"></input>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="blood_date" class="md-font">Last bloods done</label>
-                                        <input type="text" id="blood_last_date" name="blood_date" class="datepicker_input" class="underline-input"></input>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="symptom" class="md-font">Symptom</label>
-                                        <input type="text" id="treatment_symptom" name="symptom" class="underline-input"></input>
-                                    </div>
-                                </div>
-                            </div>
+                          
 
                             <div class="item container">
                                 <div class="row">
@@ -576,7 +597,6 @@
                                             </div>
                                         </li>
                                     </ul>
-<<<<<<< HEAD
                                     
                                 </div> -->
                             </div>
@@ -606,7 +626,6 @@
                             <div class="continue_btn">
                                 <a class="right carousel-control" href="#triage_slide" role="button" data-slide="next" onClick="detectTriageCarousel()">Continue</a>
                                 <a class="carousel-control add_note" role="button" onClick="createNewTriage()" style="display:none;">Add note</a>
->>>>>>> ddde1f3f76c9f83b8efa3003a5e5c89d60200541
                             </div>
                         </div>
                     </form>
@@ -705,55 +724,9 @@
                 </div>
             </div>
             <!-- content -->
-
-
         </div>
         <!-- event schedule page -->
 
-        <!-- patient page -->
-        <div id="patient_page" data-role="page">
-            <!-- header -->
-            <div data-role="header" position="fixed" class="ui-header">
-                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" class="header_back"><i class="icon icon-arrow-left"></i></a>
-                <h1>Patients</h1>
-            </div>
-            <!-- content-->
-            <div data-role="main" class="ui-content">
-                <div id="onborading_content" class="container" sytle="display:none;">
-                    <div class="row">
-                        <!-- onboarding form -->
-                        <form id="onboarding_form" role="form">
-                            <div class="form-group">
-                                <input type="text" id="onboarding_fullname" name="fullname" class="form-control no-border input-lg" placeholder="Full Name"/>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" id="onboarding_birthday" name="birthday" class="form-control no-border input-lg datepicker_input" placeholder="Date of Birth"/>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" id="onboarding_address" name="address" class="form-control no-border input-lg" placeholder="Address"/>
-                            </div>
-                            <div class="form-group">
-                                 <input type="email" id="onboarding_email" name="email" class="form-control no-border input-lg" placeholder="Email Address"/>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" id="onboarding_contact_number" name="contact_number" class="form-control no-border input-lg" placeholder="Number-home/mobile"/>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" id="onboarding_occupation" name="occupation" class="form-control no-border input-lg" placeholder="Occupation">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" id="onboarding_pps" name="pps" class="form-control no-border input-lg" placeholder="PPS number">
-                            </div>
-                            <div class="form-group">
-                                <a type="submit" id="onboarding_submit" value="sign up" name="signup_btn" class="btn btn-lg btn-presepctive btn-block">REGISTER</a>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <!-- content -->
-        </div>
-        <!-- patient page end -->
 
         <!-- onborading page -->
         <div id="onborading_page" data-role="page">
