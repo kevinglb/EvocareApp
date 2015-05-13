@@ -151,19 +151,20 @@ input{
 
 
 /* ui-header ui-content ui-footer */
-.ui-header {
+.ui-page .ui-header {
     height: 56px;
     background-color: #8FCDBE !important;
 }
 
-.ui-header .ui-title {
-    line-height: 58px;
+.ui-page .ui-header .ui-title {
+    line-height: 22px;
     font-size: 22px;
+
     font-family: "Bendons-Medium";
     overflow: show;
     text-align: left;
     margin-left: 15%;
-    padding: 0;
+    padding: 18px 0;
     text-shadow:none;
     text-transform: uppercase;
     color: #FFF;
@@ -199,11 +200,11 @@ input{
 }
 
 .ui-header .multi-icons a{
-    min-width: 36px;
-    width: 36px;
-    height: 36px;
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
     float: right;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 .ui-header, .ui-footer {
     border: none;
@@ -445,10 +446,14 @@ input{
     border-left: 1px solid #FFFFFF;
 }
 
-
+/*pie chart*/
 #pie_chart{
-    height: 30vh;
+    height: 36vh;
     padding: 15px 0;
+}
+.pie_chart_text{
+    font-size: 4vh;
+    color: #A0B2B7 !important;
 }
 
 /*#triage_form .carousel-inner .item:first-child:after{
@@ -646,52 +651,39 @@ input{
 
 .ui-checkbox label, .ui-radio label {
     font-size: 1.2em;
+    line-height: 1.5em;
 }
 
 .ui-checkbox-on::after{
-    content: "\221A";
+    content: url('../img/check-selected.png');
     display: block;
-    color:#FFF;
-    width: 1.2em !important;
-    height: 1.2em !important;
-    margin: -0.5em 2px 0px !important;
-    background-color: rgba(34, 136, 150, 0.9) !important;
-    padding-left: 2px;
-    border: 2px solid rgba(34, 136, 150, 0.9) !important;
+    margin: -0.7em 2px 0px -3px !important;
+    background-color: transparent !important;
+    border: none;
 }
 
 .ui-checkbox-off::after{
+    content: url('../img/check-unselected.png');
+    display: block;
+    margin: -0.7em 2px 0px -3px !important;
+    border: none;
     background-color: transparent !important;
-    border: 2px solid #333;
-    width: 1.2em !important;
-    height: 1.2em !important;
 }
 
 .ui-radio-off::after{
-    background-color: #fff !important;
-    border: 3px solid #333; 
-    width: 24px !important;
-    height: 24px !important;
-    border-radius: 12px !important;
-    margin: -0.6em 5px 0 !important; 
+    content: url('../img/radio-unselected.png');
+    background-color: transparent; !important;
+    margin: -0.8em 5px 0 -3px !important; 
+    border: none !important;
 }
 
 .ui-radio-on::after {
-    content: "\2022";
-    font-family: sans-serif;
+    content: url('../img/radio-selected.png');
     display: block;
-    width: 24px !important;
-    height: 24px !important;
-    border-radius: 12px !important;
-    line-height: 18px;
-    margin: -0.6em 5px 0 !important; 
-    color: rgba(34, 136, 150, 0.9);
-    background-color: #FFF !important;
-    padding-left: 1px; 
-    border:4px solid rgba(34, 136, 150, 0.9) !important;
-    font-size: 1em; 
-
+    margin: -0.8em  5px 0 -3px!important; 
+    border: none !important;
 }
+
 .grade_slider_group {
     padding-bottom: 30px;
 }
@@ -841,7 +833,10 @@ input{
     background-color: #FFFFFF;
 
 }
-
+.main_page_logo{
+    height: auto;
+    width: 80%;
+}
 /*set the child div of list_item verticle middle*/
 .vertical-middle{
     position: relative;
@@ -940,6 +935,55 @@ input{
 }
 
 
+#patientlist_menu .ui-panel-inner {
+     background-color: #f2f2f2 !important;
+     height: 100vh;
+}
+#patientlist_menu .ui-panel-inner .ui-footer{
+    border-top: 1px solid #A0B2B7;
+}
+#patientlist_menu .ui-panel-inner .ui-footer div {
+    padding: 20px 0;
+    color: #A0B2B7;
+    text-transform: uppercase;
+}
+
+#patientlist_menu .ui-panel-inner .ui-footer div:first-child{
+    border-right: 1px solid #A0B2B7;
+}
+#patientlist_menu .ui-panel-inner .ui-footer div:last-child{
+    border-left: 1px solid #A0B2B7;
+}
+#patientlist_menu .ui-panel-inner .ui-header{
+    background-color: #f2f2f2 !important;
+}
+
+#patientlist_menu .patient_info{
+    margin: 3vh 0 4vh 0;
+}
+#patientlist_menu .patient_info .patient_name{
+    font-size: 1em !important;
+} 
+#patientlist_menu .patient_info:after   {
+    clear: both;
+}
+#patientlist_menu_list{
+    list-style-type: none;
+    padding-left: 0;
+    text-transform: uppercase;
+}
+#patientlist_menu_list li a{
+    color: #495559;
+    line-height: 1.5em;
+    font-size: 1.2em;
+}
+#patientlist_menu_list li a > div{
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    line-height: 1.5em;
+    font-size: 1.2em;
+}
+
 @media screen and (max-height: 960px){
     .lg-size{
         font-size: 1.5em;
@@ -952,9 +996,28 @@ input{
     }
 
 }
+.lg-size{
+        font-size: 1.5em;
+}
+.md-size {
+        font-size: 1.2em;
+}
+.sm-size {
+        font-size: 0.8em;
+}
 
-
-
+.ui-panel{
+    width: 90vw;
+    max-width: 1080px;
+}
+.ui-panel .ui-footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0;
+    min-height: 50px;
+    text-align: center;
+}
 /*font color on datepicker*/
 .dwb0, .dwb1{
     color: #FFF !important;
@@ -1052,6 +1115,9 @@ input{
 .icon-bars{
     background-image: url("../icon/icon-bars-w.png");
 }
+.icon-bars-g{
+    background-image: url("../icon/icon-bars-g.png");
+}
 .icon-dots{
     background-image: url("../icon/icon-dots-w.png");
 }
@@ -1063,3 +1129,9 @@ div#onborading_content
 }
 
 
+.icon-dots-g{
+    background-image: url("../icon/icon-dots-g.png");
+}
+.icon-filter{
+    background-image: url("../icon/icon-filter.png");
+}

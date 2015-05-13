@@ -172,7 +172,7 @@
                     <a href="#virtual_clinic_page" data-transition="slide">
                         <div class="row list_item">
                             <div class="col-xs-3 vertical-middle text-center">
-                                <img src="img/RedCross.png">
+                                <img class="main_page_logo" src="img/virtual-clinic-logo.png">
                             </div>
                             <div class="col-xs-9 vertical-middle">
                                 <p class="lg-size">VIRTUAL CLINIC</p>
@@ -182,7 +182,7 @@
                     <a id="patient_triage_page" onClick="loadPatientInfo(this.id)">
                         <div class="row list_item">
                             <div class="col-xs-3 text-center vertical-middle">
-                                <img src="img/RedCross.png">
+                                <img class="main_page_logo" src="img/triage-logo.png">
                             </div>
                             <div class="col-xs-9 vertical-middle">
                                 <p class="lg-size">PATIENT TRIAGE</p>
@@ -192,7 +192,7 @@
                     <a href="#checklist_page" data-transition="slide">
                         <div class="row list_item">
                             <div class="col-xs-3 text-center vertical-middle">
-                                <img src="img/RedCross.png">
+                                <img class="main_page_logo" src="img/checklist-logo.png">
                             </div>
                             <div class="col-xs-9 vertical-middle">
                                 <p class="lg-size">PATIENT CHECKLIST</p>
@@ -202,7 +202,7 @@
                     <a href="#consultant_page" data-transition="slide">
                         <div class="row list_item">
                             <div class="col-xs-3 text-center vertical-middle">
-                                <img src="img/RedCross.png">
+                                <img class="main_page_logo" src="img/consultant-logo.png">
                             </div>
                             <div class="col-xs-9 vertical-middle">
                                 <p class="lg-size">CONSULTANT ON CALL</p>
@@ -212,7 +212,7 @@
                     <a href="#event_schedule_page" data-transition="slide">
                         <div class="row list_item">
                             <div class="col-xs-3 text-center vertical-middle">
-                                <img src="img/RedCross.png">
+                                <img class="main_page_logo" src="img/scheduler-logo.png">
                             </div>
                             <div class="col-xs-9 vertical-middle">
                                 <p class="lg-size">SCHEDULER</p>
@@ -222,7 +222,7 @@
                     <a id="patients_page" href="#" onClick="loadPatientInfo(this.id)" data-transition="slide">
                         <div class="row list_item">
                            <div class="col-xs-3 text-center vertical-middle">
-                                <img src="img/RedCross.png">
+                                <img class="main_page_logo" src="img/patient-logo.png">
                             </div>
                             <div class="col-xs-9 vertical-middle">
                                 <p class="lg-size">PATIENTS</p>
@@ -238,14 +238,103 @@
 
         <!-- patient list page -->
         <div id="patientlist_page" data-role="page">
+            <!-- patient list menu -->
+            
+            <div id="patientlist_menu" class="right_menu" data-role="panel" data-position="right" data-display="overlay">
+                <div data-role="header">
+                    <a href="#"><i class="icon icon-bars-g"></i></a>
+                    <a href="#"><i class="icon icon-dots-g"></i></a>
+
+                </div>
+                <div class="patient_info">
+                    <div class="col-xs-2 vertical-middle">
+                        <img src="img/RedCross.png" class="img-circle img-responsive">
+                    </div>
+                    <div class="col-xs-10 vertical-middle">
+                        <div class="row">
+                            <span class="sm-size patient_name md-size">Claire O'Dwyer</span> <span class="sm-size light-font birth_date">F. 16 APR 1950</span>
+                        </div>
+                        <div class="row">
+                            <span class="sm-size light-font disease_issue">Myeloddysplastic Syndromes(MDS)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <ul id="patientlist_menu_list">
+                    <li data-icon="false">
+                        <a href="#">
+                            <div>
+                                <div class="col-xs-1">
+                                    <i class="fa fa-angle-right"></i>
+                                </div>
+                                <div class="col-xs-11">
+                                    Edit patient details
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li data-icon="false">
+                        <a href="#">
+                            <div>
+
+                                <div class="col-xs-1">
+                                    <i class="fa fa-angle-right"></i>
+                                </div>
+                                <div class="col-xs-11">
+                                    Add virtual clinic record
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li data-icon="false">
+                        <a href="#">
+                            <div>
+                                <div class="col-xs-1">
+                                    <i class="fa fa-angle-right"></i>
+                                </div>
+                                <div class="col-xs-11">
+                                    carry out triage
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li data-icon="false">
+                        <a href="#">
+                            <div>
+                                <div class="col-xs-1">
+                                    <i class="fa fa-angle-right"></i>
+                                </div>
+                                <div class="col-xs-11">
+                                    manage patient checklist
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="ui-footer">
+                    
+                        <div class="col-xs-6">
+                            user name
+                        </div>
+                        <div class="col-xs-6">
+                           log out
+                        </div>
+                  
+
+                </div>
+
+            </div> 
+
             <div data-role="header" class="ui-header">
                 <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" class="header_back"><i class="icon icon-arrow-left"></i></a>
                 <h1>Patient list</h1>
                 <div class="ui-btn-right multi-icons">
                 <!-- <a href="#"><i class="icon icon-filter icon-right"></i></a> -->
                     
-                    <a href="#" data-transition="slide"><i class="icon icon-dots"></i></a>
+                    <a href="#patientlist_menu" data-transition="slide"><i class="icon icon-dots"></i></a>
                     <a id="onboarding_btn" href="#onborading_page" data-transition="slide"><i class="icon icon-add-patient icon-right"></i></a>
+                    <a href="#"><i class="icon icon-filter"></i></a>
                 </div>
             </div>
 
@@ -335,10 +424,50 @@
                             
                             <div class="item container">
                                 <div class="row">
+
                                     <ul id="triage_timeline" class="timeline">
+
                                     </ul>
                                 </div>
                             </div>
+
+                            <div class="item container">
+                                <div class="row">
+                                    <div class="form-group ">
+                                        <p class="md-font">On treatment in Unit?</p>
+                                        <div class="switch_group">
+                                            <fieldset id="on_treatment" class="switch" onload="setupSwitch(this)">
+                                                <input id="treatment_no" name="treatment_switch" value="no" type="radio" checked="checked" onClick="SwitchToggle('no',this)">
+                                                <label for="treatment_no">No</label>
+
+                                                <input id="treatment_yes" name="treatment_switch" value="yes" type="radio" onClick="SwitchToggle('yes',this)">    
+                                                <label for="treatment_yes">Yes</label>
+    
+                                                <span class="switch-button"></span>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="treatment_name" class="md-font">Name of the treatment</label>
+                                        <input type="text" id="treatment_name" name="treatment_name" class="underline-input"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="treatement_date" class="md-font">Date of last treatment</label>
+                                        <input  id="treatment_last_date" class="datepicker_input" name="treatment_date" class="underline-input"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="blood_date" class="md-font">Last bloods done</label>
+                                        <input type="text" id="blood_last_date" name="blood_date" class="datepicker_input" class="underline-input"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="symptom" class="md-font">Symptom</label>
+                                        <input type="text" id="treatment_symptom" name="symptom" class="underline-input"></input>
+                                    </div>
+                                </div>
+                            </div>
+                          
+
 
                             <div class="item container">
                                 <div class="row">
@@ -408,41 +537,7 @@
                                 </div>
                             </div>
 
-                            <div class="item container">
-                                <div class="row">
-                                    <div class="form-group ">
-                                        <p class="md-font">On treatment in Unit?</p>
-                                        <div class="switch_group">
-                                            <fieldset id="on_treatment" class="switch" onload="setupSwitch(this)">
-                                                <input id="treatment_no" name="treatment_switch" value="no" type="radio" checked="checked" onClick="SwitchToggle('no',this)">
-                                                <label for="treatment_no">No</label>
-
-                                                <input id="treatment_yes" name="treatment_switch" value="yes" type="radio" onClick="SwitchToggle('yes',this)">    
-                                                <label for="treatment_yes">Yes</label>
-    
-                                                <span class="switch-button"></span>
-                                            </fieldset>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <label for="treatment_name" class="md-font">Name of the treatment</label>
-                                        <input type="text" id="treatment_name" name="treatment_name" class="underline-input"></input>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="treatement_date" class="md-font">Date of last treatment</label>
-                                        <input  id="treatment_last_date" class="datepicker_input" name="treatment_date" class="underline-input"></input>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="blood_date" class="md-font">Last bloods done</label>
-                                        <input type="text" id="blood_last_date" name="blood_date" class="datepicker_input" class="underline-input"></input>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="symptom" class="md-font">Symptom</label>
-                                        <input type="text" id="treatment_symptom" name="symptom" class="underline-input"></input>
-                                    </div>
-                                </div>
-                            </div>
+                           
                  <!--            <div class="item container">
                                 <div class="row">
                                     <h3 class="md-font">Symptom</h3>
@@ -473,6 +568,11 @@
                                             </div>
                                         </li>
                                     </ul>
+<<<<<<< HEAD
+                                    
+                                </div> -->
+                            </div>
+
                                     <!-- <button type="button" class="ui-btn ui-corner-all ui-btn-a" onclick="addSymptom()">+ Symptom</button> -->
                             <!--     </div>
                             </div>  -->
@@ -587,8 +687,6 @@
                 </div>
             </div>
             <!-- content -->
-
-
         </div>
         <!-- event schedule page -->
 
