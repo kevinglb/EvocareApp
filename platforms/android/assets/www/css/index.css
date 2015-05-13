@@ -509,6 +509,7 @@ input{
     display: block;
     width: 2px;
     height:12vh;
+    margin-top: 20px;
     background: #333;
     background: -moz-linear-gradient(top, rgba(132, 151, 157, 0.8) 0%, rgba(132, 151, 157, 0.8) 8%, rgba(132, 151, 157, 0.8) 92%, rgba(132, 151, 157, 0.8) 100%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(132, 151, 157, 0.8)), color-stop(100%,rgba(132, 151, 157, 0.8)));
@@ -555,10 +556,24 @@ input{
     width: 40px;    
     height: 40px;
     margin-left: -19px;
-    background: rgba(132, 151, 157, 0.8);
+    background: rgba(132, 151, 157, 0.96);
     border-radius: 20px;
-    border: 14px solid rgba(187, 196, 199, 0.9);
-    z-index: 5;
+    border: 14px solid rgba(242,242,242, 0.2);
+    z-index: 1;
+}
+.timeline .visited .status:before{
+    position: absolute;
+    top: 0px;
+    left: -50%;
+    content: " ";
+    display: block;
+    width: 40px;    
+    height: 40px;
+    margin-left: -19px;
+    background: rgba(34, 136, 150, 0.85);
+    border-radius: 20px;
+    border: 14px solid rgba(242,242,242, 0.2);
+    z-index: 1;
 }
 
 .timeline .status:after{
@@ -580,7 +595,7 @@ input{
 .timeline .status .fa-angle-right{
     float: left;
 }
-.timeline .status .visited span{
+.timeline .visited .status span{
     text-align: left;
     text-transform: uppercase;
 }
