@@ -33,8 +33,6 @@ function getPatientList(page_id)
                 output += '<li class="patient" data-icon="false"><div id="' + value.id + '" onClick="setUpTriagePage(this.id)"><div class="col-xs-4 col-md-3 patient_photo text-center"><img class="img-circle" src="' + value.avatar + '"></div><div class="col-xs-8 col-md-9 patient_info"><div class="row"><p class="patient_name">' + value.full_name + '</p></div><div class="row"><p class="patient_date">' + value.gender.substring(0,1).toUpperCase() + ' . ' + value.date_of_birth + '</p></div><div class="row"><p class="patient_issue">' +value.condition + '</p></div></div></div></li>';
               });
 
-              output += output;
-
               $('#patient_list').children('ul').empty();
               $('#patient_list').children('ul').append(output).listview().listview('refresh');
 
@@ -56,10 +54,8 @@ function getPatientList(page_id)
 
               $.each(response.patients, function(index, value)
               {
-                output += '<li class="patient" data-icon="false"><div id="' + value.id + '" onClick="patientSelected(this.id)"><div class="col-xs-3 patient_photo text-center"><img class="img-circle" src="' + value.avatar + '"></div><div class="col-xs-9 patient_info"><div class="row"><p class="patient_name">' + value.full_name + '</p></div><div class="row"><p class="patient_date">' + value.gender.substring(0,1).toUpperCase() + ' . ' + value.date_of_birth + '</p></div><div class="row"><p class="patient_issue">' +value.condition + '</p></div></div></div></li>';
+                output += '<li class="patient" data-icon="false"><div id="' + value.id + '" onClick="patientSelected(this.id,this)"><div class="col-xs-3 patient_photo text-center"><img class="img-circle" src="' + value.avatar + '"></div><div class="col-xs-9 patient_info"><div class="row"><p class="patient_name">' + value.full_name + '</p></div><div class="row"><p class="patient_date">' + value.gender.substring(0,1).toUpperCase() + ' . ' + value.date_of_birth + '</p></div><div class="row"><p class="patient_issue">' +value.condition + '</p></div></div></div></li>';
               });
-
-              output += output;
 
               $('#patient_list').children('ul').empty();
               $('#patient_list').children('ul').append(output).listview().listview('refresh');
@@ -168,11 +164,27 @@ function setUpPatientTriageContent(response)
 }
 
 // one patient selected on Patients page
-function patientSelected(patient_id)
+function patientSelected(patient_id,element)
 {
   // get single patient info by id
-    var single_patient = getSinglePatientInfo(patient_id);
-    console.log(single_patient);
+  var single_patient = getSinglePatientInfo(patient_id);
+  
+  // setup user info in patientlist left slide page
+  if($(element).parent('li').hasClass('selected'))
+  {
+    $(element).parent('li').removeClass('selected');
+  }
+  else
+  {
+    $('#patient_list_view li').removeClass('selected'); 
+    $(element).parent('li').addClass('selected');
+    $('#patientlist_menu .patient_info img').attr('src', single_patient.avatar);
+    $('#patientlist_menu .patient_info .patient_name').text(single_patient.full_name);
+    $('#patientlist_menu .patient_info .birth_date').text(single_patient.date_of_birth);
+    $('#patientlist_menu .patient_info .disease_issue').text(single_patient.condition);
+  }
+
+
 }
 
 function getSinglePatientInfo(patient_id)
