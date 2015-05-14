@@ -172,8 +172,7 @@ function patientSelected(patient_id)
 {
   // get single patient info by id
     var single_patient = getSinglePatientInfo(patient_id);
-
-    alert("Patient profile page still in development");
+    console.log(single_patient);
 }
 
 function getSinglePatientInfo(patient_id)
