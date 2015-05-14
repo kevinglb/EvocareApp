@@ -180,7 +180,7 @@
                                 <img class="main_page_logo" src="img/virtual-clinic-logo.png">
                             </div>
                             <div class="col-xs-9 vertical-middle">
-                                <p class="lg-size">VIRTUAL CLINIC</p>
+                                <p>VIRTUAL CLINIC</p>
                             </div>
                         </div>
                     </a>
@@ -190,7 +190,7 @@
                                 <img class="main_page_logo" src="img/triage-logo.png">
                             </div>
                             <div class="col-xs-9 vertical-middle">
-                                <p class="lg-size">PATIENT TRIAGE</p>
+                                <p>PATIENT TRIAGE</p>
                             </div>
                         </div>
                     </a>
@@ -200,7 +200,7 @@
                                 <img class="main_page_logo" src="img/checklist-logo.png">
                             </div>
                             <div class="col-xs-9 vertical-middle">
-                                <p class="lg-size">PATIENT CHECKLIST</p>
+                                <p>PATIENT CHECKLIST</p>
                             </div>
                         </div>
                     </a>
@@ -210,7 +210,7 @@
                                 <img class="main_page_logo" src="img/consultant-logo.png">
                             </div>
                             <div class="col-xs-9 vertical-middle">
-                                <p class="lg-size">CONSULTANT ON CALL</p>
+                                <p>CONSULTANT ON CALL</p>
                             </div>
                         </div>
                     </a>
@@ -220,7 +220,7 @@
                                 <img class="main_page_logo" src="img/scheduler-logo.png">
                             </div>
                             <div class="col-xs-9 vertical-middle">
-                                <p class="lg-size">SCHEDULER</p>
+                                <p>SCHEDULER</p>
                             </div>
                         </div>
                     </a>
@@ -230,7 +230,7 @@
                                 <img class="main_page_logo" src="img/patient-logo.png">
                             </div>
                             <div class="col-xs-9 vertical-middle">
-                                <p class="lg-size">PATIENTS</p>
+                                <p>PATIENTS</p>
                             </div>
                         </div>
                     </a>
@@ -258,10 +258,10 @@
                     </div>
                     <div class="col-xs-10 vertical-middle">
                         <div class="row">
-                            <span class="sm-size patient_name md-size">Claire O'Dwyer</span> <span class="sm-size light-font birth_date">F. 16 APR 1950</span>
+                            <span class="patient_name md-size">Claire O'Dwyer</span> <span class="sm-size light-font birth_date">F. 16 APR 1950</span>
                         </div>
                         <div class="row">
-                            <span class="sm-size light-font disease_issue">Myeloddysplastic Syndromes(MDS)</span>
+                            <span class="light-font disease_issue">Myeloddysplastic Syndromes(MDS)</span>
                         </div>
                     </div>
                     <div class="clear"></div>
@@ -358,27 +358,49 @@
 
         <!-- virtual clinic -->
         <div id="virtual_clinic_page" data-role="page">
-
             <!-- menu -->
-            <div id="virtual_clinic_right_menu" class="right_menu" data-role="panel" data-position="right" data-display="overlay"> 
+            <div id="vc_right_menu" class="right_menu" data-role="panel" data-position="right" data-display="overlay"> 
             </div>
             <!-- header-->
             <div data-role="header" class="ui-header" position="fixed">
                 <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" class="header_back"><i class="icon icon-arrow-left"></i></a>
                 <h1>virtual clinic</h1>
-                <a href="#virtual_clinic_right_menu"><i class="icon icon-bars"></i></a>
+                <a href="#vc_right_menu"><i class="icon icon-bars"></i></a>
             </div>
             <!-- header -->
             <!-- content -->
             <div data-role="main" class="ui-content">
-                <div class="container">
+                <div id="vc_info"></div>
+                <div id="vc_slide" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
+                    <form id="vc_form" role="form">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item container active">
+                            </div>
+                            <div class="item container">
+                            </div>
+                            <div class="item container">
+                            </div>
+                            <div class="item container">
+                            </div>
+                        </div>
+                         <div class="carousel_controls">
+                            <div class="back_btn">
+                                <a class="left carousel-control" href="#vc_slide" role="button" data-slide="prev" 
+                                onClick="detectTriageCarousel()" disabled="disabled">Back</a>
+                                <!-- <a class="carousel-control add_symptom" onClick="addSymptom()" role="button" style="display:none">+Symptom</a> -->
+                            </div>
+                            <div class="continue_btn">
+                                <a class="right carousel-control" href="#vc_slide" role="button" data-slide="next" onClick="detectTriageCarousel()">Continue</a>
+                                <a class="carousel-control save_note" role="button" style="display:none;">Save</a>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
             <!-- content -->
 
         </div>
         <!-- virtual clinic -->
-
         <!-- triage page -->
         <div id="triage_page" data-role="page">
             <!-- right menu -->
@@ -397,7 +419,6 @@
             <!-- content -->
             <div role="main" class="ui-content">
                 <div id="triage_info">
-
                 </div>
                 <!-- caoursel -->
                 <div id="triage_slide" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
@@ -431,60 +452,7 @@
                             
                             <div class="item container">
                                 <div class="row">
-
-                                    <!-- <ul class="timeline">
-                                        <li class="timeline_item">
-                                            <div class="date col-xs-4 md-size">
-                                                5 March
-                                            </div>
-                                            <div class="status col-xs-4 col-xs-offset-4">
-                                                <i class="fa fa-2x fa-angle-right"></i>
-                                                <i class="fa fa-2x fa-close"></i>
-                                            </div>
-                                        </li>
-                                         <li>
-                                            <div class="date col-xs-4 md-size">
-                                                18 Feb
-                                            </div>
-                                            <div class="status col-xs-4 col-xs-offset-4">
-                                                <i class="fa fa-2x fa-angle-right"></i>
-                                                <i class="fa  fa-2x fa-close"></i>
-                                            </div>
-                                        </li>
-                                         <li class="visited">
-                                            <div class="date col-xs-4 md-size">
-                                                11 Feb
-                                            </div>
-                                            <div class="status col-xs-4 col-xs-offset-4">
-                                                <i class="fa fa-2x fa-angle-right"></i>
-                                               
-                                                <div class="visited"><span>Clinic<br>visit</span></div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="date col-xs-4 md-size">
-                                                17 Jan
-                                            </div>
-                                            <div class="status col-xs-4 col-xs-offset-4">
-                                                <i class="fa fa-2x fa-angle-right"></i>
-                                                <i class="fa fa-2x fa-close"></i>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="date col-xs-4 md-size">
-                                               8 Jan
-                                            </div>
-                                            <div class="status col-xs-4 col-xs-offset-4">
-                                                <i class="fa fa-2x fa-angle-right"></i>
-                                                <i class="fa fa-2x fa-close"></i>
-                                            </div>
-                                        </li>
-                                    </ul> -->
-
-
                                     <ul id="triage_timeline" class="timeline">
-
-
                                     </ul>
                                 </div>
                             </div>
@@ -616,7 +584,7 @@
                         <div class="carousel_controls">
                             <div class="back_btn">
                                 <a class="left carousel-control" href="#triage_slide" role="button" data-slide="prev" 
-                                onClick="detectTriageCarousel()" disabled="disabled" class="md-size">Back</a>
+                                onClick="detectTriageCarousel()" disabled="disabled">Back</a>
                                 <!-- <a class="carousel-control add_symptom" onClick="addSymptom()" role="button" style="display:none">+Symptom</a> -->
                             </div>
                             <div class="continue_btn">
@@ -960,7 +928,7 @@
                             <div class="carousel_controls">
                                 <div class="back_btn">
                                     <a class="left carousel-control" role="button" data-slide="prev" 
-                                    onClick="onBoardingBack()" disabled="disabled" class="md-size">Back</a>
+                                    onClick="onBoardingBack()" disabled="disabled">Back</a>
                                 </div>
                                 <div class="continue_btn">
                                     <a class="right carousel-control" role="button" data-slide="next" onClick="onBoardingSave()">Save</a>
