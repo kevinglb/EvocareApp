@@ -30,7 +30,7 @@ function getPatientList(page_id)
            {
               $.each(response.patients, function(index, value)
               {
-                output += '<li class="patient" data-icon="false"><div id="' + value.id + '" onClick="setUpTriagePage(this.id)"><div class="col-xs-3 patient_photo text-center"><img class="img-circle" src="' + value.avatar + '"></div><div class="col-xs-9 patient_info"><div class="row"><p class="patient_name">' + value.full_name + '</p></div><div class="row"><p class="patient_date">' + value.gender.substring(0,1).toUpperCase() + ' . ' + value.date_of_birth + '</p></div><div class="row"><p class="patient_issue">' +value.condition + '</p></div></div></div></li>';
+                output += '<li class="patient" data-icon="false"><div id="' + value.id + '" onClick="setUpTriagePage(this.id)"><div class="col-xs-4 col-md-3 patient_photo text-center"><img class="img-circle" src="' + value.avatar + '"></div><div class="col-xs-8 col-md-9 patient_info"><div class="row"><p class="patient_name">' + value.full_name + '</p></div><div class="row"><p class="patient_date">' + value.gender.substring(0,1).toUpperCase() + ' . ' + value.date_of_birth + '</p></div><div class="row"><p class="patient_issue">' +value.condition + '</p></div></div></div></li>';
               });
 
               output += output;
@@ -360,7 +360,8 @@ function onBoardingSave()
     onboard_gender = $(this).val();
   });
 
-  var onboard_telephone = $('#onboarding_contact_number').val();
+  var onboard_home_phone = $('#onboarding_home_number').val();
+  var onboard_mobile = $('#onboarding_mobile_number').val();
   var onboard_birth_date = $('#onboarding_birthday').val();
   var onboard_occupation = $('#onboarding_occupation').val();
   var onboard_patient_address = $('#onboarding_address').val();
@@ -393,8 +394,9 @@ function onBoardingSave()
   var onboard_kin2_address = $('#onboarding_kin2_address').val();
   var onboard_kin2_phone = $('#onboarding_kin2_phone').val();
 
-  var onboard_past_medicine = $('#onboarding_medication_history').val();
-  var onboard_allergies = $('#onboarding_problem_period').val();
+  var onboard_past_medicine = $('#onboarding_does_takeing').val();
+  var onboard_allergies = $('#onboarding_allergies_history').val();
+  var onboard_problem_period = $('#onboarding_problem_period').val();
   var onboard_religious = $('#onboarding_religious').val();
 
   var onboard_gp_fullname = $('#onboarding_gp_full_name').val();
@@ -465,7 +467,7 @@ function onBoardingSave()
     onboard_cancer = true;
   }
 
-  var onboard_data = {key: api_key, full_name: onboard_full_name, email: onboard_email, gender: onboard_gender, telephone: onboard_telephone,
+  var onboard_data = {key: api_key, full_name: onboard_full_name, email: onboard_email, gender: onboard_gender, telephone: onboard_home_phone,
                       date_of_birth: onboard_birth_date, occupation: onboard_occupation, address: onboard_patient_address, nationality: onboard_country,
                       has_medical_card: onboard_medical_card, medical_insurance: onboard_insurance, pps: onboard_pps, kin1_full_name: onboard_kin1_fullname,
                       kin1_address: onboard_kin1_address, kin1_telephone: onboard_kin1_phone, kin2_full_name: onboard_kin2_fullname,
@@ -503,6 +505,16 @@ function onBoardingSave()
         }
     });
 
+}
+
+function onBoardingBack()
+{
+    $.mobile.changePage("#patientlist_page", 
+    {
+      transition: "slide",
+      reverse: false,
+      changeHash: true
+    });
 }
 
 

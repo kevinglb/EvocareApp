@@ -410,7 +410,7 @@
                                 <div class="row below_content">
                                     <div class="col-xs-5">
                                         <span id="patient_contacts" class="lg_text_left "></span>
-                                        <span class="sm_text_left regular-text">Patient <br>Contacts</span>
+                                        <span class="sm_text_left">Patient <br>Contacts</span>
                                     </div>
                                     <div class="col-xs-2 text-center">
                                         <i class="icon icon-arrow-left-g icon-reverse"></i>
@@ -722,7 +722,7 @@
         <div id="onborading_page" data-role="page">
             <div data-role="header" class="ui-header">
                 <a href="#" data-rel="back" data-transition="slide" data-direction="reverse"><i class="icon icon-arrow-left"></i></a>
-
+                <h1>PATIENTS</h1>
                 <a href="#"></a>
             </div>
             <!-- content-->
@@ -756,10 +756,16 @@
                             <div class="form-group">
                                  <input type="email" id="onboarding_email" name="email" class="form-control no-border input-lg" placeholder="Email Address"/>
                             </div>
+                           
                             <div class="form-group">
-                                <input type="number" id="onboarding_contact_number" name="contact_number" class="form-control no-border input-lg" placeholder="Number-home/mobile"/>
+                                <input type="number" id="onboarding_home_number" name="contact_number" class="form-control no-border input-lg" placeholder="Home Phone Number"/>
                             </div>
+                             <div class="form-group">
+                                <input type="number" id="onboarding_mobile_number" name="mobile_number" class="form-control no-border input-lg" placeholder="Mobile Phone Number"/>
+                            </div>
+                            
                             <div class="form-group">
+                                <label>Nationality</label>
                                 <div class="form-item">
                                     <input id="country_selector" type="text">
                                 </div>
@@ -774,22 +780,24 @@
                                 <input type="text" id="onboarding_pps" name="pps" class="form-control no-border input-lg" placeholder="PPS number"/>
                             </div>
                             <div class="form-group">
-                                <input type="text" id="onboarding_kin1_fullname" name="kin1_fullname" class="form-control no-border input-lg" placeholder="Kin1 full name"/>
+                                <label>Next of Kin 1</label>
+                                <input type="text" id="onboarding_kin1_fullname" name="kin1_fullname" class="form-control no-border input-lg" placeholder="Name"/>
                             </div>
                             <div class="form-group">
-                                <input type="text" id="onboarding_kin1_address" name="kin1_address" class="form-control no-border input-lg" placeholder="Kin1 address"/>
+                                <input type="text" id="onboarding_kin1_address" name="kin1_address" class="form-control no-border input-lg" placeholder="Address"/>
                             </div>
                             <div class="form-group">
-                                <input type="number" id="onboarding_kin1_phone" name="kin1_phone" class="form-control no-border input-lg" placeholder="Kin1 phone number"/>
+                                <input type="number" id="onboarding_kin1_phone" name="kin1_phone" class="form-control no-border input-lg" placeholder="Phone number"/>
                             </div>
                             <div class="form-group">
-                                <input type="text" id="onboarding_kin2_fullname" name="kin2_fullname" class="form-control no-border input-lg" placeholder="Kin2 full name"/>
+                                <label>Next of Kin 2</label>
+                                <input type="text" id="onboarding_kin2_fullname" name="kin2_fullname" class="form-control no-border input-lg" placeholder="Name"/>
                             </div>
                             <div class="form-group">
-                                <input type="text" id="onboarding_kin2_address" name="kin2_address" class="form-control no-border input-lg" placeholder="Kin2 address"/>
+                                <input type="text" id="onboarding_kin2_address" name="kin2_address" class="form-control no-border input-lg" placeholder="Address"/>
                             </div>
                              <div class="form-group">
-                                <input type="number" id="onboarding_kin2_phone" name="kin1_phone" class="form-control no-border input-lg" placeholder="Kin2 phone number"/>
+                                <input type="number" id="onboarding_kin2_phone" name="kin1_phone" class="form-control no-border input-lg" placeholder="Phone number"/>
                             </div>
                             <div class="form-group">
                                 <p>Do you have a medical card?</p>
@@ -815,20 +823,25 @@
                                     <label for="vhi" class="light-font">VHI</label>
                                     
                                     <input name="onboarding_insurance" id="aviva" value="aviva" type="radio">
-                                    <label for="aviva" class="light-font">AVIVA</label>
+                                    <label for="aviva" class="light-font">Aviva</label>
 
                                     <input name="onboarding_insurance" id="laya" value="laya" type="radio">
-                                    <label for="laya" class="light-font">LAYA</label>
+                                    <label for="laya" class="light-font">Laya</label>
 
                                     <input name="onboarding_insurance" id="glo" value="glo" type="radio">
-                                    <label for="glo" class="light-font">GLO HEALTH</label>
+                                    <label for="glo" class="light-font">Glo Health</label>
 
                                     <input name="onboarding_insurance" id="other" value="other" type="radio">
-                                    <label for="other" class="light-font">OTHER + POLICY NUMBER</label>
+                                    <label for="other" class="light-font">Other</label>
                                 </fieldset>                   
                             </div>
+                            
                             <div class="form-group">
-                                <input name="onboarding_medication_history" id="onboarding_medication_history" class="form-control no-border input-lg" placeholder="Do you have any allergies e.g. food or medication?"/>
+                                <input name="onboarding_does_takeing" id="onboarding_does_takeing" class="form-control no-border input-lg" placeholder="List of Medications & doses currently taking"/>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input name="onboarding_allergies_history" id="onboarding_allergies_history" class="form-control no-border input-lg" placeholder="Do you have any allergies e.g. food or medication?"/>
                             </div>
                             <div class="form-group">
                                 <input name="onboarding_problem_period" id="onboarding_problem_period" class="form-control no-border input-lg" placeholder="How long has it been a problem?"/>
@@ -857,7 +870,7 @@
                                 <input type="number" name="onboarding__pharmacy_phoneNo" id="onboarding__pharmacy_phoneNo" class="form-control no-border input-lg" placeholder="Phone number"/>
                             </div>
                             <div id="onboarding_family_history" class="form-group">
-                                <label>FAMILY HISTORY</label>
+                                <label>Family History</label>
                                 <p>Do any of your close family members (parents, brothers, sisters, grandparents, uncles or aunts) have any of the following?</p>
                                 
                                 <p>Diabetes</p>
@@ -942,7 +955,7 @@
                             <div class="carousel_controls">
                                 <div class="back_btn">
                                     <a class="left carousel-control" role="button" data-slide="prev" 
-                                    onClick="" disabled="disabled" class="md-size">Back</a>
+                                    onClick="onBoardingBack()" disabled="disabled" class="md-size">Back</a>
                                 </div>
                                 <div class="continue_btn">
                                     <a class="right carousel-control" role="button" data-slide="next" onClick="onBoardingSave()">Save</a>
