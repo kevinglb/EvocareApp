@@ -25,7 +25,8 @@ function onDeviceReady()
 
        if($.mobile.activePage.is('#triage_page'))
        {
-        $("#triage_form").trigger('reset'); 
+        console.log('reset triage page');
+        resetTriagePage();
         navigator.app.backHistory();
        }
 
@@ -42,6 +43,9 @@ function resetTriagePage()
   $("#triage_form").trigger('reset'); 
   $('#triage_slide .carousel-inner .item').removeClass('active')
   $('#triage_slide .carousel-inner .item:first').addClass('active');
+  $('#triage_slide .carousel_controls .right').text("CONTINUE");
+  $('#triage_slide .carousel_controls .save_note').hide();
+  $('#triage_slide .carousel_controls .right').show();
 }
 
 function resetOnBoardingPage()
