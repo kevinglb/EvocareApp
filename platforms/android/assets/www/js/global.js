@@ -54,6 +54,7 @@ function resetTriagePage()
   $('#triage_slide .carousel_controls .save_note').hide();
   $('#triage_slide .carousel_controls .right').show();
   $('#treatement_date').val();
+  $('#blood_last_date').val('');
 }
 
 function resetOnBoardingPage()
@@ -68,4 +69,5 @@ function resetVCPage()
   $('#vc_slide .carousel-inner .item').removeClass('active')
   $('#vc_slide .carousel-inner .item:first').addClass('active');
   $('#vc_treatment_last_date').val('');
+  $('#vc_blood_last_date').val('');
 }
