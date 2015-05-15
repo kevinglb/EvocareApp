@@ -26,7 +26,8 @@ function getPatientList(page_id)
             $('#onboarding_btn').hide();
 
             //if user click virtual clinic
-            if(page_id == "virtual_clinic_page"){
+            if(page_id == "virtual_clinic_page")
+            {
               $.each(response.patients, function(index, value)
               {
                 output += '<li class="patient" data-icon="false"><div id="' + value.id + '" onClick="setUpVCPage(this.id)"><div class="col-xs-4 col-md-3 patient_photo text-center"><img class="img-circle" src="' + value.avatar + '"></div><div class="col-xs-8 col-md-9 patient_info"><div class="row"><p class="patient_name">' + value.full_name + '</p></div><div class="row"><p class="patient_date">' + value.gender.substring(0,1).toUpperCase() + ' . ' + value.date_of_birth + '</p></div><div class="row"><p class="patient_issue">' +value.condition + '</p></div></div></div></li>';
@@ -122,7 +123,8 @@ function getPatientList(page_id)
 }
 
 //load data and fill in the VC Page
-function setUpVCPage(patient_id){
+function setUpVCPage(patient_id)
+{
   global_patient_id = patient_id;
 
     // get single patient info by id
@@ -193,7 +195,8 @@ function setUpTriagePage(patient_id)
     });
 }
 
-function setUpVCContent(response){
+function setUpVCContent(response)
+{
   var total_clinic_visits = response.total_clinic_visits;
   var total_patients = response.total;
 
@@ -205,7 +208,7 @@ function setUpVCContent(response){
 
    setTimeout(function()
    {
-      showPercentDonut("vc_pie_chart",total_trend);
+    showPercentDonut('#vc_pie_chart',total_trend);
    }, 1000);
 
 
@@ -250,7 +253,7 @@ function setUpPatientTriageContent(response)
 
    setTimeout(function()
    {
-      showPercentDonut(total_trend);
+    showPercentDonut('#triage_pie_chart', total_trend);
    }, 1000);
 
 
@@ -328,8 +331,9 @@ function getSinglePatientInfo(patient_id)
 
 function showPercentDonut(element_id, percent) 
 {
-
-    var target = document.getElementById(element_id);
+    console.log(element_id + " " + percent);
+    var target = $(element_id);
+    console.log(target);
     target.empty();
     var width= target.width(),
         height = target.height(),
@@ -350,7 +354,7 @@ function showPercentDonut(element_id, percent)
         .innerRadius(radius - 2 - dig)
         .outerRadius(radius -5);
 
-    var svg = d3.select("#pie_chart").append("svg")
+    var svg = d3.select(element_id).append("svg")
         .attr("width", width)
         .attr("height", height)
         .append("g")
