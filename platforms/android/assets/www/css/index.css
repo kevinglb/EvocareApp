@@ -466,6 +466,9 @@ input[type=number]{
     background-color: transparent !important;
     background: transparent;
 }
+.ui-listview>li p{
+    font-size: 1em;
+}
 .ui-listview > .ui-li-static {
     border: none;
 }
@@ -799,6 +802,59 @@ input[type=number]{
     height: 95vh;
     overflow-y: auto;
 }
+
+#checklist_page .ui-input-text{
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #495559;
+    border-radius: 0;
+    box-shadow: none;
+}
+#checklist_page .close_link i{
+    line-height: 48px;
+}
+
+.ui-popup {
+    padding:1.5em 0 0 0;
+    border:none !important;
+}
+.ui-popup h1{
+    margin:0;
+    padding: 0.5em 1.5em;
+    color: #495559;
+    border-bottom: 1px solid #495559; 
+}
+.ui-popup fieldset{
+    padding: 1em 1.5em;
+}
+.ui-popup .popup-btns{
+    width: 100%;
+    margin: 0 auto;
+
+}
+.ui-popup .popup-btns a{
+    width: 50%;
+    float: left;
+    background-color: #A0B2B7;
+    border-radius:0;
+    color: #fff;
+    font-size: 1.2em;
+}
+.ui-popup .popup-btns a:first-child{
+    border-bottom-left-radius: 0.3125em;
+    border-right: 1px solid #fff; 
+}
+.ui-popup .popup-btns a:nth-child(2){
+    border-bottom-right-radius: 0.3125em;
+    border-left: 1px solid #fff;
+}
+
+.list li{
+    background-color: #FFF !important;
+    margin:15px 0 !important;
+    font-size: 1em;
+}
+
 /* checklist page end */
 
 /*event schedule page*/
