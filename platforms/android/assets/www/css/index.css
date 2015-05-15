@@ -712,7 +712,7 @@ input[type=number]{
 .slider_group .ui-slider-track:after{
     clear: both;
 }
-#triage_form .ui-input-text {
+#vc_slide .ui-input-text, #triage_slide .ui-input-text {
     margin-top: 10px;
     background-color: transparent;
     border: none;
@@ -720,7 +720,7 @@ input[type=number]{
     border-bottom: 1px solid #BBC4C7;
     border-radius: 0;
 }
-#triage_form textarea{
+#triage_slide textarea, #vc_slide textarea{
     min-height: 120px;
     max-height: 60vh;
 }

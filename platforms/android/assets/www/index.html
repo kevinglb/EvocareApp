@@ -1077,8 +1077,8 @@
                     <!-- wrapper for slides -->
                     <div class="carousel-inner" role="listbox">  
                         <div class="item active container">
-                                <h3>Create Checklist</h3>
                             <div class="row">
+                                <h3>Create Checklist</h3>
                                 <ul id="checklist_listview_create" data-role="listview">
                                     <li>
                                         <div class="col-xs-10">
@@ -1145,100 +1145,96 @@
                                     <button type="button" class="ui-btn ui-corner-all ui-btn-a" onclick="addNewNote()">ADD NOTE</button>
                                 </div>
                         </div> 
-                        <div class="item container">
-                            <div class="checklist_user_assign">                       
-                                <ul data-role="listview" data-autodividers="true" data-filter="true" data-inset="true" data-filter-placeholder="Assign Checklist Name to">
-                                    <li data-icon="delete">
-                                        <a href="">
-                                            <img src="img/RedCross.png">
-                                            <h3>Stephen Morrissey</h3>
-                                            <p>M.20 Mar 1952</p>
-                                            <p>T.Lorem Ipsum</p>
-                                        </a>
+                        <div class="item contianer">
+                            <div class="row">
+                                <div class="col-xs-10">
+                                    <h3>Checklist Info</h3>
+                                </div>
+                                <div class="col-xs-2">
+                                    <a href="#" onClick="showEditBtn()" class="btn" id="editbtn">Edit</a>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="row">
+                                <ul data-role="listview" id="checklist_list">
+                                    <li data-icon="false">
+                                        <div>
+                                            <div class="col-xs-10">
+                                                <p>Checklist name 1</p>    
+                                            </div>
+                                            <div class="col-xs-1 checklist_edit_btn" style="display:none">
+                                                <a href="#"  onClick="goEditChecklist()"><i class="fa fa-2x fa-edit"></i></a>
+                                            </div>
+                                            <div class="col-xs-1 checklist_edit_btn" style="display:none">
+                                                <a href="#"><i class="fa fa-2x fa-trash-o"></i></a>
+                                            </div>
+                                        </div>
                                     </li>
-
-                                    <li data-icon="delete">
-                                        <a href="">
-                                            <img src="img/RedCross.png">
-                                            <h3>Claire O'Dwyer</h3>
-                                            <p>F.16 Apr 1952</p>
-                                            <p>Myelodysplastic Syndromes(MDS)</p>
-                                        </a>
+                                    <li data-icon="false">
+                                        <div>
+                                            <div class="col-xs-10">
+                                                <p>Checklist name 2</p>    
+                                            </div>
+                                            <div class="col-xs-1 checklist_edit_btn" style="display:none">
+                                                <a href="#"  onClick="goEditChecklist()"><i class="fa fa-2x fa-edit"></i></a>
+                                            </div>
+                                            <div class="col-xs-1 checklist_edit_btn" style="display:none">
+                                                <a href="#"><i class="fa fa-2x fa-trash-o"></i></a>
+                                            </div>
+                                        </div>
                                     </li>
-                                    <li data-icon="delete">
-                                        <a href="">
-                                            <img src="img/RedCross.png">
-                                            <h3>Tom O'Reilly</h3>
-                                            <p>M.3 July 1942</p>
-                                            <p>T.Lorem Ipsum</p>
-                                        </a>
+                                    <li data-icon="false">
+                                        <div>
+                                            <div class="col-xs-10">
+                                                <p>Checklist name 3</p>    
+                                            </div>
+                                            <div class="col-xs-1 checklist_edit_btn" style="display:none">
+                                                <a href="#" onClick="goEditChecklist()"><i class="fa fa-2x fa-edit"></i></a>
+                                            </div>
+                                            <div class="col-xs-1 checklist_edit_btn" style="display:none">
+                                                <a href="#"><i class="fa fa-2x fa-trash-o"></i></a>
+                                            </div>
+                                        </div>
                                     </li>
-                                    <li data-icon="delete">
-                                        <a href="">
-                                            <img src="img/RedCross.png">
-                                            <h3>Rob Peters</h3>
-                                            <p>F.16 Apr 1952</p>
-                                            <p>Myelodysplastic Syndromes(MDS)</p>
-                                        </a>
+                                    <li data-icon="false">
+                                        <div>
+                                            <div class="col-xs-10">
+                                                <p>Checklist name 4</p>    
+                                            </div>
+                                            <div class="col-xs-1 checklist_edit_btn" style="display:none">
+                                                <a href="#" onClick="goEditChecklist()"><i class="fa fa-2x fa-edit"></i></a>
+                                            </div>
+                                            <div class="col-xs-1 checklist_edit_btn" style="display:none">
+                                                <a href="#"><i class="fa fa-2x fa-trash-o"></i></a>
+                                            </div>
+                                        </div>
                                     </li>
-                                    <li data-icon="delete">
-                                        <a href="">
-                                            <img src="img/RedCross.png">
-                                            <h3>Tom O'Dwyer</h3>
-                                            <p>F.16 Jun 1952</p>
-                                            <p>Myelodysplastic Syndromes(MDS)</p>
-                                        </a>
-                                    </li>
-
                                 </ul>
                             </div>
                         </div>
-                        <div class="item container">
-
-                        </div>
-                        <div class="item container">
-                             <div class="row">
-                                    <h3 class="md-font">First Chemotherapy</h3>
-                                    <div class="symptom_chooselist">
-                                        <input name="chemotherapy_1" id="chemotherapy_1" value="" type="checkbox">
-                                        <label for="chemotherapy_1">Bring current medications</label>
-                                     
-                                        <input name="chemotherapy_2" id="chemotherapy_2" value="" type="checkbox">
-                                        <label for="chemotherapy_2">checklist item 2</label>
-                                     
-                                        <input name="chemotherapy_3" id="chemotherapy_3" value="" type="checkbox">
-                                        <label for="chemotherapy_3">checklist item 3</label>
-                                     
-                                        <input name="chemotherapy_4" id="chemotherapy_4" value="" type="checkbox">
-                                        <label for="chemotherapy_4">checklist item 4</label>
-    
-                                        <input name="chemotherapy_5" id="chemotherapy_5" value="" type="checkbox">
-                                        <label for="chemotherapy_5">checklist item 5</label>
-
-                                    </div>
-                                </div>
-                        </div>
-                        <div class="item container">
-                            <div class="row">
-                                <h3>Checklist Name</h3>
+                        <div class="item container" id="checklist_edit_content">
+                            <div class="row" style="margin-top:2vh;">
+                                <h3 class="md-font">Checklist Name</h3>
                                 <p>Oncology</p>
+                            </div>
+                            <div class="row" style="margin-top:5vh;">
                                 <p>Completed by T-2 Days</p>
                             </div>
-                            <div class="row">
-                                <h3>Patient Items</h3>
-                                <label>Stop taking pre med 24hr prior to...</label>
+                            <div class="row" style="margin-top:5vh;">
+                                <h3 class="md-font">Patient Items</h3>
+                                <input type="text" value="Stop taking pre meds 24hr prior.."></input>
                             </div>
                             <div class="row">
-                                <h3>System Items</h3>
+                                <h3 class="md-font" style="margin-top:5vh;">System Items</h3>
                                 <label>Order Blood Test</label>
-                                <label>Stop taking pre med 24hr prior to...</label>
+                                <input type="text" value="Blood Test Department"></input>
                             </div>
 
-                            <a href="#assign_popup" data-rel="popup" data-position-to="window" class="btn">assign</a>
+                            <a href="#assign_popup" data-rel="popup" data-position-to="window" class="btn">Assign</a>
                             <div data-role="popup" data-overlay-theme="b" id="assign_popup" >
                                 <h1>Assign Checklist Name to</h1>
                                 <fieldset>
-                                    <input name="assign_option" id="assign_patient" value="patient" checked="checked" type="radio">
+                                    <input name="assign_option" id="assign_patient" value="patient"  type="radio">
                                     <label for="assign_patient" class="light-font">Patient</label>
 
                                     <input name="assign_option" id="assign_group" value="group" type="radio">
@@ -1248,12 +1244,16 @@
                                     <label for="assign_event" class="light-font">Event</label>
                                 </fieldset>
                                  <div class="row popup-btns">
-                                        <a href="#" class="btn">Cancel</a>
-                                        <a href="#" class="btn">Continue</a>
+                                        <a href="#" class="btn" data-rel="back">Cancel</a>
+                                        <a href="#" class="btn" data-rel="back" onClick="gotoAssign()">Continue</a>
                                         <div class="clear"></div>
                                 </div>
                             </div>
                         </div>
+                        <div class="item container" id="checklist_assign_content">
+                        </div>
+                        
+                        
                         <div class="item container">
                             <div class="row">
                                 <h3>Assign Checklist Name to</h3>
@@ -1359,10 +1359,26 @@
                             </div>
                         </div>
                         <div class="item container">
-                            <div class="row">
-                                <ul data-role="listview">
-                                </ul>
-                            </div>
+                             <div class="row">
+                                    <h3 class="md-font">First Chemotherapy</h3>
+                                    <div class="symptom_chooselist">
+                                        <input name="chemotherapy_1" id="chemotherapy_1" value="" type="checkbox">
+                                        <label for="chemotherapy_1">Bring current medications</label>
+                                     
+                                        <input name="chemotherapy_2" id="chemotherapy_2" value="" type="checkbox">
+                                        <label for="chemotherapy_2">checklist item 2</label>
+                                     
+                                        <input name="chemotherapy_3" id="chemotherapy_3" value="" type="checkbox">
+                                        <label for="chemotherapy_3">checklist item 3</label>
+                                     
+                                        <input name="chemotherapy_4" id="chemotherapy_4" value="" type="checkbox">
+                                        <label for="chemotherapy_4">checklist item 4</label>
+    
+                                        <input name="chemotherapy_5" id="chemotherapy_5" value="" type="checkbox">
+                                        <label for="chemotherapy_5">checklist item 5</label>
+
+                                    </div>
+                                </div>
                         </div>
                     </div>
                               <!-- controls -->
@@ -1533,6 +1549,40 @@ function SwitchToggle(status,element){
     }
 }
 
+function showEditBtn(){
+    if($(".checklist_edit_btn").is(':visible')){
+        $(".checklist_edit_btn").hide();
+        $("#editbtn").text('Edit');
+    }
+    else{
+        $(".checklist_edit_btn").show();
+        $("#editbtn").text("Done");
+        
+    }
+}
+
+function goEditChecklist(){
+
+    //load the selected checklist info and jump to the next edit page
+    $("#checklist_slide").carousel('next');
+}
+
+function gotoAssign(){
+    var target = $('#assign_popup').children('fieldset');
+    var target_item;
+    if(target.children('.ui-radio').first().children('label').hasClass('ui-radio-on')){
+        target_item = "patient";
+    }
+    else if(target.children('.ui-radio:nth-child(2)').children('label').hasClass('ui-radio-on')){
+        target_item = "group";
+    }
+    else if(target.children('.ui-radio').last().children('label').hasClass('ui-radio-on')){
+        target_item = "event";
+    }
+
+    //loadAssignContent(target_item);
+    $("#checklist_slide").carousel('next');
+}
 $("#country_selector").countrySelect({
                 //defaultCountry: "jp",
                 //onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
