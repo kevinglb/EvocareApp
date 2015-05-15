@@ -25,6 +25,26 @@ function getPatientList(page_id)
             // hide onboarding button
             $('#onboarding_btn').hide();
 
+            //if user click virtual clinic
+            if(page_id == "virtual_clinic_page"){
+              $.each(response.patients, function(index, value)
+              {
+                output += '<li class="patient" data-icon="false"><div id="' + value.id + '" onClick="setUpVCPage(this.id)"><div class="col-xs-4 col-md-3 patient_photo text-center"><img class="img-circle" src="' + value.avatar + '"></div><div class="col-xs-8 col-md-9 patient_info"><div class="row"><p class="patient_name">' + value.full_name + '</p></div><div class="row"><p class="patient_date">' + value.gender.substring(0,1).toUpperCase() + ' . ' + value.date_of_birth + '</p></div><div class="row"><p class="patient_issue">' +value.condition + '</p></div></div></div></li>';
+              });
+
+              output += output;
+
+              $('#patient_list').children('ul').empty();
+              $('#patient_list').children('ul').append(output).listview().listview('refresh');
+
+              // navigate to patientlist page after updating
+              $.mobile.changePage("#patientlist_page", 
+              {
+                transition: "slide",
+                reverse: false,
+                changeHash: true
+              });
+            }
             // if user click triage page
             if(page_id == "patient_triage_page")
            {
@@ -85,7 +105,41 @@ function getPatientList(page_id)
 		});
 }
 
+//load data and fill in the VC Page
+function setUpVCPage(patient_id){
+  global_patient_id = patient_id;
 
+    // get single patient info by id
+    var single_patient = getSinglePatientInfo(patient_id);
+
+    // set up patient info on triage page header
+    var output = '<div class="col-xs-3 vertical-middle"><img src="' +single_patient.avatar + '" class="img-circle img-responsive"></div><div class="col-xs-9 vertical-middle"><div class="row"><div class="col-xs-6 patient_name md-size">' + single_patient.full_name + '</div><div class="col-xs-1 light-font gender">'+single_patient.gender.substring(0,1)+'</div><div class="col-xs-5 light-font birth_date">' + single_patient.date_of_birth + '</div></div><div class="row"><div class="col-xs-12 light-font disease_issue">' + single_patient.condition + '</div></div></div>';
+    $('#vc_info').first().html(output);
+
+    // get patient triage history
+    $.ajax(
+    {
+        url : patientTriageHistory_url,
+        type: "POST",
+        data : {key: api_key, patient: patient_id},
+        dataType: 'json',
+        success: function(response)
+        {
+          if(response.status == "1")
+          {
+            setUpVCContent(response);
+          }
+          else
+          {
+            alert("Sorry, cannot load patient triage history");
+          }
+        },
+        error: function (error)
+        {
+          alert("Sorry, failed to load patient triage history. Please check your network and try again later");
+        }
+    });
+}
 //load data and fill in the Triage Page
 function setUpTriagePage(patient_id)
 {
@@ -123,6 +177,50 @@ function setUpTriagePage(patient_id)
     });
 }
 
+function setUpVCContent(response){
+  var total_clinic_visits = response.total_clinic_visits;
+  var total_patients = response.total;
+
+  var total_trend = (total_clinic_visits/total_patients) * 100;
+
+  // set up triage trend page
+  $('#vc_slide .patient_contacts').text(total_patients);
+  $('#vc_slide .clinic_visit').text(total_clinic_visits);
+
+   setTimeout(function()
+   {
+      showPercentDonut("vc_pie_chart",total_trend);
+   }, 1000);
+
+
+  // set up triage timeline
+  var triage_time_data = [];
+  $.each(response.list, function(index, value)
+  {
+    if(value.clinic_visit == false)
+    {
+       triage_time_data += '<li class="timeline_item"><div class="date col-xs-4 md-size">' + value.date + '</div><div class="status col-xs-4 col-xs-offset-4"><i class="fa fa-2x fa-angle-right"></i><i class="fa fa-2x fa-close"></i></div></li>';
+    }
+
+    if(value.clinic_visit == true)
+    {
+       triage_time_data += '<li class="timeline_item visited "><div class="date col-xs-4 md-size">' + value.date + '</div><div class="status col-xs-4 col-xs-offset-4"><i class="fa fa-2x fa-angle-right"></i><div><span>Clinic<br>visit</span></div></div></li>';
+    }
+   
+  });
+
+  $('#vc_timeline').empty();
+  $('#vc_timeline').append(triage_time_data).listview().listview('refresh');
+
+  $.mobile.changePage("#vc_page", 
+  {
+    transition: "slide",
+    reverse: false,
+    changeHash: true
+  });
+
+}
+
 function setUpPatientTriageContent(response)
 {
   var total_clinic_visits = response.total_clinic_visits;
@@ -131,8 +229,8 @@ function setUpPatientTriageContent(response)
   var total_trend = (total_clinic_visits/total_patients) * 100;
 
   // set up triage trend page
-  $('#patient_contacts').text(total_patients);
-  $('#clinic_visit').text(total_clinic_visits);
+  $('#triage_slide .patient_contacts').text(total_patients);
+  $('#triage_slide .clinic_visit').text(total_clinic_visits);
 
    setTimeout(function()
    {
@@ -188,10 +286,10 @@ function getSinglePatientInfo(patient_id)
     return null;
 }
 
-function showPercentDonut(percent) 
+function showPercentDonut(element_id, percent) 
 {
 
-    var target = $("#pie_chart");
+    var target = document.getElementById(element_id);
     target.empty();
     var width= target.width(),
         height = target.height(),

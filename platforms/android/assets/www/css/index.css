@@ -414,7 +414,7 @@ input[type=number]{
 
 
 /*pie chart*/
-#pie_chart{
+.pie_chart{
     height: 36vh;
     padding: 15px 0;
 }
@@ -739,22 +739,22 @@ input[type=number]{
     font-family: "Bendons-Medium";
 }
 
-.main_content .container a:first-child{
+.main_content .row a:first-child{
     color:  #035b67;
 }
-.main_content .container a:nth-child(2){
+.main_content .row a:nth-child(2){
     color: #A21814;
 }
-.main_content .container a:nth-child(3){
+.main_content .row a:nth-child(3){
     color: #3A8F7A;
 }
-.main_content .container a:nth-child(4){
+.main_content .row a:nth-child(4){
     color: #A76A00;
 }
-.main_content .container a:nth-child(5){
+.main_content .row a:nth-child(5){
     color: #B08A00
 }
-.main_content .container a:last-child{
+.main_content .row a:last-child{
     color: #6d810c
 }
 .main_content a .list_item{
@@ -773,6 +773,7 @@ input[type=number]{
 .main_page_logo{
     height: auto;
     width: 50%;
+    max-width: 10vh;
 }
 /*set the child div of list_item verticle middle*/
 .vertical-middle{
