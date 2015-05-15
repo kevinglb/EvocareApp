@@ -839,7 +839,9 @@ input[type=number]{
     font-size: 1em;
 
 }
-
+#patient_list .patient.selected{
+    background-color: red!important;
+}
 .patient_info .patient_name
 {
     
