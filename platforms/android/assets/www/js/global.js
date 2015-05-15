@@ -5,8 +5,7 @@ var register_url = "http://clinic.evocare.co/api/register";
 var patientList_url = "http://clinic.evocare.co/api/list_patients";
 var patientTriageHistory_url = "http://clinic.evocare.co/api/patient_triage_history";
 var crateNewTriage_url = "http://clinic.evocare.co/api/create_triage";
-var onboard_url = "http://clinic.evocare.co/api/onboard_patient";
-var patientVitrualClinic_url = "";
+var onboard_url = "http://clinic.evocare.co/api/onboard_patient"
 
 
 var api_key = "";
@@ -31,12 +30,12 @@ function onDeviceReady()
         navigator.app.backHistory();
        }
 
-        if($.mobile.activePage.is('#vc_page'))
+       if($.mobile.activePage.is('#vc_page'))
        {
+        console.log('reset triage page');
         resetVCPage();
         navigator.app.backHistory();
        }
-
 
        else 
        {
@@ -54,6 +53,7 @@ function resetTriagePage()
   $('#triage_slide .carousel_controls .right').text("CONTINUE");
   $('#triage_slide .carousel_controls .save_note').hide();
   $('#triage_slide .carousel_controls .right').show();
+  $('#treatement_date').val();
 }
 
 function resetOnBoardingPage()
@@ -64,7 +64,8 @@ function resetOnBoardingPage()
 
 function resetVCPage()
 {
-  $("#vc_form").trigger('reset');  
+  $('#vc_form').trigger('reset');
   $('#vc_slide .carousel-inner .item').removeClass('active')
   $('#vc_slide .carousel-inner .item:first').addClass('active');
+  $('#vc_treatment_last_date').val('');
 }
