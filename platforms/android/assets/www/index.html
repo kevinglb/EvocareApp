@@ -1066,7 +1066,7 @@
             <div data-role="header" position="fixed" class="ui-header">
                 <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" class="head_back"><i class="icon icon-arrow-left"></i></a>
                 <h1>Checklist</h1>
-                <a href="#checklist_right_menu" class="ui-btn ui-corner-all"><i class="icon icon-dots"></i></a>
+                <a href="#" class="ui-btn ui-corner-all"><i class="icon icon-dots"></i></a>
             </div>
             <!-- header -->
             <!-- content -->
@@ -1078,39 +1078,39 @@
                                 <h3>Create Checklist</h3>
                             <div class="row">
                                 <ul id="checklist_listview_create" data-role="listview">
-                                    <li class="ui-field-contain">
-                                        <div class="col-xs-9">
+                                    <li>
+                                        <div class="col-xs-10">
                                             <input type="text" id="checklist_name_create" name="checklist name" placeholder="Checcklist name">
                                         </div>
-                                        <div class="col-xs-2 col-xs-offset-1">
-                                            <a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a>
+                                        <div class="col-xs-2 ">
+                                            <a href="#" class="close_link text-center" ><i class="fa fa-2x fa-close"></i></a>
                                         </div>
                                     </li>
                                     
-                                    <li class="ui-field-contain">
-                                        <div class="col-xs-9">
+                                    <li>
+                                        <div class="col-xs-10">
                                             <input type="text" id="checklist_category_create" name="category" placeholder="Category">
                                         </div>
-                                        <div class="col-xs-2 col-xs-offset-1">
-                                            <a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a>
+                                        <div class="col-xs-2">
+                                            <a href="#" class="close_link text-center" ><i class="fa fa-2x fa-close"></i></a>
                                         </div>
                                     </li>
 
-                                    <li class="ui-field-contain">
-                                        <div class="col-xs-9">
-                                            <input type="text" id="checklist_tag1_create" name="tag1" placeholder="Optional tag 1">
+                                    <li>
+                                        <div class="col-xs-10">
+                                            <input type="text" id="checklist_tag1_create" name="tag1" placeholder="Optional tag">
                                         </div>
-                                        <div class="col-xs-2 col-xs-offset-1">
-                                            <a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a>
+                                        <div class="col-xs-2">
+                                            <a href="#" class="close_link text-center" onClick="removeTag(this)" ><i class="fa fa-2x fa-close"></i></a>
                                     </div>
                                         </li>
                                 
-                                    <li class="ui-field-contain">
-                                        <div class="col-xs-9">
-                                            <input type="text" id="checklist_tag2_create" name="tag2" placeholder="Optional tag 2">
+                                    <li>
+                                        <div class="col-xs-10">
+                                            <input type="text" id="checklist_tag2_create" name="tag2" placeholder="Optional tag">
                                         </div>
-                                         <div class="col-xs-2 col-xs-offset-1">
-                                            <a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a>
+                                         <div class="col-xs-2">
+                                            <a href="#" class="close_link text-center" onClick="removeTag(this)"><i class="fa fa-2x fa-close"></i></a>
                                         </div>
                                     </li>
                                 </ul>
@@ -1121,22 +1121,24 @@
                             <h3>Checklist Name</h3>
                                 <div class="row">
                                     <ul id="checklist_listview_item" data-role="listview">
+                                        <h3 class="text-center">ITEM1</h3>
                                         <li>
-                                            <h4 style="text-align:center">ITEM1</h4>
-                                                <div class="col-xs-9">
+                                            <div class="col-xs-10">
                                                     <input type="text" id="item1_task" name"item" placeholder="Item/Task">
-                                                </div>
-                                                <div class="col-xs-2 col-xs-offset-1">
+                                            </div>
+                                             <div class="col-xs-2">
                                                     <a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a>
-                                                </div>
-
-                                                <div class="col-xs-9">
-                                                    <input type="text" id="item1_respon" name"respon" placeholder="Responsible entity">
-                                                </div>
-                                                <div class="col-xs-2 col-xs-offset-1">
-                                                    <a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a>
-                                                </div>
+                                            </div>
                                         </li>
+                                        </li>
+                                            <div class="col-xs-10">
+                                                    <input type="text" id="item1_respon" name"respon" placeholder="Responsible entity">
+                                            </div>
+                                            <div class="col-xs-2">
+                                                    <a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a>
+                                            </div>
+                                        </li>
+                                        
                                     </ul>
                                     <button type="button" class="ui-btn ui-corner-all ui-btn-a" onclick="addNewNote()">ADD NOTE</button>
                                 </div>
@@ -1189,6 +1191,177 @@
                                 </ul>
                             </div>
                         </div>
+                        <div class="item container">
+
+                        </div>
+                        <div class="item container">
+                             <div class="row">
+                                    <h3 class="md-font">First Chemotherapy</h3>
+                                    <div class="symptom_chooselist">
+                                        <input name="chemotherapy_1" id="chemotherapy_1" value="" type="checkbox">
+                                        <label for="chemotherapy_1">Bring current medications</label>
+                                     
+                                        <input name="chemotherapy_2" id="chemotherapy_2" value="" type="checkbox">
+                                        <label for="chemotherapy_2">checklist item 2</label>
+                                     
+                                        <input name="chemotherapy_3" id="chemotherapy_3" value="" type="checkbox">
+                                        <label for="chemotherapy_3">checklist item 3</label>
+                                     
+                                        <input name="chemotherapy_4" id="chemotherapy_4" value="" type="checkbox">
+                                        <label for="chemotherapy_4">checklist item 4</label>
+    
+                                        <input name="chemotherapy_5" id="chemotherapy_5" value="" type="checkbox">
+                                        <label for="chemotherapy_5">checklist item 5</label>
+
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="item container">
+                            <div class="row">
+                                <h3>Checklist Name</h3>
+                                <p>Oncology</p>
+                                <p>Completed by T-2 Days</p>
+                            </div>
+                            <div class="row">
+                                <h3>Patient Items</h3>
+                                <label>Stop taking pre med 24hr prior to...</label>
+                            </div>
+                            <div class="row">
+                                <h3>System Items</h3>
+                                <label>Order Blood Test</label>
+                                <label>Stop taking pre med 24hr prior to...</label>
+                            </div>
+
+                            <a href="#assign_popup" data-rel="popup" data-position-to="window" class="btn">assign</a>
+                            <div data-role="popup" data-overlay-theme="b" id="assign_popup" >
+                                <h1>Assign Checklist Name to</h1>
+                                <fieldset>
+                                    <input name="assign_option" id="assign_patient" value="patient" checked="checked" type="radio">
+                                    <label for="assign_patient" class="light-font">Patient</label>
+
+                                    <input name="assign_option" id="assign_group" value="group" type="radio">
+                                    <label for="assign_group"  class="light-font">Group</label>
+
+                                    <input name="assign_option" id="assign_event" value="event" type="radio">
+                                    <label for="assign_event" class="light-font">Event</label>
+                                </fieldset>
+                                 <div class="row popup-btns">
+                                        <a href="#" class="btn">Cancel</a>
+                                        <a href="#" class="btn">Continue</a>
+                                        <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item container">
+                            <div class="row">
+                                <h3>Assign Checklist Name to</h3>
+                                <ul data-role="listview" id="group_list" class="list">
+                                    <li data-iconn="false" class="group">
+                                        <div>
+                                            <div class="col-xs-4 text-center">
+                                                <img src=""></img>
+                                            </div>
+                                            <div class="col-xs-8">
+                                                <div class="row group_name">
+                                                    <p>Stage 3 treatment</p>
+                                                </div>
+                                                <div class="row goup_info light-font">
+                                                    <p>patient(S) 35</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-iconn="false" class="group">
+                                        <div>
+                                            <div class="col-xs-4 text-center">
+                                                <img src=""></img>
+                                            </div>
+                                            <div class="col-xs-8">
+                                                <div class="row group_name">
+                                                    <p>Remission</p>
+                                                </div>
+                                                <div class="row goup_info light-font">
+                                                    <p>patient(S) 7</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-iconn="false" class="group">
+                                        <div>
+                                            <div class="col-xs-4 text-center">
+                                                <img src=""></img>
+                                            </div>
+                                            <div class="col-xs-8">
+                                                <div class="row group_name">
+                                                    <p>Title</p>
+                                                </div>
+                                                <div class="row goup_info light-font">
+                                                    <p>patient(S) 9</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-iconn="false" class="group">
+                                        <div>
+                                            <div class="col-xs-4 text-center">
+                                                <img src=""></img>
+                                            </div>
+                                            <div class="col-xs-8">
+                                                <div class="row group_name">
+                                                    <p>Title</p>
+                                                </div>
+                                                <div class="row goup_info light-font">
+                                                    <p>patient(S) 23</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="item container">
+                            <div class="row">
+                                <h3>Assign Checklist Name to</h3>
+                                <ul data-role="listview" id="event_list" class="list">
+                                    <li data-iconn="false" class="event">
+                                        <div>
+                                            <div class="col-xs-4 text-center">
+                                                <img src=""></img>
+                                            </div>
+                                            <div class="col-xs-8 event_name">
+                                                <p>Chemotherapy</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-iconn="false" class="event">
+                                        <div>
+                                            <div class="col-xs-4 text-center">
+                                                <img src=""></img>
+                                            </div>
+                                            <div class="col-xs-8 event_name">
+                                                <p>Event Title</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                     <li data-iconn="false" class="event">
+                                        <div>
+                                            <div class="col-xs-4 text-center">
+                                                <img src=""></img>
+                                            </div>
+                                            <div class="col-xs-8 event_name">
+                                                <p>Event Title</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="item container">
+                            <div class="row">
+                                <ul data-role="listview">
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                               <!-- controls -->
                         <div class="carousel_controls">
@@ -1234,20 +1407,27 @@
 
 <script type="text/javascript">
 
-var tag_id = 3;
 function addNewTag()
 {
-    $('#checklist_listview_create').append('<li class="ui-field-contain"> <div class="col-xs-9"><div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="text" id="checklist_tag' + tag_id + '" name="tag' + tag_id + '" placeholder="Optional tag ' + tag_id + '"></div></div><div class="col-xs-2 col-xs-offset-1"><a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a></div></li>').listview('refresh');
-    
-    tag_id ++;
-    var last_li = $("#checklist_listview_create li:last-child").offset().top;
+    var index = $("#checklist_listview_create>li").length-1;
+    $('#checklist_listview_create').append('<li> <div class="col-xs-10"><div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="text" id="checklist_tag' + index + '" name="tag' + index + '" placeholder="Optional tag"></div></div><div class="col-xs-2"><a href="#" class="close_link text-center" onClick="removeTag(this)"><i class="fa fa-2x fa-close"></i></a></div></li>').listview('refresh');
+    //var last_li = $("#checklist_listview_create li:last-child").offset().top;
 }
-var item_id = 2;
+
+function removeTag(element){
+    // var id = $(el).parent('div').parent('li').attr('id');
+    // console.log(id);
+    var target = $(element).parent('div').parent('li');
+    target.remove();
+}
+
 function addNewNote()
 {
     $('#checklist_listview_item').append(' <li><h4 style="text-align:center">ITEM' + item_id + '</h4><div class="col-xs-9"><div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="text" id="item' + item_id + '_task" name"item" placeholder="Item/Task"></div></div> <div class="col-xs-2 col-xs-offset-1"><a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a></div><div class="col-xs-9"><div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="text" id="item' + item_id + '"_respon" name="resopn" placeholder="Responsible entity"></div></div><div class="col-xs-2 col-xs-offset-1"><a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a></div></li>').listview('refresh');
     item_id ++;
 }
+
+
 //set up the height of ui-content once the page is loaded
 function setHeightofContent(){
     var screen = $.mobile.getScreenHeight();
