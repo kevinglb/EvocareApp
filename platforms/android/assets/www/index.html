@@ -40,14 +40,12 @@
         
     </head>
     <body onload="setHeightofContent()">
-
         <!-- log in page -->
         <div id="login_page" data-role="page">
             <!-- header -->
             <div date-role="header" class="ui-header" position="fixed">
             </div>
             <!-- header -->
-
             <!-- content -->
             <div role="main" class="ui-content">
                 <div id="login_content" class="container">
@@ -89,7 +87,7 @@
             <div data-role="header">
             </div>
             <div data-role="main" class="ui-content">
-                <div id="signup_content" class="container">
+                <div id="signup_content">
                     <div class="row">
                         <!-- signup form -->
                         <form id="signup_form" role="form">
@@ -159,22 +157,18 @@
                     <li><a href="#">manage patient checklist</a></li>
                     <li><a href="#" style="position:fixed; bottom:0px;">Log out</a></li>
                 </ul>
-
             </div> 
-            
             <!-- header -->
             <div data-role="header"  class="ui-header" position="fixed">
                 <a href="#" data-rel="back" data-transition="slide" data-direction="reverse"><i class="icon icon-arrow-left"></i></a>
                 <a href="#main_right_menu" class="menu_btn"><i class="icon icon-bars"></i></a>
             </div>
             <!-- header -->
-
             <!-- content -->
-
             <div data-role="main" class="ui-content">
                <div id="main_content" class="main_content">
-                <div class="container">
-                    <a href="#virtual_clinic_page" data-transition="slide">
+                <div class="row">
+                    <a href="#" id="virtual_clinic_page" data-transition="slide" onClick="loadPatientInfo(this.id)">
                         <div class="row list_item">
                             <div class="col-xs-3 vertical-middle text-center">
                                 <img class="main_page_logo" src="img/virtual-clinic-logo.png">
@@ -183,8 +177,9 @@
                                 <p>VIRTUAL CLINIC</p>
                             </div>
                         </div>
+                        <div class="clear"></div>
                     </a>
-                    <a id="patient_triage_page" onClick="loadPatientInfo(this.id)">
+                    <a href="#" id="patient_triage_page" onClick="loadPatientInfo(this.id)">
                         <div class="row list_item">
                             <div class="col-xs-3 text-center vertical-middle">
                                 <img class="main_page_logo" src="img/triage-logo.png">
@@ -193,6 +188,7 @@
                                 <p>PATIENT TRIAGE</p>
                             </div>
                         </div>
+                        <div class="clear"></div>
                     </a>
                     <a href="#checklist_page" data-transition="slide">
                         <div class="row list_item">
@@ -203,6 +199,7 @@
                                 <p>PATIENT CHECKLIST</p>
                             </div>
                         </div>
+                        <div class="clear"></div>
                     </a>
                     <a href="conulstant_page" data-transition="slide" onClick="loadPatientInfo(this.id)">
                         <div class="row list_item">
@@ -213,6 +210,7 @@
                                 <p>CONSULTANT ON CALL</p>
                             </div>
                         </div>
+                        <div class="clear"></div>
                     </a>
                     <a href="#event_schedule_page" data-transition="slide">
                         <div class="row list_item">
@@ -223,6 +221,7 @@
                                 <p>SCHEDULER</p>
                             </div>
                         </div>
+                        <div class="clear"></div>
                     </a>
                     <a id="patients_page" href="#" onClick="loadPatientInfo(this.id)" data-transition="slide">
                         <div class="row list_item">
@@ -233,6 +232,7 @@
                                 <p>PATIENTS</p>
                             </div>
                         </div>
+                        <div class="clear"></div>
                     </a>
                 </div>
                </div>
@@ -249,7 +249,6 @@
                 <div data-role="header">
                     <a href="#"><i class="icon icon-bars-g"></i></a>
                     <a href="#"><i class="icon icon-dots-g"></i></a>
-
                 </div>
                 <div data-role="main" class="ui-content">
                 <div class="patient_info">
@@ -267,7 +266,6 @@
                     </div>
                     <div class="clear"></div>
                 </div>
-
                 <ul id="patientlist_menu_list" data-role="listview">
                     <li data-icon="false">
                         <a href="#">
@@ -281,11 +279,9 @@
                             </div>
                         </a>
                     </li>
-
                     <li data-icon="false">
                         <a href="#">
                             <div>
-
                                 <div class="col-xs-1">
                                     <i class="fa fa-angle-right"></i>
                                 </div>
@@ -328,12 +324,10 @@
                         <div class="col-xs-6">
                            log out
                         </div>
-                  
-
                 </div>
             </div>
             </div> 
-
+            <!-- header -->
             <div data-role="header" class="ui-header">
                 <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" class="header_back"><i class="icon icon-arrow-left"></i></a>
                 <h1>Patient list</h1>
@@ -345,7 +339,7 @@
                     <a href="#"><i class="icon icon-filter"></i></a>
                 </div>
             </div>
-
+            <!-- content -->
             <div data-role="main" class="ui-content">
                 <div class="container">
                     <div id="patient_list">
@@ -356,9 +350,16 @@
             </div>
         </div>
         <!-- patient list page -->
-
-        <!-- virtual clinic -->
-        <div id="virtual_clinic_page" data-role="page">
+        <div id="profile_page" data-role="page">
+            <div data-role="header">
+                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" class="header_back"><i class="icon icon-arrow-left"></i></a>
+            </div>
+            <!-- content -->
+            <div data-role="main" class="ui-content">
+            </div>
+        </div>
+        <!-- virtual clinic page -->
+        <div id="vc_page" data-role="page">
             <!-- menu -->
             <div id="vc_right_menu" class="right_menu" data-role="panel" data-position="right" data-display="overlay"> 
             </div>
@@ -376,67 +377,15 @@
                     <form id="vc_form" role="form">
                         <div class="carousel-inner" role="listbox">
                             <div class="item container active">
-                            </div>
-                            <div class="item container">
-                            </div>
-                            <div class="item container">
-                            </div>
-                            <div class="item container">
-                            </div>
-                        </div>
-                         <div class="carousel_controls">
-                            <div class="back_btn">
-                                <a class="left carousel-control" href="#vc_slide" role="button" data-slide="prev" 
-                                onClick="detectTriageCarousel()" disabled="disabled">Back</a>
-                                <!-- <a class="carousel-control add_symptom" onClick="addSymptom()" role="button" style="display:none">+Symptom</a> -->
-                            </div>
-                            <div class="continue_btn">
-                                <a class="right carousel-control" href="#vc_slide" role="button" data-slide="next" onClick="detectTriageCarousel()">Continue</a>
-                                <a class="carousel-control save_note" role="button" style="display:none;">Save</a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <!-- content -->
-
-        </div>
-        <!-- virtual clinic -->
-        <!-- triage page -->
-        <div id="triage_page" data-role="page">
-            <!-- right menu -->
-            <div id="triage_right_menu" class="right_menu" data-role="panel" data-position="right" data-display="overlay">
-                <ul data-role="listview">
-                </ul>
-            </div>
-            <!-- right menu -->
-            <!-- header -->
-            <div data-role="header" class="ui-header" position="fixed">
-                <a href="#" onclick="resetTriagePage()" data-rel="back" data-transition="slide" data-direction="reverse" class="header_back"><i class="icon icon-arrow-left"></i></a>
-                <h1>Triage Manager</h1>
-                <a href="#triage_right_menu" class="menu_btn"><i class="icon icon-dots"></i></a>
-            </div>
-            <!-- header -->
-            <!-- content -->
-            <div role="main" class="ui-content">
-                <div id="triage_info">
-                </div>
-                <!-- caoursel -->
-                <div id="triage_slide" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
-
-                    <!-- wrapper for slides -->
-                    <form id="triage_form" role="form">
-                        <div class="carousel-inner" role="listbox">
-                            <div class="item active container">
-                                <div class="row">
-                                    <h3 class="md-font">Triage Trend</h3>
+                                 <div class="row">
+                                    <h3 class="md-font">Virtual Clinic Trend</h3>
                                 </div>
                                 <div class="row">
-                                    <div id="pie_chart" class="text-center"></div>
+                                    <div id="vc_pie_chart" class="pie_chart text-center"></div>
                                 </div>
                                 <div class="row below_content">
                                     <div class="col-xs-5">
-                                        <span id="patient_contacts" class="lg_text_left "></span>
+                                        <span class="patient_contacts lg_text_left "></span>
                                         <span class="sm_text_left">Patient <br>Contacts</span>
                                     </div>
                                     <div class="col-xs-2 text-center">
@@ -444,20 +393,16 @@
                                     </div>
                                     <div class="col-xs-5">
                                         <span class="sm_text_right regular-text">Clinic<br> visit</span>
-                                        <span id="clinic_visit" class="lg_text_right"></span>
-                                        
+                                        <span  class=" clinic_visit lg_text_right"></span> 
                                     </div>
-
                                 </div>
                             </div>
-                            
                             <div class="item container">
                                 <div class="row">
-                                    <ul id="triage_timeline" class="timeline">
+                                    <ul id="vc_timeline" class="timeline">
                                     </ul>
                                 </div>
                             </div>
-
                             <div class="item container">
                                 <div class="row">
                                     <div class="form-group ">
@@ -473,8 +418,7 @@
                                                 <span class="switch-button"></span>
                                             </fieldset>
                                         </div>
-                                    </div>
-                                    
+                                    </div>                                 
                                     <div class="form-group">
                                         <label for="treatment_name" class="md-font">Name of the treatment</label>
                                         <input type="text" id="treatment_name" name="treatment_name" class="underline-input"></input>
@@ -493,9 +437,6 @@
                                     </div>
                                 </div>
                             </div>
-                          
-
-
                             <div class="item container">
                                 <div class="row">
                                     <h3 class="md-font">Symptoms</h3>
@@ -520,7 +461,6 @@
                                     </div>
                                 </div>
                             </div>
-                                
                             <div class="item container">
                                 <div class="row">
                                     <h3>Pain</h3>
@@ -563,7 +503,185 @@
                                     </div>
                                 </div>
                             </div>
-                           
+                             <div class="item container">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label for="vc_note">Edit your note:</label>
+                                        <textarea  name="vc_note" id="vc_note"></textarea>
+                                    </div>
+                                </div>
+                           </div>
+                        </div>
+
+                         <div class="carousel_controls">
+                            <div class="back_btn">
+                                <a class="left carousel-control" href="#vc_slide" role="button" data-slide="prev" 
+                                onClick="detectTriageCarousel()" disabled="disabled">Back</a>
+                                <!-- <a class="carousel-control add_symptom" onClick="addSymptom()" role="button" style="display:none">+Symptom</a> -->
+                            </div>
+                            <div class="continue_btn">
+                                <a class="right carousel-control" href="#vc_slide" role="button" data-slide="next" onClick="detectTriageCarousel()">Continue</a>
+                                <a class="carousel-control save_note" role="button" style="display:none;">Save</a>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <!-- content -->
+        </div>
+        <!-- triage page -->
+        <div id="triage_page" data-role="page">
+            <!-- right menu -->
+            <div id="triage_right_menu" class="right_menu" data-role="panel" data-position="right" data-display="overlay">
+                <ul data-role="listview">
+                </ul>
+            </div>
+            <!-- right menu -->
+            <!-- header -->
+            <div data-role="header" class="ui-header" position="fixed">
+                <a href="#" onclick="resetTriagePage()" data-rel="back" data-transition="slide" data-direction="reverse" class="header_back"><i class="icon icon-arrow-left"></i></a>
+                <h1>Triage Manager</h1>
+                <a href="#triage_right_menu" class="menu_btn"><i class="icon icon-dots"></i></a>
+            </div>
+            <!-- header -->
+            <!-- content -->
+            <div role="main" class="ui-content">
+                <div id="triage_info">
+                </div>
+                <!-- caoursel -->
+                <div id="triage_slide" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
+
+                    <!-- wrapper for slides -->
+                    <form id="triage_form" role="form">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active container">
+                                <div class="row">
+                                    <h3 class="md-font">Triage Trend</h3>
+                                </div>
+                                <div class="row">
+                                    <div id="triage_pie_chart" class="pie_chart text-center"></div>
+                                </div>
+                                <div class="row below_content">
+                                    <div class="col-xs-5">
+                                        <span id="patient_contacts" class="lg_text_left "></span>
+                                        <span class="sm_text_left">Patient <br>Contacts</span>
+                                    </div>
+                                    <div class="col-xs-2 text-center">
+                                        <i class="icon icon-arrow-left-g icon-reverse"></i>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <span class="sm_text_right regular-text">Clinic<br> visit</span>
+                                        <span id="clinic_visit" class="lg_text_right"></span> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item container">
+                                <div class="row">
+                                    <ul id="triage_timeline" class="timeline">
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="item container">
+                                <div class="row">
+                                    <div class="form-group ">
+                                        <p class="md-font">On treatment in Unit?</p>
+                                        <div class="switch_group">
+                                            <fieldset id="on_treatment" class="switch" onload="setupSwitch(this)">
+                                                <input id="treatment_no" name="treatment_switch" value="no" type="radio" checked="checked" onClick="SwitchToggle('no',this)">
+                                                <label for="treatment_no">No</label>
+
+                                                <input id="treatment_yes" name="treatment_switch" value="yes" type="radio" onClick="SwitchToggle('yes',this)">    
+                                                <label for="treatment_yes">Yes</label>
+    
+                                                <span class="switch-button"></span>
+                                            </fieldset>
+                                        </div>
+                                    </div>                                 
+                                    <div class="form-group">
+                                        <label for="treatment_name" class="md-font">Name of the treatment</label>
+                                        <input type="text" id="treatment_name" name="treatment_name" class="underline-input"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="treatement_date" class="md-font">Date of last treatment</label>
+                                        <input  id="treatment_last_date" class="datepicker_input" name="treatment_date" class="underline-input"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="blood_date" class="md-font">Last bloods done</label>
+                                        <input type="text" id="blood_last_date" name="blood_date" class="datepicker_input" class="underline-input"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="symptom" class="md-font">Symptom</label>
+                                        <input type="text" id="treatment_symptom" name="symptom" class="underline-input"></input>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item container">
+                                <div class="row">
+                                    <h3 class="md-font">Symptoms</h3>
+                                    <div class="symptom_chooselist">
+                                        <input name="symptom_1" id="symptom_1" value="Breathlessness" type="checkbox">
+                                        <label for="symptom_1">Breathlessness</label>
+                                     
+                                        <input name="symptom_2" id="symptom_2" value="Pain" type="checkbox">
+                                        <label for="symptom_2">Pain</label>
+                                     
+                                        <input name="symptom_3" id="symptom_3" value="Symptom 3" type="checkbox">
+                                        <label for="symptom_3">Symptom 3</label>
+                                     
+                                        <input name="symptom_4" id="symptom_4" value="Symptom 4" type="checkbox">
+                                        <label for="symptom_4">Symptom 4</label>
+    
+                                        <input name="symptom_5" id="symptom_5" value="Symptom 5" type="checkbox">
+                                        <label for="symptom_5">Symptom 5</label>
+
+                                        <input name="symptom_6" id="symptom_6" value="Symptom 6" type="checkbox">
+                                        <label for="symptom_6">Symptom 6</label>
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="item container">
+                                <div class="row">
+                                    <h3>Pain</h3>
+                                    <div class="form-group grade_slider_group">
+                                        <p>Grade 1-4 NCI</p>
+                                        <input name="slider" id="nci_grade" data-highlight="true" min="0" max="4" value="0" type="range" onChange="SliderChange()">
+                                        <label for="slider" disabled="disabled"></label>
+                                        <span class="nci_percent">0%</span>
+                                    </div>
+
+                                    <div class="form-group ">
+                                        <p>History of Pain:</p>
+                                        <div class="switch_group">
+                                            <fieldset id="history_record" class="switch" onload="setupSwitch(this)">
+                                                <input id="history_no" name="history_switch" value="no" type="radio" checked="checked" onClick="SwitchToggle('no',this)">
+                                                <label for="history_no">No</label>
+
+                                                <input id="history_yes" name="history_switch" value="yes" type="radio" onClick="SwitchToggle('yes',this)">    
+                                                <label for="history_yes">Yes</label>
+    
+                                                <span class="switch-button"></span>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                    <div id="pain_character" class="form-group">
+                                        <p>Character of Pain</p>
+                                        <fieldset>
+                                            <input name="radio-choice-v-2" id="radio-choice-v-2a" value="dull" checked="checked" type="radio">
+                                            <label for="radio-choice-v-2a" class="light-font">Dull</label>
+
+                                            <input name="radio-choice-v-2" id="radio-choice-v-2b" value="sharp" type="radio">
+                                            <label for="radio-choice-v-2b"  class="light-font">Sharp</label>
+
+                                            <input name="radio-choice-v-2" id="radio-choice-v-2c" value="Stabbing" type="radio">
+                                            <label for="radio-choice-v-2c" class="light-font">Stabbing</label>
+
+                                            <input name="radio-choice-v-2" id="radio-choice-v-2d" value="Ache" type="radio">
+                                            <label for="radio-choice-v-2d" class="light-font">Ache</label>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>                     
                            <div class="item container">
                                 <div class="row">
 
@@ -573,12 +691,6 @@
                                     </div>
                                 </div>
                            </div>
-
-
-                                    <!-- <button type="button" class="ui-btn ui-corner-all ui-btn-a" onclick="addSymptom()">+ Symptom</button> -->
-                            <!--     </div>
-                            </div>  -->
-
                         </div>
                         <!-- carousel inner -->
                         <!-- controls -->
@@ -600,27 +712,24 @@
             </div>
             <!-- content -->
         </div>
-        <!-- triage page -->
 
         <!-- consultant page -->
         <div id="consultant_page" data-role="page">
-
             <!-- header -->
             <div id="consultant_right_menu" class="right_menu" data-role="panel" data-position="right" data-display="overlay">
             </div>
-
             <div data-role="header" class="ui-header">
                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" class="header_back"><i class="icon icon-arrow-left"></i></a>
                 <h1>Consultant</h1>
                 <a href="#consultant_right_menu"><i class="icon icon-bars"></i></a>
             </div>
-
+            <!-- header -->
+            <!-- content-->
             <div data-role="main" class="ui-content">
 
             </div>
         </div>
         <!-- consultant page -->
-
         <!-- event schedule page -->
         <div id="event_schedule_page" data-role="page">
             <!-- header -->
@@ -938,22 +1047,12 @@
                                 </div>
                             </div>
                         </form>
-                    
                 </div>
             </div>
             <!-- content -->
-
         </div>
-
-
         <!-- checklist page -->
         <div id="checklist_page" data-role="page">
-
-             <!-- left menu -->
-            <div id="checklist_left_menu" class="left_menu" data-role="panel" data-position="left" data-display="push">
-                <h1>Left Menu</h1>
-            </div>
-
             <!-- right menu -->
             <div id="checklist_right_menu" class="right_menu" data-role="panel" data-position="right" data-display="overlay">
                 <h3>Right Menu</h3>
@@ -965,7 +1064,6 @@
                     <li><a href="#" style="position:fixed; bottom:0px;">Log out</a></li>
                 </ul>
             </div>
-
             <!-- header -->
             <div data-role="header" position="fixed" class="ui-header">
                 <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" class="head_back"><i class="icon icon-arrow-left"></i></a>
@@ -973,12 +1071,9 @@
                 <a href="#checklist_right_menu" class="ui-btn ui-corner-all"><i class="icon icon-dots"></i></a>
             </div>
             <!-- header -->
-
             <!-- content -->
             <div data-role="main" class="ui-content">
-
                <div id="checklist_slide" class="carousel slide" data-ride="carousel" data-interval="false">
-
                     <!-- wrapper for slides -->
                     <div class="carousel-inner" role="listbox">  
                         <div class="item active container">
@@ -1024,8 +1119,6 @@
                                 <button type="button" class="ui-btn ui-corner-all ui-btn-a" onclick="addNewTag()">ADD TAG</button>
                             </div>
                         </div>
-                        
-                        
                          <div class="item container">
                             <h3>Checklist Name</h3>
                                 <div class="row">
@@ -1050,7 +1143,6 @@
                                     <button type="button" class="ui-btn ui-corner-all ui-btn-a" onclick="addNewNote()">ADD NOTE</button>
                                 </div>
                         </div> 
-
                         <div class="item container">
                             <div class="checklist_user_assign">                       
                                 <ul data-role="listview" data-autodividers="true" data-filter="true" data-inset="true" data-filter-placeholder="Assign Checklist Name to">
@@ -1071,7 +1163,6 @@
                                             <p>Myelodysplastic Syndromes(MDS)</p>
                                         </a>
                                     </li>
-
                                     <li data-icon="delete">
                                         <a href="">
                                             <img src="img/RedCross.png">
@@ -1080,7 +1171,6 @@
                                             <p>T.Lorem Ipsum</p>
                                         </a>
                                     </li>
-
                                     <li data-icon="delete">
                                         <a href="">
                                             <img src="img/RedCross.png">
@@ -1089,7 +1179,6 @@
                                             <p>Myelodysplastic Syndromes(MDS)</p>
                                         </a>
                                     </li>
-
                                     <li data-icon="delete">
                                         <a href="">
                                             <img src="img/RedCross.png">
@@ -1112,10 +1201,8 @@
                                 <a class="right carousel-control" href="#checklist_slide" role="button" data-slide="next">Continue</a>
                             </div>
                         </div>
-
                 </div>
                 <!-- content end -->
-        
             </div>
             <!-- checlist page end -->
 
@@ -1145,8 +1232,9 @@
                     dateFormat: 'dd-M-yy'
                 });
         });
-        </script>
-    <script type="text/javascript">
+</script>
+
+<script type="text/javascript">
 
 var tag_id = 3;
 function addNewTag()
