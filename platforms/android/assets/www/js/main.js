@@ -28,6 +28,8 @@ function getPatientList(page_id)
             //if user click virtual clinic
             if(page_id == "virtual_clinic_page")
             {
+               $('#patientlist_page h1').text('VIRTUAL CLINIC');
+
               $.each(response.patients, function(index, value)
               {
                 output += '<li class="patient" data-icon="false"><div id="' + value.id + '" onClick="setUpVCPage(this.id)"><div class="col-xs-4 col-md-3 patient_photo text-center"><img class="img-circle" src="' + value.avatar + '"></div><div class="col-xs-8 col-md-9 patient_info"><div class="row"><p class="patient_name">' + value.full_name + '</p></div><div class="row"><p class="patient_date">' + value.gender.substring(0,1).toUpperCase() + ' . ' + value.date_of_birth + '</p></div><div class="row"><p class="patient_issue">' +value.condition + '</p></div></div></div></li>';
@@ -49,6 +51,8 @@ function getPatientList(page_id)
             // if user click triage page
             if(page_id == "patient_triage_page")
            {
+             $('#patientlist_page h1').text('PATIENT TRIAGE');
+
               $.each(response.patients, function(index, value)
               {
                 output += '<li class="patient" data-icon="false"><div id="' + value.id + '" onClick="setUpTriagePage(this.id)"><div class="col-xs-4 col-md-3 patient_photo text-center"><img class="img-circle" src="' + value.avatar + '"></div><div class="col-xs-8 col-md-9 patient_info"><div class="row"><p class="patient_name">' + value.full_name + '</p></div><div class="row"><p class="patient_date">' + value.gender.substring(0,1).toUpperCase() + ' . ' + value.date_of_birth + '</p></div><div class="row"><p class="patient_issue">' +value.condition + '</p></div></div></div></li>';
@@ -69,9 +73,10 @@ function getPatientList(page_id)
             // if user click patients page
             if(page_id == "patients_page")
             {
+              $('#patientlist_page h1').text('PATIENTS');
+
               // display onboarding button
               $('#onboarding_btn').show();
-
 
               $.each(response.patients, function(index, value)
               {
@@ -93,6 +98,8 @@ function getPatientList(page_id)
             // if user click consultant page
             if(page_id == "conulstant_page")
             {
+              $('#patientlist_page h1').text('CONSULTANT ON CALL');
+
               $.each(response.patients, function(index, value)
               {
                 output += '<li class="patient" data-icon="false"><div id="' + value.id + '" onClick="setUpConulstantPage(this.id)"><div class="col-xs-3 patient_photo text-center"><img class="img-circle" src="' + value.avatar + '"></div><div class="col-xs-9 patient_info"><div class="row"><p class="patient_name">' + value.full_name + '</p></div><div class="row"><p class="patient_date">' + value.gender.substring(0,1).toUpperCase() + ' . ' + value.date_of_birth + '</p></div><div class="row"><p class="patient_issue">' +value.condition + '</p></div></div></div></li>';
@@ -137,6 +144,7 @@ function setUpVCPage(patient_id)
     // get patient triage history
     $.ajax(
     {
+       //this url needs to be chaged to patientVitrualClinic_url
         url : patientTriageHistory_url,
         type: "POST",
         data : {key: api_key, patient: patient_id},
