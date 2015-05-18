@@ -365,7 +365,7 @@
             </div>
             <!-- header-->
             <div data-role="header" class="ui-header" position="fixed">
-                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" class="header_back"><i class="icon icon-arrow-left"></i></a>
+                <a href="#" onclick="resetVCPage()" data-rel="back" data-transition="slide" data-direction="reverse" class="header_back"><i class="icon icon-arrow-left"></i></a>
                 <h1>virtual clinic</h1>
                 <a href="#vc_right_menu"><i class="icon icon-bars"></i></a>
             </div>
@@ -408,32 +408,32 @@
                                     <div class="form-group ">
                                         <p class="md-font">On treatment in Unit?</p>
                                         <div class="switch_group">
-                                            <fieldset id="on_treatment" class="switch" onload="setupSwitch(this)">
-                                                <input id="treatment_no" name="treatment_switch" value="no" type="radio" checked="checked" onClick="SwitchToggle('no',this)">
-                                                <label for="treatment_no">No</label>
+                                            <fieldset id="vc_on_treatment" class="switch" onload="setupSwitch(this)">
+                                                <input id="vc_treatment_no" name="vc_treatment_switch" value="no" type="radio" checked="checked" onClick="SwitchToggle('no',this)">
+                                                <label for="vc_treatment_no">No</label>
 
-                                                <input id="treatment_yes" name="treatment_switch" value="yes" type="radio" onClick="SwitchToggle('yes',this)">    
-                                                <label for="treatment_yes">Yes</label>
+                                                <input id="vc_treatment_yes" name="vc_treatment_switch" value="yes" type="radio" onClick="SwitchToggle('yes',this)">    
+                                                <label for="vc_treatment_yes">Yes</label>
     
                                                 <span class="switch-button"></span>
                                             </fieldset>
                                         </div>
                                     </div>                                 
                                     <div class="form-group">
-                                        <label for="treatment_name" class="md-font">Name of the treatment</label>
-                                        <input type="text" id="treatment_name" name="treatment_name" class="underline-input"></input>
+                                        <label for="vc_treatment_name" class="md-font">Name of the treatment</label>
+                                        <input type="text" id="vc_treatment_name" name="vc_treatment_name" class="underline-input"></input>
                                     </div>
                                     <div class="form-group">
-                                        <label for="treatement_date" class="md-font">Date of last treatment</label>
-                                        <input  id="treatment_last_date" class="datepicker_input" name="treatment_date" class="underline-input"></input>
+                                        <label for="vc_treatement_date" class="md-font">Date of last treatment</label>
+                                        <input  id="vc_treatment_last_date" class="datepicker_input" name="vc_treatment_date" class="underline-input"></input>
                                     </div>
                                     <div class="form-group">
-                                        <label for="blood_date" class="md-font">Last bloods done</label>
-                                        <input type="text" id="blood_last_date" name="blood_date" class="datepicker_input" class="underline-input"></input>
+                                        <label for="vc_blood_date" class="md-font">Last bloods done</label>
+                                        <input type="text" id="vc_blood_last_date" name="vc_blood_date" class="datepicker_input" class="underline-input"></input>
                                     </div>
                                     <div class="form-group">
-                                        <label for="symptom" class="md-font">Symptom</label>
-                                        <input type="text" id="treatment_symptom" name="symptom" class="underline-input"></input>
+                                        <label for="vc_symptom" class="md-font">Symptom</label>
+                                        <input type="text" id="vc_treatment_symptom" name="vc_symptom" class="underline-input"></input>
                                     </div>
                                 </div>
                             </div>
@@ -441,23 +441,23 @@
                                 <div class="row">
                                     <h3 class="md-font">Symptoms</h3>
                                     <div class="symptom_chooselist">
-                                        <input name="symptom_1" id="symptom_1" value="Breathlessness" type="checkbox">
-                                        <label for="symptom_1">Breathlessness</label>
+                                        <input name="vc_symptom_1" id="vc_symptom_1" value="Breathlessness" type="checkbox">
+                                        <label for="vc_symptom_1">Breathlessness</label>
                                      
-                                        <input name="symptom_2" id="symptom_2" value="Pain" type="checkbox">
-                                        <label for="symptom_2">Pain</label>
+                                        <input name="vc_symptom_2" id="vc_symptom_2" value="Pain" type="checkbox">
+                                        <label for="vc_symptom_2">Pain</label>
                                      
-                                        <input name="symptom_3" id="symptom_3" value="Symptom 3" type="checkbox">
-                                        <label for="symptom_3">Symptom 3</label>
+                                        <input name="vc_symptom_3" id="vc_symptom_3" value="Symptom 3" type="checkbox">
+                                        <label for="vc_symptom_3">Symptom 3</label>
                                      
-                                        <input name="symptom_4" id="symptom_4" value="Symptom 4" type="checkbox">
-                                        <label for="symptom_4">Symptom 4</label>
+                                        <input name="vc_symptom_4" id="vc_symptom_4" value="Symptom 4" type="checkbox">
+                                        <label for="vc_symptom_4">Symptom 4</label>
     
-                                        <input name="symptom_5" id="symptom_5" value="Symptom 5" type="checkbox">
-                                        <label for="symptom_5">Symptom 5</label>
+                                        <input name="vc_symptom_5" id="vc_symptom_5" value="Symptom 5" type="checkbox">
+                                        <label for="vc_symptom_5">Symptom 5</label>
 
-                                        <input name="symptom_6" id="symptom_6" value="Symptom 6" type="checkbox">
-                                        <label for="symptom_6">Symptom 6</label>
+                                        <input name="vc_symptom_6" id="vc_symptom_6" value="Symptom 6" type="checkbox">
+                                        <label for="vc_symptom_6">Symptom 6</label>
                                     </div>
                                 </div>
                             </div>
@@ -466,8 +466,8 @@
                                     <h3>Pain</h3>
                                     <div class="form-group grade_slider_group">
                                         <p>Grade 1-4 NCI</p>
-                                        <input name="slider" id="nci_grade" data-highlight="true" min="0" max="4" value="0" type="range" onChange="SliderChange()">
-                                        <label for="slider" disabled="disabled"></label>
+                                        <input name="vc_slider" id="vc_nci_grade" data-highlight="true" min="0" max="4" value="0" type="range" onChange="SliderChange(this)">
+                                        <label for="vc_slider" disabled="disabled"></label>
                                         <span class="nci_percent">0%</span>
                                     </div>
 
@@ -475,11 +475,11 @@
                                         <p>History of Pain:</p>
                                         <div class="switch_group">
                                             <fieldset id="history_record" class="switch" onload="setupSwitch(this)">
-                                                <input id="history_no" name="history_switch" value="no" type="radio" checked="checked" onClick="SwitchToggle('no',this)">
-                                                <label for="history_no">No</label>
+                                                <input id="vc_history_no" name="vc_history_switch" value="no" type="radio" checked="checked" onClick="SwitchToggle('no',this)">
+                                                <label for="vc_history_no">No</label>
 
-                                                <input id="history_yes" name="history_switch" value="yes" type="radio" onClick="SwitchToggle('yes',this)">    
-                                                <label for="history_yes">Yes</label>
+                                                <input id="vc_history_yes" name="vc_history_switch" value="yes" type="radio" onClick="SwitchToggle('yes',this)">    
+                                                <label for="vc_history_yes">Yes</label>
     
                                                 <span class="switch-button"></span>
                                             </fieldset>
@@ -645,7 +645,7 @@
                                     <h3>Pain</h3>
                                     <div class="form-group grade_slider_group">
                                         <p>Grade 1-4 NCI</p>
-                                        <input name="slider" id="nci_grade" data-highlight="true" min="0" max="4" value="0" type="range" onChange="SliderChange()">
+                                        <input name="slider" id="nci_grade" data-highlight="true" min="0" max="4" value="0" type="range" onChange="SliderChange(this)">
                                         <label for="slider" disabled="disabled"></label>
                                         <span class="nci_percent">0%</span>
                                     </div>
@@ -667,17 +667,17 @@
                                     <div id="pain_character" class="form-group">
                                         <p>Character of Pain</p>
                                         <fieldset>
-                                            <input name="radio-choice-v-2" id="radio-choice-v-2a" value="dull" checked="checked" type="radio">
-                                            <label for="radio-choice-v-2a" class="light-font">Dull</label>
+                                            <input name="radio-choice-2" id="radio-choice-2a" value="dull" checked="checked" type="radio">
+                                            <label for="radio-choice-2a" class="light-font">Dull</label>
 
-                                            <input name="radio-choice-v-2" id="radio-choice-v-2b" value="sharp" type="radio">
-                                            <label for="radio-choice-v-2b"  class="light-font">Sharp</label>
+                                            <input name="radio-choice-2" id="radio-choice-2b" value="sharp" type="radio">
+                                            <label for="radio-choice-2b"  class="light-font">Sharp</label>
 
-                                            <input name="radio-choice-v-2" id="radio-choice-v-2c" value="Stabbing" type="radio">
-                                            <label for="radio-choice-v-2c" class="light-font">Stabbing</label>
+                                            <input name="radio-choice-2" id="radio-choice-2c" value="Stabbing" type="radio">
+                                            <label for="radio-choice-2c" class="light-font">Stabbing</label>
 
-                                            <input name="radio-choice-v-2" id="radio-choice-v-2d" value="Ache" type="radio">
-                                            <label for="radio-choice-v-2d" class="light-font">Ache</label>
+                                            <input name="radio-choice-2" id="radio-choice-2d" value="Ache" type="radio">
+                                            <label for="radio-choice-2d" class="light-font">Ache</label>
                                         </fieldset>
                                     </div>
                                 </div>
@@ -1597,9 +1597,9 @@ function ScheduleContentSwitch(target)
         $(".clinic_content").show();
     }
 }
-function SliderChange(){
+function SliderChange(element){
     //alert("slider change");
-    var grade = $("#nci_grade").val();
+    var grade = $(element).val();
     if(grade < 2 ){
         $(".grade_slider_group .ui-slider-track .ui-btn-active").removeClass("orange red").addClass('green');
         //$(".grade_slider_group .ui-slider-track .ui-btn.ui-slider-handle").removeClass("orange red").addClass('green');

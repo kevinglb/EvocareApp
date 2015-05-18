@@ -908,6 +908,10 @@ input[type=number]{
 #patient_list .patient.selected{
     background-color: red!important;
 }
+.patient_info {
+    height: 15vh;
+    background: #FFF;
+}
 .patient_info .patient_name
 {
     

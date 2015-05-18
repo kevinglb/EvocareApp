@@ -29,12 +29,21 @@ function onDeviceReady()
         resetTriagePage();
         navigator.app.backHistory();
        }
-       if($.mobile.activePage.is('#checklist_page'))
+      if($.mobile.activePage.is('#checklist_page'))
        {
         console.log('reset checklist page');
         resetChecklistPage();
         navigator.app.backHistory();
        }
+
+
+       if($.mobile.activePage.is('#vc_page'))
+       {
+        console.log('reset triage page');
+        resetVCPage();
+        navigator.app.backHistory();
+       }
+
        else 
        {
         navigator.app.backHistory();
@@ -51,6 +60,8 @@ function resetTriagePage()
   $('#triage_slide .carousel_controls .right').text("CONTINUE");
   $('#triage_slide .carousel_controls .save_note').hide();
   $('#triage_slide .carousel_controls .right').show();
+  $('#treatement_date').val();
+  $('#blood_last_date').val('');
 }
 
 function resetOnBoardingPage()
@@ -59,6 +70,7 @@ function resetOnBoardingPage()
   $('#onboarding_birthday').val('');
 }
 
+<<<<<<< HEAD
 function resetChecklistPage(){  
   $("#triage_form").trigger('reset'); 
   $('#checklist_slide .carousel-inner .item').removeClass('active')
@@ -67,3 +79,13 @@ function resetChecklistPage(){
   $('#checklist_slide .carousel_controls .save_btn').hide();
   $('#checklist_slide .carousel_controls .right').show("CONTINUE");
 }
+=======
+function resetVCPage()
+{
+  $('#vc_form').trigger('reset');
+  $('#vc_slide .carousel-inner .item').removeClass('active')
+  $('#vc_slide .carousel-inner .item:first').addClass('active');
+  $('#vc_treatment_last_date').val('');
+  $('#vc_blood_last_date').val('');
+}
+>>>>>>> f06b2694b2fb52da27de1b261d23acd3255e7eaa
