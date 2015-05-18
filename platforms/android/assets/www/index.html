@@ -1073,7 +1073,7 @@
             <!-- header -->
             <!-- content -->
             <div data-role="main" class="ui-content">
-               <div id="checklist_slide" class="carousel slide" data-ride="carousel" data-interval="false">
+               <div id="checklist_slide" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
                     <!-- wrapper for slides -->
                     <div class="carousel-inner" role="listbox">  
                         <div class="item active container">
@@ -1104,7 +1104,7 @@
                                         </div>
                                         <div class="col-xs-2">
                                             <a href="#" class="close_link text-center" onClick="removeTag(this)" ><i class="fa fa-2x fa-close"></i></a>
-                                    </div>
+                                        </div>
                                         </li>
                                 
                                     <li>
@@ -1116,14 +1116,17 @@
                                         </div>
                                     </li>
                                 </ul>
-                                <button type="button" class="ui-btn ui-corner-all ui-btn-a" onclick="addNewTag()">ADD TAG</button>
+                                <div class="row" >
+                                    <a onclick="addNewTag()" class="add_link"><i class="fa fa-plus-circle"> </i>ADD TAG</a>
+                                </div>
                             </div>
                         </div>
                          <div class="item container">
-                            <h3>Checklist Name</h3>
+                            
                                 <div class="row">
+                                    <h3>Checklist Name</h3>
                                     <ul id="checklist_listview_item" data-role="listview">
-                                        <h3 class="text-center">ITEM1</h3>
+                                        <h3 class="text-center">ITEM 1</h3>
                                         <li>
                                             <div class="col-xs-10">
                                                     <input type="text" id="item1_task" name"item" placeholder="Item/Task">
@@ -1132,17 +1135,19 @@
                                                     <a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a>
                                             </div>
                                         </li>
-                                        </li>
+                                        <li>
                                             <div class="col-xs-10">
                                                     <input type="text" id="item1_respon" name"respon" placeholder="Responsible entity">
                                             </div>
                                             <div class="col-xs-2">
                                                     <a href="#" class="close_link" ><i class="fa fa-2x fa-close"></i></a>
                                             </div>
+                                           
                                         </li>
-                                        
                                     </ul>
-                                    <button type="button" class="ui-btn ui-corner-all ui-btn-a" onclick="addNewNote()">ADD NOTE</button>
+                                    <div class="row" >
+                                        <a class="add_link" onclick="addNewNote()"><i class="fa fa-plus-circle"></i> ADD NOTE</a>
+                                    </div>
                                 </div>
                         </div> 
                         <div class="item contianer">
@@ -1230,7 +1235,7 @@
                                 <input type="text" value="Blood Test Department"></input>
                             </div>
 
-                            <a href="#assign_popup" data-rel="popup" data-position-to="window" class="btn">Assign</a>
+                            <!-- <a href="#assign_popup" data-rel="popup" data-position-to="window" class="btn">Assign</a> -->
                             <div data-role="popup" data-overlay-theme="b" id="assign_popup" >
                                 <h1>Assign Checklist Name to</h1>
                                 <fieldset>
@@ -1251,10 +1256,13 @@
                             </div>
                         </div>
                         <div class="item container" id="checklist_assign_content">
+                            <div class="row">
+                                <h3>Assign Checklist Name to</h3>
+                                <ul data-role="listview" class="list">
+                                </li>
+                            </div>
                         </div>
-                        
-                        
-                        <div class="item container">
+                        <!-- <div class="item container">
                             <div class="row">
                                 <h3>Assign Checklist Name to</h3>
                                 <ul data-role="listview" id="group_list" class="list">
@@ -1357,7 +1365,7 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="item container">
                              <div class="row">
                                     <h3 class="md-font">First Chemotherapy</h3>
@@ -1380,14 +1388,67 @@
                                     </div>
                                 </div>
                         </div>
+                        <div class="item container">
+                            <div class="patient_info">
+                                <div class="col-xs-2 vertical-middle">
+                                    <img  class="img-circle img-responsive">
+                                </div>
+                                <div class="col-xs-10 vertical-middle">
+                                    <div class="row">
+                                        <span class="sm-size patient_name md-size"></span> 
+                                        <span class="sm-size light-font birth_date"></span>
+                                    </div>
+                                    <div class="row">
+                                        <span class="sm-size light-font disease_issue"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="md-font">Link Checklist Name to Upcoming Event</h3>
+                            <ul data-role="listview">
+                                <li>
+                                    <div class="col-xs-8">
+                                        <input name="" id="upcoming_event1" value="" type="checkbox">
+                                        <label for="upcoming_event1">Virtual Clinic</label>
+                                    </div>
+                                    <div class="col-xs-4 upcoming_date">
+                                        <p>30 APR 2015</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="col-xs-8">
+                                        <input name="" id="upcoming_event2" value="" type="checkbox">
+                                        <label for="upcoming_event2">Clinic Visit</label>
+                                    </div>
+                                    <div class="col-xs-4 upcoming_date">
+                                        <p>21 MAY 2015</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="col-xs-8">
+                                        <input name="" id="upcoming_event3" value="" type="checkbox">
+                                        <label for="upcoming_event3">Check Up</label>
+                                    </div>
+                                    <div class="col-xs-4 upcoming_date">
+                                        <p>4 JUN 2015</p>
+                                    </div>
+                            
+                                </li>
+                            </ul>
+                            <div class="row">
+                                 <a onclick="" class="add_link"><i class="fa fa-plus-circle"> </i>ADD EVENT</a>
+                            </div>
+                            
+                        </div>
                     </div>
                               <!-- controls -->
                         <div class="carousel_controls">
                             <div class="back_btn">
-                                <a class="left carousel-control" href="#checklist_slide" role="button" data-slide="prev">Back</a>
+                                <a class="left carousel-control" href="#checklist_slide" role="button" data-slide="prev" onClick="detectChecklistCarousel()">Back</a>
                             </div>
                             <div class="continue_btn">
-                                <a class="right carousel-control" href="#checklist_slide" role="button" data-slide="next">Continue</a>
+                                <a class="right carousel-control" href="#checklist_slide" role="button" data-slide="next" onClick="detectChecklistCarousel()">Continue</a>
+                                <a href="#assign_popup" data-rel="popup" data-position-to="window" class="assign_btn carousel-control" style="display:none;">Assign</a>
+                                <a href="#" class="save_btn carousel-control" style="display:none;" onClick="" >Save</a>
                             </div>
                         </div>
                 </div>
@@ -1468,6 +1529,32 @@ function removeSymptom(element){
     var target = $(element).parent('div').parent('li');
     target.remove();
 }
+
+function detectChecklistCarousel(){
+   setTimeout(function(){
+        if($('#checklist_slide .carousel-inner .item:first').hasClass('active')){  
+                $('#checklist_slide .carousel_controls .left').attr('disabled',true);
+
+
+            }
+        else if($('#checklist_slide .carousel-inner .item:last-child').hasClass('active')) {
+                $('#checklist_slide .carousel_controls .right').hide();
+                $('#checklist_slide .carousel_controls .save_btn').show();
+              
+            }
+        else if($('#checklist_slide .carousel-inner .item:nth-child(4)').hasClass('active')){
+                $('#checklist_slide .carousel_controls .right').hide();
+                $('#checklist_slide .carousel_controls .save_btn').hide();
+                $('#checklist_slide .carousel_controls .assign_btn').show();
+            }
+        else{
+            $('#checklist_slide .carousel_controls .assign_btn').hide();
+            $('#checklist_slide .carousel_controls .save_btn').hide();
+            $('#checklist_slide .carousel_controls .right').show();
+            $('#checklist_slide .carousel_controls .back_btn .left').attr('disabled',false);
+        }
+    },500);
+}
 //detect the current slide of the carousel and show/hide the buttons
 function detectTriageCarousel(){
     setTimeout(function(){
@@ -1527,6 +1614,7 @@ function SliderChange(){
     }
     $('.grade_slider_group .nci_percent').text(grade/4*100+"%");
 }
+
 function setupSwitch(element){
     console.log('load success');
     var first = $element.first('.ui-radio');
@@ -1564,7 +1652,11 @@ function showEditBtn(){
 function goEditChecklist(){
 
     //load the selected checklist info and jump to the next edit page
+
     $("#checklist_slide").carousel('next');
+    $("#editbtn").click();
+    $('#checklist_slide .carousel_controls .right').hide();
+    $('#checklist_slide .carousel_controls .assign_btn').show();
 }
 
 function gotoAssign(){
@@ -1579,9 +1671,26 @@ function gotoAssign(){
     else if(target.children('.ui-radio').last().children('label').hasClass('ui-radio-on')){
         target_item = "event";
     }
-
-    //loadAssignContent(target_item);
+    //hide assign btn 
+    $('#checklist_slide .carousel_controls .assign_btn').hide();
+    $('#checklist_slide .carousel_controls .right').show();
+    loadAssignContent(target_item);
     $("#checklist_slide").carousel('next');
+
+}
+function loadAssignContent(target_item){
+    if(target_item == "group"){
+        $("#checklist_assign_content .row ul").empty();
+        $("#checklist_assign_content .row ul").append('<li data-icon="false" class="group"><div><div class="col-xs-4 text-center"><img src=""></img></div><div class="col-xs-8"><div class="row group_name"><p>Stage 3 treatment</p></div><div class="row goup_info light-font"><p>patient(S) 35</p></div></div></div></li><li data-icon="false" class="group"><div><div class="col-xs-4 text-center"><img src=""></img></div><div class="col-xs-8"><div class="row group_name"><p>Remission</p></div><div class="row goup_info light-font"><p>patient(S) 7</p></div></div></div></li><li data-icon="false" class="group"><div><div class="col-xs-4 text-center"><img src=""></img></div><div class="col-xs-8"><div class="row group_name"><p>Title</p></div><div class="row goup_info light-font"><p>patient(S) 9</p></div></div></div></li><li data-icon="false" class="group"><div><div class="col-xs-4 text-center"><img src=""></img></div><div class="col-xs-8"><div class="row group_name"><p>Title</p></div><div class="row goup_info light-font"><p>patient(S) 23</p></div></div></div></li>').listview('refresh');;
+    }
+    else if(target_item == "event"){
+        $("#checklist_assign_content .row ul").empty();
+        $("#checklist_assign_content .row ul").append('<li data-iconn="false" class="event"><div><div class="col-xs-4 text-center"><img src=""></img></div><div class="col-xs-8 event_name"><p>Chemotherapy</p></div></div></li><li data-iconn="false" class="event"><div><div class="col-xs-4 text-center"><img src=""></img></div><div class="col-xs-8 event_name"><p>Event Title</p></div></div></li><li data-iconn="false" class="event"><div><div class="col-xs-4 text-center"><img src=""></img></div><div class="col-xs-8 event_name"><p>Event Title</p></div></div></li>').listview('refresh');
+
+    }
+    else if(target_item == "patient"){
+        getPatientList("assign_content_list");
+    }
 }
 $("#country_selector").countrySelect({
                 //defaultCountry: "jp",

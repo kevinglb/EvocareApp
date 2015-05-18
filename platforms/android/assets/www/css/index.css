@@ -166,7 +166,7 @@ input[type=number]{
     font-family: "Bendons-Medium";
     overflow: show;
     text-align: left;
-    margin-left: 15%;
+    margin-left: 80px;
     padding: 18px 0;
     text-shadow:none;
     text-transform: uppercase;
@@ -384,9 +384,10 @@ input[type=number]{
     line-height: 60px;
     z-index: 5;
 }
-.carousel_controls .save_note{
+.carousel_controls .save_note, .carousel_controls .assign_btn, .carousel_controls .save_btn{
     left: auto;
 }
+
 .carousel_controls .back_btn a{
     border-right: 1px solid #FFFFFF;
 }
@@ -830,8 +831,8 @@ input[type=number]{
 .ui-popup .popup-btns{
     width: 100%;
     margin: 0 auto;
-
 }
+
 .ui-popup .popup-btns a{
     width: 50%;
     float: left;
@@ -853,6 +854,15 @@ input[type=number]{
     background-color: #FFF !important;
     margin:15px 0 !important;
     font-size: 1em;
+}
+
+.add_link {
+    font-size: 1.2em;
+    line-height: 1.6em;
+    color: #A0B2B7;
+}
+.add_link i{
+    font-size: 1.6em;
 }
 
 /* checklist page end */

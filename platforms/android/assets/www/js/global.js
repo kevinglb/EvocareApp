@@ -29,7 +29,12 @@ function onDeviceReady()
         resetTriagePage();
         navigator.app.backHistory();
        }
-
+       if($.mobile.activePage.is('#checklist_page'))
+       {
+        console.log('reset checklist page');
+        resetChecklistPage();
+        navigator.app.backHistory();
+       }
        else 
        {
         navigator.app.backHistory();
@@ -52,4 +57,13 @@ function resetOnBoardingPage()
 {
   $('#onboarding_form').trigger('reset'); 
   $('#onboarding_birthday').val('');
+}
+
+function resetChecklistPage(){  
+  $("#triage_form").trigger('reset'); 
+  $('#checklist_slide .carousel-inner .item').removeClass('active')
+  $('#checklist_slide .carousel-inner .item:first').addClass('active');
+  $('#checklist_slide .carousel_controls .add_btn').hide();
+  $('#checklist_slide .carousel_controls .save_btn').hide();
+  $('#checklist_slide .carousel_controls .right').show("CONTINUE");
 }
