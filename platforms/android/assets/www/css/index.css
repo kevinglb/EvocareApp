@@ -103,7 +103,16 @@ input[type=number]{
 {
     margin-right: 15px;
     margin-left: 15px;
-    padding-bottom: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/*clearing floating*/
+.row:after{
+    clear: both;
+    content: "";
+    visibility: hidden;
+    display: block;
+    height: 0;
 }
 .clear{
     clear: both;
@@ -379,11 +388,14 @@ input[type=number]{
 }
 .carousel_controls .back_btn .carousel-control, .continue_btn .carousel-control{
     width: 50%;
-    background-color: #495559;
+    background-color: #A0B2B7;
     color: #FFFFFF;
     line-height: 60px;
-    z-index: 5;
+    z-index: 10;
+    opacity: 1;
+    text-shadow:none;
 }
+
 .carousel_controls .save_note, .carousel_controls .assign_btn, .carousel_controls .save_btn{
     left: auto;
 }
@@ -713,7 +725,7 @@ input[type=number]{
 .slider_group .ui-slider-track:after{
     clear: both;
 }
-#vc_slide .ui-input-text, #triage_slide .ui-input-text {
+#vc_slide .ui-input-text, #triage_slide .ui-input-text, #schedule_slide .ui-input-text {
     margin-top: 10px;
     background-color: transparent;
     border: none;
@@ -733,6 +745,22 @@ input[type=number]{
 }
 
 
+
+/*flip switch button*/
+.ui-slider-switch{
+    border-radius: 2em !important;
+    background-color: transparent !important;
+    margin-top: 0 !important;
+}
+.ui-slider-switch .ui-slider-label{
+    border-color: #f2f2f2;
+    border-radius: 2em;
+}
+.ui-slider-switch  .ui-slider-inneroffset .ui-slider-handle{
+    margin: -5px 0 0 -15px;
+    background-color: rgba(34, 136, 150, 0.9) !important;
+
+}
 /* main page */
 
 
@@ -857,12 +885,13 @@ input[type=number]{
 }
 
 .add_link {
-    font-size: 1.2em;
+    font-size: 1.4em;
     line-height: 1.6em;
     color: #A0B2B7;
 }
 .add_link i{
-    font-size: 1.6em;
+    margin-right: 10px;
+    font-size: 1.2em;
 }
 
 /* checklist page end */

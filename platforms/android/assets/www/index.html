@@ -743,16 +743,235 @@
             <!-- header -->
             <!-- content -->
             <div data-role="main" class="ui-content">
-                <div class="switch_btn">
-                    <a href="#" onClick="ScheduleContentSwitch('clinic')" data-role="button">Clinic</a>
-                    <a href="#" onClick="ScheduleContentSwitch('individual')" data-role="button">Individual</a>
+                <div id="schedule_slide" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item container active">
+                            <div class="row">
+                                <input type="text" placeholder="Title"></input>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-2">
+                                    <i class="fa fa-2x fa-clock-o"></i>
+                                </div>
+                                <div class="col-xs-10">
+                                    <div class="row">
+                                    <div class="col-xs-4 text-left">
+                                        <label for="flip-mini">All day</span>
+                                    </div>
+                                    <div class="col-xs-8 text-right">
+                                            <select name="flip-mini" id="flip-mini" data-role="slider" data-mini="true">
+                                                <option value="off"></option>
+                                                <option value="on"></option>
+                                            </select> 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-4 text-left">
+                                        <span>Starts</span>
+                                    </div>
+                                    <div class="col-xs-8 text-right">
+                                        <label>27 Apr 2015 11:30</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-4 text-left">
+                                        <span>Ends</span>
+                                    </div>
+                                    <div class="col-xs-8 text-right">
+                                        <label>27 Apr 2015 12:30</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-4 text-left">
+                                        <span>Repeat</span>
+                                    </div>
+                                    <div class="col-xs-8 text-right">
+                                        <label>Never</label>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-2">
+                                    <i class="fa fa-map-marker"></i>
+                                </div>
+                                <div class="col-xs-10">
+                                    <input type="text" placeholder="Add lcoation"></input>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-2">
+                                    <i class="fa fa-bell-o"></i>
+                                </div>
+                                <div class="col-xs-10">
+                                    <p>Alert 30 minutes by e-mail</p>
+                                    <input type="text" placeholder="Travel time"></input>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-2">
+                                    <i class="fa fa-users"></i>
+                                </div>
+                                <div class="col-xs-10">
+                                    <input type="text" placeholder="Invites"></input>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item container">
+                       
+
+                        </div>
+                        <div class="item container">
+                            <div class="row">
+                                <input type="text" placeholder="Event Type"></input>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-5 text-center">
+                                    <span>Start</span>
+                                </div>
+                                <div class="col-xs-2 text-center">
+                                    <i class='fa fa-angle-right'></i>
+                                </div>
+                                <div class="col-xs-5 text-center">
+                                    <span>End</span>
+                                </div>
+                            </div>
+                            <div  style="background:#FFF;  padding:1em 0; margin-left:-15px; margin-right:-15px;">
+                                <div class="row">
+                                    <div class="col-xs-6 text-center">
+                                        <img src="img/RedCross.png" class="img-circle"/>
+                                    </div>
+                                    <div class="col-xs-6 text-center">
+                                     <img src="img/RedCross.png" class="img-circle"/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6 text-center">
+                                        <label>Select Patient</label>
+                                    </div>
+                                    <div class="col-xs-6 text-center">
+                                        <label>Assign HCP</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class="col-xs-2 text-center">
+                                    <i class="fa fa-2x fa-file-o"></i>
+                                </div>
+                                <div class="col-xs-10 text-left">
+                                    <span>Add Note</span>
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class="col-xs-2 text-center">
+                                    <i class="fa fa-2x fa-bell-o"></i>
+                                </div>
+                                <div class="col-xs-10 text-left">
+                                    <span>Add Alert</span>
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class="col-xs-2 text-center">
+                                    <i class="fa fa-2x fa-file"></i>
+                                </div>
+                                <div class="col-xs-10 text-left">
+                                    <span>Add Checklist</span>
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class="col-xs-2 text-center">
+                                    <i class="fa fa-2x fa-map-marker"></i>
+                                </div>
+                                <div class="col-xs-10 text-left">
+                                    <span>Add Location</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="item container">
+                            <div class="patient_info">
+                            </div>
+                            <div class="row">
+                                <h3 class="md-font">Filter</h3>
+                                <div class="row">
+                                    <label>Appointment Confirmation</label>
+                                    <div class="col-xs-6">
+                                        <input name="app_confirm" id="app_confirm1" value="" type="checkbox">
+                                        <label for="app_confirm1">Unconfirmed</label>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <input name="app_confirm2" id="app_confirm2" value="" type="checkbox">
+                                        <label for="app_confirm2">Confirmed</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label>Checklists</label>
+                                    <div class="col-xs-6">
+                                        <input name="check_confirm" id="check_confirm1" value="" type="checkbox">
+                                        <label for="check_confirm1">Unconfirmed</label>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <input name="check_confirm2" id="check_confirm2" value="" type="checkbox">
+                                        <label for="check_confirm2">Confirmed</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label>Patient</label>
+                                    <div class="col-xs-6">
+                                        <input name="patient_q" id="patient_q1" value=""  type="radio">
+                                        <label for="patient_q1" >Queued</label>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <input name="patient_q" id="patient_q2" value=""  type="radio">
+                                        <label for="patient_q2" >Scheduled</label>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="item container">
+                            <div class="row">
+                                <h3 class="md-font">Filter</h3>
+                                <div class="row">
+                                    <input name="filter_1" id="filter_1" value="" type="checkbox">
+                                    <label for="filter_1">Chemotherapy</label>
+                                     
+                                    <input name="filter_2" id="filter_2" value="" type="checkbox">
+                                    <label for="filter_2">Lab Test</label>
+                                     
+                                    <input name="filter_3" id="filter_3" value="" type="checkbox">
+                                    <label for="filter_3">Virtual Clinic</label>
+                                     
+                                    <input name="filter_4" id="filter_4" value="" type="checkbox">
+                                    <label for="filter_4">Clinic Visit</label>
+    
+                                    <input name="filter_5" id="filter_5" value="" type="checkbox">
+                                    <label for="filter_5">Surgery</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item container">
+                            <ul id="schedule_timeline">
+                                
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="carousel_controls">
+                            <div class="back_btn">
+                                <a class="left carousel-control" href="#schedule_slide" role="button" data-slide="prev">Back</a>
+                            </div>
+                            <div class="continue_btn">
+                                <a class="right carousel-control" href="#schedule_slide" role="button" data-slide="next" >Continue</a>
+                                <!-- <a class="carousel-control save_note" role="button" onClick="createNewTriage()" style="display:none;">Save</a> -->
+                            </div>
+                        </div>
                 </div>
 
-                <div class="clinic_content">
-                    <p>this is the clinic content</p>
-                </div>
+                
 
-                <div class="individual_content" style="display:none;">
+                <!-- <div class="individual_content" style="display:none;">
                     <div class="container">
                         <ul class="timeline">
                             <li>
@@ -797,12 +1016,11 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
             </div>
             <!-- content -->
         </div>
         <!-- event schedule page -->
-
         <!-- onborading page -->
         <div id="onborading_page" data-role="page">
             <div data-role="header" class="ui-header">
@@ -1150,7 +1368,7 @@
                                     </div>
                                 </div>
                         </div> 
-                        <div class="item contianer">
+                        <div class="item container">
                             <div class="row">
                                 <div class="col-xs-10">
                                     <h3>Checklist Info</h3>
@@ -1238,17 +1456,19 @@
                             <!-- <a href="#assign_popup" data-rel="popup" data-position-to="window" class="btn">Assign</a> -->
                             <div data-role="popup" data-overlay-theme="b" id="assign_popup" >
                                 <h1>Assign Checklist Name to</h1>
-                                <fieldset>
-                                    <input name="assign_option" id="assign_patient" value="patient"  type="radio">
-                                    <label for="assign_patient" class="light-font">Patient</label>
+                                <div class="row">
+                                    <fieldset>
+                                        <input name="assign_option" id="assign_patient" value="patient"  type="radio">
+                                        <label for="assign_patient" class="light-font">Patient</label>
 
-                                    <input name="assign_option" id="assign_group" value="group" type="radio">
-                                    <label for="assign_group"  class="light-font">Group</label>
+                                        <input name="assign_option" id="assign_group" value="group" type="radio">
+                                        <label for="assign_group"  class="light-font">Group</label>
 
-                                    <input name="assign_option" id="assign_event" value="event" type="radio">
-                                    <label for="assign_event" class="light-font">Event</label>
-                                </fieldset>
-                                 <div class="row popup-btns">
+                                        <input name="assign_option" id="assign_event" value="event" type="radio">
+                                        <label for="assign_event" class="light-font">Event</label>
+                                    </fieldset>
+                                </div>
+                                 <div class=" popup-btns">
                                         <a href="#" class="btn" data-rel="back">Cancel</a>
                                         <a href="#" class="btn" data-rel="back" onClick="gotoAssign()">Continue</a>
                                         <div class="clear"></div>
