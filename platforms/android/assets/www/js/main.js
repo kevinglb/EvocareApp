@@ -351,7 +351,7 @@ function showPercentDonut(element_id, percent)
         radius = Math.min(width, height)/2,
         dig = radius/6,
         color = d3.scale.ordinal()
-                  .range(["#A0b2b7","#228896"]),
+                  .range(["#228896","#A0b2b7"]),
         center = [width/2, height/2],
         dataset = 
         {

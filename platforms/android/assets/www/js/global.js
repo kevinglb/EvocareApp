@@ -70,7 +70,7 @@ function resetOnBoardingPage()
   $('#onboarding_birthday').val('');
 }
 
-<<<<<<< HEAD
+
 function resetChecklistPage(){  
   $("#triage_form").trigger('reset'); 
   $('#checklist_slide .carousel-inner .item').removeClass('active')
@@ -79,7 +79,7 @@ function resetChecklistPage(){
   $('#checklist_slide .carousel_controls .save_btn').hide();
   $('#checklist_slide .carousel_controls .right').show("CONTINUE");
 }
-=======
+
 function resetVCPage()
 {
   $('#vc_form').trigger('reset');
@@ -88,4 +88,4 @@ function resetVCPage()
   $('#vc_treatment_last_date').val('');
   $('#vc_blood_last_date').val('');
 }
->>>>>>> f06b2694b2fb52da27de1b261d23acd3255e7eaa
+
