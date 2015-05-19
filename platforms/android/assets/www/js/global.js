@@ -26,17 +26,22 @@ function onDeviceReady()
        if($.mobile.activePage.is('#triage_page'))
        {
         console.log('reset triage page');
-        resetTriagePage();
         navigator.app.backHistory();
+        resetTriagePage();
        }
 
        if($.mobile.activePage.is('#vc_page'))
        {
         console.log('reset triage page');
-        resetVCPage();
         navigator.app.backHistory();
+        resetVCPage();
        }
 
+       if($.mobile.activePage.is('#onborading_page'))
+       {
+        resetOnBoardingPage();
+        getPatientList("patients_page"); 
+       }
        else 
        {
         navigator.app.backHistory();
@@ -61,6 +66,8 @@ function resetOnBoardingPage()
 {
   $('#onboarding_form').trigger('reset'); 
   $('#onboarding_birthday').val('');
+  var image = document.getElementById("onboarding_avatar");
+  image.src = "img/ChooseAvatar.png";
 }
 
 function resetVCPage()
