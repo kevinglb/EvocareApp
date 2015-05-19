@@ -103,7 +103,19 @@ input[type=number]{
 {
     margin-right: 15px;
     margin-left: 15px;
-    padding-bottom: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/*clearing floating*/
+.row:after{
+    clear: both;
+    content: "";
+    visibility: hidden;
+    display: block;
+    height: 0;
+}
+.container{
+    width: 100%
 }
 .clear{
     clear: both;
@@ -166,7 +178,7 @@ input[type=number]{
     font-family: "Bendons-Medium";
     overflow: show;
     text-align: left;
-    margin-left: 15%;
+    margin-left: 80px;
     padding: 18px 0;
     text-shadow:none;
     text-transform: uppercase;
@@ -379,14 +391,18 @@ input[type=number]{
 }
 .carousel_controls .back_btn .carousel-control, .continue_btn .carousel-control{
     width: 50%;
-    background-color: #495559;
+    background-color: #A0B2B7;
     color: #FFFFFF;
     line-height: 60px;
-    z-index: 5;
+    z-index: 10;
+    opacity: 1;
+    text-shadow:none;
 }
-.carousel_controls .save_note{
+
+.carousel_controls .save_note, .carousel_controls .assign_btn, .carousel_controls .save_btn{
     left: auto;
 }
+
 .carousel_controls .back_btn a{
     border-right: 1px solid #FFFFFF;
 }
@@ -594,6 +610,44 @@ input[type=number]{
     border: 5px solid rgb(255,80,80);
     z-index: 10;
 }
+
+.timeline .schedule_info:before{
+    position: absolute;
+    top: 0px;
+    left: -50%;
+    content: " ";
+    display: block;
+    width: 10px;    
+    height: 10px;
+    margin-left: -4px;
+    background: #495559;
+    border-radius: 5px;
+   
+    z-index: 1;
+}
+
+.timeline .patient_schedule:before{
+     position: absolute;
+    left: 50%;
+    content: ' ';
+    display: block;
+    width: 2px;
+    height:15vh;
+    margin-top: 20px;
+    background: #333;
+    background: -moz-linear-gradient(top, rgba(132, 151, 157, 0.8) 0%, rgba(132, 151, 157, 0.8) 8%, rgba(132, 151, 157, 0.8) 92%, rgba(132, 151, 157, 0.8) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(132, 151, 157, 0.8)), color-stop(100%,rgba(132, 151, 157, 0.8)));
+    background: -webkit-linear-gradient(top,rgba(132, 151, 157, 0.8) 0%, rgba(132, 151, 157, 0.8) 8%,rgba(132, 151, 157, 0.8) 92%, rgba(132, 151, 157, 0.8) 100%);
+    background: -o-linear-gradient(top, rgba(132, 151, 157, 0.8) 0%, rgba(132, 151, 157, 0.8) 8%, rgba(132, 151, 157, 0.8) 92%, rgba(132, 151, 157, 0.8) 100%);
+    background: -ms-linear-gradient(top, rgba(132, 151, 157, 0.8) 0%, rgba(132, 151, 157, 0.8) 8%, rgba(132, 151, 157, 0.8) 92%, rgba(132, 151, 157, 0.8) 100%);
+    background: linear-gradient(to bottom, rgba(132, 151, 157, 0.8) 0%, rgba(132, 151, 157, 0.8) 8%, rgba(132, 151, 157, 0.8) 92%, rgba(132, 151, 157, 0.8) 100%);
+
+}
+.timeline .round-img{
+    margin-top: 2em;
+    z-index: 5;
+}
+
 /*symptom choose list */
 .symptom_chooselist .ui-checkbox{
     padding:  1em 0;
@@ -712,7 +766,7 @@ input[type=number]{
 .slider_group .ui-slider-track:after{
     clear: both;
 }
-#vc_slide .ui-input-text, #triage_slide .ui-input-text {
+#vc_slide .ui-input-text, #triage_slide .ui-input-text, #schedule_slide .ui-input-text {
     margin-top: 10px;
     background-color: transparent;
     border: none;
@@ -730,6 +784,30 @@ input[type=number]{
 #symptom_list  li.ui-input-text input:-webkit-placeholder{
     color: #BBC4C7;
 }
+
+
+
+/*flip switch button*/
+.ui-slider-switch{
+    border-radius: 2em !important;
+    background-color: transparent !important;
+    margin-top: 0 !important;
+    width: 4.8em !important;
+}
+.ui-slider-switch .ui-slider-label{
+    border-color: #f2f2f2;
+    border-radius: 2em;
+}
+.ui-slider-switch  .ui-slider-inneroffset .ui-slider-handle{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    margin: -2px 0 0 -15px;
+    background-color: #f2f2f2 !important;
+    border: 2px solid #E2e2e2;
+
+}
+
 
 
 /* main page */
@@ -830,8 +908,8 @@ input[type=number]{
 .ui-popup .popup-btns{
     width: 100%;
     margin: 0 auto;
-
 }
+
 .ui-popup .popup-btns a{
     width: 50%;
     float: left;
@@ -853,6 +931,16 @@ input[type=number]{
     background-color: #FFF !important;
     margin:15px 0 !important;
     font-size: 1em;
+}
+
+.add_link {
+    font-size: 1.4em;
+    line-height: 1.6em;
+    color: #A0B2B7;
+}
+.add_link i{
+    margin-right: 10px;
+    font-size: 1.2em;
 }
 
 /* checklist page end */
@@ -897,6 +985,10 @@ input[type=number]{
 }
 #patient_list .patient.selected{
     background-color: red!important;
+}
+.patient_info {
+    height: 15vh;
+    background: #FFF;
 }
 .patient_info .patient_name
 {
