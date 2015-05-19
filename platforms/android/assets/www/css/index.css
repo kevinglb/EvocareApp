@@ -1287,3 +1287,9 @@ div#onborading_content
 #onborading_content .ui-input-text input:webkit-placeholder{
     color: #495559;
 }
+
+img#onboarding_avatar 
+{
+    width: 120px;
+    height: 120px;
+}

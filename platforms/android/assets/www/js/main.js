@@ -1,5 +1,6 @@
 var patients_list = "";
 var global_patient_id = "";
+var uploadAvatar = false;
 
 function loadPatientInfo(page_id)
 {
@@ -22,9 +23,6 @@ function getPatientList(page_id)
             var output = [];
             patients_list = response.patients;
 
-            // hide onboarding button
-            $('#onboarding_btn').hide();
-
             //if user click virtual clinic
             if(page_id == "virtual_clinic_page")
             {
@@ -32,8 +30,6 @@ function getPatientList(page_id)
               {
                 output += '<li class="patient" data-icon="false"><div id="' + value.id + '" onClick="setUpVCPage(this.id)"><div class="col-xs-4 col-md-3 patient_photo text-center"><img class="img-circle" src="' + value.avatar + '"></div><div class="col-xs-8 col-md-9 patient_info"><div class="row"><p class="patient_name">' + value.full_name + '</p></div><div class="row"><p class="patient_date">' + value.gender.substring(0,1).toUpperCase() + ' . ' + value.date_of_birth + '</p></div><div class="row"><p class="patient_issue">' +value.condition + '</p></div></div></div></li>';
               });
-
-              output += output;
 
               $('#patient_list').children('ul').empty();
               $('#patient_list').children('ul').append(output).listview().listview('refresh');
@@ -49,6 +45,8 @@ function getPatientList(page_id)
             // if user click triage page
             if(page_id == "patient_triage_page")
            {
+              $('#onboarding_btn').hide();
+
               $.each(response.patients, function(index, value)
               {
                 output += '<li class="patient" data-icon="false"><div id="' + value.id + '" onClick="setUpTriagePage(this.id)"><div class="col-xs-4 col-md-3 patient_photo text-center"><img class="img-circle" src="' + value.avatar + '"></div><div class="col-xs-8 col-md-9 patient_info"><div class="row"><p class="patient_name">' + value.full_name + '</p></div><div class="row"><p class="patient_date">' + value.gender.substring(0,1).toUpperCase() + ' . ' + value.date_of_birth + '</p></div><div class="row"><p class="patient_issue">' +value.condition + '</p></div></div></div></li>';
@@ -91,8 +89,10 @@ function getPatientList(page_id)
             }
 
             // if user click consultant page
-            if(page_id == "conulstant_page")
+            if(page_id == "consultant_page")
             {
+              $('#onboarding_btn').hide();
+
               $.each(response.patients, function(index, value)
               {
                 output += '<li class="patient" data-icon="false"><div id="' + value.id + '" onClick="setUpConulstantPage(this.id)"><div class="col-xs-3 patient_photo text-center"><img class="img-circle" src="' + value.avatar + '"></div><div class="col-xs-9 patient_info"><div class="row"><p class="patient_name">' + value.full_name + '</p></div><div class="row"><p class="patient_date">' + value.gender.substring(0,1).toUpperCase() + ' . ' + value.date_of_birth + '</p></div><div class="row"><p class="patient_issue">' +value.condition + '</p></div></div></div></li>';
@@ -629,9 +629,23 @@ function onBoardingSave()
                       family_history_diabetes: onboard_diabetes, family_history_blood_pressure: onboard_blood_pressure, family_history_heart_disease: onboard_heart_disease,
                       family_history_asthma: onboard_asthma, family_history_epilepsy: onboard_epilepsy, family_history_cancer: onboard_cancer};
 
-  console.log(onboard_data);
-  
-  $.ajax(
+  if(uploadAvatar == true)
+  {
+    var imageURI = document.getElementById('onboarding_avatar').getAttribute("src");    
+    var options = new FileUploadOptions();
+    options.fileKey = "avatar";
+    options.mimeType = "image/jpg";
+    options.fileName = imageURI.substr(imageURI.lastIndexOf('/')+1);
+    options.chunkedMode = false;
+    options.params = onboard_data;
+
+    var ft = new FileTransfer();
+    ft.upload(imageURI, encodeURI(onboard_url), avatarTransferSuccess, avatarTransferFailure, options);
+  }
+
+  if(uploadAvatar == false)
+  {
+     $.ajax(
     {
         url : onboard_url,
         type: "POST",
@@ -642,21 +656,53 @@ function onBoardingSave()
           if(response.status == "1")
           {
             alert(response.message);
-            
+
             // reset triage form after create a new triage successfully
             resetOnBoardingPage();
+            getPatientList("patients_page");
           }
           else
           {
-            alert("Sorry, cannot create new triage");
+            alert(response.message);
           }
         },
         error: function (error)
         {
-          alert("Sorry, failed to create new triage. Please check your network and try again later");
+          alert("Sorry, some errors occurred. Please try again later");
         }
     });
 
+  }
+
+}
+
+function avatarTransferSuccess(response)
+{ 
+   var result = $.parseJSON(response.response);
+
+   if(result.status == "1")
+   {
+      uploadAvatar = false;
+      alert(result.message);
+
+      // reset triage form after create a new triage successfully
+      resetOnBoardingPage();
+      getPatientList("patients_page"); 
+
+      // clean the cache
+      var imageURI = document.getElementById('onboarding_avatar').getAttribute("src"); 
+      deletePictureFromCache(imageURI);
+    }
+    else
+    {
+      alert(result.message);
+    }
+}
+
+function avatarTransferFailure(error)
+{ 
+  alert("Sorry, some errors occurred. Please try again later");
+  console.log($.parseJSON(error));
 }
 
 function onBoardingBack()
@@ -668,6 +714,75 @@ function onBoardingBack()
       changeHash: true
     });
 }
+
+
+<<<<<<< HEAD
+// onboarding page requries user avatar 
+function selectAvatar()
+{
+   navigator.notification.confirm
+   (
+      'Choose Profile Picture',  // message
+      onConfirm,         // callback
+      'Select',            // title
+      ['Choose from Library', 'Take Photo']  // buttonName
+   );
+}
+
+function onConfirm(buttonIndex) 
+{
+  // choose from library
+  if(buttonIndex == 1)
+  {
+    navigator.camera.getPicture(onAvatarSuccess, onFail, 
+    {
+      quality: 100,
+      allowEdit: true,
+      targetWidth:160,
+      targetHeight: 160,
+      destinationType: Camera.DestinationType.FILE_URI,
+      sourceType: Camera.PictureSourceType.PHOTOLIBRARY, 
+      mediaType : Camera.MediaType.PICTURE,
+      correctOrientation: true
+    });
+  }
+
+  // take photo 
+  if(buttonIndex == 2)
+  {
+    navigator.camera.getPicture(onAvatarSuccess, onFail, 
+    {
+      quality: 100, 
+      allowEdit: true,
+      targetWidth:160,
+      targetHeight: 160,
+      destinationType: Camera.DestinationType.FILE_URI,
+      saveToPhotoAlbum: false,
+      correctOrientation: true
+    });
+  }
+}
+
+function onAvatarSuccess(imageURI)
+{
+  uploadAvatar = true;
+  var image = document.getElementById("onboarding_avatar");
+  image.src = imageURI;
+}
+
+function onFail(message)
+{
+  console.log('Failed because: ' + message);
+}
+
+function deletePictureFromCache( imageURI )
+{
+  window.resolveLocalFileSystemURI(imageURI, function( fileEntry )
+  {
+    fileEntry.remove();
+  }, null);
+}
+
 
 
 

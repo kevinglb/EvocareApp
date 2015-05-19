@@ -4,6 +4,7 @@ $('#login_submit') .click(function()
 	// get username and password from 
 	// var username = $('#login_username').val();
 	// var password = $('#login_password').val();
+	
 	var username = "123@123.com";
 	var password = "123";
 
