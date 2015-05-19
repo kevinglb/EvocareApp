@@ -49,6 +49,8 @@ function onDeviceReady()
         navigator.app.backHistory();
        }
     }, false);
+
+    
 }
 
 
