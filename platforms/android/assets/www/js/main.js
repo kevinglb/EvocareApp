@@ -783,5 +783,3 @@ function deletePictureFromCache( imageURI )
 }
 
 
-
-
