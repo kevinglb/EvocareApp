@@ -13,6 +13,10 @@
                             "count": 1
                         }
                     ],
+
+                    "EventKit.framework": [],
+                    "EventKitUI.framework": []
+
                     "ImageIO.framework": [
                         {
                             "xml": true,
@@ -43,6 +47,7 @@
                             "count": 2
                         }
                     ]
+
                 }
             },
             "config.xml": {

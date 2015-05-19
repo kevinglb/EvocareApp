@@ -780,3 +780,5 @@ function deletePictureFromCache( imageURI )
     fileEntry.remove();
   }, null);
 }
+
+

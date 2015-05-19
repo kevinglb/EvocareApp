@@ -37,6 +37,11 @@
                         }
                     ]
                 }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/manifest": []
+                }
             }
         }
     },

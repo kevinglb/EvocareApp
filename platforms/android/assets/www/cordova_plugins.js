@@ -13,7 +13,7 @@ module.exports = [
         "merges": [
             "navigator.notification"
         ]
-    },
+
     {
         "file": "plugins/org.apache.cordova.camera/www/CameraConstants.js",
         "id": "org.apache.cordova.camera.Camera",
@@ -201,6 +201,7 @@ module.exports = [
             "cordova"
         ],
         "runs": true
+
     }
 ];
 module.exports.metadata = 
@@ -210,6 +211,7 @@ module.exports.metadata =
     "org.apache.cordova.camera": "0.3.6",
     "org.apache.cordova.file-transfer": "0.5.0",
     "org.apache.cordova.file": "1.3.3"
+
 }
 // BOTTOM OF METADATA
 });
