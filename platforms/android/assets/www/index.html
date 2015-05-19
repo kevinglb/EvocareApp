@@ -201,7 +201,7 @@
                         </div>
                         <div class="clear"></div>
                     </a>
-                    <a href="conulstant_page" data-transition="slide" onClick="loadPatientInfo(this.id)">
+                    <a href="#consultant_page" data-transition="slide" onClick="loadPatientInfo(this.id)" id="consultant_page">
                         <div class="row list_item">
                             <div class="col-xs-3 text-center vertical-middle">
                                 <img class="main_page_logo" src="img/consultant-logo.png">
@@ -726,7 +726,30 @@
             <!-- header -->
             <!-- content-->
             <div data-role="main" class="ui-content">
+                <div id="consultant_slide" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item container active">
 
+                        </div>
+                        <div class="item container">
+                            <div class="patient_info">
+                            </div>
+                            <div class="row">
+                                <h3 class="md-font">Assign</h3>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel_controls">
+                            <div class="back_btn">
+                                <a class="left carousel-control" href="#consultant_slide" role="button" data-slide="prev"  disabled="disabled">Back</a>
+                            </div>
+                            <div class="continue_btn">
+                                <a class="right carousel-control" href="#consultant_slide" role="button" data-slide="next">Continue</a>
+                               
+                            </div>
+                        </div>
+                </div>
             </div>
         </div>
         <!-- consultant page -->
@@ -793,7 +816,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-xs-2">
-                                    <i class="fa fa-map-marker"></i>
+                                    <i class="fa fa-2x fa-map-marker"></i>
                                 </div>
                                 <div class="col-xs-10">
                                     <input type="text" placeholder="Add lcoation"></input>
@@ -801,7 +824,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-xs-2">
-                                    <i class="fa fa-bell-o"></i>
+                                    <i class="fa fa-2x fa-bell-o"></i>
                                 </div>
                                 <div class="col-xs-10">
                                     <p>Alert 30 minutes by e-mail</p>
@@ -810,7 +833,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-xs-2">
-                                    <i class="fa fa-users"></i>
+                                    <i class="fa fa-2x fa-users"></i>
                                 </div>
                                 <div class="col-xs-10">
                                     <input type="text" placeholder="Invites"></input>
@@ -827,13 +850,13 @@
                             </div>
                             <div class="row">
                                 <div class="col-xs-5 text-center">
-                                    <span>Start</span>
+                                    <label class="start_time">Start</label>
                                 </div>
                                 <div class="col-xs-2 text-center">
                                     <i class='fa fa-angle-right'></i>
                                 </div>
                                 <div class="col-xs-5 text-center">
-                                    <span>End</span>
+                                    <label class="end_time">End</label>
                                 </div>
                             </div>
                             <div  style="background:#FFF;  padding:1em 0; margin-left:-15px; margin-right:-15px;">
@@ -859,7 +882,7 @@
                                     <i class="fa fa-2x fa-file-o"></i>
                                 </div>
                                 <div class="col-xs-10 text-left">
-                                    <span>Add Note</span>
+                                    <label>Add Note</label>
                                 </div>
                             </div>
                             <div class='row'>
@@ -867,7 +890,7 @@
                                     <i class="fa fa-2x fa-bell-o"></i>
                                 </div>
                                 <div class="col-xs-10 text-left">
-                                    <span>Add Alert</span>
+                                    <label>Add Alert</label>
                                 </div>
                             </div>
                             <div class='row'>
@@ -875,7 +898,7 @@
                                     <i class="fa fa-2x fa-file"></i>
                                 </div>
                                 <div class="col-xs-10 text-left">
-                                    <span>Add Checklist</span>
+                                    <label>Add Checklist</label>
                                 </div>
                             </div>
                             <div class='row'>
@@ -883,7 +906,7 @@
                                     <i class="fa fa-2x fa-map-marker"></i>
                                 </div>
                                 <div class="col-xs-10 text-left">
-                                    <span>Add Location</span>
+                                    <label>Add Location</label>
                                 </div>
                             </div>
 
@@ -952,8 +975,76 @@
                             </div>
                         </div>
                         <div class="item container">
-                            <ul id="schedule_timeline">
-                                
+                            <div class="patient_info">
+                                <div class="col-xs-2 vertical-middle">
+                                    <img  class="img-circle img-responsive">
+                                </div>
+                                <div class="col-xs-10 vertical-middle">
+                                    <div class="row">
+                                        <span class="sm-size patient_name md-size"></span> 
+                                        <span class="sm-size light-font birth_date"></span>
+                                    </div>
+                                    <div class="row">
+                                        <span class="sm-size light-font disease_issue"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul id="schedule_timeline" class="timeline">
+                                <li class="patient_schedule">
+                                    <div class="row">
+                                        <div class="col-xs-4">
+                                            <span class="time">10:00</span></br>
+                                            <span class="date">Today</span>
+                                            <div>
+                                                <i class="fa fa-2x fa-file-o"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4 text-center round-img">
+                                            <i class="fa fa-3x fa-file-o"></i>
+                                        </div>
+                                        <div class="col-xs-4 schedule_info">
+                                            <span class="checklist">Virtual Clinic</span>
+                                            <span class="hcp_name">A.Jenkins</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="patient_schedule">
+                                    <div class="row">
+                                        <div class="col-xs-4">
+                                            <span class="time">10:00</span></br>
+                                            <span class="date">Today</span>
+                                            <div>
+                                                <i class="fa fa-2x fa-file-o"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4 text-center round-img">
+                                            <i class="fa fa-3x fa-file-o"></i>
+                                        </div>
+                                        <div class="col-xs-4 schedule_info">
+                                            <span class="checklist">Virtual Clinic</span>
+                                            <span class="hcp_name">A.Jenkins</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="patient_schedule">
+                                    <div class="row">
+                                        <div class="col-xs-4">
+                                            <span class="time">10:00</span></br>
+                                            <span class="date">Today</span>
+                                            <div>
+                                                <i class="fa fa-2x fa-file-o"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4 text-center round-img">
+                                            <i class="fa fa-3x fa-file-o"></i>
+                                        </div>
+                                        <div class="col-xs-4 schedule_info">
+                                            <span class="checklist">Virtual Clinic</span>
+                                            <span class="hcp_name">A.Jenkins</span>
+                                        </div>
+                                    </div>
+                                </li>
+
                             </ul>
                         </div>
                     </div>
@@ -981,7 +1072,8 @@
                                 </div>
                                 <div class="col-xs-4 col-xs-offset-4 name text-center">
                                     <p>Stephen moriiessy</p>
-                                    <img src="img/RedCross.png" class="img-circle"/>
+                                    <img sr
+                                    c="img/RedCross.png" class="img-circle"/>
                                 </div>
                             </li>
                             <li>
@@ -1690,7 +1782,7 @@
      <script type="text/javascript" src="plugins/mobiscroll.frame.android.js"></script>
     <script type="text/javascript" src="plugins/mobiscroll.frame.android-holo.js"></script>
 
-
+    <script type="text/javascript" src="plugins/Calendar.js"></script>
 <script>
         $(function () {
                 // Date picker initialization
@@ -1880,7 +1972,7 @@ function goEditChecklist(){
 }
 
 function gotoAssign(){
-    var target = $('#assign_popup').children('fieldset');
+    var target = $('#assign_popup .row').children('fieldset');
     var target_item;
     if(target.children('.ui-radio').first().children('label').hasClass('ui-radio-on')){
         target_item = "patient";
@@ -1894,14 +1986,19 @@ function gotoAssign(){
     //hide assign btn 
     $('#checklist_slide .carousel_controls .assign_btn').hide();
     $('#checklist_slide .carousel_controls .right').show();
+
     loadAssignContent(target_item);
+
     $("#checklist_slide").carousel('next');
+    
+
 
 }
 function loadAssignContent(target_item){
+
     if(target_item == "group"){
         $("#checklist_assign_content .row ul").empty();
-        $("#checklist_assign_content .row ul").append('<li data-icon="false" class="group"><div><div class="col-xs-4 text-center"><img src=""></img></div><div class="col-xs-8"><div class="row group_name"><p>Stage 3 treatment</p></div><div class="row goup_info light-font"><p>patient(S) 35</p></div></div></div></li><li data-icon="false" class="group"><div><div class="col-xs-4 text-center"><img src=""></img></div><div class="col-xs-8"><div class="row group_name"><p>Remission</p></div><div class="row goup_info light-font"><p>patient(S) 7</p></div></div></div></li><li data-icon="false" class="group"><div><div class="col-xs-4 text-center"><img src=""></img></div><div class="col-xs-8"><div class="row group_name"><p>Title</p></div><div class="row goup_info light-font"><p>patient(S) 9</p></div></div></div></li><li data-icon="false" class="group"><div><div class="col-xs-4 text-center"><img src=""></img></div><div class="col-xs-8"><div class="row group_name"><p>Title</p></div><div class="row goup_info light-font"><p>patient(S) 23</p></div></div></div></li>').listview('refresh');;
+        $("#checklist_assign_content .row ul").append('<li data-icon="false" class="group"><div><div class="col-xs-4 text-center"><img src=""></img></div><div class="col-xs-8"><div class="row group_name"><p>Stage 3 treatment</p></div><div class="row goup_info light-font"><p>patient(S) 35</p></div></div></div></li><li data-icon="false" class="group"><div><div class="col-xs-4 text-center"><img src=""></img></div><div class="col-xs-8"><div class="row group_name"><p>Remission</p></div><div class="row goup_info light-font"><p>patient(S) 7</p></div></div></div></li><li data-icon="false" class="group"><div><div class="col-xs-4 text-center"><img src=""></img></div><div class="col-xs-8"><div class="row group_name"><p>Title</p></div><div class="row goup_info light-font"><p>patient(S) 9</p></div></div></div></li><li data-icon="false" class="group"><div><div class="col-xs-4 text-center"><img src=""></img></div><div class="col-xs-8"><div class="row group_name"><p>Title</p></div><div class="row goup_info light-font"><p>patient(S) 23</p></div></div></div></li>').listview('refresh');
     }
     else if(target_item == "event"){
         $("#checklist_assign_content .row ul").empty();
@@ -1912,12 +2009,107 @@ function loadAssignContent(target_item){
         getPatientList("assign_content_list");
     }
 }
+
 $("#country_selector").countrySelect({
                 //defaultCountry: "jp",
                 //onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
                 preferredCountries: ['ie', 'cn', 'us']
             });
 
+
+document.addEventListener("deviceready", function() {
+  // prep some variables
+  var startDate = new Date(2015,2,15,18,30,0,0,0); // beware: month 0 = january, 11 = december
+  var endDate = new Date(2015,2,15,19,30,0,0,0);
+  var title = "My nice event";
+  var eventLocation = "Home";
+  var notes = "Some notes about this event.";
+  var success = function(message) { alert("Success: " + JSON.stringify(message)); };
+  var error = function(message) { alert("Error: " + message); };
+
+  // create a calendar (iOS only for now)
+  window.plugins.calendar.createCalendar(calendarName,success,error);
+  // if you want to create a calendar with a specific color, pass in a JS object like this:
+  var createCalOptions = window.plugins.calendar.getCreateCalendarOptions();
+  createCalOptions.calendarName = "My Cal Name";
+  createCalOptions.calendarColor = "#FF0000"; // an optional hex color (with the # char), default is null, so the OS picks a color
+  window.plugins.calendar.createCalendar(createCalOptions,success,error);
+
+  // delete a calendar (iOS only for now)
+  window.plugins.calendar.deleteCalendar(calendarName,success,error);
+
+  // create an event silently (on Android < 4 an interactive dialog is shown)
+  window.plugins.calendar.createEvent(title,eventLocation,notes,startDate,endDate,success,error);
+
+  // create an event silently (on Android < 4 an interactive dialog is shown which doesn't use this options) with options:
+  var calOptions = window.plugins.calendar.getCalendarOptions(); // grab the defaults
+  calOptions.firstReminderMinutes = 120; // default is 60, pass in null for no reminder (alarm)
+  calOptions.secondReminderMinutes = 5;
+
+  // Added these options in version 4.2.4:
+  calOptions.recurrence = "monthly"; // supported are: daily, weekly, monthly, yearly
+  calOptions.recurrenceEndDate = new Date(2015,10,1,0,0,0,0,0); // leave null to add events into infinity and beyond
+  calOptions.calendarName = "MyCreatedCalendar"; // iOS only
+  calOptions.calendarId = 1; // Android only, use id obtained from listCalendars() call which is described below. This will be ignored on iOS in favor of calendarName and vice versa. Default: 1.
+
+  // And the URL can be passed since 4.3.2 (will be appended to the notes on Android as there doesn't seem to be a sep field)
+  calOptions.url = "https://www.google.com";
+
+  window.plugins.calendar.createEventWithOptions(title,eventLocation,notes,startDate,endDate,calOptions,success,error);
+
+  // create an event interactively
+  window.plugins.calendar.createEventInteractively(title,eventLocation,notes,startDate,endDate,success,error);
+
+  // create an event interactively with the calOptions object as shown above
+  window.plugins.calendar.createEventInteractivelyWithOptions(title,eventLocation,notes,startDate,endDate,calOptions,success,error);
+
+  // create an event in a named calendar (iOS only for now)
+  window.plugins.calendar.createEventInNamedCalendar(title,eventLocation,notes,startDate,endDate,calendarName,success,error);
+
+  // find events (on iOS this includes a list of attendees (if any))
+  window.plugins.calendar.findEvent(title,eventLocation,notes,startDate,endDate,success,error);
+
+  // if you need to find events in a specific calendar, use this one. All options are currently ignored when finding events, except for the calendarName.
+  var calOptions = window.plugins.calendar.getCalendarOptions();
+  calOptions.calendarName = "MyCreatedCalendar"; // iOS only
+  window.plugins.calendar.findEventWithOptions(title,eventLocation,notes,startDate,endDate,calOptions,success,error);
+
+  // list all events in a date range (only supported on Android for now)
+  window.plugins.calendar.listEventsInRange(startDate,endDate,success,error);
+
+  // list all calendar names - returns this JS Object to the success callback: [{"id":"1", "name":"first"}, ..]
+  window.plugins.calendar.listCalendars(success,error);
+
+  // find all _future_ events in the first calendar with the specified name (iOS only for now, this includes a list of attendees (if any))
+  window.plugins.calendar.findAllEventsInNamedCalendar(calendarName,success,error);
+
+  // change an event (iOS only for now)
+  var newTitle = "New title!";
+  window.plugins.calendar.modifyEvent(title,eventLocation,notes,startDate,endDate,newTitle,eventLocation,notes,startDate,endDate,success,error);
+
+  // or to add a reminder, make it recurring, change the calendar, or the url, use this one:
+  var filterOptions = window.plugins.calendar.getCalendarOptions(); // or {} or null for the defaults
+  filterOptions.calendarName = "Bla"; // only filter option currently implemented (iOS only)
+  var newOptions = window.plugins.calendar.getCalendarOptions();
+  newOptions.calendaName = "New Bla"; // make sure this calendar exists before moving the event to it
+  newOptions.firstReminderMinutes = 120; // etc
+  window.plugins.calendar.modifyEventWithOptions(title,eventLocation,notes,startDate,endDate,newTitle,eventLocation,notes,startDate,endDate,filterOptions,newOptions,success,error);
+
+  // delete an event (you can pass nulls for irrelevant parameters, note that on Android `notes` is ignored). The dates are mandatory and represent a date range to delete events in.
+  // note that on iOS there is a bug where the timespan must not be larger than 4 years, see issue 102 for details.. call this method multiple times if need be
+  // since 4.3.0 you can match events starting with a prefix title, so if your event title is 'My app - cool event' then 'My app -' will match.
+  window.plugins.calendar.deleteEvent(newTitle,eventLocation,notes,startDate,endDate,success,error);
+
+  // delete an event, as above, but for a specific calendar (iOS only)
+  window.plugins.calendar.deleteEventFromNamedCalendar(newTitle,eventLocation,notes,startDate,endDate,calendarName,success,error);
+
+  // open the calendar app (added in 4.2.8):
+  // - open it at 'today'
+  window.plugins.calendar.openCalendar();
+  // - open at a specific date, here today + 3 days
+  var d = new Date(new Date().getTime() + 3*24*60*60*1000);
+  window.plugins.calendar.openCalendar(d, success, error); // callbacks are optional
+}, false);
 </script>
         <script type="text/javascript" src="cordova.js"></script>
         <script src="plugins/com.phonegap.plugins.sqlite/www/SQLitePlugin.js"></script>
