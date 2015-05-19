@@ -716,7 +716,6 @@ function onBoardingBack()
 }
 
 
-<<<<<<< HEAD
 // onboarding page requries user avatar 
 function selectAvatar()
 {

@@ -13,7 +13,7 @@ module.exports = [
         "merges": [
             "navigator.notification"
         ]
-
+    },
     {
         "file": "plugins/org.apache.cordova.camera/www/CameraConstants.js",
         "id": "org.apache.cordova.camera.Camera",
