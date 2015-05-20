@@ -31,7 +31,8 @@
           $table,
           $header,
           $tbody,
-          $listview;
+          //$listview;
+          $slider;
 
       function init() {
          plugin.settings = $.extend({}, defaults, options);
@@ -64,8 +65,9 @@
          $tbody = $("<tbody/>").appendTo($table);
          
          $table.appendTo($element);
-         $listview = $("<ul data-role='listview'/>").insertAfter($table);
-         
+         //$listview = $("<ul data-role='listview'/>").insertAfter($table);
+         $slider = $("<div id='calendar-slide' class='carousel slide' data-ride='carousel' data-interval='false'></div>").insertAfter($table);
+         $slider_inner = $("<div class='carousel-inner' role='listbox'></div>").appendTo($slider);
          // Call refresh to fill the calendar with dates
          refresh(plugin.settings.date);      
       }
@@ -219,23 +221,38 @@
 
       $element.bind('change', function(event, begin) {
          var end = new Date(begin.getFullYear(), begin.getMonth(), begin.getDate() + 1, 0,0,0,0);
+         var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
          // Empty the list
-         $listview.empty();
-
+         //$listview.empty();
+         $slider_inner.empty();
          // Find events for this date
          for ( var   i = 0, event; event = plugin.settings.events[i]; i++ ) {
             if ( event[plugin.settings.end] >= begin && event[plugin.settings.begin] <= begin ) {
                // Append matches to list
                var title    = event[plugin.settings.title],
                    type = event[plugin.settings.type],
+                   date = begin.getDate(), 
+                   month = begin.getMonth().toString(),
                    beginTime  = (( event[plugin.settings.begin] > begin ) ? event[plugin.settings.begin] : begin ).toTimeString().substr(0,5),
                    endTime    = (( event[plugin.settings.end] < end ) ? event[plugin.settings.end] : end ).toTimeString().substr(0,5),
                    timeString = beginTime + "-" + endTime;
-               $("<li>" + ( ( timeString != "00:00-00:00" ) ? timeString : "" ) + " " + title + '<br>'+type+"</li>").appendTo($listview);   
+                   console.log(beginTime);
+                   console.log(endTime);
+               //$("<li>" + date +" "+months[month]+ " "+( ( timeString != "00:00-00:00" ) ? timeString : "" ) + " " + title + '<br>'+type+"</li>").appendTo($listview);
+                  $("<div class='item'><div class='row'>" + date + " "+ months[month]+"</div><div class='row'>"+title+" "+type+"</div></div>").appendTo($slider_inner);
+                  console.log($slider_inner);   
             }
          }
+         $slider_inner.children('.item').first().addClass('active');
+         //$slider.trigger('create').carousel('refresh');
+         //$listview.trigger('create').filter(".ui-listview").listview('refresh');
 
-         $listview.trigger('create').filter(".ui-listview").listview('refresh');
+         $slider.on("swipeleft", function(event){
+            $slider.carousel('next');
+         });
+         $slider.on("swiperight", function(event){
+            $slider.carousel('prev');
+         });
       });
       
       $element.bind('refresh', function(event, date) {
