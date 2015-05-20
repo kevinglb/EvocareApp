@@ -114,9 +114,7 @@ input[type=number]{
     display: block;
     height: 0;
 }
-.container{
-    width: 100%
-}
+
 .clear{
     clear: both;
 }
@@ -373,6 +371,9 @@ input[type=number]{
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
+}
+.carousel-inner .item{
+    height: 100%;
 }
 .carousel_controls{
     width: 100%;
