@@ -325,6 +325,14 @@ function setUpConulstantPage(patient_id)
   var single_patient = getSinglePatientInfo(patient_id);
 
   console.log(single_patient);
+
+  
+  $.mobile.changePage("#consultant_page", 
+  {
+    transition: "slide",
+    reverse: false,
+    changeHash: true
+  });
 }
 
 function getSinglePatientInfo(patient_id)
@@ -629,6 +637,7 @@ function onBoardingSave()
                       family_history_diabetes: onboard_diabetes, family_history_blood_pressure: onboard_blood_pressure, family_history_heart_disease: onboard_heart_disease,
                       family_history_asthma: onboard_asthma, family_history_epilepsy: onboard_epilepsy, family_history_cancer: onboard_cancer};
 
+  // with avatar
   if(uploadAvatar == true)
   {
     var imageURI = document.getElementById('onboarding_avatar').getAttribute("src");    
@@ -643,6 +652,7 @@ function onBoardingSave()
     ft.upload(imageURI, encodeURI(onboard_url), avatarTransferSuccess, avatarTransferFailure, options);
   }
 
+  // without avatar
   if(uploadAvatar == false)
   {
      $.ajax(
