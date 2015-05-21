@@ -23,6 +23,8 @@
         <link rel="stylesheet" type="text/css" href="css/mobiscroll.scroller.android-holo.css"/>
         <link rel="stylesheet" type="text/css" href="css/mobiscroll.android-holo-light.css"/>
         <link rel="stylesheet" type="text/css" href="css/countrySelect.min.css"/>
+        <!-- jqm calendar css -->
+        <link rel="stylesheet" type="text/css" href="css/jw-jqm-cal.css"/>
          <!-- main css -->
         <link rel="stylesheet" type="text/css" href="css/index.css" />
 
@@ -204,6 +206,7 @@
                     </a>
 
                     <a href="#" id="consultant_page" data-transition="slide" onClick="loadPatientInfo(this.id)">
+
                         <div class="row list_item">
                             <div class="col-xs-3 text-center vertical-middle">
                                 <img class="main_page_logo" src="img/consultant-logo.png">
@@ -841,12 +844,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="item container">
-                            <div class="row">
-                                <div id="calendar">
-                                </div>
+                        <div class="item">
+                            <div id="calendar">
                             </div>
-
                         </div>
                         <div class="item container">
                             <div class="row">
@@ -1777,6 +1777,9 @@
     <script type="text/javascript" src="cordova.js"></script>
     <script src="plugins/com.phonegap.plugins.sqlite/www/SQLitePlugin.js"></script>
 
+    <!-- calendar js -->
+
+    <script type="text/javascript" src="plugins/jw-jqm-cal.js"></script>
     <script type="text/javascript" src="plugins/mobiscroll.appframework.js"></script>
     <script type="text/javascript" src="plugins/mobiscroll.core.js"></script>
     <script type="text/javascript" src="plugins/mobiscroll.frame.js"></script>
@@ -1791,7 +1794,7 @@
     <script type="text/javascript" src="plugins/mobiscroll.frame.android.js"></script>
     <script type="text/javascript" src="plugins/mobiscroll.frame.android-holo.js"></script>
 
-    <script type="text/javascript" src="plugins/Calendar.js"></script>
+
 <script>
         $(function () {
                 // Date picker initialization
@@ -1802,6 +1805,42 @@
                     dateOrder: 'dd M yy',
                     dateFormat: 'dd-M-yy'
                 });
+                 var date = new Date();
+    var d = date.getDate();
+    var m = date.getMonth();
+    var y = date.getFullYear();
+                //calendar initialization
+                $("#calendar").jqmCalendar({
+                    events: [{
+            "title": "Meet PM",
+            "type" : "personal",
+            "begin": new Date(y,m, 27 ),
+            "end": new Date(y, m, 28)
+            
+        }, 
+        {
+            "title": "gym",
+            "type" : "fitness",
+            "begin": new Date(y,m, 22 ),
+            "end": new Date(y, m, 28)
+            
+        },{
+            "title": "Dinner",
+            "type": "personal",
+            "begin": new Date(y, m, d+3,1,10,0,0),
+            "end": new Date(y, m, d + 4,15,15,0,0)
+            
+        }, {
+            "title": "Lunch with Friends",
+            "type": "public",
+            "begin": new Date(y, m, d + 6),
+            "end": new Date(y, m, d + 7)
+            
+        }, 
+                ],
+                    months : ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+                    startOfWeek : 0
+                    }); 
         });
 </script>
 
@@ -2018,7 +2057,36 @@ function loadAssignContent(target_item){
         getPatientList("assign_content_list");
     }
 }
-
+$(function(){
+var date = new Date();
+    var d = date.getDate();
+    var m = date.getMonth();
+    var y = date.getFullYear();
+    
+    $("#calendar").jqmCalendar({
+        events: [{
+            "summary": "Meet PM",
+            "begin": new Date(y,m, 27 ),
+            "end": new Date(y, m, 28)
+            
+        }, {
+            "summary": "Dinner",
+            "begin": new Date(y, m, d + 3),
+            "end": new Date(y, m, d + 4)
+            
+        }, {
+            "summary": "Lunch with Friends",
+            "begin": new Date(y, m, d + 6),
+            "end": new Date(y, m, d + 7)
+            
+        }, 
+                ],
+                 months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+ 
+        startOfWeek: 0
+        
+    });
+});
 $("#country_selector").countrySelect({
                 //defaultCountry: "jp",
                 //onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],

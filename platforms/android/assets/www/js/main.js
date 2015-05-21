@@ -725,6 +725,7 @@ function onBoardingBack()
     });
 }
 
+
 // onboarding page requries user avatar 
 function selectAvatar()
 {
