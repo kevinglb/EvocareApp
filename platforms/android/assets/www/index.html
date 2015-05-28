@@ -520,12 +520,11 @@
 
                          <div class="carousel_controls">
                             <div class="back_btn">
-                                <a class="left carousel-control" href="#vc_slide" role="button" data-slide="prev" 
-                                onClick="detectTriageCarousel()" disabled="disabled">Back</a>
+                                <a class="left carousel-control" href="#vc_slide" role="button" data-slide="prev" >Back</a>
                                 <!-- <a class="carousel-control add_symptom" onClick="addSymptom()" role="button" style="display:none">+Symptom</a> -->
                             </div>
                             <div class="continue_btn">
-                                <a class="right carousel-control" href="#vc_slide" role="button" data-slide="next" onClick="detectTriageCarousel()">Continue</a>
+                                <a class="right carousel-control" href="#vc_slide" role="button" data-slide="next">Continue</a>
                                 <a class="carousel-control save_note" role="button" style="display:none;">Save</a>
                             </div>
                         </div>
@@ -1845,6 +1844,18 @@
 </script>
 
 <script type="text/javascript">
+/*  function called once a slide action is done in vc_slide */
+$("#vc_slide").bind('slid.bs.carousel',function(){
+    detectVCCarousel();
+});
+
+$("#triage_slide").bind('slid.bs.carousel',function(){
+    detectTriageCarousel();
+});
+
+$("#checklist_slide").bind('slid.bs.carousel',function(){
+    detectChecklistCarousel();
+});
 
 function addNewTag()
 {
@@ -1878,6 +1889,7 @@ function setHeightofContent(){
     $(".ui-content").height(contentCurrent);
     
 }
+
 function addSymptom(){
     var index = $("#symptom_list>li").length+1;
     //console.log(index);
@@ -1889,60 +1901,79 @@ function removeSymptom(element){
     var target = $(element).parent('div').parent('li');
     target.remove();
 }
-
-function detectChecklistCarousel(){
-   setTimeout(function(){
-        if($('#checklist_slide .carousel-inner .item:first').hasClass('active')){  
-                $('#checklist_slide .carousel_controls .left').attr('disabled',true);
-
-
-            }
-        else if($('#checklist_slide .carousel-inner .item:last-child').hasClass('active')) {
-                $('#checklist_slide .carousel_controls .right').hide();
-                $('#checklist_slide .carousel_controls .save_btn').show();
-              
-            }
-        else if($('#checklist_slide .carousel-inner .item:nth-child(4)').hasClass('active')){
-                $('#checklist_slide .carousel_controls .right').hide();
-                $('#checklist_slide .carousel_controls .save_btn').hide();
-                $('#checklist_slide .carousel_controls .assign_btn').show();
-            }
-        else{
-            $('#checklist_slide .carousel_controls .assign_btn').hide();
-            $('#checklist_slide .carousel_controls .save_btn').hide();
-            $('#checklist_slide .carousel_controls .right').show();
-            $('#checklist_slide .carousel_controls .back_btn .left').attr('disabled',false);
-        }
-    },500);
-}
-//detect the current slide of the carousel and show/hide the buttons
-function detectTriageCarousel(){
-    setTimeout(function(){
-        if($('#triage_slide .carousel-inner .item:first').hasClass('active')){  
-                $('#triage_slide .carousel_controls .left').attr('disabled',true);
+function detectVCCarousel(){
+    if($('#vc_slide .carousel-inner .item:first').hasClass('active')){  
+                $('#vc_slide .carousel_controls .left').attr('disabled', 'disabled');
                 console.log("the 1st item");
             }
-        else if($('#triage_slide .carousel-inner .item:last-child').hasClass('active')) {
-                $('#triage_slide .carousel_controls .right').hide();
+        else if($('#vc_slide .carousel-inner .item:last-child').hasClass('active')) {
+                $('#vc_slide .carousel_controls .right').hide();
                 // $('.carousel_controls .left').hide();
-                $('#triage_slide .carousel_controls .save_note').show();
+                $('#vc_slide .carousel_controls .save_note').show();
                 // $('.carousel_controls .add_symptom').show();
                 console.log("the last item");
             }
-        else if($('#triage_slide .carousel-inner .item:nth-last-child(2)').hasClass('active')){
-                $('#triage_slide .carousel_controls .right').text("Add Note");
-                $('#triage_slide .carousel_controls .save_note').hide();
-                $('#triage_slide .carousel_controls .right').show();
+        else if($('#vc_slide .carousel-inner .item:nth-last-child(2)').hasClass('active')){
+                $('#vc_slide .carousel_controls .right').text("Add Note");
+                $('#vc_slide .carousel_controls .save_note').hide();
+                $('#vc_slide .carousel_controls .right').show();
             }
         else{
-            $('#triage_slide .carousel_controls .right').text("Continue");
-            $('#triage_slide .carousel_controls .back_btn .left').attr('disabled',false);
-            $('#triage_slide .carousel_controls .save_note').hide();
-            $('#triage_slide .carousel_controls .right').show();
+            $('#vc_slide .carousel_controls .right').text("Continue");
+            $('#vc_slide .carousel_controls .left').removeAttr('disabled');
+            $('#vc_slide .carousel_controls .save_note').hide();
+            $('#vc_slide .carousel_controls .right').show();
             console.log("the rest items");
         }
-    },500);
 }
+
+function detectTriageCarousel(){
+    if($('#triage_slide .carousel-inner .item:first').hasClass('active')){  
+        $('#triage_slide .carousel_controls .left').attr('disabled','disabled');
+        console.log("the 1st item");
+    }
+    else if($('#triage_slide .carousel-inner .item:last-child').hasClass('active')) {
+        $('#triage_slide .carousel_controls .right').hide();
+        $('#triage_slide .carousel_controls .save_note').show();
+        console.log("the last item");
+    }
+    else if($('#triage_slide .carousel-inner .item:nth-last-child(2)').hasClass('active')){
+        $('#triage_slide .carousel_controls .right').text("Add Note");
+        $('#triage_slide .carousel_controls .save_note').hide();
+        $('#triage_slide .carousel_controls .right').show();
+    }
+    else{
+        $('#triage_slide .carousel_controls .right').text("Continue");
+        $('#triage_slide .carousel_controls .left').removeAttr('disabled');
+        $('#triage_slide .carousel_controls .save_note').hide();
+        $('#triage_slide .carousel_controls .right').show();
+        console.log("the rest items");
+    }
+}
+
+function detectChecklistCarousel(){
+    if($('#checklist_slide .carousel-inner .item:first').hasClass('active')){  
+        $('#checklist_slide .carousel_controls .left').attr('disabled','disabled');
+    }
+    else if($('#checklist_slide .carousel-inner .item:last-child').hasClass('active')) {
+        $('#checklist_slide .carousel_controls .right').hide();
+        $('#checklist_slide .carousel_controls .save_btn').show(); 
+    }
+    else if($('#checklist_slide .carousel-inner .item:nth-child(4)').hasClass('active')){
+        $('#checklist_slide .carousel_controls .right').hide();
+        $('#checklist_slide .carousel_controls .save_btn').hide();
+        $('#checklist_slide .carousel_controls .assign_btn').show();
+    }
+    else{
+        $('#checklist_slide .carousel_controls .assign_btn').hide();
+        $('#checklist_slide .carousel_controls .save_btn').hide();
+        $('#checklist_slide .carousel_controls .right').show();
+        $('#checklist_slide .carousel_controls .left').removeAttr('disabled');
+    }
+}
+
+
+
 function ScheduleContentSwitch(target)
 {
     if(target == "individual"){
@@ -1957,6 +1988,7 @@ function ScheduleContentSwitch(target)
         $(".clinic_content").show();
     }
 }
+
 function SliderChange(element){
     //alert("slider change");
     var grade = $(element).val();
@@ -2038,10 +2070,8 @@ function gotoAssign(){
     loadAssignContent(target_item);
 
     $("#checklist_slide").carousel('next');
-    
-
-
 }
+
 function loadAssignContent(target_item){
 
     if(target_item == "group"){
@@ -2092,9 +2122,6 @@ $("#country_selector").countrySelect({
                 //onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
                 preferredCountries: ['ie', 'cn', 'us']
             });
-
-
-
 </script>
         
         <script type="text/javascript" src="js/global.js"></script>

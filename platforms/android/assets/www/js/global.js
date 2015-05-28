@@ -98,3 +98,5 @@ function resetVCPage()
   $('#vc_blood_last_date').val('');
 }
 
+
+

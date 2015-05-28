@@ -103,8 +103,7 @@ input[type=number]{
 {
     margin-right: 15px;
     margin-left: 15px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+   
 }
 /*clearing floating*/
 .row:after{
@@ -466,9 +465,11 @@ input[type=number]{
     padding-right: 10px;
 }
 
-.below_content div i{
+.below_content div .icon-arrow-left-g{
     line-height: 60px;
     font-size: 24px;
+    max-width: 48px;
+    margin: 0 auto;
 }
 
 /*listview*/
