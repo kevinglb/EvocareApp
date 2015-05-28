@@ -103,7 +103,10 @@ input[type=number]{
 {
     margin-right: 15px;
     margin-left: 15px;
-   
+}
+.padded-row{
+    line-height: 50px;
+    padding: 10px 0;
 }
 /*clearing floating*/
 .row:after{
@@ -169,7 +172,7 @@ input[type=number]{
 }
 
 .ui-page .ui-header .ui-title {
-    line-height: 22px;
+    line-height: 24px;
     font-size: 22px;
 
     font-family: "Bendons-Medium";
@@ -197,7 +200,7 @@ input[type=number]{
     padding: 0;
     text-shadow:none;
     color:#FFF;
-    margin-top: 6px;
+    margin-top: 9px;
 }
 
 .ui-header .ui-btn-left{
@@ -1213,10 +1216,7 @@ input[type=number]{
 /*icons setting*/
 
 .icon{
-    height: 100%;
-    width: 100%;
     display: block;
-    margin-top: 2px;
     background-position: center center;
     background-size: cover;
 }
@@ -1225,37 +1225,63 @@ input[type=number]{
     -moz-transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
     -ms-transform: scaleX(-1);
-    height: 48px;
+}
+.header-icon{
+    height: 90%;
+    width: 90%;
+    margin: 2px auto;
+}
+.content-icon {
+    height: 45px;
+    width: 45px;
 }
 .icon-arrow-left{
-    background-image: url("../icon/icon-arrow-left.png");
+    background-image: url("../icon/icon-arrow-left-w.svg");
 }
 .icon-arrow-left-g{
-    background-image: url("../icon/icon-arrow-left-g.png");
+    background-image: url("../icon/icon-arrow-left-g.svg");
 }
 .icon-add-patient{
-    background-image: url("../icon/icon-add-patient.png");
+    background-image: url("../icon/icon-add-patient.svg");
 }
 .icon-bars{
-    background-image: url("../icon/icon-bars-w.png");
+    background-image: url("../icon/icon-bars-w.svg");
 }
 .icon-bars-g{
-    background-image: url("../icon/icon-bars-g.png");
+    background-image: url("../icon/icon-bars-g.svg");
 }
 .icon-dots{
-    background-image: url("../icon/icon-dots-w.png");
+    background-image: url("../icon/icon-dots-w.svg");
 }
 .icon-dots-g{
-    background-image: url("../icon/icon-dots-g.png");
+    background-image: url("../icon/icon-dots-g.svg");
 }
 .icon-filter{
-    background-image: url("../icon/icon-filter.png");
+    background-image: url("../icon/icon-filter-w.svg");
 }
 .icon-user{
-    background-image: url("../icon/icon-user-bg.png");
+    background-image: url("../icon/icon-user-w.svg");
 }
 .icon-locker{
-    background-image: url("../icon/icon-locker-bg.png");
+    background-image: url("../icon/icon-locker-w.svg");
+}
+.icon-clock-light{
+    background-image: url('../icon/icon-clock-light.svg'); 
+}
+.icon-location-g{
+     background-image: url('../icon/icon-location-g.svg'); 
+}
+.icon-ring {
+     background-image: url('../icon/icon-ring.svg'); 
+}
+.icon-group{
+     background-image: url('../icon/icon-group.svg'); 
+}
+.icon-note{
+     background-image: url('../icon/icon-note.svg'); 
+}
+.icon-checklist{
+     background-image: url('../icon/icon-checklist.svg'); 
 }
 div#onborading_content
 {

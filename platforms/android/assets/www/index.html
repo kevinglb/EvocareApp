@@ -14,10 +14,10 @@
         <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
 
         <!-- mobiscroll css -->
-        <link rel="stylesheet" type="text/css" href="css/mobiscroll.animation.css"/>
-        <link rel="stylesheet" type="text/css" href="css/mobiscroll.icons.css"/>
+        <!-- <link rel="stylesheet" type="text/css" href="css/mobiscroll.animation.css"/> -->
+        <!-- <link rel="stylesheet" type="text/css" href="css/mobiscroll.icons.css"/> -->
         <link rel="stylesheet" type="text/css" href="css/mobiscroll.frame.css"/>
-        <link rel="stylesheet" type="text/css" href="css/mobiscroll.frame.android.css"/>
+        <!-- <link rel="stylesheet" type="text/css" href="css/mobiscroll.frame.android.css"/> -->
         <link rel="stylesheet" type="text/css" href="css/mobiscroll.frame.android-holo.css"/>
         <link rel="stylesheet" type="text/css" href="css/mobiscroll.scroller.css"/>
         <link rel="stylesheet" type="text/css" href="css/mobiscroll.scroller.android-holo.css"/>
@@ -32,11 +32,6 @@
         <script type="text/javascript" src="plugins/jquery-1.11.2.min.js"></script>
         <script type="text/javascript" src="plugins/jquery.mobile-1.4.5.min.js"></script>
         <script type="text/javascript" src="plugins/bootstrap.min.js"></script>
-        <script type="text/javascript" src="plugins/d3.min.js"></script>
-        <script type="text/javascript" src="plugins/countrySelect.min.js"></script>
-        
-        <!-- date pikcer on mobile device trail version -->
-        <!-- <script type="text/javascript" src="plugins/mobiscroll.custom-2.15.1.min.js" ></script> -->
         
         <title>Evocare</title>
 
@@ -60,11 +55,11 @@
                         <form id="login_form" role="form">
                             <div class="form-group has-feedback left-feedback no-label">
                                 <input type="text" id="login_username" name="username" class="form-control " placeholder="youremail@mail.com">
-                                    <span class="icon-user form-control-feedback"></span></input>
+                                    <span class="icon-user content-icon form-control-feedback"></span></input>
                             </div>
                             <div class="form-group has-feedback left-feedback no-label">
                                 <input type="password" id="login_password" name="password" class="form-control " placeholder="password">
-                                <span class="icon-locker form-control-feedback"></span></input>
+                                <span class="icon-locker content-icon form-control-feedback"></span></input>
                             </div>
 
                             <div class="form-group">
@@ -163,8 +158,8 @@
             </div> 
             <!-- header -->
             <div data-role="header"  class="ui-header" position="fixed">
-                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse"><i class="icon icon-arrow-left"></i></a>
-                <a href="#main_right_menu" class="menu_btn"><i class="icon icon-bars"></i></a>
+                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse"><i class="icon header-icon icon-arrow-left"></i></a>
+                <a href="#main_right_menu" class="menu_btn"><i class="icon header-icon icon-bars"></i></a>
             </div>
             <!-- header -->
             <!-- content -->
@@ -174,7 +169,7 @@
                     <a href="#" id="virtual_clinic_page" data-transition="slide" onClick="loadPatientInfo(this.id)">
                         <div class="row list_item">
                             <div class="col-xs-3 vertical-middle text-center">
-                                <img class="main_page_logo" src="img/virtual-clinic-logo.png">
+                                <img class="main_page_logo" src="img/virtual-clinic-logo.svg">
                             </div>
                             <div class="col-xs-9 vertical-middle">
                                 <p>VIRTUAL CLINIC</p>
@@ -185,7 +180,7 @@
                     <a href="#" id="patient_triage_page" onClick="loadPatientInfo(this.id)">
                         <div class="row list_item">
                             <div class="col-xs-3 text-center vertical-middle">
-                                <img class="main_page_logo" src="img/triage-logo.png">
+                                <img class="main_page_logo" src="img/triage-logo.svg">
                             </div>
                             <div class="col-xs-9 vertical-middle">
                                 <p>PATIENT TRIAGE</p>
@@ -196,7 +191,7 @@
                     <a href="#checklist_page" data-transition="slide">
                         <div class="row list_item">
                             <div class="col-xs-3 text-center vertical-middle">
-                                <img class="main_page_logo" src="img/checklist-logo.png">
+                                <img class="main_page_logo" src="img/checklist-logo.svg">
                             </div>
                             <div class="col-xs-9 vertical-middle">
                                 <p>PATIENT CHECKLIST</p>
@@ -209,7 +204,7 @@
 
                         <div class="row list_item">
                             <div class="col-xs-3 text-center vertical-middle">
-                                <img class="main_page_logo" src="img/consultant-logo.png">
+                                <img class="main_page_logo" src="img/consultant-logo.svg">
                             </div>
                             <div class="col-xs-9 vertical-middle">
                                 <p>CONSULTANT ON CALL</p>
@@ -217,10 +212,10 @@
                         </div>
                         <div class="clear"></div>
                     </a>
-                    <a href="#schedule_page" data-transition="slide">
+                    <a href="#scheduler_page" data-transition="slide">
                         <div class="row list_item">
                             <div class="col-xs-3 text-center vertical-middle">
-                                <img class="main_page_logo" src="img/scheduler-logo.png">
+                                <img class="main_page_logo" src="img/scheduler-logo.svg">
                             </div>
                             <div class="col-xs-9 vertical-middle">
                                 <p>SCHEDULER</p>
@@ -231,7 +226,7 @@
                     <a id="patients_page" href="#" onClick="loadPatientInfo(this.id)" data-transition="slide">
                         <div class="row list_item">
                            <div class="col-xs-3 text-center vertical-middle">
-                                <img class="main_page_logo" src="img/patient-logo.png">
+                                <img class="main_page_logo" src="img/patient-logo.svg">
                             </div>
                             <div class="col-xs-9 vertical-middle">
                                 <p>PATIENTS</p>
@@ -252,8 +247,8 @@
             
             <div id="patientlist_menu" class="right_menu" data-role="panel" data-position="right" data-display="overlay">
                 <div data-role="header">
-                    <a href="#"><i class="icon icon-bars-g"></i></a>
-                    <a href="#"><i class="icon icon-dots-g"></i></a>
+                    <a href="#"><i class="icon header-icon icon-bars-g"></i></a>
+                    <a href="#"><i class="icon header-icon icon-dots-g"></i></a>
                 </div>
                 <div data-role="main" class="ui-content">
                 <div class="patient_info">
@@ -334,14 +329,14 @@
             </div> 
             <!-- header -->
             <div data-role="header" class="ui-header">
-                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" class="header_back"><i class="icon icon-arrow-left"></i></a>
+                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" class="header_back"><i class="icon header-icon icon-arrow-left"></i></a>
                 <h1>Patient list</h1>
                 <div class="ui-btn-right multi-icons">
                 <!-- <a href="#"><i class="icon icon-filter icon-right"></i></a> -->
                     
-                    <a href="#patientlist_menu" data-transition="slide"><i class="icon icon-dots"></i></a>
-                    <a id="onboarding_btn" href="#onborading_page" data-transition="slide"><i class="icon icon-add-patient icon-right"></i></a>
-                    <a href="#"><i class="icon icon-filter"></i></a>
+                    <a href="#patientlist_menu" data-transition="slide"><i class="icon header-icon icon-dots"></i></a>
+                    <a id="onboarding_btn" href="#onborading_page" data-transition="slide"><i class="icon header-icon icon-add-patient"></i></a>
+                    <a href="#"><i class="icon header-icon icon-filter"></i></a>
                 </div>
             </div>
             <!-- content -->
@@ -357,7 +352,7 @@
         <!-- patient list page -->
         <div id="profile_page" data-role="page">
             <div data-role="header">
-                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" class="header_back"><i class="icon icon-arrow-left"></i></a>
+                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" class="header_back"><i class="icon header-icon icon-arrow-left"></i></a>
             </div>
             <!-- content -->
             <div data-role="main" class="ui-content">
@@ -370,9 +365,9 @@
             </div>
             <!-- header-->
             <div data-role="header" class="ui-header" position="fixed">
-                <a href="#" onclick="resetVCPage()" data-rel="back" data-transition="slide" data-direction="reverse" class="header_back"><i class="icon icon-arrow-left"></i></a>
+                <a href="#" onclick="resetVCPage()" data-rel="back" data-transition="slide" data-direction="reverse" class="header_back"><i class="icon  header-icon icon-arrow-left"></i></a>
                 <h1>virtual clinic</h1>
-                <a href="#vc_right_menu"><i class="icon icon-bars"></i></a>
+                <a href="#vc_right_menu"><i class="icon header-icon icon-bars"></i></a>
             </div>
             <!-- header -->
             <!-- content -->
@@ -544,9 +539,9 @@
             <!-- right menu -->
             <!-- header -->
             <div data-role="header" class="ui-header" position="fixed">
-                <a href="#" onclick="resetTriagePage()" data-rel="back" data-transition="slide" data-direction="reverse" class="header_back"><i class="icon icon-arrow-left"></i></a>
+                <a href="#" onclick="resetTriagePage()" data-rel="back" data-transition="slide" data-direction="reverse" class="header_back"><i class="icon header-icon icon-arrow-left"></i></a>
                 <h1>Triage Manager</h1>
-                <a href="#triage_right_menu" class="menu_btn"><i class="icon icon-dots"></i></a>
+                <a href="#triage_right_menu" class="menu_btn"><i class="icon header-icon icon-dots"></i></a>
             </div>
             <!-- header -->
             <!-- content -->
@@ -723,9 +718,9 @@
             <div id="consultant_right_menu" class="right_menu" data-role="panel" data-position="right" data-display="overlay">
             </div>
             <div data-role="header" class="ui-header">
-               <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" class="header_back"><i class="icon icon-arrow-left"></i></a>
+               <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" class="header_back"><i class="icon header-icon icon-arrow-left"></i></a>
                 <h1>Consultant</h1>
-                <a href="#consultant_right_menu"><i class="icon icon-bars"></i></a>
+                <a href="#consultant_right_menu"><i class="icon header-icon icon-bars"></i></a>
             </div>
             <!-- header -->
             <!-- content-->
@@ -757,14 +752,14 @@
         </div>
         <!-- consultant page -->
         <!-- scheduler page -->
-        <div id="schedule_page" data-role="page">
+        <div id="scheduler_page" data-role="page">
             <!-- header -->
             <div id="schedule_right_menu" class="right_menu" data-role="panel" data-position="right" data-display="overlay">
             </div>
             <div data-role="header" class="ui-header">  
-                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" data-role="button"><i class="icon icon-arrow-left"></i></a>
-                <h1>Event Schedule</h1>
-                <a href="#schedule_right_menu"><i class="icon icon-bars"></i></a>
+                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" data-role="button"><i class="icon header-icon icon-arrow-left"></i></a>
+                <h1>Scheduler</h1>
+                <a href="#schedule_right_menu"><i class="icon header-icon icon-bars"></i></a>
             </div>
             <!-- header -->
             <!-- content -->
@@ -772,17 +767,16 @@
                 <div id="schedule_slide" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
                     <div class="carousel-inner" role="listbox">
                         <div class="item container active">
-                            <div class="row">
+                            <div class="row padded-row">
                                 <input type="text" placeholder="Title"></input>
                             </div>
-                            <div class="row">
+                            <div class="row padded-row">
                                 <div class="col-xs-2">
-                                    <i class="fa fa-2x fa-clock-o"></i>
+                                    <i class="icon content-icon icon-clock-light"></i>
                                 </div>
                                 <div class="col-xs-10">
-                                    <div class="row">
                                     <div class="col-xs-4 text-left">
-                                        <label for="flip-mini">All day</span>
+                                        <label for="flip-mini">All day</label>
                                     </div>
                                     <div class="col-xs-8 text-right">
                                             <select name="flip-mini" id="flip-mini" data-role="slider" data-mini="true">
@@ -791,7 +785,9 @@
                                             </select> 
                                     </div>
                                 </div>
-                                <div class="row">
+                            </div>
+                            <div class="row padded-row">
+                                <div class="col-xs-10 col-xs-offset-2">
                                     <div class="col-xs-4 text-left">
                                         <span>Starts</span>
                                     </div>
@@ -799,7 +795,7 @@
                                         <label>27 Apr 2015 11:30</label>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class="col-xs-10 col-xs-offset-2">
                                     <div class="col-xs-4 text-left">
                                         <span>Ends</span>
                                     </div>
@@ -807,7 +803,7 @@
                                         <label>27 Apr 2015 12:30</label>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class="col-xs-10 col-xs-offset-2">
                                     <div class="col-xs-4 text-left">
                                         <span>Repeat</span>
                                     </div>
@@ -815,28 +811,28 @@
                                         <label>Never</label>
                                     </div>
                                 </div>
-                                </div>
                             </div>
-                            <div class="row">
+                        
+                            <div class="row padded-row">
                                 <div class="col-xs-2">
-                                    <i class="fa fa-2x fa-map-marker"></i>
+                                    <i class="icon content-icon icon-location-g"></i>
                                 </div>
                                 <div class="col-xs-10">
                                     <input type="text" placeholder="Add lcoation"></input>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row padded-row">
                                 <div class="col-xs-2">
-                                    <i class="fa fa-2x fa-bell-o"></i>
+                                    <i class="icon content-icon icon-ring"></i>
                                 </div>
                                 <div class="col-xs-10">
                                     <p>Alert 30 minutes by e-mail</p>
                                     <input type="text" placeholder="Travel time"></input>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row padded-row">
                                 <div class="col-xs-2">
-                                    <i class="fa fa-2x fa-users"></i>
+                                    <i class="icon content-icon icon-group"></i>
                                 </div>
                                 <div class="col-xs-10">
                                     <input type="text" placeholder="Invites"></input>
@@ -851,7 +847,7 @@
                             <div class="row">
                                 <input type="text" placeholder="Event Type"></input>
                             </div>
-                            <div class="row">
+                            <div class="row padded-row">
                                 <div class="col-xs-5 text-center">
                                     <label class="start_time">Start</label>
                                 </div>
@@ -863,12 +859,12 @@
                                 </div>
                             </div>
                             <div  style="background:#FFF;  padding:1em 0; margin-left:-15px; margin-right:-15px;">
-                                <div class="row">
+                                <div class="row padded-row">
                                     <div class="col-xs-6 text-center">
-                                        <img src="img/RedCross.png" class="img-circle"/>
+                                        <img src="img/add-button.svg" class="img-circle" style="max-width:120px;"/>
                                     </div>
                                     <div class="col-xs-6 text-center">
-                                     <img src="img/RedCross.png" class="img-circle"/>
+                                        <img src="img/add-button.svg" class="img-circle" style="max-width:120px;"/>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -880,33 +876,33 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class='row'>
+                            <div class='row padded-row'>
                                 <div class="col-xs-2 text-center">
-                                    <i class="fa fa-2x fa-file-o"></i>
+                                    <i class="icon content-icon icon-note"></i>
                                 </div>
                                 <div class="col-xs-10 text-left">
                                     <label>Add Note</label>
                                 </div>
                             </div>
-                            <div class='row'>
+                            <div class='row padded-row'>
                                 <div class="col-xs-2 text-center">
-                                    <i class="fa fa-2x fa-bell-o"></i>
+                                    <i class="icon content-icon icon-ring"></i>
                                 </div>
                                 <div class="col-xs-10 text-left">
                                     <label>Add Alert</label>
                                 </div>
                             </div>
-                            <div class='row'>
+                            <div class='row padded-row'>
                                 <div class="col-xs-2 text-center">
-                                    <i class="fa fa-2x fa-file"></i>
+                                    <i class="icon content-icon icon-checklist"></i>
                                 </div>
                                 <div class="col-xs-10 text-left">
                                     <label>Add Checklist</label>
                                 </div>
                             </div>
-                            <div class='row'>
+                            <div class='row padded-row'>
                                 <div class="col-xs-2 text-center">
-                                    <i class="fa fa-2x fa-map-marker"></i>
+                                    <i class="icon content-icon icon-location-g"></i>
                                 </div>
                                 <div class="col-xs-10 text-left">
                                     <label>Add Location</label>
@@ -1119,7 +1115,7 @@
         <!-- onborading page -->
         <div id="onborading_page" data-role="page">
             <div data-role="header" class="ui-header">
-                <a href="#" data-rel="back" onclick="resetOnBoardingPage()" data-transition="slide" data-direction="reverse"><i class="icon icon-arrow-left"></i></a>
+                <a href="#" data-rel="back" onclick="resetOnBoardingPage()" data-transition="slide" data-direction="reverse"><i class="icon header-icon icon-arrow-left"></i></a>
                 <h1>PATIENTS</h1>
                 <a href="#"></a>
             </div>
@@ -1382,9 +1378,9 @@
             </div>
             <!-- header -->
             <div data-role="header" position="fixed" class="ui-header">
-                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" class="head_back"><i class="icon icon-arrow-left"></i></a>
+                <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" class="head_back"><i class="icon header-icon icon-arrow-left"></i></a>
                 <h1>Checklist</h1>
-                <a href="#" class="ui-btn ui-corner-all"><i class="icon icon-dots"></i></a>
+                <a href="#" class="ui-btn ui-corner-all"><i class="icon header-icon icon-dots"></i></a>
             </div>
             <!-- header -->
             <!-- content -->
@@ -1577,7 +1573,7 @@
                             <div class="row">
                                 <h3>Assign Checklist Name to</h3>
                                 <ul data-role="listview" class="list">
-                                </li>
+                                </ul>
                             </div>
                         </div>
                         <!-- <div class="item container">
@@ -1769,17 +1765,23 @@
                                 <a href="#" class="save_btn carousel-control" style="display:none;" onClick="" >Save</a>
                             </div>
                         </div>
+                    </div>
                 </div>
                 <!-- content end -->
-            </div>
+        </div>
             <!-- checlist page end -->
+
     <script type="text/javascript" src="cordova.js"></script>
     <script src="plugins/com.phonegap.plugins.sqlite/www/SQLitePlugin.js"></script>
 
-    <!-- calendar js -->
+    <script type="text/javascript" src="plugins/d3.min.js"></script>
+    <script type="text/javascript" src="plugins/countrySelect.min.js"></script>
 
+    <!-- calendar js -->
     <script type="text/javascript" src="plugins/jw-jqm-cal.js"></script>
-    <script type="text/javascript" src="plugins/mobiscroll.appframework.js"></script>
+    
+    <!-- mobiscroll datepicker js -->s
+    <!--<script type="text/javascript" src="plugins/mobiscroll.appframework.js"></script> -->
     <script type="text/javascript" src="plugins/mobiscroll.core.js"></script>
     <script type="text/javascript" src="plugins/mobiscroll.frame.js"></script>
     <script type="text/javascript" src="plugins/mobiscroll.scroller.js"></script>
@@ -1787,10 +1789,11 @@
     <script type="text/javascript" src="plugins/mobiscroll.datetimebase.js"></script>
     <script type="text/javascript" src="plugins/mobiscroll.datetime.js"></script>
     <script type="text/javascript" src="plugins/mobiscroll.select.js"></script>
-    <script type="text/javascript" src="plugins/mobiscroll.listbase.js"></script>
-    <script type="text/javascript" src="plugins/mobiscroll.image.js"></script>
-    <script type="text/javascript" src="plugins/mobiscroll.treelist.js"></script>
-    <script type="text/javascript" src="plugins/mobiscroll.frame.android.js"></script>
+    <!-- <script type="text/javascript" src="plugins/mobiscroll.listbase.js"></script> -->
+    <!-- <script type="text/javascript" src="plugins/mobiscroll.image.js"></script> -->
+     <!-- <script type="text/javascript" src="plugins/mobiscroll.treelist.js"></script> -->
+
+     <!-- <script type="text/javascript" src="plugins/mobiscroll.frame.android.js"></script> -->
     <script type="text/javascript" src="plugins/mobiscroll.frame.android-holo.js"></script>
 
 
