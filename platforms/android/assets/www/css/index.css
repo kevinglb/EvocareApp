@@ -1,8 +1,6 @@
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
-
-
 @font-face{
     font-family: 'Bendons-Regular';
     font-style: normal;
@@ -28,8 +26,6 @@
   font-weight: normal;
   src: url('../fonts/BentonSans-Bold.otf') format('opentype');
 }
-
-
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
@@ -53,7 +49,6 @@ body {
     padding:0px;
     width:100%;
 }
-
 /* Portrait layout (default) */
 .app {
     background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
@@ -69,7 +64,6 @@ body {
     margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
                                    /* offset horizontal: half of text area width */
 }
-
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
     .app {
@@ -79,7 +73,6 @@ body {
                                       /* offset horizontal: half of image width and text area width */
     }
 }
-
 h1 {
     font-size:1.5em;
     font-weight:normal;
@@ -88,17 +81,18 @@ h1 {
     padding:0px;
     text-align:center;
 }
-
 a {
     text-shadow:none;
     text-decoration: none;
 }
-
 input[type=number]{
     -moz-appearance: textfield;
     -webkit-appearance: textfield;
 }
-
+textarea{
+    min-height: 120px;
+    max-height: 50vh;
+}
 .row
 {
     margin-right: 15px;
@@ -116,7 +110,6 @@ input[type=number]{
     display: block;
     height: 0;
 }
-
 .clear{
     clear: both;
 }
@@ -148,6 +141,25 @@ input[type=number]{
     background-color:#4B946A;
     display:none;
 }
+
+.bottom-border .ui-input-text{
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    border-bottom: 1px solid #BBC4C7;
+    font-family: "Bendons-Light";
+    color: #495559;
+}
+.bottom-border.color-w .ui-input-text{
+    color: #fff;
+    border-color: #fff;
+}
+.bottom-border.color-w .ui-input-text input::-webkit-input-placeholder{
+    color: #fff;
+}
+.bottom-border.color-w .ui-input-text input::-moz-placeholder{
+    color: #fff;
+}
 @keyframes fade {
     from { opacity: 1.0; }
     50% { opacity: 0.4; }
@@ -158,19 +170,15 @@ input[type=number]{
     50% { opacity: 0.4; }
     to { opacity: 1.0; }
 }
- 
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
-
-
 /* ui-header ui-content ui-footer */
 .ui-page .ui-header {
     height: 56px;
     background-color: #8FCDBE !important;
 }
-
 .ui-page .ui-header .ui-title {
     line-height: 24px;
     font-size: 22px;
@@ -184,14 +192,12 @@ input[type=number]{
     text-transform: uppercase;
     color: #FFF;
 }
-
 .ui-header a{
     background-color: transparent !important;
     border: none;
     box-shadow: none;
     color: #FFF;
 }
-
 .ui-header .ui-btn-left, .ui-header .ui-btn-right{
     height: 40px;
     line-height: 40px;
@@ -199,10 +205,8 @@ input[type=number]{
     top: 0;
     padding: 0;
     text-shadow:none;
-    color:#FFF;
     margin-top: 9px;
 }
-
 .ui-header .ui-btn-left{
     margin-left: 10px;
 }
@@ -230,23 +234,13 @@ input[type=number]{
     background-color: #F2F2F2; 
     color: #495559;  
 }
+
+
 /*login page css*/
 .form-group {
     margin: 15px 0px;
 }
-#login_page {
-    height: 100%;
-}
-#login_page .ui-header{
-    background-color: rgba(166, 181, 184,1) !important;
-}
-#login_page .ui-content{
-    background-color:  rgba(166, 181, 184,1) !important;
-}
-#signup_page .ui-header{
-    background-color: rgba(166, 181, 184,1) !important;
-}
-#signup_page .ui-content{
+#login_page .ui-content, #signup_page .ui-content{
     background-color:  rgba(166, 181, 184,1) !important;
 }
 #login_content, #signup_content{
@@ -254,7 +248,6 @@ input[type=number]{
     max-width:  1080px;
     overflow-y:auto; 
 }
-
 #login_content .login_header{
     height: 25%;
     padding-top:10%;
@@ -329,30 +322,12 @@ input[type=number]{
 
 
 /*sign up form*/
-#signup_form .ui-input-text {
-    border: none;
-    border-bottom:  1px solid #FFF;
-    border-radius: 0px;
-    background: transparent;
-    box-shadow:none;
-    text-shadow:none;
-    color: #FFF;
+#signup_form{
+    margin-top: 20%;
 }
-
-
-#signup_form .ui-input-text input{
+#signup_form input{
     text-align: center;
-    border: none;
-    box-shadow: none;
-} 
-
-#signup_form .ui-input-text input::-moz-placeholder{
-    color: #FFF;
 }
-#signup_form .ui-input-text input:webkit-placeholder{
-    color: #fff;
-}
-
 #signup_submit{
     background-color: rgba(189, 201, 205, 1);
     color: rgba(44, 118, 108, 1) !important;
@@ -362,7 +337,7 @@ input[type=number]{
     padding: 0;
 }
 
-/*slide settting*/
+/*carousel settting*/
 .ui-content .slide{
     height: 80vh;
 }
@@ -386,7 +361,6 @@ input[type=number]{
     text-shadow: none !important;
     text-transform: uppercase;
 }
-
 .carousel_controls div{
     height: 100%;
     width: 50%;
@@ -430,8 +404,6 @@ input[type=number]{
 .gender {
     text-transform: uppercase;
 }
-
-
 /*pie chart*/
 .pie_chart{
     height: 36vh;
@@ -467,7 +439,6 @@ input[type=number]{
     font-weight: bold;
     padding-right: 10px;
 }
-
 .below_content div .icon-arrow-left-g{
     line-height: 60px;
     font-size: 24px;
@@ -779,19 +750,13 @@ input[type=number]{
     border-bottom: 1px solid #BBC4C7;
     border-radius: 0;
 }
-#triage_slide textarea, #vc_slide textarea{
-    min-height: 120px;
-    max-height: 60vh;
-}
+
 #symptom_list li .ui-input-text input::-moz-placeholder {
     color: #BBC4C7;
 }
 #symptom_list  li.ui-input-text input:-webkit-placeholder{
     color: #BBC4C7;
 }
-
-
-
 /*flip switch button*/
 .ui-slider-switch{
     border-radius: 2em !important;
@@ -810,14 +775,8 @@ input[type=number]{
     margin: -2px 0 0 -15px;
     background-color: #f2f2f2 !important;
     border: 2px solid #E2e2e2;
-
 }
-
-
-
 /* main page */
-
-
 .main_content
 {
     height:100%;
@@ -873,19 +832,15 @@ input[type=number]{
     line-height: 3.6vh;
     font-size: 3vh
 }
-
-
 /* checklist page */
 #checklist_page {
     height: 100%;
     overflow-y:hidden;
 }
-
 #checklist_slide {
     height: 95vh;
     overflow-y: auto;
 }
-
 #checklist_page .ui-input-text{
     background: transparent;
     border: none;
@@ -896,7 +851,6 @@ input[type=number]{
 #checklist_page .close_link i{
     line-height: 48px;
 }
-
 .ui-popup {
     padding:1.5em 0 0 0;
     border:none !important;
@@ -914,7 +868,6 @@ input[type=number]{
     width: 100%;
     margin: 0 auto;
 }
-
 .ui-popup .popup-btns a{
     width: 50%;
     float: left;
@@ -931,13 +884,11 @@ input[type=number]{
     border-bottom-right-radius: 0.3125em;
     border-left: 1px solid #fff;
 }
-
 .list li{
     background-color: #FFF !important;
     margin:15px 0 !important;
     font-size: 1em;
 }
-
 .add_link {
     font-size: 1.4em;
     line-height: 1.6em;
@@ -948,45 +899,22 @@ input[type=number]{
     font-size: 1.2em;
 }
 
-/* checklist page end */
-
-/*event schedule page*/
-.switch_btn {
-    width: 100%;
-    height: 4vh;
-    margin: 0.5vh 0;
-}
-.switch_btn a{
-    width: 50%;
-    float: left;
-    height: 100%;
-    border: none;
-    margin: 0;
-}
-
-.clinic_content, .individual_content {
-    height: 95vh;
-    overflow: auto;
-}
-
+/* schedule page*/
 #patientlist_page .ui-content{
     overflow-y : auto !important;
 }
 #patient_list{
     padding: 15px 0px;
 }
-
 #patient_list_view{
     overflow-y: auto; 
     box-shadow: none;
 }
-
 #patient_list .patient{
     background-color: #fff !important;
     margin:15px 0;
     line-height: 1em;
     font-size: 1em;
-
 }
 #patient_list .patient.selected{
     background-color: red!important;
@@ -1210,13 +1138,10 @@ input[type=number]{
 .switch-button.toggle{
     left: 50%;
 }
-/*.switch.ui-radio:last-child >label[class*="ui-radio-on"] ~.switch-button{left: 50%;}
-*/
 
 /*icons setting*/
-
 .icon{
-    display: block;
+    display: inline-block;
     background-position: center center;
     background-size: cover;
 }
@@ -1283,6 +1208,12 @@ input[type=number]{
 .icon-checklist{
      background-image: url('../icon/icon-checklist.svg'); 
 }
+.icon-attach{
+    background-image: url('../icon/icon-attach.svg'); 
+}
+.icon-print{
+    background-image: url('../icon/icon-print.svg'); 
+}
 div#onborading_content
 {
   overflow-y: auto;
@@ -1291,29 +1222,6 @@ div#onborading_content
 }
 #onboarding_form{
     margin-bottom: 120px;
-}
-#onborading_content .form-control{
-    box-shadow: none;
-}
-#onborading_content .form-group .ui-input-text{
-    background: transparent !important;
-    border: none;
-    border-bottom: 1px solid #BBC4C7;
-    border-radius: 0;
-    box-shadow: none;
-}
-
-#onborading_content .form-group .ui-input-text input{
-    border: none;
-    color: #495559;
-}
-
-#onborading_content .ui-input-text input::moz-placeholder{
-    color: #495559;
-}
-
-#onborading_content .ui-input-text input:webkit-placeholder{
-    color: #495559;
 }
 
 img#onboarding_avatar 

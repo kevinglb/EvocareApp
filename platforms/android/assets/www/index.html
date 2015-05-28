@@ -7,17 +7,13 @@
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-
         <!-- css & font libraries  -->
         <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
 
         <!-- mobiscroll css -->
-        <!-- <link rel="stylesheet" type="text/css" href="css/mobiscroll.animation.css"/> -->
-        <!-- <link rel="stylesheet" type="text/css" href="css/mobiscroll.icons.css"/> -->
         <link rel="stylesheet" type="text/css" href="css/mobiscroll.frame.css"/>
-        <!-- <link rel="stylesheet" type="text/css" href="css/mobiscroll.frame.android.css"/> -->
         <link rel="stylesheet" type="text/css" href="css/mobiscroll.frame.android-holo.css"/>
         <link rel="stylesheet" type="text/css" href="css/mobiscroll.scroller.css"/>
         <link rel="stylesheet" type="text/css" href="css/mobiscroll.scroller.android-holo.css"/>
@@ -27,22 +23,16 @@
         <link rel="stylesheet" type="text/css" href="css/jw-jqm-cal.css"/>
          <!-- main css -->
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-
         <!-- javascript libraries -->
         <script type="text/javascript" src="plugins/jquery-1.11.2.min.js"></script>
         <script type="text/javascript" src="plugins/jquery.mobile-1.4.5.min.js"></script>
         <script type="text/javascript" src="plugins/bootstrap.min.js"></script>
-        
         <title>Evocare</title>
-
-        
     </head>
     <body onload="setHeightofContent()">
         <!-- log in page -->
         <div id="login_page" data-role="page">
-            <!-- header -->
-            <div date-role="header" class="ui-header" position="fixed">
-            </div>
+            
             <!-- header -->
             <!-- content -->
             <div role="main" class="ui-content">
@@ -55,13 +45,12 @@
                         <form id="login_form" role="form">
                             <div class="form-group has-feedback left-feedback no-label">
                                 <input type="text" id="login_username" name="username" class="form-control " placeholder="youremail@mail.com">
-                                    <span class="icon-user content-icon form-control-feedback"></span></input>
+                                    <span class="icon-user form-control-feedback"></span></input>
                             </div>
                             <div class="form-group has-feedback left-feedback no-label">
                                 <input type="password" id="login_password" name="password" class="form-control " placeholder="password">
-                                <span class="icon-locker content-icon form-control-feedback"></span></input>
+                                <span class="icon-locker form-control-feedback"></span></input>
                             </div>
-
                             <div class="form-group">
                                 <a id="login_submit" value="Log in" name="login_btn" class="btn btn-lg btn-perspective btn-block">LOG IN</a>
                             </div>
@@ -71,7 +60,6 @@
                         <div class="row text-center">
                             <a href="#">Forgot username or password?</a>
                         </div>
-
                         <div class="row text-center">
                             <a href="#signup_page"  data-transition="slideup">Register now</a>
                         </div>
@@ -82,39 +70,38 @@
         <!-- log in page end -->
         <!-- signn up page -->
         <div  id="signup_page" data-role="page">
-            <div data-role="header">
-            </div>
+            
             <div data-role="main" class="ui-content">
                 <div id="signup_content">
                     <div class="row">
                         <!-- signup form -->
                         <form id="signup_form" role="form">
-                            <div class="form-group">
-                                <input type="text" id="signup_fullname" name="fullname" class="form-control  " placeholder="Full Name" />
+                            <div class="form-group bottom-border color-w">
+                                <input type="text" id="signup_fullname" name="fullname"  placeholder="Full Name" />
                             </div>
-                            <div class="form-group">
-                                <input type="email" id="signup_email" name="email" class="form-control  " placeholder="Email Address"/>
+                            <div class="form-group bottom-border color-w">
+                                <input type="email" id="signup_email" name="email"  placeholder="Email Address"/>
                             </div>
-                            <div class="form-group">
-                                <input type="password" id="signup_password" name="password" class="form-control  " placeholder="Password"/>
+                            <div class="form-group bottom-border color-w">
+                                <input type="password" id="signup_password" name="password"  placeholder="Password"/>
                             </div>
-                            <div class="form-group">
-                                <input type="password" id="signup_password_confirm" name="password_confirm" class="form-control  " placeholder="Confirm Password"/>
+                            <div class="form-group bottom-border color-w">
+                                <input type="password" id="signup_password_confirm" name="password_confirm" placeholder="Confirm Password"/>
                             </div>
-                            <div class="form-group">
-                                <input type="text" id="signup_birthday" name="birthday" class="form-control   datepicker_input" placeholder="Date of Birth"/>
+                            <div class="form-group bottom-border color-w">
+                                <input type="text" id="signup_birthday" name="birthday" class="datepicker_input" placeholder="Date of Birth"/>
                             </div>
-                            <div class="form-group">
-                                <input type="text" id="signup_contact_number" name="contact_number" class="form-control  " placeholder="Contact Number"/>
+                            <div class="form-group bottom-border color-w">
+                                <input type="text" id="signup_contact_number" name="contact_number" placeholder="Contact Number"/>
                             </div>
-                            <div class="form-group">
-                                <input type="text" id="signup_hospital" name="hospital" class="form-control  " placeholder="Hospital" />
+                            <div class="form-group bottom-border color-w">
+                                <input type="text" id="signup_hospital" name="hospital" placeholder="Hospital" />
                             </div>
-                            <div class="form-group">
-                                <input type="text" id="signup_job_title" name="job_title" class="form-control  " placeholder="Current Job Title" />
+                            <div class="form-group bottom-border color-w">
+                                <input type="text" id="signup_job_title" name="job_title"  placeholder="Current Job Title" />
                             </div>
-                            <div class="form-group">
-                                <input type="text" id="signup_registration_number" name="registration_number" class="form-control  " placeholder="ABA registration number" />
+                            <div class="form-group bottom-border color-w">
+                                <input type="text" id="signup_registration_number" name="registration_number" placeholder="ABA registration number" />
                             </div>
                             <div class="form-group">
                                 <select name="signup_medical_insurance" id="signup_medical_insurance" data-native-menu="false">
@@ -240,11 +227,9 @@
             <!-- content -->  
         </div>
         <!-- main page end -->
-
         <!-- patient list page -->
         <div id="patientlist_page" data-role="page">
             <!-- patient list menu -->
-            
             <div id="patientlist_menu" class="right_menu" data-role="panel" data-position="right" data-display="overlay">
                 <div data-role="header">
                     <a href="#"><i class="icon header-icon icon-bars-g"></i></a>
@@ -728,15 +713,55 @@
                 <div id="consultant_slide" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
                     <div class="carousel-inner" role="listbox">
                         <div class="item container active">
+                            <form>
+                                <div class="row padded-row">
+                                    <div class="col-xs-2">
+                                        <label for="message_title">Title</label>
+                                    </div>
+                                    <div class="col-xs-10 bottom-border">
+                                        <input type="text" id="message_title"></input>
+                                    </div>
+                                </div>
+                                <div class="row padded-row">
+                                    <div class="col-xs-2">
+                                        <label for="message_subject">Subject</label>
+                                    </div>
+                                    <div class="col-xs-10 bottom-border">
+                                        <input type="text" id="message_subject"></input>
+                                    </div>
+                                </div>
+                                <div class="row padded-row">
+                                    <div class="col-xs-2">
+                                        <label for="message_content">Message</label>
+                                    </div>
+                                    <div class="col-xs-10 bottom-border">
+                                        <textarea type="text" id="message_content"></textarea>
+                                    </div>
+                                </div>
+                                <div class="row padded-row">
+                                    <a href="#">
+                                        <label>
+                                            <i class="icon content-icon icon-attach"></i>
+                                    
+                                        
+                                            Attachment</label>
+                                    
 
-                        </div>
-                        <div class="item container">
-                            <div class="patient_info">
-                            </div>
-                            <div class="row">
-                                <h3 class="md-font">Assign</h3>
+                                    </a>
+                                </div>
+                                <div class="row padded-row">
+                                    <a href="#">
+                                        <div class="col-xs-1">
+                                            <i class="icon content-icon icon-print"></i>
+                                        </div>
+                                        <div class="col-xs-11">
+                                            <label>Print</label>
+                                        </div>
 
-                            </div>
+                                    </a>
+                                </div>
+                            </form>
+
                         </div>
                     </div>
                     <div class="carousel_controls">
@@ -1047,7 +1072,6 @@
                             </ul>
                         </div>
                     </div>
-
                     <div class="carousel_controls">
                             <div class="back_btn">
                                 <a class="left carousel-control" href="#schedule_slide" role="button" data-slide="prev">Back</a>
@@ -1058,60 +1082,10 @@
                             </div>
                         </div>
                 </div>
-
-                
-
-                <!-- <div class="individual_content" style="display:none;">
-                    <div class="container">
-                        <ul class="timeline">
-                            <li>
-                                <div class="col-xs-4 time text-center">
-                                    <p>10:00 today</p>
-                                     <img src="img/RedCross.png" class="img-circle"/>
-                                </div>
-                                <div class="col-xs-4 col-xs-offset-4 name text-center">
-                                    <p>Stephen moriiessy</p>
-                                    <img sr
-                                    c="img/RedCross.png" class="img-circle"/>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="col-xs-4 time text-center">
-                                    <p>14:00 tomorrow</p>
-                                     <img src="img/RedCross.png" class="img-circle"/>
-                                </div>
-                                <div class="col-xs-4 col-xs-offset-4 name text-center">
-                                    <p>Mary Berry</p>
-                                    <img src="img/RedCross.png" class="img-circle"/>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="col-xs-4 time text-center">
-                                    <p>8:00 29th APR</p>
-                                     <img src="img/RedCross.png" class="img-circle"/>
-                                </div>
-                                <div class="col-xs-4 col-xs-offset-4 name text-center">
-                                    <p>Stephen moriiessy</p>
-                                    <img src="img/RedCross.png" class="img-circle"/>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="col-xs-4 time text-center">
-                                    <p>10:00 today</p>
-                                     <img src="img/RedCross.png" class="img-circle"/>
-                                </div>
-                                <div class="col-xs-4 col-xs-offset-4 name text-center">
-                                    <p>Stephen moriiessy</p>
-                                    <img src="img/RedCross.png" class="img-circle"/>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div> -->
             </div>
             <!-- content -->
         </div>
-        <!-- event schedule page -->
+        <!-- schedule page -->
         <!-- onborading page -->
         <div id="onborading_page" data-role="page">
             <div data-role="header" class="ui-header">
@@ -1122,7 +1096,6 @@
             <!-- content-->
             <div data-role="main" class="ui-content">
                 <div id="onborading_content" class="container" sytle="display:none;">
-                    
                         <!-- onboarding form -->
                         <form id ="onboarding_form" role="form">
                             <div class="form-group">
@@ -1131,13 +1104,13 @@
                             <div class="form-group">
                                 <img type="file" id="onboarding_avatar" class="img-circle" src="img/ChooseAvatar.png" onclick="selectAvatar(); return false;"/>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group bottom-border">
                                 <input type="text" id="onboarding_fullname" name="fullname"  placeholder="Full Name"/>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group bottom-border">
                                 <input type="text" id="onboarding_birthday" name="birthday" class="datepicker_input" placeholder="Date of Birth"/>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group bottom-border">
                                 <input type="text" id="onboarding_address" name="address" placeholder="Address"/>
                             </div>
                             <div id="onboarding_gender" class="form-group">
@@ -1150,17 +1123,16 @@
                                     <label for="onboarding_female" class="light-font">Female</label>
                                 </fieldset>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group bottom-border">
                                  <input type="email" id="onboarding_email" name="email" placeholder="Email Address"/>
                             </div>
                            
-                            <div class="form-group">
+                            <div class="form-group bottom-border">
                                 <input type="number" id="onboarding_home_number" name="contact_number"  placeholder="Home Phone Number"/>
                             </div>
-                             <div class="form-group">
+                             <div class="form-group bottom-border">
                                 <input type="number" id="onboarding_mobile_number" name="mobile_number" placeholder="Mobile Phone Number"/>
                             </div>
-                            
                             <div class="form-group">
                                 <label>Nationality</label>
                                 <div class="form-item">
@@ -1170,30 +1142,30 @@
                                     <input type="text" id="country_selector_code" name="country_selector_code" data-countrycodeinput="1" readonly="readonly" placeholder="Selected country code will appear here" />
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group bottom-border">
                                 <input type="text" id="onboarding_occupation" name="occupation" placeholder="Occupation"/>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group bottom-border">
                                 <input type="text" id="onboarding_pps" name="pps"  placeholder="PPS number"/>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group bottom-border">
                                 <label>Next of Kin 1</label>
                                 <input type="text" id="onboarding_kin1_fullname" name="kin1_fullname"  placeholder="Name"/>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group bottom-border">
                                 <input type="text" id="onboarding_kin1_address" name="kin1_address"  placeholder="Address"/>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group bottom-border">
                                 <input type="number" id="onboarding_kin1_phone" name="kin1_phone"  placeholder="Phone number"/>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group bottom-border">
                                 <label>Next of Kin 2</label>
                                 <input type="text" id="onboarding_kin2_fullname" name="kin2_fullname"  placeholder="Name"/>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group bottom-border">
                                 <input type="text" id="onboarding_kin2_address" name="kin2_address"  placeholder="Address"/>
                             </div>
-                             <div class="form-group">
+                             <div class="form-group bottom-border">
                                 <input type="number" id="onboarding_kin2_phone" name="kin1_phone"  placeholder="Phone number"/>
                             </div>
                             <div class="form-group">
@@ -1233,22 +1205,21 @@
                                 </fieldset>                   
                             </div>
                             
-                            <div class="form-group">
+                            <div class="form-group bottom-border">
                                 <input name="onboarding_does_takeing" id="onboarding_does_takeing" placeholder="List of Medications & doses currently taking"/>
                             </div>
                             
-                            <div class="form-group">
+                            <div class="form-group bottom-border">
                                 <input name="onboarding_allergies_history" id="onboarding_allergies_history" placeholder="Do you have any allergies e.g. food or medication?"/>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group bottom-border">
                                 <input name="onboarding_problem_period" id="onboarding_problem_period"  placeholder="How long has it been a problem?"/>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group bottom-border">
                                 <input name="onboarding_religious" id="onboarding_religious" placeholder="Religious beliefs"/>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group bottom-border">
                                 <label>GP</label>
-                                 
                                 <input name="onboarding_gp_full_name" id="onboarding_gp_full_name" placeholder="Name"/>
                                   
                                 <input name="onboarding_gp_address" id="onboarding_gp_address"  placeholder
@@ -1256,7 +1227,7 @@
                                   
                                 <input type="number" name="onboarding_gp_phoneNo" id="onboarding_gp_phoneNo"  placeholder="Phone number"/>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group bottom-border">
                                 <label>Preferred pharmacy</label>
                                  
                                 <input name="onboarding__pharmacy_name" id="onboarding__pharmacy_name"  placeholder="Name"/>
@@ -1890,7 +1861,8 @@ function setHeightofContent(){
     console.log(contentCurrent);
     //var content = screen - header  - contentCurrent;
     $(".ui-content").height(contentCurrent);
-    
+    $('#login_page .ui-content').css('height','100vh');
+    $('#signup_page .ui-content').css('height','100vh');
 }
 
 function addSymptom(){
@@ -2090,36 +2062,7 @@ function loadAssignContent(target_item){
         getPatientList("assign_content_list");
     }
 }
-$(function(){
-var date = new Date();
-    var d = date.getDate();
-    var m = date.getMonth();
-    var y = date.getFullYear();
-    
-    $("#calendar").jqmCalendar({
-        events: [{
-            "summary": "Meet PM",
-            "begin": new Date(y,m, 27 ),
-            "end": new Date(y, m, 28)
-            
-        }, {
-            "summary": "Dinner",
-            "begin": new Date(y, m, d + 3),
-            "end": new Date(y, m, d + 4)
-            
-        }, {
-            "summary": "Lunch with Friends",
-            "begin": new Date(y, m, d + 6),
-            "end": new Date(y, m, d + 7)
-            
-        }, 
-                ],
-                 months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
- 
-        startOfWeek: 0
-        
-    });
-});
+
 $("#country_selector").countrySelect({
                 //defaultCountry: "jp",
                 //onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
