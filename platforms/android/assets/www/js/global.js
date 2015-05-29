@@ -6,7 +6,7 @@ var patientList_url = "http://clinic.evocare.co/api/list_patients";
 var patientTriageHistory_url = "http://clinic.evocare.co/api/patient_triage_history";
 var crateNewTriage_url = "http://clinic.evocare.co/api/create_triage";
 var onboard_url = "http://clinic.evocare.co/api/onboard_patient"
-
+var sendConsultant_url = "http://clinic.evocare.co/api/send_memo ";
 
 var api_key = "";
 
@@ -98,5 +98,7 @@ function resetVCPage()
   $('#vc_blood_last_date').val('');
 }
 
-
+function resetConsultantPage(){
+  $("#consultant_page form").trigger('reset');
+}
 

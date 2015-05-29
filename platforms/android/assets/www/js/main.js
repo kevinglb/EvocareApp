@@ -323,6 +323,9 @@ function setUpConulstantPage(patient_id)
 
   // get single patient info by id
   var single_patient = getSinglePatientInfo(patient_id);
+  // set up patient info on consultants page header
+  var output = '<div class="col-xs-3 vertical-middle"><img src="' +single_patient.avatar + '" class="img-circle img-responsive"></div><div class="col-xs-9 vertical-middle"><div class="row"><div class="col-xs-6 patient_name md-size">' + single_patient.full_name + '</div><div class="col-xs-1 light-font gender">'+single_patient.gender.substring(0,1)+'</div><div class="col-xs-5 light-font birth_date">' + single_patient.date_of_birth + '</div></div><div class="row"><div class="col-xs-12 light-font disease_issue">' + single_patient.condition + '</div></div></div>';
+  $('#consultant_info').first().html(output);
 
   console.log(single_patient);
 
@@ -333,8 +336,68 @@ function setUpConulstantPage(patient_id)
     reverse: false,
     changeHash: true
   });
+
+  document.getElementById("consultant_send").onclick = function(){
+    sendConsultantMessage(single_patient);      
+  };
 }
 
+
+function sendConsultantMessage(single_patient){
+
+    var patient_name = single_patient.full_name;
+    var patient_gender = single_patient.gender;
+    var patient_dob = single_patient.date_of_birth;
+    var patient_issue = single_patient.condition;
+    var patient_id = single_patient.id;
+    //message details
+    var receiver = $("#message_receiver").val();
+    var subject = $("#message_subject").val();
+    var content = $("#message_content").val();
+
+    var emailFormat = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+    console.log(emailFormat.test(receiver) );
+    if(emailFormat.test(receiver) == 0){
+      alert('please input a valid email address');
+      $("#message_receiver").focus();
+    }
+    else{
+
+
+    var new_consultant_message = {key: api_key, patient: patient_id, to: receiver, subject: subject, text: content, attachment: ""};;
+
+    $.ajax(
+    {
+        url : sendConsultant_url,
+        type: "POST",
+        data : new_consultant_message,
+        dataType: 'json',
+        success: function(response)
+        {
+          if(response.status == "1")
+          {
+            console.log(JSON.stringify(response.message));
+            alert('the email has been send successfully'); 
+            $.mobile.changePage("#patientlist_page", 
+            {
+              transition: "pop",
+              reverse: false,
+              changeHash: false
+            });
+            resetConsultantPage();
+          }
+          else
+          {
+            alert("Sorry, sending message failed");
+          }
+        },
+        error: function (error)
+        {
+          alert("Sorry, failed to create new triage. Please check your network and try again later");
+        }
+    });
+  }
+}
 function getSinglePatientInfo(patient_id)
 {
     var i = null;
