@@ -92,6 +92,7 @@ input[type=number]{
 textarea{
     min-height: 120px;
     max-height: 50vh;
+    border: 1px solid #BBC4C7 !important;
 }
 .row
 {
@@ -99,8 +100,11 @@ textarea{
     margin-left: 15px;
 }
 .padded-row{
-    line-height: 50px;
-    padding: 10px 0;
+    line-height: 2em;
+    padding: 4px 0;
+}
+.padded-row .ui-input-text{
+    margin: 0;
 }
 /*clearing floating*/
 .row:after{
@@ -238,9 +242,9 @@ textarea{
 
 /*login page css*/
 .form-group {
-    margin: 15px 0px;
+    margin: 15px 0px 0px 0px;
 }
-#login_page .ui-content, #signup_page .ui-content{
+#login_page .ui-content,#login_page .ui-header, #signup_page .ui-content{
     background-color:  rgba(166, 181, 184,1) !important;
 }
 #login_content, #signup_content{
@@ -322,9 +326,7 @@ textarea{
 
 
 /*sign up form*/
-#signup_form{
-    margin-top: 20%;
-}
+
 #signup_form input{
     text-align: center;
 }
@@ -360,6 +362,7 @@ textarea{
     font-weight: bold;
     text-shadow: none !important;
     text-transform: uppercase;
+    z-index: 10;
 }
 .carousel_controls div{
     height: 100%;
@@ -780,7 +783,7 @@ textarea{
 .main_content
 {
     height:100%;
-    padding: 10px 0;
+    padding:5px 0;
     font-family: "Bendons-Medium";
 }
 
@@ -803,21 +806,16 @@ textarea{
     color: #6d810c
 }
 .main_content a .list_item{
-    height: 14vh;
-    margin: 1vh 0;
+    height: 16%;
+    margin: 1% 0;
     padding: 0;
     border: none;
     background-color: #FFFFFF;
 }
-.main_content a:first-child .list_item{
-    margin-top: 0.5vh;
-}
-.main_content a:first-child .list_item:last-child{
-    margin-bottom: 0;
-}
+
 .main_page_logo{
     height: auto;
-    width: 50%;
+    width: 60%;
     max-width: 10vh;
 }
 /*set the child div of list_item verticle middle*/
@@ -919,7 +917,7 @@ textarea{
 #patient_list .patient.selected{
     background-color: red!important;
 }
-.patient_info {
+.patient_details {
     height: 15vh;
     background: #FFF;
 }
@@ -999,10 +997,18 @@ textarea{
 
 @media screen and (max-width: 480px){
     body{
-        font-size: 16px;
+        font-size: 14px;
     }
     .row{
         margin: 0 auto;
+    }
+    .carousel_controls{
+        height: 45px;
+    }
+
+    .carousel_controls .back_btn .carousel-control, .continue_btn .carousel-control{
+        line-height: 45px;
+        font-size: 18px;
     }
     .patient_photo{
         padding-top: 0;
@@ -1027,9 +1033,7 @@ textarea{
         padding: 0;
         font-size: 14px;
     }
-    .carousel-inner{
-        height: 65vh;
-    }
+    
     .item .below_content div {
         padding:0 ;
     }
@@ -1059,6 +1063,23 @@ textarea{
         font-size: 8vh;
         line-height: 12vh;
     }
+    .col-xs-1,.col-sm-1,.col-md-1,.col-lg-1,.col-xs-2,.col-sm-2,.col-md-2,.col-lg-2,.col-xs-3,.col-sm-3,.col-md-3,.col-lg-3,.col-xs-4,.col-sm-4,.col-md-4,.col-lg-4,.col-xs-5,.col-sm-5,.col-md-5,.col-lg-5,.col-xs-6,.col-sm-6,.col-md-6,.col-lg-6,.col-xs-7,.col-sm-7,.col-md-7,.col-lg-7,.col-xs-8,.col-sm-8,.col-md-8,.col-lg-8,.col-xs-9,.col-sm-9,.col-md-9,.col-lg-9,.col-xs-10,.col-sm-10,.col-md-10,.col-lg-10,.col-xs-11,.col-sm-11,.col-md-11,.col-lg-11,.col-xs-12,.col-sm-12,.col-md-12,.col-lg-12{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .ui-checkbox-on::after{
+        margin-top: -1em !important;
+    }
+    .ui-checkbox-off::after{
+        margin-top: -1em !important;
+    }
+    .ui-radio-on::after{
+        margin-top: -1em !important;
+    }
+    .ui-radio-off::after{
+        margin-top: -1em !important;
+    }
+
 }
 .ui-panel{
     width: 90vw;
@@ -1084,11 +1105,11 @@ textarea{
 /*switch toggle button */
 .switch_group {
   position: relative;
-  margin: 30px auto;
-  padding: 10px 10px;
+  margin: 15px auto;
+  padding: 5px 10px;
   background:#fff;
-  width: 95%;
-  max-width: 580px;
+  width: 90%;
+  max-width: 480px;
   border-radius: 10px;
 }
 
@@ -1157,8 +1178,8 @@ textarea{
     margin: 2px auto;
 }
 .content-icon {
-    height: 45px;
-    width: 45px;
+    height: 2em;
+    width: 2em;
 }
 .icon-arrow-left{
     background-image: url("../icon/icon-arrow-left-w.svg");

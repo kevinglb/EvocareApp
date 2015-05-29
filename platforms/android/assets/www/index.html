@@ -32,7 +32,7 @@
     <body onload="setHeightofContent()">
         <!-- log in page -->
         <div id="login_page" data-role="page">
-            
+            <div role="header" class='ui-header'></div>
             <!-- header -->
             <!-- content -->
             <div role="main" class="ui-content">
@@ -72,7 +72,7 @@
         <div  id="signup_page" data-role="page">
             
             <div data-role="main" class="ui-content">
-                <div id="signup_content">
+                <div id="signup_content" class="container">
                     <div class="row">
                         <!-- signup form -->
                         <form id="signup_form" role="form">
@@ -152,7 +152,7 @@
             <!-- content -->
             <div data-role="main" class="ui-content">
                <div id="main_content" class="main_content">
-                <div class="row">
+                <div class="row" style="height:100%; margin:0 15px;">
                     <a href="#" id="virtual_clinic_page" data-transition="slide" onClick="loadPatientInfo(this.id)">
                         <div class="row list_item">
                             <div class="col-xs-3 vertical-middle text-center">
@@ -236,7 +236,7 @@
                     <a href="#"><i class="icon header-icon icon-dots-g"></i></a>
                 </div>
                 <div data-role="main" class="ui-content">
-                <div class="patient_info">
+                <div class="patient_details">
                     <div class="col-xs-2 vertical-middle">
                         <img  class="img-circle img-responsive">
                     </div>
@@ -714,51 +714,54 @@
                     <div class="carousel-inner" role="listbox">
                         <div class="item container active">
                             <form>
-                                <div class="row padded-row">
-                                    <div class="col-xs-2">
-                                        <label for="message_title">Title</label>
-                                    </div>
-                                    <div class="col-xs-10 bottom-border">
+                                <div class="form-group padded-row">
+                                    <label for="message_title" class="col-xs-3 col-sm-2 control-label">Title</label>
+                                    <div class="col-xs-9 col-sm-10 bottom-border">
                                         <input type="text" id="message_title"></input>
                                     </div>
+                                    <div class="clear"></div>
                                 </div>
-                                <div class="row padded-row">
-                                    <div class="col-xs-2">
-                                        <label for="message_subject">Subject</label>
-                                    </div>
-                                    <div class="col-xs-10 bottom-border">
+                                <div class="form-group padded-row">
+                                    
+                                        <label for="message_subject" class="col-xs-3 col-sm-2 contril-label">Subject</label>
+                                    
+                                    <div class="col-xs-9 col-sm-10 bottom-border">
                                         <input type="text" id="message_subject"></input>
                                     </div>
+                                    <div class="clear"></div>
                                 </div>
-                                <div class="row padded-row">
-                                    <div class="col-xs-2">
-                                        <label for="message_content">Message</label>
-                                    </div>
-                                    <div class="col-xs-10 bottom-border">
+                                <div class="form-group  padded-row">
+                                    
+                                    <label for="message_content" class="col-xs-3 col-sm-2 contril-label">Message</label>
+                                
+                                    <div class="col-xs-9 col-sm-10 bottom-border">
                                         <textarea type="text" id="message_content"></textarea>
                                     </div>
+                                    <div class="clear"></div>
                                 </div>
-                                <div class="row padded-row">
-                                    <a href="#">
-                                        <label>
-                                            <i class="icon content-icon icon-attach"></i>
-                                    
-                                        
-                                            Attachment</label>
-                                    
-
-                                    </a>
-                                </div>
-                                <div class="row padded-row">
-                                    <a href="#">
-                                        <div class="col-xs-1">
-                                            <i class="icon content-icon icon-print"></i>
-                                        </div>
-                                        <div class="col-xs-11">
-                                            <label>Print</label>
-                                        </div>
-
-                                    </a>
+                                <div class="form-group">
+                                    <div class="padded-row">
+                                        <a href="#">
+                                            <div class="col-xs-1">
+                                                <i class="icon content-icon icon-attach"></i>
+                                            </div>
+                                            <div class="col-xs-11">
+                                                <label style="padding-left:5px;">Attachment</label>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </a>
+                                    </div>
+                                    <div class=" padded-row">
+                                        <a href="#">
+                                            <div class="col-xs-1">
+                                                <i class="icon content-icon icon-print"></i>
+                                            </div>
+                                            <div class="col-xs-11">
+                                                <label style="padding-left:5px;">Print</label>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </a>
+                                    </div>
                                 </div>
                             </form>
 
@@ -769,9 +772,10 @@
                                 <a class="left carousel-control" href="#consultant_slide" role="button" data-slide="prev"  disabled="disabled">Back</a>
                             </div>
                             <div class="continue_btn">
-                                <a class="right carousel-control" href="#consultant_slide" role="button" data-slide="next">Continue</a>            
+                                <a class="right carousel-control" href="#consultant_slide" role="button" data-slide="next" style="display:none">Continue</a>   
+                                <a class="right carousel-control" role="button" onClick="">Send</a>         
                             </div>
-                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -886,10 +890,10 @@
                             <div  style="background:#FFF;  padding:1em 0; margin-left:-15px; margin-right:-15px;">
                                 <div class="row padded-row">
                                     <div class="col-xs-6 text-center">
-                                        <img src="img/add-button.svg" class="img-circle" style="max-width:120px;"/>
+                                        <img src="img/add-button.svg" class="img-circle" style="width:60%; max-width:120px;"/>
                                     </div>
                                     <div class="col-xs-6 text-center">
-                                        <img src="img/add-button.svg" class="img-circle" style="max-width:120px;"/>
+                                        <img src="img/add-button.svg" class="img-circle" style="width:60%; max-width:120px;"/>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -936,7 +940,7 @@
 
                         </div>
                         <div class="item container">
-                            <div class="patient_info">
+                            <div class="patient_details">
                             </div>
                             <div class="row">
                                 <h3 class="md-font">Filter</h3>
@@ -999,7 +1003,7 @@
                             </div>
                         </div>
                         <div class="item container">
-                            <div class="patient_info">
+                            <div class="patient_details">
                                 <div class="col-xs-2 vertical-middle">
                                     <img  class="img-circle img-responsive">
                                 </div>
@@ -1674,7 +1678,7 @@
                                 </div>
                         </div>
                         <div class="item container">
-                            <div class="patient_info">
+                            <div class="patient_details">
                                 <div class="col-xs-2 vertical-middle">
                                     <img  class="img-circle img-responsive">
                                 </div>
@@ -1857,12 +1861,15 @@ function setHeightofContent(){
     var screen = $.mobile.getScreenHeight();
     
     var header = $(".ui-page .ui-header").outerHeight();
+    console.log(header);
     var  contentCurrent = screen - header;
     console.log(contentCurrent);
     //var content = screen - header  - contentCurrent;
     $(".ui-content").height(contentCurrent);
-    $('#login_page .ui-content').css('height','100vh');
     $('#signup_page .ui-content').css('height','100vh');
+    var bottom = $('#cheduler_page .carousel_controls').outerHeight();
+    $('#schedule_slide').height(contentCurrent-bottom);
+
 }
 
 function addSymptom(){
