@@ -321,7 +321,7 @@
                     
                     <a href="#patientlist_menu" data-transition="slide"><i class="icon header-icon icon-dots"></i></a>
                     <a id="onboarding_btn" href="#onborading_page" data-transition="slide"><i class="icon header-icon icon-add-patient"></i></a>
-                    <a href="#"><i class="icon header-icon icon-filter"></i></a>
+                   <!--  <a href="#"><i class="icon header-icon icon-filter"></i></a> -->
                 </div>
             </div>
             <!-- content -->
@@ -1963,23 +1963,6 @@ function detectChecklistCarousel(){
         $('#checklist_slide .carousel_controls .save_btn').hide();
         $('#checklist_slide .carousel_controls .right').show();
         $('#checklist_slide .carousel_controls .left').removeAttr('disabled');
-    }
-}
-
-
-
-function ScheduleContentSwitch(target)
-{
-    if(target == "individual"){
-        console.log("clinic");
-        $(".clinic_content").hide();
-        $(".individual_content").show();
-        // $(".individual_content .container .timeline").append('<li><div class="col-xs-4 time text-center"><p>10:00 today</p><img src="img/RedCross.png" class="img-circle"/></div><div class="col-xs-4 col-xs-offset-4 name text-center"><p>Stephen moriiessy</p><img src="img/RedCross.png" class="img-circle"/></div></li>');
-    }
-    else if(target == "clinic"){
-        console.log("individual");
-        $(".individual_content").hide();
-        $(".clinic_content").show();
     }
 }
 
