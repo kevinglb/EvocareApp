@@ -841,10 +841,7 @@ textarea{
     height: 100%;
     overflow-y:hidden;
 }
-#checklist_slide {
-    height: 95vh;
-    overflow-y: auto;
-}
+
 #checklist_page .ui-input-text{
     background: transparent;
     border: none;
@@ -852,8 +849,11 @@ textarea{
     border-radius: 0;
     box-shadow: none;
 }
-#checklist_page .close_link i{
-    line-height: 48px;
+.close_link .icon{
+    margin-top: 20px;
+}
+.checklist_edit_btn a:first-child{
+    margin-right: 10px;
 }
 .ui-popup {
     padding:1.5em 0 0 0;
@@ -895,12 +895,13 @@ textarea{
 }
 .add_link {
     font-size: 1.4em;
-    line-height: 1.6em;
+    line-height: 2.2em;
     color: #A0B2B7;
 }
 .add_link i{
     margin-right: 10px;
-    font-size: 1.2em;
+    width: 2.2em;
+    height: 2.2em;
 }
 
 /* schedule page*/
@@ -1183,9 +1184,20 @@ textarea{
     width: 90%;
     margin: 2px auto;
 }
-.content-icon {
-    height: 2.2em;
-    width: 2.2em;
+.icon-1x {
+    height: 1em;
+    width: 1em;
+}
+.icon-2x {
+    height: 2em;
+    width: 2em;
+}
+
+.icon-3x{
+
+}
+.icon-add {
+    background-image: url("../icon/icon-add.svg");
 }
 .icon-arrow-left{
     background-image: url("../icon/icon-arrow-left-w.svg");
@@ -1240,6 +1252,15 @@ textarea{
 }
 .icon-print{
     background-image: url('../icon/icon-print.svg'); 
+}
+.icon-delete{
+    background-image: url('../icon/icon-delete.svg'); 
+}
+.icon-edit{
+    background-image: url('../icon/icon-edit.svg'); 
+}
+.icon-trash{
+    background-image: url('../icon/icon-trash.svg'); 
 }
 div#onborading_content
 {
