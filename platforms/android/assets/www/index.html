@@ -199,7 +199,7 @@
                         </div>
                         <div class="clear"></div>
                     </a>
-                    <a href="#scheduler_page" data-transition="slide">
+                    <a href="#scheduler_page" data-transition="slide" onClick="initialCalendar()">
                         <div class="row list_item">
                             <div class="col-xs-3 text-center vertical-middle">
                                 <img class="main_page_logo" src="img/scheduler-logo.svg">
@@ -1778,43 +1778,46 @@
                     dateOrder: 'dd M yy',
                     dateFormat: 'dd-M-yy'
                 });
-                 var date = new Date();
-    var d = date.getDate();
-    var m = date.getMonth();
-    var y = date.getFullYear();
-                //calendar initialization
-                $("#calendar").jqmCalendar({
-                    events: [{
-            "title": "Meet PM",
-            "type" : "personal",
-            "begin": new Date(y,m, 27 ),
-            "end": new Date(y, m, 28)
+
+                
+                
+    //              var date = new Date();
+    // var d = date.getDate();
+    // var m = date.getMonth();
+    // var y = date.getFullYear();
+        //         //calendar initialization
+        //         $("#calendar").jqmCalendar({
+        //             events: [{
+        //     "title": "Meet PM",
+        //     "type" : "personal",
+        //     "begin": new Date(y,m, 27 ),
+        //     "end": new Date(y, m, 28)
             
-        }, 
-        {
-            "title": "gym",
-            "type" : "fitness",
-            "begin": new Date(y,m, 22 ),
-            "end": new Date(y, m, 28)
+        // }, 
+        // {
+        //     "title": "gym",
+        //     "type" : "fitness",
+        //     "begin": new Date(y,m, 22 ),
+        //     "end": new Date(y, m, 28)
             
-        },{
-            "title": "Dinner",
-            "type": "personal",
-            "begin": new Date(y, m, d+3,1,10,0,0),
-            "end": new Date(y, m, d + 4,15,15,0,0)
+        // },{
+        //     "title": "Dinner",
+        //     "type": "personal",
+        //     "begin": new Date(y, m, d+3,1,10,0,0),
+        //     "end": new Date(y, m, d + 4,15,15,0,0)
             
-        }, {
-            "title": "Lunch with Friends",
-            "type": "public",
-            "begin": new Date(y, m, d + 6),
-            "end": new Date(y, m, d + 7)
+        // }, {
+        //     "title": "Lunch with Friends",
+        //     "type": "public",
+        //     "begin": new Date(y, m, d + 6),
+        //     "end": new Date(y, m, d + 7)
             
-        }, 
-                ],
-                    months : ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-                    startOfWeek : 0
-                    }); 
-        });
+        // }, 
+        //         ],
+        //             months : ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        //             startOfWeek : 0
+        //             }); 
+        // });
 </script>
 
 <script type="text/javascript">

@@ -9,6 +9,7 @@
          end : "end",
          title : "title",
          type : "type",
+         time: "time",
          // Theme
          theme : "c",
          // Date variable to determine which month to show and which date to select
@@ -231,6 +232,7 @@
                // Append matches to list
                var title    = event[plugin.settings.title],
                    type = event[plugin.settings.type],
+                   time = event[plugin.settings.time],
                    date = begin.getDate(), 
                    month = begin.getMonth().toString(),
                    beginTime  = (( event[plugin.settings.begin] > begin ) ? event[plugin.settings.begin] : begin ).toTimeString().substr(0,5),
@@ -239,7 +241,7 @@
                    console.log(beginTime);
                    console.log(endTime);
                //$("<li>" + date +" "+months[month]+ " "+( ( timeString != "00:00-00:00" ) ? timeString : "" ) + " " + title + '<br>'+type+"</li>").appendTo($listview);
-                  $("<div class='item'><div class='row'>" + date + " "+ months[month]+"</div><div class='row'>"+title+" "+type+"</div></div>").appendTo($slider_inner);
+                  $("<div class='item'><div class='row'>Time: "+ time+"</div><div class='row'>Title: "+title+"</div><div class='row'>Type: "+type+"</div></div>").appendTo($slider_inner);
                   console.log($slider_inner);   
             }
          }

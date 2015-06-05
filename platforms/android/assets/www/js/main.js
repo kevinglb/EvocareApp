@@ -855,4 +855,53 @@ function deletePictureFromCache( imageURI )
   }, null);
 }
 
+function initialCalendar(){
+  var start_date = '01-JUN-2015';
+  var end_date = '30-JUN-2015';
+  var message = {key: api_key,from: start_date, to: end_date};
+  $.ajax(
+    {
+        url : getevents_url,
+        type: "POST",
+        data : message,
+        dataType: 'json',
+        success: function(response)
+        {
+          console.log(getevents_url);
+          console.log(response.status);
+           
+          if(response.status == "1")
+          {
+            var event = [];
+            console.log("success");
+             $.each(response.events, function(index, value){
+                //console.log(JSON.stringify(response.events));
+                var event_content = {};
+                var start_array = value.start_time.split(' ');
+                var start_date = start_array[0];
+                var start_time = start_array[1];
+                event_content["title"] = value.title;
+                event_content['type'] = value.type;
+                event_content['begin'] = new Date(start_date);
+                event_content['end'] = new Date(start_date);
+                event_content['time'] = start_time;
+                event.push(event_content);
+                console.log('event:'+JSON.stringify(event));
+            }); 
+            $("#calendar").jqmCalendar({
+                    events: event,
+                    months : ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+                    startOfWeek : 0
+                  });
+          }
+          else{
+            console.log('errors in calendar initialization');
+          }
+        },
+        error: function (error)
+        {
+          alert("Sorry, failed to events. Please check your network and try again later");
+        }
+    });
+}
 
