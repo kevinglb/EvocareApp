@@ -5,11 +5,13 @@ var uploadAvatar = false;
 function loadPatientInfo(page_id)
 {
 	// load patient list 
+  //alert(page_id);
 	getPatientList(page_id);
 }
 
 function getPatientList(page_id)
 {
+  console.log(page_id);
 	$.ajax(
 		{
     		url : patientList_url,
@@ -119,6 +121,25 @@ function getPatientList(page_id)
               $("#checklist_assign_content .row ul").empty();
               $("#checklist_assign_content .row ul").append(output).listview('refresh');
 
+            }
+
+            if(page_id == "prescription_page"){
+              console.log("prescription_page");
+              $.each(response.patients, function(index, value)
+              {
+                output += '<li class="patient" data-icon="false"><div id="' + value.id + '" onClick="setUpPrescriptionPage(this.id)"><div class="col-xs-4 col-md-3 patient_photo text-center"><img class="img-circle" src="' + value.avatar + '"></div><div class="col-xs-8 col-md-9 patient_info"><div class="row"><p class="patient_name">' + value.full_name + '</p></div><div class="row"><p class="patient_date">' + value.gender.substring(0,1).toUpperCase() + ' . ' + value.date_of_birth + '</p></div><div class="row"><p class="patient_issue">' +value.condition + '</p></div></div></div></li>';
+              });
+
+              $('#patient_list').children('ul').empty();
+              $('#patient_list').children('ul').append(output).listview().listview('refresh');
+
+              // navigate to patientlist page after updating
+              $.mobile.changePage("#patientlist_page", 
+              {
+                transition: "slide",
+                reverse: false,
+                changeHash: true
+              });
             }
     			}
     			else
@@ -398,6 +419,7 @@ function sendConsultantMessage(single_patient){
     });
   }
 }
+
 function getSinglePatientInfo(patient_id)
 {
     var i = null;
@@ -902,6 +924,25 @@ function initialCalendar(){
         {
           alert("Sorry, failed to events. Please check your network and try again later");
         }
+    });
+}
+
+
+function setUpPrescriptionPage(patient_id){
+  global_patient_id = patient_id;
+
+    // get single patient info by id
+    var single_patient = getSinglePatientInfo(patient_id);
+
+    // set up patient info on triage page header
+    var output = '<div class="col-xs-3 vertical-middle"><img src="' +single_patient.avatar + '" class="img-circle img-responsive"></div><div class="col-xs-9 vertical-middle"><div class="row"><div class="col-xs-6 patient_name md-size">' + single_patient.full_name + '</div><div class="col-xs-1 light-font gender">'+single_patient.gender.substring(0,1)+'</div><div class="col-xs-5 light-font birth_date">' + single_patient.date_of_birth + '</div></div><div class="row"><div class="col-xs-12 light-font disease_issue">' + single_patient.condition + '</div></div></div>';
+    $('#prescription_page .patient_detail').first().html(output);
+
+    $.mobile.changePage("#prescription_page", 
+    {
+      transition: "slide",
+      reverse: false,
+      changeHash: true
     });
 }
 
