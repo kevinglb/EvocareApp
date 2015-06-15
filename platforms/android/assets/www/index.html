@@ -26,7 +26,7 @@
         <script type="text/javascript" src="plugins/jquery-1.11.2.min.js"></script>
         <script type="text/javascript" src="plugins/jquery.mobile-1.4.5.min.js"></script>
         <script type="text/javascript" src="plugins/bootstrap.min.js"></script>
-        <title>Evocare</title>
+        <title>Evocare-Clinic</title>
     </head>
     <body onload="setHeightofContent()">
         <!-- log in page -->
@@ -356,7 +356,7 @@
             <!-- header -->
             <!-- content -->
             <div data-role="main" class="ui-content">
-                <div id="vc_info"></div>
+                <div id="vc_info" class="patient_detail"></div>
                 <div id="vc_slide" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
                     <form id="vc_form" role="form">
                         <div class="carousel-inner" role="listbox">
@@ -530,7 +530,7 @@
             <!-- header -->
             <!-- content -->
             <div role="main" class="ui-content">
-                <div id="triage_info">
+                <div id="triage_info" class="patient_detail">
                 </div>
                 <!-- caoursel -->
                 <div id="triage_slide" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
@@ -546,7 +546,7 @@
                                 </div>
                                 <div class="row below_content">
                                     <div class="col-xs-5">
-                                        <span id="patient_contacts" class="lg_text_left "></span>
+                                        <span class="patient_contacts lg_text_left "></span>
                                         <span class="sm_text_left">Patient <br>Contacts</span>
                                     </div>
                                     <div class="col-xs-2 text-center">
@@ -554,7 +554,7 @@
                                     </div>
                                     <div class="col-xs-5">
                                         <span class="sm_text_right regular-text">Clinic<br> visit</span>
-                                        <span id="clinic_visit" class="lg_text_right"></span> 
+                                        <span class="clinic_visit lg_text_right"></span> 
                                     </div>
                                 </div>
                             </div>
@@ -708,7 +708,7 @@
             <!-- header -->
             <!-- content-->
             <div data-role="main" class="ui-content">
-                <div id="consultant_info">
+                <div id="consultant_info" class="patient_detail">
                 </div>
                 <div id="consultant_slide" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
                     <div class="carousel-inner" role="listbox">
@@ -1833,11 +1833,29 @@ $("#checklist_slide").bind('slid.bs.carousel',function(){
     detectChecklistCarousel();
 });
 
+$(".slide .carousel-inner .item").on('swipeleft', function(event){
+    if($(this).hasClass('last')){
+        return;
+    }
+    else{
+        $(this).parent('.carousel-inner').parent('form').parent('.slide').carousel('next');;
+    }
+});
+
+
+$(".slide  .carousel-inner .item").on('swiperight', function(event){
+    if($(this).hasClass('first')){
+        return;
+    }
+    else{
+       $(this).parent('.carousel-inner').parent('form').parent('.slide').carousel('prev');;
+    }
+});
+
 $("li.checklist_item").on('swipeleft', function(){
     var edit_btn = $(this).children('div').children('.checklist_edit_btn');
     console.log('left');
     edit_btn.show();
-
 });
 
 $("li.checklist_item").on('swiperight', function(){
@@ -1873,11 +1891,17 @@ function addNewNote()
 //set up the height of ui-content once the page is loaded
 function setHeightofContent(){
     var screen = $.mobile.getScreenHeight();
-    
-    var header = $(".ui-page .ui-header").outerHeight();
-    console.log(header);
+    //responsive header with different height for different width screens
+    var header;
+    if($(window).width() <= 480){
+        header = $(".ui-page .ui-header").outerHeight() || 45;
+    }
+    else {
+        header = $(".ui-page .ui-header").outerHeight() || 56;
+    }
+    //console.log(header);
     var  contentCurrent = screen - header;
-    console.log(contentCurrent);
+    //console.log(contentCurrent);
     //var content = screen - header  - contentCurrent;
     $(".ui-content").height(contentCurrent);
     $('#signup_page .ui-content').css('height','100vh');

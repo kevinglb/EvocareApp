@@ -32,8 +32,9 @@ function onDeviceReady()
       if($.mobile.activePage.is('#checklist_page'))
        {
         console.log('reset checklist page');
-        resetChecklistPage();
+        
         navigator.app.backHistory();
+        resetChecklistPage();
        }
 
 
