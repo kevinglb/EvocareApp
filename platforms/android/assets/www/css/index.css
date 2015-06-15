@@ -930,6 +930,16 @@ textarea{
     height: 15vh;
     background: #FFF;
 }
+.patient_detail {
+    height: 15vh;
+    background: #FFF;
+}
+.patient_detail.expand{
+    height: 100vh;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+}
 .patient_info .patient_name
 {
     font-size: 1.2em !important;
