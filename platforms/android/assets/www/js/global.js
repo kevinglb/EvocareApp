@@ -17,39 +17,35 @@ function onDeviceReady()
     document.addEventListener("backbutton", function(e)
     {
 
-       if($.mobile.activePage.is('#login_page'))
-       {
+      if($.mobile.activePage.is('#login_page')){
         e.preventDefault();
         navigator.app.exitApp();
-       }
-
-       if($.mobile.activePage.is('#triage_page'))
-       {
+      }
+      else if($.mobile.activePage.is('#triage_page')){
         console.log('reset triage page');
         navigator.app.backHistory();
         resetTriagePage();
-       }
-      if($.mobile.activePage.is('#checklist_page'))
-       {
+      }
+      else if($.mobile.activePage.is('#checklist_page')){
         console.log('reset checklist page');
         
         navigator.app.backHistory();
         resetChecklistPage();
-       }
-
-
-       if($.mobile.activePage.is('#vc_page'))
-       {
+      }
+      else if($.mobile.activePage.is('#vc_page')){
         console.log('reset triage page');
         navigator.app.backHistory();
         resetVCPage();
-       }
-
-       if($.mobile.activePage.is('#onborading_page'))
-       {
+      }
+      if($.mobile.activePage.is('#scheduler_page')){
+        console.log('reset triage page');
+        //navigator.app.backHistory();
+        resetSchedulerPage();
+      } 
+      if($.mobile.activePage.is('#onborading_page')){
         resetOnBoardingPage();
         getPatientList("patients_page"); 
-       }
+      }
        else 
        {
         navigator.app.backHistory();
@@ -63,13 +59,13 @@ function onDeviceReady()
 function resetTriagePage()
 {
   $("#triage_form").trigger('reset'); 
-  $('#triage_slide .carousel-inner .item').removeClass('active')
-  $('#triage_slide .carousel-inner .item:first').addClass('active');
+  $('#triage_slide').carousel(0);
   $('#triage_slide .carousel_controls .right').text("CONTINUE");
   $('#triage_slide .carousel_controls .save_note').hide();
   $('#triage_slide .carousel_controls .right').show();
   $('#treatement_date').val();
   $('#blood_last_date').val('');
+  $('#triage_pie_chart .pie_chart_text').text('0%');
 }
 
 function resetOnBoardingPage()
@@ -83,8 +79,7 @@ function resetOnBoardingPage()
 
 function resetChecklistPage(){  
   $("#triage_form").trigger('reset'); 
-  $('#checklist_slide .carousel-inner .item').removeClass('active')
-  $('#checklist_slide .carousel-inner .item:first').addClass('active');
+  $('#checklist_slide').carousel(0);
   $('#checklist_slide .carousel_controls .add_btn').hide();
   $('#checklist_slide .carousel_controls .save_btn').hide();
   $('#checklist_slide .carousel_controls .right').show("CONTINUE");
@@ -93,13 +88,16 @@ function resetChecklistPage(){
 function resetVCPage()
 {
   $('#vc_form').trigger('reset');
-  $('#vc_slide .carousel-inner .item').removeClass('active')
-  $('#vc_slide .carousel-inner .item:first').addClass('active');
+  $('#vc_slide').carousel(0);
   $('#vc_treatment_last_date').val('');
   $('#vc_blood_last_date').val('');
+  $('#vc_pie_chart .pie_chart_text').text('0%');
 }
 
 function resetConsultantPage(){
   $("#consultant_page form").trigger('reset');
 }
 
+function resetSchedulerPage(){
+  $('#schedule_slide').carousel(0);
+}

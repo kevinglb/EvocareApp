@@ -35,7 +35,7 @@ function getPatientList(page_id)
 
               $('#patient_list').children('ul').empty();
               $('#patient_list').children('ul').append(output).listview().listview('refresh');
-
+              $('#onboarding_btn').hide();
               // navigate to patientlist page after updating
               $.mobile.changePage("#patientlist_page", 
               {
@@ -56,7 +56,7 @@ function getPatientList(page_id)
 
               $('#patient_list').children('ul').empty();
               $('#patient_list').children('ul').append(output).listview().listview('refresh');
-
+              $('#onboarding_btn').hide();
               // navigate to patientlist page after updating
               $.mobile.changePage("#patientlist_page", 
               {
@@ -71,8 +71,6 @@ function getPatientList(page_id)
             {
               // display onboarding button
               $('#onboarding_btn').show();
-
-
               $.each(response.patients, function(index, value)
               {
                 output += '<li class="patient" data-icon="false"><div id="' + value.id + '" onClick="patientSelected(this.id,this)"><div class="col-xs-3 patient_photo text-center"><img class="img-circle" src="' + value.avatar + '"></div><div class="col-xs-9 patient_info"><div class="row"><p class="patient_name">' + value.full_name + '</p></div><div class="row"><p class="patient_date">' + value.gender.substring(0,1).toUpperCase() + ' . ' + value.date_of_birth + '</p></div><div class="row"><p class="patient_issue">' +value.condition + '</p></div></div></div></li>';
@@ -120,7 +118,7 @@ function getPatientList(page_id)
               
               $("#checklist_assign_content .row ul").empty();
               $("#checklist_assign_content .row ul").append(output).listview('refresh');
-
+              $('#onboarding_btn').hide();
             }
 
             if(page_id == "prescription_page"){
@@ -132,7 +130,7 @@ function getPatientList(page_id)
 
               $('#patient_list').children('ul').empty();
               $('#patient_list').children('ul').append(output).listview().listview('refresh');
-
+              $('#onboarding_btn').hide();
               // navigate to patientlist page after updating
               $.mobile.changePage("#patientlist_page", 
               {
@@ -250,12 +248,12 @@ function setUpVCContent(response)
   {
     if(value.clinic_visit == false)
     {
-       triage_time_data += '<li class="timeline_item"><div class="date col-xs-4 md-size">' + value.date + '</div><div class="status col-xs-4 col-xs-offset-4"><i class="fa fa-2x fa-angle-right"></i><i class="fa fa-2x fa-close"></i></div></li>';
+       triage_time_data += '<li class="timeline_item"><div class="date col-xs-4 md-size">' + value.date + '</div><div class="status col-xs-4 col-xs-offset-4"><i class="icon icon-angle-right"></i><i class="icon icon-delete"></i></div></li>';
     }
 
     if(value.clinic_visit == true)
     {
-       triage_time_data += '<li class="timeline_item visited "><div class="date col-xs-4 md-size">' + value.date + '</div><div class="status col-xs-4 col-xs-offset-4"><i class="fa fa-2x fa-angle-right"></i><div><span>Clinic<br>visit</span></div></div></li>';
+       triage_time_data += '<li class="timeline_item visited "><div class="date col-xs-4 md-size">' + value.date + '</div><div class="status col-xs-4 col-xs-offset-4"><i class="icon icon-angle-right icon-2x"></i><div><span>Clinic<br>visit</span></div></div></li>';
     }
    
   });
@@ -295,12 +293,12 @@ function setUpPatientTriageContent(response)
   {
     if(value.clinic_visit == false)
     {
-       triage_time_data += '<li class="timeline_item"><div class="date col-xs-4 md-size">' + value.date + '</div><div class="status col-xs-4 col-xs-offset-4"><i class="fa fa-2x fa-angle-right"></i><i class="fa fa-2x fa-close"></i></div></li>';
+       triage_time_data += '<li class="timeline_item"><div class="date col-xs-4 md-size">' + value.date + '</div><div class="status col-xs-4 col-xs-offset-4"><i class="icon icon-angle-right"></i><i class="icon icon-delete"></i></div></li>';
     }
 
     if(value.clinic_visit == true)
     {
-       triage_time_data += '<li class="timeline_item visited "><div class="date col-xs-4 md-size">' + value.date + '</div><div class="status col-xs-4 col-xs-offset-4"><i class="fa fa-2x fa-angle-right"></i><div><span>Clinic<br>visit</span></div></div></li>';
+       triage_time_data += '<li class="timeline_item visited "><div class="date col-xs-4 md-size">' + value.date + '</div><div class="status col-xs-4 col-xs-offset-4"><i class="icon icon-angle-right"></i><div><span>Clinic<br>visit</span></div></div></li>';
     }
    
   });
@@ -435,9 +433,9 @@ function getSinglePatientInfo(patient_id)
 
 function showPercentDonut(element_id, percent) 
 {
-    console.log(element_id + " " + percent);
+    //console.log(element_id + " " + percent);
     var target = $(element_id);
-    console.log(target);
+    //console.log(target);
     target.empty();
     var width= target.width(),
         height = target.height(),
@@ -888,10 +886,7 @@ function initialCalendar(){
         data : message,
         dataType: 'json',
         success: function(response)
-        {
-          console.log(getevents_url);
-          console.log(response.status);
-           
+        {  
           if(response.status == "1")
           {
             var event = [];
@@ -908,7 +903,7 @@ function initialCalendar(){
                 event_content['end'] = new Date(start_date);
                 event_content['time'] = start_time;
                 event.push(event_content);
-                console.log('event:'+JSON.stringify(event));
+                //console.log('event:'+JSON.stringify(event));
             }); 
             $("#calendar").jqmCalendar({
                     events: event,

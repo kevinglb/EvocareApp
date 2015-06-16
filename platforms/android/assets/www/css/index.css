@@ -48,6 +48,7 @@ body {
     margin:0px;
     padding:0px;
     width:100%;
+    color: :#495559;
 }
 /* Portrait layout (default) */
 .app {
@@ -80,6 +81,12 @@ h1 {
     overflow:visible;
     padding:0px;
     text-align:center;
+}
+h1, h2, h3, h4{
+    margin: 0;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    font-weight: bold;
 }
 a {
     text-shadow:none;
@@ -129,6 +136,9 @@ textarea{
 .bold-font {
     font-family: "Bendons-Bold";
 }
+.light-grey{
+    color:#8CA0A7;
+}
 .event {
     border-radius:4px;
     -webkit-border-radius:4px;
@@ -153,6 +163,11 @@ textarea{
     border-bottom: 1px solid #BBC4C7;
     font-family: "Bendons-Light";
     color: #495559;
+}
+.bottom-border textarea{
+
+    border: none !important;
+    border-bottom: 1px solid #BBC4C7 !important;
 }
 .bottom-border.color-w .ui-input-text{
     color: #fff;
@@ -184,14 +199,15 @@ textarea{
     background-color: #8FCDBE !important;
 }
 .ui-page .ui-header .ui-title {
-    line-height: 24px;
-    font-size: 22px;
+    line-height: 18px;
+    font-size: 18px;
 
     font-family: "Bendons-Medium";
+    font-weight: normal;
     overflow: show;
     text-align: left;
-    margin-left: 80px;
-    padding: 18px 0;
+    margin-left: 60px;
+    padding: 15px 0 12px 0;
     text-shadow:none;
     text-transform: uppercase;
     color: #FFF;
@@ -203,13 +219,13 @@ textarea{
     color: #FFF;
 }
 .ui-header .ui-btn-left, .ui-header .ui-btn-right{
-    height: 40px;
-    line-height: 40px;
-    min-width: 40px;
+    height: 45px;
+    line-height: 45px;
+    min-width: 45px;
     top: 0;
     padding: 0;
     text-shadow:none;
-    margin-top: 9px;
+    margin-top: 0px;
 }
 .ui-header .ui-btn-left{
     margin-left: 10px;
@@ -222,11 +238,13 @@ textarea{
     margin-right: 0px;
 }
 .ui-header .multi-icons a{
+    text-align: center;
     min-width: 40px;
     width: 40px;
-    height: 40px;
+    height: 45px;
     float: right;
-    margin-right: 10px;
+    margin-top: 0px;
+    margin-right: 0px;
 }
 .ui-header, .ui-footer {
     border: none;
@@ -242,7 +260,7 @@ textarea{
 
 /*login page css*/
 .form-group {
-    margin: 15px 0px 0px 0px;
+    margin: 0 0 15px 0;
 }
 #login_page .ui-content,#login_page .ui-header, #signup_page .ui-content{
     background-color:  rgba(166, 181, 184,1) !important;
@@ -259,6 +277,12 @@ textarea{
 }
 #login_content .login_header img{
     width: 60%;
+}
+#login_form .ui-input-text input::-webkit-input-placeholder{
+    color: #fff;
+}
+#login_form .ui-input-text input::-moz-placeholder{
+    color: #fff;
 }
 .below_content {
     margin-top: 5vh;
@@ -287,9 +311,9 @@ textarea{
 }
 .has-feedback .form-control {
     padding-right:  0;
-    padding-left: 54px;
-    height: 56px;
-    line-height: 56px;
+    padding-left: 45px;
+    height: 50px;
+    line-height: 50px;
     font-size: 1.1em;
 }
 
@@ -299,12 +323,12 @@ textarea{
 
 .form-control-feedback {
 
-    width: 28px;
-    height: 28px;
+    width: 20px;
+    height: 20px;
     background-repeat: no-repeat;
     background-size: cover;
-    left: 14px;
-    top: 12px;
+    left: 12px;
+    top: 14px;
 }
 
 #login_page .ui-link{
@@ -319,7 +343,7 @@ textarea{
     background-color: rgba(154, 175, 176, 1);
     color: rgba(44, 118, 108, 1) !important;
     font-family: "Bendons-Medium";
-    line-height: 58px;
+    line-height: 50px;
     font-size: 1.5em;
     padding: 0;
 }
@@ -347,7 +371,6 @@ textarea{
     height: 100%;
 }
 .carousel-inner {
-    height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -405,8 +428,9 @@ textarea{
 }
 /*pie chart*/
 .pie_chart{
-    height: 36vh;
+    height: 35vh;
     padding: 15px 0;
+    margin-bottom: 20px;
 }
 .pie_chart_text{
     font-size: 4vh;
@@ -443,6 +467,8 @@ textarea{
     font-size: 24px;
     max-width: 48px;
     margin: 0 auto;
+    height: 48px;
+    width: 100%;
 }
 
 /*listview*/
@@ -494,9 +520,8 @@ textarea{
     content: ' ';
     display: block;
     width: 2px;
-    height:12vh;
-    margin-top: 20px;
-    background: #333;
+    height:16vh;
+    
     background: -moz-linear-gradient(top, rgba(132, 151, 157, 0.8) 0%, rgba(132, 151, 157, 0.8) 8%, rgba(132, 151, 157, 0.8) 92%, rgba(132, 151, 157, 0.8) 100%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(132, 151, 157, 0.8)), color-stop(100%,rgba(132, 151, 157, 0.8)));
     background: -webkit-linear-gradient(top,rgba(132, 151, 157, 0.8) 0%, rgba(132, 151, 157, 0.8) 8%,rgba(132, 151, 157, 0.8) 92%, rgba(132, 151, 157, 0.8) 100%);
@@ -530,7 +555,7 @@ textarea{
     width: 40px;    
     height: 40px;
     margin-left: -19px;
-    background: rgba(132, 151, 157, 0.96);
+    background: rgba(132, 151, 157, 0.8);
     border-radius: 20px;
     border: 14px solid rgba(242,242,242, 0.2);
     z-index: 1;
@@ -544,7 +569,7 @@ textarea{
     width: 40px;    
     height: 40px;
     margin-left: -19px;
-    background: rgba(34, 136, 150, 0.85);
+    background: rgba(34, 136, 150, 0.8);
     border-radius: 20px;
     border: 14px solid rgba(242,242,242, 0.2);
     z-index: 1;
@@ -553,8 +578,9 @@ textarea{
     clear: both;
 }
 .timeline .status i{
-    line-height: 1.2em;
-    color: rgba(187, 196, 199, 1);
+    width: 1.2em;
+    height: 1.2em;
+    margin-top: 0.6em;
 }
 .timeline .status i:last-child{
     float: right;
@@ -635,14 +661,14 @@ textarea{
 }
 /*checkbox and radio button */
 .ui-checkbox, .ui-radio{
-    margin: 2vh 0;
+    margin: 0;
 }
 .ui-checkbox label, .ui-radio label{
     border: none;
     background-color: transparent !important;
     margin: 0;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
 }
 .ui-checkbox input, .ui-radio input{
     display: none;
@@ -655,6 +681,7 @@ textarea{
 .ui-checkbox-on::after{
     content: url('../img/check-selected.png');
     display: block;
+    top: 1.1em;
     margin: -0.7em 2px 0px -3px !important;
     background-color: transparent !important;
     border: none;
@@ -662,20 +689,26 @@ textarea{
 .ui-checkbox-off::after{
     content: url('../img/check-unselected.png');
     display: block;
+    top: 1.1em;
     margin: -0.7em 2px 0px -3px !important;
     border: none;
+    top: 1.1em;
     background-color: transparent !important;
 }
-
+#pain_character .ui-radio{
+    padding: 0.6em 0;
+}
 .ui-radio-off::after{
     content: url('../img/radio-unselected.png');
     background-color: transparent; !important;
     margin: -0.8em 5px 0 -3px !important; 
+    top: 1.1em;
     border: none !important;
 }
 .ui-radio-on::after {
     content: url('../img/radio-selected.png');
     display: block;
+    top: 1.1em;
     margin: -0.8em  5px 0 -3px!important; 
     border: none !important;
 }
@@ -685,7 +718,7 @@ textarea{
 
 .grade_slider_group input.ui-slider-input {
     position: absolute;
-    text-align: left;
+    text-align: center;
     float: right;
     right: 15px;
     top: 60px;
@@ -714,7 +747,7 @@ textarea{
 }
 
 .grade_slider_group .ui-slider-track .ui-btn-active.green{
-    background: rgba(34, 136, 150, 0.9) !important;
+    background: rgba(176, 197, 71, 0.9) !important;
 }
 .grade_slider_group .ui-slider-track .ui-btn-active.orange{
     background: rgba(245, 174, 48, 0.9) !important;
@@ -837,32 +870,31 @@ textarea{
     height: 100%;
     overflow-y:hidden;
 }
-
-#checklist_page .ui-input-text{
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #495559;
-    border-radius: 0;
-    box-shadow: none;
-}
 .close_link .icon{
     margin-top: 20px;
 }
 .checklist_edit_btn a:first-child{
     margin-right: 10px;
 }
+.ui-popup-container{
+    width: 100%;
+}
 .ui-popup {
-    padding:1.5em 0 0 0;
+    padding:1em 0 0 0;
     border:none !important;
 }
-.ui-popup h1{
+.ui-popup h3{
     margin:0;
-    padding: 0.5em 1.5em;
+    text-align: left;
+    padding: 0.5em 1em;
     color: #495559;
     border-bottom: 1px solid #495559; 
 }
 .ui-popup fieldset{
     padding: 1em 1.5em;
+}
+.ui-popup fieldset .ui-radio{
+    padding: 1em 0;
 }
 .ui-popup .popup-btns{
     width: 100%;
@@ -1051,9 +1083,9 @@ textarea{
   width: 100%;  
   font-family: helvetica;
   font-weight: bold;
-  font-size: 22px; 
+  font-size: 1em; 
 }
-.switch .ui-radio {margin:0;}
+.switch .ui-radio {margin:0; padding: 0;}
 .switch .ui-radio-on:after {position: absolute; opacity:0;}
 .switch .ui-radio-off:after{position: absolute; opacity:0;}
 .switch .ui-radio label {
@@ -1104,9 +1136,9 @@ textarea{
     -ms-transform: scaleX(-1);
 }
 .header-icon{
-    height: 90%;
-    width: 90%;
-    margin: 2px auto;
+    height: 24px;
+    width: 24px;
+    margin: 10px auto;
 }
 .icon-1x {
     height: 1em;
@@ -1129,6 +1161,9 @@ textarea{
 .icon-arrow-left-g{
     background-image: url("../icon/icon-arrow-left-g.svg");
 }
+.icon-angle-right{
+    background-image: url("../icon/icon-angle-right-g.svg");   
+}
 .icon-add-patient{
     background-image: url("../icon/icon-add-patient.svg");
 }
@@ -1146,6 +1181,9 @@ textarea{
 }
 .icon-filter{
     background-image: url("../icon/icon-filter-w.svg");
+}
+.icon-search-w{
+     background-image: url("../icon/icon-search-w.svg");   
 }
 .icon-user{
     background-image: url("../icon/icon-user-w.svg");
@@ -1186,6 +1224,7 @@ textarea{
 .icon-trash{
     background-image: url('../icon/icon-trash.svg'); 
 }
+
 div#onborading_content
 {
   overflow-y: auto;
@@ -1208,6 +1247,7 @@ img#onboarding_avatar
     }
     h3{
         font-size: 20px;
+        font-weight: bold;
     }
     .row{
         margin: 0 auto;
@@ -1218,8 +1258,9 @@ img#onboarding_avatar
     .ui-page .ui-header .ui-title {
         line-height: 18px;
         font-size: 18px;
-        margin-left: 60px;
-        padding: 14px 0;
+        margin-left: 50px;
+        padding: 15px 0 12px 0;
+        font-weight: normal;
     }
     .ui-header .ui-btn-left{
         margin-left: 0;
@@ -1228,13 +1269,9 @@ img#onboarding_avatar
         margin-right: 0;
     }
     .ui-header .ui-btn-left, .ui-header .ui-btn-right{
-        margin-top: 3px;
+        margin-top: 0px;
     }
-    .header-icon{
-        width: 30px;
-        height: 30px;
-        margin-top: 5px auto;
-    }
+    
     #patient_list .patient{
         margin:10px 0;
     }
@@ -1289,30 +1326,35 @@ img#onboarding_avatar
         padding:0 ;
     }
     .item .below_content .lg_text_left{
-    float: left;
-    font-size: 8vh;
-    line-height: 12vh;
-    font-weight: bold;
+        float: left;
+        font-size: 8vh;
+        line-height: 10vh;
+        font-weight: bold;
     }
     .item .below_content .sm_text_left{
         float: left;
         text-align: left;
         font-size: 2.5vh;
-        line-height: 5vh;
+        padding-top: 1vh;
         margin-left: 10px;
     }
-
+    .item .below_content .sm_text_left p{
+        margin: 0;
+    }
     .item .below_content .sm_text_right{
         float: right;
         text-align: left;
         font-size: 2.5vh;
-        line-height: 5vh;
+        padding-top: 1vh;
         padding-right: 10px; 
+    }
+    .item .below_content .sm_text_right p{
+        margin: 0;
     }
     .item .below_content .lg_text_right{
         float: right;
         font-size: 8vh;
-        line-height: 12vh;
+        line-height: 10vh;
     }
     .col-xs-1,.col-sm-1,.col-md-1,.col-lg-1,.col-xs-2,.col-sm-2,.col-md-2,.col-lg-2,.col-xs-3,.col-sm-3,.col-md-3,.col-lg-3,.col-xs-4,.col-sm-4,.col-md-4,.col-lg-4,.col-xs-5,.col-sm-5,.col-md-5,.col-lg-5,.col-xs-6,.col-sm-6,.col-md-6,.col-lg-6,.col-xs-7,.col-sm-7,.col-md-7,.col-lg-7,.col-xs-8,.col-sm-8,.col-md-8,.col-lg-8,.col-xs-9,.col-sm-9,.col-md-9,.col-lg-9,.col-xs-10,.col-sm-10,.col-md-10,.col-lg-10,.col-xs-11,.col-sm-11,.col-md-11,.col-lg-11,.col-xs-12,.col-sm-12,.col-md-12,.col-lg-12{
         padding-left: 5px;
