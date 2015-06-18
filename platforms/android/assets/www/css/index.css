@@ -1264,11 +1264,14 @@ textarea{
 .icon-clock{
     background-image: url('../icon/icon-clock-dark.svg'); 
 }
-.icon-location-g{
+.icon-location-light{
      background-image: url('../icon/icon-location-g.svg'); 
 }
 .icon-location{
     background-image: url('../icon/icon-location-dark.svg'); 
+}
+.icon-ring-light{
+     background-image: url('../icon/icon-ring.svg'); 
 }
 .icon-ring{
      background-image: url('../icon/icon-ring-dark.svg'); 
