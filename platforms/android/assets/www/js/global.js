@@ -66,6 +66,9 @@ function resetTriagePage()
   $('#treatement_date').val();
   $('#blood_last_date').val('');
   $('#triage_pie_chart .pie_chart_text').text('0%');
+  $('#triage_slide .carousel_controls .right').text('Continue').show();
+  $('#triage_slide .carousel_controls .save_note').hide();
+  showPercentDonut('#triage_pie_chart',0);
 }
 
 function resetOnBoardingPage()
@@ -92,6 +95,9 @@ function resetVCPage()
   $('#vc_treatment_last_date').val('');
   $('#vc_blood_last_date').val('');
   $('#vc_pie_chart .pie_chart_text').text('0%');
+  $('#vc_slide .carousel_controls .right').text('Continue').show();
+  $('#vc_slide .carousel_controls .save_note').hide();
+  showPercentDonut('#vc_pie_chart',0);
 }
 
 function resetConsultantPage(){

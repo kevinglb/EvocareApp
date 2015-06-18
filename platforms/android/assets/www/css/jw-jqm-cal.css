@@ -5,7 +5,7 @@
 .jq-calendar-wrapper .ui-listview { margin: 0 0 1px 0; }
 .jq-calendar-wrapper th { padding: .2em 0; width: 14.28571428571429%; text-align: center;} 
 .jq-calendar-wrapper th.header { padding: 0; line-height:3em; }
-.jq-calendar-wrapper tr {border-bottom:  1px solid #A0B2B7;}
+.jq-calendar-wrapper tr {border-bottom:  1px solid #d6d6d6;}
 .jq-calendar-wrapper .previous-btn { float: left; margin: 0; background-color: transparent;border: none; box-shadow: none; width: 60px;line-height: 2em;}
 .jq-calendar-wrapper .next-btn { float: right; margin: 0; background-color: transparent;border: none;box-shadow: none; width: 60px; line-height: 2em;}
 .jq-calendar-wrapper td { position: relative; text-align:center; width: 14.28571428571429%; max-height: 100px;}

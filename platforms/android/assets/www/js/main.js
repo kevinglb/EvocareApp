@@ -239,7 +239,7 @@ function setUpVCContent(response)
    setTimeout(function()
    {
     showPercentDonut('#vc_pie_chart',total_trend);
-   }, 1000);
+   }, 800);
 
 
   // set up triage timeline
@@ -284,7 +284,7 @@ function setUpPatientTriageContent(response)
    setTimeout(function()
    {
     showPercentDonut('#triage_pie_chart', total_trend);
-   }, 1000);
+   }, 800);
 
 
   // set up triage timeline

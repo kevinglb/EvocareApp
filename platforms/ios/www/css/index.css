@@ -1238,14 +1238,17 @@ textarea{
 .icon-locker{
     background-image: url("../icon/icon-locker-w.svg");
 }
-.icon-clock-light{
-    background-image: url('../icon/icon-clock-light.svg'); 
+.icon-clock{
+    background-image: url('../icon/icon-clock-dark.svg'); 
 }
 .icon-location-g{
      background-image: url('../icon/icon-location-g.svg'); 
 }
-.icon-ring {
-     background-image: url('../icon/icon-ring.svg'); 
+.icon-location{
+    background-image: url('../icon/icon-location-dark.svg'); 
+}
+.icon-ring{
+     background-image: url('../icon/icon-ring-dark.svg'); 
 }
 .icon-group{
      background-image: url('../icon/icon-group.svg'); 
