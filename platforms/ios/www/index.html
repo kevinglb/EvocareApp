@@ -487,8 +487,8 @@
                             </div>
                              <div class="item container">
                                 <div class="row">
-                                    <div class="form-group bottom-border" style="padding-top:20px;">
-                                        <label for="vc_note">Edit your note:</label>
+                                    <h3>Note:</h3>
+                                    <div class="form-group bottom-border">
                                         <textarea  name="vc_note" id="vc_note"></textarea>
                                     </div>
                                 </div>
@@ -661,9 +661,8 @@
                             </div>                     
                            <div class="item container">
                                 <div class="row">
-
-                                    <div class="form-group bottom-border" style="padding-top:20px;">
-                                        <label for="triage_note">Edit your note:</label>
+                                    <h3>Note:</h3>
+                                    <div class="form-group bottom-border">
                                         <textarea  name="triage_note" id="triage_note"></textarea>
                                     </div>
                                 </div>
@@ -840,10 +839,10 @@
                         
                             <div class="row padded-row">
                                 <div class="col-xs-2">
-                                    <i class="icon icon-2x icon-location"></i>
+                                    <i class="icon icon-2x icon-location-g"></i>
                                 </div>
                                 <div class="col-xs-10">
-                                    <input type="text" placeholder="Add lcoation"></input>
+                                    <input type="text" placeholder="Add location"></input>
                                 </div>
                             </div>
                             <div class="row padded-row">
@@ -942,8 +941,8 @@
                             <div class="container">
                                 <h3>Filter</h3>
                                 <div class="row">
-                                    <label>Appointment Confirmation</label>    
-                                    <div class="col-xs-6" style="padding:0">
+                                    <label class="md-font">Appointment Confirmation</label>    
+                                    <div class="col-xs-6" style="padding:10px 0">
                                         <input name="app_confirm" id="app_confirm1" value="" type="checkbox">
                                         <label for="app_confirm1">Unconfirmed</label>
                                     </div>
@@ -953,8 +952,8 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <label>Checklists</label>
-                                        <div class="col-xs-6" style="padding:0">
+                                    <label class="md-font">Checklists</label>
+                                        <div class="col-xs-6" style="padding:10px 0">
                                             <input name="check_confirm" id="check_confirm1" value="" type="checkbox">
                                             <label for="check_confirm1">Unconfirmed</label>
                                         </div>                           
@@ -964,12 +963,12 @@
                                         </div>                            
                                 </div>
                                 <div class="row">
-                                    <label>Patient</label>
-                                        <div class="col-xs-6" style="padding:0">
+                                    <label class="md-font">Patient</label>
+                                        <div class="col-xs-6" style="padding:10px 0">
                                             <input name="patient_q" id="patient_q1" value=""  type="radio">
                                             <label for="patient_q1" >Queued</label>
                                         </div>
-                                        <div class="col-xs-6" style="padding:0">
+                                        <div class="col-xs-6" style="padding:10px 0">
                                             <input name="patient_q" id="patient_q2" value=""  type="radio">
                                             <label for="patient_q2" >Scheduled</label>
                                         </div>
@@ -981,19 +980,23 @@
                             </div>
                             <div class="row container">
                                 <h3>Filter</h3>
-                                <div class="row">
+                                <div class="row" style="padding:5px 0">
                                     <input name="filter_1" id="filter_1" value="" type="checkbox">
                                     <label for="filter_1">Chemotherapy</label>
-                                     
+                                </div>
+                                <div class="row" style="padding:5px 0">
                                     <input name="filter_2" id="filter_2" value="" type="checkbox">
                                     <label for="filter_2">Lab Test</label>
-                                     
+                                </div>
+                                <div class="row" style="padding:5px 0">
                                     <input name="filter_3" id="filter_3" value="" type="checkbox">
                                     <label for="filter_3">Virtual Clinic</label>
-                                     
+                                </div>
+                                <div class="row" style="padding:5px 0">    
                                     <input name="filter_4" id="filter_4" value="" type="checkbox">
                                     <label for="filter_4">Clinic Visit</label>
-    
+                                </div>
+                                <div class="row" style="padding:5px 0">
                                     <input name="filter_5" id="filter_5" value="" type="checkbox">
                                     <label for="filter_5">Surgery</label>
                                 </div>
