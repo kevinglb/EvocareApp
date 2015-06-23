@@ -362,6 +362,7 @@ textarea{
     font-family: "Bendons-Medium";
     line-height: 50px;
     font-size: 1.5em;
+    font-weight: bold;
     padding: 0;
 }
 
@@ -637,7 +638,7 @@ textarea{
 .timeline .date{
     position: relative;
     display: inline-block;
-    text-align: center;
+    text-align: left;
     color:#495559;
     line-height: 1.6em;
     font-size: 1em;

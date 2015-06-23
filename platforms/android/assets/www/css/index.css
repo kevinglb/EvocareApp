@@ -359,6 +359,7 @@ textarea{
     background-color: rgba(154, 175, 176, 1);
     color: rgba(44, 118, 108, 1) !important;
     font-family: "Bendons-Medium";
+    font-weight: bold;
     line-height: 50px;
     font-size: 1.5em;
     padding: 0;
@@ -632,7 +633,7 @@ textarea{
 .timeline .date{
     position: relative;
     display: inline-block;
-    text-align: center;
+    text-align: left;
     color:#495559;
     line-height: 1.6em;
     font-size: 1em;
@@ -858,13 +859,17 @@ textarea{
     border-color: #f2f2f2;
     border-radius: 2em;
 }
+span.ui-slider-label.ui-slider-label-b{
+    background-color: #d6d6d6;
+}
 .ui-slider-switch  .ui-slider-inneroffset .ui-slider-handle{
     width: 30px;
     height: 30px;
     border-radius: 15px;
-    margin: -2px 0 0 -15px;
+    margin: -1px 0 0 -15px;
     background-color: #f2f2f2 !important;
     border: 2px solid #E2e2e2;
+    transition-duration: 0.02s;
 }
 /* main page */
 .main_content
@@ -893,8 +898,8 @@ textarea{
     color: #6d810c
 }
 .main_content a .list_item{
-    height: 16%;
-    margin: 1% 0;
+    height: 14vh;
+    margin: 1vh 0;
     padding: 0;
     border: none;
     background-color: #FFFFFF;
@@ -1169,7 +1174,7 @@ textarea{
   color: #fff;
 }
 .switch .ui-radio label[class*="ui-radio-off"] {
-    color: #524f52;
+    color: #8CA0A7;
 }
 
 .switch .ui-radio input:focus + label {outline: none;}
@@ -1334,8 +1339,20 @@ img#onboarding_avatar
         font-size: 20px;
         font-weight: bold;
     }
+    .container{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
     .row{
         margin: 0 auto;
+    }
+    div[class^="col-xs-"]{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    span[class^="col-xs-"]{
+        padding-left: 5px;
+        padding-right: 5px;
     }
     .ui-page .ui-header {
         height: 45px;
@@ -1359,10 +1376,12 @@ img#onboarding_avatar
     
     #patient_list .patient{
         margin:10px 0;
+        padding: 10px 0;
     }
     .patient_photo{
         padding-top: 0;
         padding-right: 0;
+        padding-left: 10px !important;
         padding-bottom: 0;
     }
     .patient_photo img{
@@ -1370,7 +1389,7 @@ img#onboarding_avatar
         height: auto;
     }
     .patient_info{
-        padding-top: 0em;
+        padding: 5px 10px 0 10px !important;
     }
     .patient_detail{
     height: 15vh;
@@ -1457,13 +1476,6 @@ img#onboarding_avatar
     .ui-radio-off::after{
         margin-top: -1em !important;
     }
-    div[class^="col-xs-"]{
-        padding-left: 5px;
-        padding-right: 5px;
-    }
-    span[class^="col-xs-"]{
-        padding-left: 5px;
-        padding-right: 5px;
-    }
+    
 
 }
