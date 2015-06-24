@@ -569,29 +569,22 @@ textarea{
     position: absolute;
     top: 0px;
     left: -50%;
-    content: " ";
+    content: url('../img/timeline-grey.svg');;
     display: block;
     width: 40px;    
     height: 40px;
     margin-left: -19px;
-    background: rgba(132, 151, 157, 0.8);
-    border-radius: 20px;
-    border: 14px solid rgba(242,242,242, 0.2);
-    z-index: 1;
+    z-index: 5;
 }
 .timeline .visited .status:before{
     position: absolute;
     top: 0px;
     left: -50%;
-    content: " ";
+    content: url('../img/timeline-blue.svg');;
     display: block;
     width: 40px;    
     height: 40px;
-    margin-left: -19px;
-    background: rgba(34, 136, 150, 0.8);
-    border-radius: 20px;
-    border: 14px solid rgba(242,242,242, 0.2);
-    z-index: 1;
+    z-index: 5;
 }
 .timeline .status:after{
     clear: both;
