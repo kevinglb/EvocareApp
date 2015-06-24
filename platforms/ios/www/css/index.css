@@ -611,6 +611,7 @@ textarea{
 .timeline .status .fa-angle-right{
     float: left;
 }
+
 .timeline .visited .status span{
     line-height: 1.5em;
     text-align: left;
@@ -1444,6 +1445,7 @@ img#onboarding_avatar
         text-align: left;
         font-size: 2.5vh;
         padding-top: 1vh;
+        margin-left: 10px;
     }
     .item .below_content .sm_text_left p{
         margin: 0;

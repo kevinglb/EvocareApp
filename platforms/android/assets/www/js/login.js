@@ -11,7 +11,9 @@ $('#login_submit') .click(function()
 	// check whether username or password is empty
 	if(!username.trim() || !password.trim())
 	{
-		alert("Username and Password cannot be empty");
+		//alert("Username and Password cannot be empty");
+		$('#login_popup .title h3').text('Username and Password cannot be empty.');
+         $('#login_popup').popup('open');
 	}
 	else
 	{
@@ -50,7 +52,9 @@ $('#login_submit') .click(function()
     		},
     		error: function (error)
     		{
-    			alert("Sorry, please check your network and try again later");
+    			//alert("Sorry, please check your network and try again later");
+    			$('#login_popup .title h3').text('Sorry, please check your network and try again later.');
+            	$('#login_popup').popup('open');
     		}
 		});
 

@@ -1,4 +1,4 @@
-   var patients_list = "";
+var patients_list = "";
 var global_patient_id = "";
 var uploadAvatar = false;
 
@@ -142,14 +142,21 @@ function getPatientList(page_id)
     			}
     			else
     			{
-    				alert("Sorry, cannot load your patient list");
+    				//alert("Sorry, cannot load your patient list");
+            $('#main_popup .title h3').text('Sorry, cannot load the patient list.');
+            $('#main_popup').popup('open');
+            
     			}
     		},
     		error: function (error)
     		{
-    			alert("Sorry, failed to load patient list. Please check your network and try again later");
+    			//alert("Sorry, failed to load patient list. Please check your network and try again later");
+          $('#main_popup .title h3').text('Sorry, failed to load patient list. Please check your network and try again later');
+          $('#main_popup').popup('open');
     		}
 		});
+
+   
 }
 
 //load data and fill in the VC Page
@@ -377,9 +384,17 @@ function sendConsultantMessage(single_patient){
     var emailFormat = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
     console.log(emailFormat.test(receiver) );
     if(emailFormat.test(receiver) == 0){
-      alert('please input a valid email address');
-      $("#message_receiver").focus();
-    }
+      //alert('please input a valid email address');
+      $('#consultant_popup .title h3').text('Please input a valid email address');
+      $('#consultant_popup').popup('open');
+      
+      $("#consultant_popup").popup({
+        afterclose: function () {
+          $("#message_receiver").focus();
+        }
+      },'close'); 
+      
+      }
     else{
 
 
@@ -395,26 +410,52 @@ function sendConsultantMessage(single_patient){
         {
           if(response.status == "1")
           {
-            console.log(JSON.stringify(response.message));
-            alert('the email has been send successfully'); 
-            $.mobile.changePage("#patientlist_page", 
-            {
-              transition: "pop",
-              reverse: false,
-              changeHash: false
-            });
-            resetConsultantPage();
+            //console.log(JSON.stringify(response.message));
+            //alert('the email has been send successfully'); 
+            $('#consultant_popup .title h3').text('The message has been sent successfully.');
+            $('#consultant_popup').popup('open');
+            $("#consultant_popup .popup-btns a").addClass('success');
+            // $.mobile.changePage("#patientlist_page", 
+            // {
+            //   transition: "pop",
+            //   reverse: false,
+            //   changeHash: false
+            // });
+            // resetConsultantPage();
           }
           else
           {
-            alert("Sorry, sending message failed");
+            //alert("Sorry, sending message failed");
+            $('#consultant_popup .title h3').text('Sorry, sending message failed');
+            $('#consultant_popup').popup('open');
+            
           }
         },
         error: function (error)
         {
-          alert("Sorry, failed to create new triage. Please check your network and try again later");
+          //alert("Sorry, failed to create new triage. Please check your network and try again later");
+          $('#consultant_popup .title h3').text('Sorry, failed to create new triage. Please check your network and try again later');
+          $('#consultant_popup').popup('open');
+
         }
     });
+
+    $("#consultant_popup").popup({
+        afterclose: function () {
+         if( $("#consultant_popup .popup-btns a").hasClass('success')){
+            resetConsultantPage();
+            $.mobile.changePage("#patientlist_page", 
+            {
+                 transition: "slide",
+                  reverse: false,
+                  changeHash: false
+               });
+         
+          }
+          $("#consultant_popup .popup-btns a").removwClass('success'); 
+        }
+      },'close');  
+  
   }
 }
 
@@ -533,8 +574,8 @@ function createNewTriage()
 
   var pain_grade = $("#nci_grade").val();
 
-  var history_pain = $('#history_record').children().children('label').attr('class').split(' ').pop();
-  if(history_pain == "ui-radio-on")
+  var history_pain = $('#history_record').children().children('label');
+  if(history_pain.hasClass("ui-radio-on"))
   {
     on_treatment = false;
   }
@@ -564,30 +605,50 @@ function createNewTriage()
         {
           if(response.status == "1")
           {
-            alert(response.message);
-            
+            //alert(response.message);
+            $('#triage_popup .title h3').text('A new triage has been created.');
+            $('#triage_popup').popup('open');
+            $("#triage_popup .popup-btns a").addClass('success');
             // reset triage form after create a new triage successfully
-            resetTriagePage();
-            $('#triage_slide .carousel_controls .save_note').hide();
-            $('#triage_slide .carousel_controls .right').show();
-            
-            $.mobile.changePage("#patientlist_page", 
-            {
-              transition: "pop",
-              reverse: false,
-              changeHash: false
-            });
+          
           }
           else
           {
-            alert("Sorry, cannot create new triage");
+            // alert("Sorry, cannot create new triage");
+            $('#triage_popup .title h3').text('Sorry, cannot create new triage');
+            $('#triage_popup').popup('open');
+            $("#triage_popup .popup-btns a").addClass('success');
           }
         },
         error: function (error)
         {
-          alert("Sorry, failed to create new triage. Please check your network and try again later");
+          //alert("Sorry, failed to create new triage. Please check your network and try again later");
+          $('#triage_popup .title h3').text('Sorry, failed to create new triage. Please check your network and try again later');
+          $('#triage_popup').popup('open');
+          $("#triage_popup .popup-btns a").addClass('success');
+
         }
     });
+
+   $("#triage_popup").popup({
+        afterclose: function () {
+         if( $("#triage_popup .popup-btns a").hasClass('success')){
+          // reset triage form after create a new triage successfully
+           resetTriagePage();
+            $('#triage_slide .carousel_controls .save_note').hide();
+            $('#triage_slide .carousel_controls .right').show();
+            $.mobile.changePage("#patientlist_page", 
+            {
+                 transition: "slide",
+                  reverse: false,
+                  changeHash: false
+               });
+         
+          }
+          $("#triage_popup .popup-btns a").removwClass('success'); 
+        }
+      },'close');  
+  
 
 }
 

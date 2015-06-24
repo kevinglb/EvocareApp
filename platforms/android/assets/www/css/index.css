@@ -115,7 +115,7 @@ textarea{
 }
 .padded-row{
     line-height: 2.2em;
-    padding: 10px 0 5px 0;
+    padding: 5px 0;
 }
 .padded-row .ui-input-text{
     margin: 0;
@@ -869,7 +869,7 @@ span.ui-slider-label.ui-slider-label-b{
     margin: -1px 0 0 -15px;
     background-color: #f2f2f2 !important;
     border: 2px solid #E2e2e2;
-    transition-duration: 0.02s;
+    /*transition-duration: 0.02s;*/
 }
 /* main page */
 .main_content
@@ -944,6 +944,8 @@ span.ui-slider-label.ui-slider-label-b{
 }
 .ui-popup-container{
     width: 100%;
+    background-color: #ddd;
+    border-radius: 5px;
 }
 .ui-popup {
     padding:1em 0 0 0;
@@ -1314,6 +1316,9 @@ span.ui-slider-label.ui-slider-label-b{
 .icon-treatment{
     background-image: url('../icon/icon-treatment.svg');   
 }
+.icon-sync{
+    background-image: url('../icon/icon-sync.svg'); 
+}
 
 div#onborading_content
 {
@@ -1346,6 +1351,14 @@ img#onboarding_avatar
     .row{
         margin: 0 auto;
     }
+    .row.title{
+         
+         padding: 15px 5px;
+    }
+     .row.title h3{
+         margin: 0 auto;
+         padding: 5px;
+     }
     div[class^="col-xs-"]{
         padding-left: 5px;
         padding-right: 5px;
@@ -1475,6 +1488,20 @@ img#onboarding_avatar
     }
     .ui-radio-off::after{
         margin-top: -1em !important;
+    }
+
+    /*submit popup*/
+    .submit_popup .title h3{
+        border: none;
+        text-align: center;
+    }
+    .submit_popup .popup-btns a{
+        width: 100%;
+        line-height: 2em;
+        border: none !important;
+        border-bottom-left-radius:  5px;
+        border-bottom-right-radius:  5px;         
+        margin-top: 1em;
     }
     
 
