@@ -684,10 +684,6 @@ textarea{
     font-size: 0.9em;
 }
 .timeline .round-img{
-    background-color: #fff;
-    border-radius: 50%;
-    width: 4em;
-    height: 4em;
     margin: 2em auto 0 auto;
 }
 .timeline .round-img .icon{
@@ -1225,6 +1221,10 @@ span.ui-slider-label.ui-slider-label-b{
     width: 3em;
     height: 3em;
 }
+.icon-4x{
+    width: 4em;
+    height: 4em;
+}
 .icon-add {
     background-image: url("../icon/icon-add.svg");
 }
@@ -1311,6 +1311,12 @@ span.ui-slider-label.ui-slider-label-b{
 }
 .icon-treatment{
     background-image: url('../icon/icon-treatment.svg');   
+}
+.icon-timeline-phone{
+    background-image: url('../img/timeline-phone.svg'); 
+}
+.icon-timeline-treat{
+    background-image: url('../img/timeline-treat.svg'); 
 }
 
 div#onborading_content
