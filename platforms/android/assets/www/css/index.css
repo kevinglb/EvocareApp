@@ -1346,8 +1346,7 @@ img#onboarding_avatar
         margin: 0 auto;
     }
     .row.title{
-         
-         padding: 15px 5px;
+         padding: 15px 20px;
     }
      .row.title h3{
          margin: 0 auto;
@@ -1485,9 +1484,10 @@ img#onboarding_avatar
     }
 
     /*submit popup*/
-    .submit_popup .title h3{
+    .submit_popup .title label{
         border: none;
-        text-align: center;
+        font-size: 1.2em;
+        margin: 0;
     }
     .submit_popup .popup-btns a{
         width: 100%;

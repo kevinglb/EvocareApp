@@ -22,23 +22,22 @@ function onDeviceReady()
         navigator.app.exitApp();
       }
       else if($.mobile.activePage.is('#triage_page')){
-        console.log('reset triage page');
-        navigator.app.backHistory();
+        //console.log('reset triage page');
+        //navigator.app.backHistory();
         resetTriagePage();
       }
       else if($.mobile.activePage.is('#checklist_page')){
-        console.log('reset checklist page');
-        
-        navigator.app.backHistory();
+        //console.log('reset checklist page');
+        //navigator.app.backHistory();
         resetChecklistPage();
       }
       else if($.mobile.activePage.is('#vc_page')){
-        console.log('reset triage page');
-        navigator.app.backHistory();
+        //console.log('reset triage page');
+        //navigator.app.backHistory();
         resetVCPage();
       }
       if($.mobile.activePage.is('#scheduler_page')){
-        console.log('reset triage page');
+        //console.log('reset triage page');
         //navigator.app.backHistory();
         resetSchedulerPage();
       } 

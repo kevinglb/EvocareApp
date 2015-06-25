@@ -143,7 +143,7 @@ function getPatientList(page_id)
     			else
     			{
     				//alert("Sorry, cannot load your patient list");
-            $('#main_popup .title h3').text('Sorry, cannot load the patient list.');
+            $('#main_popup .title label').text('Sorry, cannot load the patient list.');
             $('#main_popup').popup('open');
             
     			}
@@ -151,7 +151,7 @@ function getPatientList(page_id)
     		error: function (error)
     		{
     			//alert("Sorry, failed to load patient list. Please check your network and try again later");
-          $('#main_popup .title h3').text('Sorry, failed to load patient list. Please check your network and try again later');
+          $('#main_popup .title label').text('Sorry, failed to load patient list. Please check your network and try again later');
           $('#main_popup').popup('open');
     		}
 		});
@@ -385,7 +385,7 @@ function sendConsultantMessage(single_patient){
     console.log(emailFormat.test(receiver) );
     if(emailFormat.test(receiver) == 0){
       //alert('please input a valid email address');
-      $('#consultant_popup .title h3').text('Please input a valid email address');
+      $('#consultant_popup .title label').text('Please input a valid email address');
       $('#consultant_popup').popup('open');
       
       $("#consultant_popup").popup({
@@ -412,7 +412,7 @@ function sendConsultantMessage(single_patient){
           {
             //console.log(JSON.stringify(response.message));
             //alert('the email has been send successfully'); 
-            $('#consultant_popup .title h3').text('The message has been sent successfully.');
+            $('#consultant_popup .title label').text('The message has been sent successfully.');
             $('#consultant_popup').popup('open');
             $("#consultant_popup .popup-btns a").addClass('success');
             // $.mobile.changePage("#patientlist_page", 
@@ -426,7 +426,7 @@ function sendConsultantMessage(single_patient){
           else
           {
             //alert("Sorry, sending message failed");
-            $('#consultant_popup .title h3').text('Sorry, sending message failed');
+            $('#consultant_popup .title label').text('Sorry, sending message failed');
             $('#consultant_popup').popup('open');
             
           }
@@ -434,7 +434,7 @@ function sendConsultantMessage(single_patient){
         error: function (error)
         {
           //alert("Sorry, failed to create new triage. Please check your network and try again later");
-          $('#consultant_popup .title h3').text('Sorry, failed to create new triage. Please check your network and try again later');
+          $('#consultant_popup .title label').text('Sorry, failed to create new triage. Please check your network and try again later');
           $('#consultant_popup').popup('open');
 
         }
@@ -606,7 +606,7 @@ function createNewTriage()
           if(response.status == "1")
           {
             //alert(response.message);
-            $('#triage_popup .title h3').text('A new triage has been created.');
+            $('#triage_popup .title label').text('A new triage has been created.');
             $('#triage_popup').popup('open');
             $("#triage_popup .popup-btns a").addClass('success');
             // reset triage form after create a new triage successfully
@@ -615,7 +615,7 @@ function createNewTriage()
           else
           {
             // alert("Sorry, cannot create new triage");
-            $('#triage_popup .title h3').text('Sorry, cannot create new triage');
+            $('#triage_popup .title label').text('Sorry, cannot create new triage');
             $('#triage_popup').popup('open');
             $("#triage_popup .popup-btns a").addClass('success');
           }
