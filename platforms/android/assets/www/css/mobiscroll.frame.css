@@ -193,6 +193,7 @@
     text-transform: uppercase;
     min-height: 2em;
     line-height: 2em;
+    font-weight: bold;
 }
 .mbsc-mobiscroll .dwbc {
     display: block;
