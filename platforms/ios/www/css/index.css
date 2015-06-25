@@ -1346,6 +1346,9 @@ img#onboarding_avatar
     .row{
         margin: 0 auto;
     }
+    .row.title{
+        padding: 15px 20px;
+    }
     div[class^="col-xs-"]{
         padding-left: 5px;
         padding-right: 5px;
@@ -1474,6 +1477,18 @@ img#onboarding_avatar
     .ui-radio-off::after{
         margin-top: -1em !important;
     }
-    
+    .submit_popup .title label{
+        border: none;
+        font-size: 1.2em;
+        margin: 0;
+    }
+    .submit_popup .popup-btns a{
+         width: 100%;
+         line-height: 2em;
+         border: none !important;
+         border-bottom-left-radius:  5px;
+         border-bottom-right-radius:  5px;         
+         margin-top: 1em;
+     }
 
 }
