@@ -999,7 +999,3 @@ function initialCalendar(){
         }
     });
 }
-
-
-
-
