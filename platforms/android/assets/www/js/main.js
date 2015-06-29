@@ -8,7 +8,14 @@ function loadPatientInfo(page_id)
   //alert(page_id);
 	getPatientList(page_id);
 }
+/*
+Perhaps we only need load the patient list for patientlit_page at the very first time(maybe when open the app) and then replace the 'onClick' function for every link when the user go for
+different sections
 
+also we need a common function for "$mobile.changePage()" with target page id ,reverse(boolean) and changeHash(boolean) as parameters, in this way we can reduce lines of code
+
+Kevin
+*/
 function getPatientList(page_id)
 {
   console.log(page_id);
@@ -186,12 +193,16 @@ function setUpVCPage(patient_id)
           }
           else
           {
-            alert("Sorry, cannot load patient triage history");
+            //alert("Sorry, cannot load patient triage history");
+            $("#vc_popup .title label").text('Sorry, cannot load patient triage history');
+            $("#vc_popup").popup('open');
           }
         },
         error: function (error)
         {
-          alert("Sorry, failed to load patient triage history. Please check your network and try again later");
+          //alert("Sorry, failed to load patient triage history. Please check your network and try again later");
+          $("#vc_popup .title label").text('Sorry, failed to load patient triage history. Please check your network and try again later');
+          $("#vc_popup").popup('open');
         }
     });
 }
@@ -223,12 +234,16 @@ function setUpTriagePage(patient_id)
           }
           else
           {
-            alert("Sorry, cannot load patient triage history");
+            //alert("Sorry, cannot load patient triage history);;
+            $("#triage_popup .title label").text('Sorry, cannot load patient triage history');
+            $("#triage_popup").popup('open'); 
           }
         },
         error: function (error)
         {
-          alert("Sorry, failed to load patient triage history. Please check your network and try again later");
+          //alert("Sorry, failed to load patient triage history. Please check your network and try again later");
+          $("#triage_popup .title label").text('Sorry, failed to load patient triage history. Please check your network and try again later');
+          $("#triage_popup").popup('open'); 
         }
     });
 }
@@ -978,7 +993,9 @@ function initialCalendar(){
         },
         error: function (error)
         {
-          alert("Sorry, failed to events. Please check your network and try again later");
+          //alert("Sorry, failed to events. Please check your network and try again later");
+          $("#scheduler_popup .title label").text('Sorry, failed to events. Please check your network and try again later');
+          $("#scheduler_popup").popup('open');
         }
     });
 }

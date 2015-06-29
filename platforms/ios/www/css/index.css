@@ -1483,6 +1483,9 @@ img#onboarding_avatar
     .ui-radio-off::after{
         margin-top: -1em !important;
     }
+    .submit_popup .title{
+        padding: 10px 25px;
+    }
     .submit_popup .title label{
         border: none;
         font-size: 1.2em;

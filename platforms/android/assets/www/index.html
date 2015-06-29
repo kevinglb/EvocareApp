@@ -138,7 +138,6 @@
             <div id="main_left_menu" class="right_menu" data-role="panel" data-position="left" data-display="push">
                 <h1>Left Menu</h1>
             </div>
-
             <!-- right menu -->
             <div id="main_right_menu" class="right_menu" data-role="panel" data-position="right" data-display="overlay">
                 <h3>Right Menu</h3>
@@ -349,9 +348,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>
-
-            
+            </div>            
         </div>
         <!-- patient list page -->
         <div id="profile_page" data-role="page">
@@ -376,7 +373,36 @@
             <!-- header -->
             <!-- content -->
             <div data-role="main" class="ui-content">
-                <div id="vc_info" class="patient_detail" onClick="showPatienDetail(this)"></div>
+                <div id="vc_info" class="patient_detail" onClick="showPatienDetail(this)">
+                </div>
+                <div class="patient_contact_info" style="display:none;z-index:10; width:360px;">
+                    <div class="container" >
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <i class="icon icon-2x icon-location"></i>
+                            </div>
+                            <div class="col-xs-10">
+                                <label class="patient_contact_address">here will be the detailed address of thr patient</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <i class="icon icon-2x icon-phone"></i>
+                            </div>
+                            <div class="col-xs-10">
+                                <label class="patient_contact_phone">here will be the phone number of thr patient</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <i class="icon icon-2x icon-mail"></i>
+                            </div>
+                            <div class="col-xs-10">
+                                <label class="patient_contact_email">here will be the email address of thr patient</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div id="vc_slide" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
                     <form id="vc_form" role="form">
                         <div class="carousel-inner" role="listbox">
@@ -514,18 +540,17 @@
                                 </div>
                            </div>
                         </div>
-
-                         <div class="carousel_controls">
-                            <div class="back_btn">
-                                <a class="left carousel-control" href="#vc_slide" role="button" data-slide="prev" >Back</a>
-                            </div>
-                            <div class="continue_btn">
-                                <a class="right carousel-control" href="#vc_slide" role="button" data-slide="next">Continue</a>
-                                <a class="carousel-control save_note" role="button" style="display:none;">Save</a>
-                            </div>
-                        </div>
-
                     </form>
+                    <div class="carousel_controls">
+                        <div class="back_btn">
+                            <a class="left carousel-control" href="#vc_slide" role="button" data-slide="prev" >Back</a>
+                        </div>
+                        <div class="continue_btn">
+                            <a class="right carousel-control" href="#vc_slide" role="button" data-slide="next">Continue</a>
+                            <a class="carousel-control save_note" role="button" style="display:none;">Save</a>
+                        </div>
+                    </div>
+                    
                     <div data-role="popup" data-overlay-theme="b" data-dismissible="false" id="vc_popup" class="submit_popup" >                        
                        <div class="row title">
                             <label></label>
@@ -538,6 +563,15 @@
                 </div>
             </div>
             <!-- content -->
+            <div  data-role="popup" data-overlay-theme="b" data-dismissible="false" id="vc_popup" class="submit_popup" >
+                 <div class="row title">
+                    <label></label>
+                </div>
+                <div class="popup-btns">
+                    <a href="#" class="btn" data-rel="back">OK</a>
+                    <div class="clear"></div>
+                </div>
+            </div>
         </div>
         <!-- triage page -->
         <div id="triage_page" data-role="page">
@@ -697,33 +731,31 @@
                                 </div>
                            </div>
                         </div>
+                    </form>
+                    <!-- triage form -->  
                         <!-- carousel inner -->
                         <!-- controls -->
-                        <div class="carousel_controls">
-                            <div class="back_btn">
-                                <a class="left carousel-control" href="#triage_slide" role="button" data-slide="prev" 
-                                onClick="detectTriageCarousel()" disabled="disabled">Back</a>
-                                <!-- <a class="carousel-control add_symptom" onClick="addSymptom()" role="button" style="display:none">+Symptom</a> -->
-                            </div>
-                            <div class="continue_btn">
-                                <a class="right carousel-control" href="#triage_slide" role="button" data-slide="next" onClick="detectTriageCarousel()">Continue</a>
-                                <a class="carousel-control save_note" role="button" onClick="createNewTriage()" style="display:none;">Save</a>
-                            </div>
+                    <div class="carousel_controls">
+                        <div class="back_btn">
+                            <a class="left carousel-control" href="#triage_slide" role="button" data-slide="prev" onClick="detectTriageCarousel()" disabled="disabled">Back</a>
                         </div>
-                    </form>
-                    <!-- triage form -->    
+                        <div class="continue_btn">
+                            <a class="right carousel-control" href="#triage_slide" role="button" data-slide="next" onClick="detectTriageCarousel()">Continue</a>
+                            <a class="carousel-control save_note" role="button" onClick="createNewTriage()" style="display:none;">Save</a>
+                        </div>
+                    </div>  
                 </div> 
                 <!-- triage slide -->
             </div>
             <div data-role="popup" data-overlay-theme="b" data-dismissible="false" id="triage_popup" class="submit_popup" >                        
-                       <div class="row title">
-                            <label></label>
-                        </div>
-                        <div class="popup-btns">
-                                <a href="#" class="btn" data-rel="back">OK</a>
-                                <div class="clear"></div>
-                            </div>
-                    </div>
+                <div class="row title">
+                    <label></label>
+                </div>
+                <div class="popup-btns">
+                    <a href="#" class="btn" data-rel="back">OK</a>
+                    <div class="clear"></div>
+                </div>
+            </div>
             <!-- content -->
         </div>
         <!-- consultant page -->
@@ -797,7 +829,6 @@
                                     </div>
                                 </div>
                             </form>
-
                         </div>
                     </div>
                     <div class="carousel_controls">
@@ -809,7 +840,6 @@
                                 <a class="right carousel-control" role="button" id="consultant_send">Send</a>         
                             </div>
                     </div>
-
                     <div data-role="popup" data-overlay-theme="b" data-dismissible="false" id="consultant_popup" class="submit_popup" >                        
                        <div class="row title">
                             <label></label>
@@ -862,6 +892,7 @@
                                 <div class="col-xs-10 col-xs-offset-2">
                                     <div class="col-xs-4 text-left">
                                         <label>Starts</label>
+                                        <!--  -->
                                     </div>
                                     <div class="col-xs-8 text-right">
                                         <label>27 Apr 2015 11:30</label>
@@ -884,7 +915,6 @@
                                     </div>
                                 </div>
                             </div>
-                        
                             <div class="row padded-row">
                                 <div class="col-xs-2">
                                     <i class="icon icon-2x icon-location"></i>
@@ -922,12 +952,14 @@
                             <div class="row  container padded-row">
                                 <div class="col-xs-5 text-center">
                                     <label class="start_time">START</label>
+                                    <!-- <input type="text" class="datepicker_input start_time" placeholder="start"></input> -->
                                 </div>
                                 <div class="col-xs-2 text-center">
                                     <i class='icon icon-angle-right icon-1x'></i>
                                 </div>
                                 <div class="col-xs-5 text-center">
                                     <label class="end_time">END</label>
+                                   <!--  <input type="text" class="datepicker_input end_time" placeholder="start"></input> -->
                                 </div>
                             </div>
                             <div style="background:#FFF;">
@@ -1075,7 +1107,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <ul id="schedule_timeline" class="timeline">
                                 <li class="patient_schedule">
                                     <div class="row">
@@ -1148,10 +1179,18 @@
                                 <a class="right carousel-control" href="#schedule_slide" role="button" data-slide="next" >Continue</a>
                                 <!-- <a class="carousel-control save_note" role="button" onClick="createNewTriage()" style="display:none;">Save</a> -->
                             </div>
-                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- content -->
+             <div data-role="popup" data-overlay-theme="b" data-dismissible="false" id="scheduler_popup" class="submit_popup" >                        
+                <div class="row title">
+                    <label></label>
+                </div>
+                <div class="popup-btns">
+                    <a href="#" class="btn" data-rel="back">OK</a>
+                    <div class="clear"></div>
+                </div>
+            </div>
         </div>
         <!-- schedule page -->
         <!-- onborading page -->
@@ -1433,10 +1472,7 @@
                     <div class="carousel-inner" role="listbox">  
                         <div class="item active container">
                             <div class="row">
-                                
                                 <h3>Create Checklist</h3>
-
-                                
                                 <ul id="checklist_listview_create" data-role="listview">
                                     <li>
                                         <div class="col-xs-10 bottom-border color-g">
@@ -1473,8 +1509,8 @@
                                 </ul>
                                 <div class="row" style=" margin-top: 25px;">
                                     <a onclick="addNewTag()" class="add_link">
-                                            <i class="icon icon-2x icon-add"></i>
-                                            <span class="md-font">ADD TAG</span>
+                                        <i class="icon icon-2x icon-add"></i>
+                                        <span class="md-font">ADD TAG</span>
                                     </a>
                                 </div>
                             </div>
@@ -1493,14 +1529,12 @@
                                              <div class="col-xs-2 text-center">
                                                     <a href="#" class="close_link" ><i class="icon icon-1x icon-delete"></i></a>
                                             </div>
-                                    
                                             <div class="col-xs-10 bottom-border color-g">
                                                     <input type="text" id="item1_respon" name"respon" placeholder="Responsible entity">
                                             </div>
                                             <div class="col-xs-2 text-center">
                                                     <a href="#" class="close_link" ><i class="icon icon-1x icon-delete"></i></a>
                                             </div>
-                                           
                                         </li>
                                     </ul>
                                     <div class="row" style=" margin-top: 25px;">
@@ -1676,7 +1710,6 @@
                                         </div>
                                     </li>
                                 </ul>
-
                                 <div class="row" style=" margin-top: 25px;">
                                      <a class="add_link">
                                         <i class=" icon icon-2x icon-add"></i>
@@ -1687,22 +1720,21 @@
                             
                         </div>
                     </div>
-                              <!-- controls -->
-                        <div class="carousel_controls">
-                            <div class="back_btn">
-                                <a class="left carousel-control" href="#checklist_slide" role="button" data-slide="prev" onClick="detectChecklistCarousel()">Back</a>
-                            </div>
-                            <div class="continue_btn">
-                                <a class="right carousel-control" href="#checklist_slide" role="button" data-slide="next" onClick="detectChecklistCarousel()">Continue</a>
-                                <a href="#assign_popup" data-rel="popup" data-position-to="window" class="assign_btn carousel-control" style="display:none;">Assign</a>
-                                <a href="#" class="save_btn carousel-control" style="display:none;" onClick="" >Save</a>
-                            </div>
+                    <div class="carousel_controls">
+                        <div class="back_btn">
+                            <a class="left carousel-control" href="#checklist_slide" role="button" data-slide="prev" onClick="detectChecklistCarousel()">Back</a>
+                        </div>
+                        <div class="continue_btn">
+                            <a class="right carousel-control" href="#checklist_slide" role="button" data-slide="next" onClick="detectChecklistCarousel()">Continue</a>
+                            <a href="#assign_popup" data-rel="popup" data-position-to="window" class="assign_btn carousel-control" style="display:none;">Assign</a>
+                            <a href="#" class="save_btn carousel-control" style="display:none;" onClick="" >Save</a>
                         </div>
                     </div>
                 </div>
-                <!-- content end -->
+            </div>
+            <!-- content end -->
         </div>
-            <!-- checlist page end -->
+            <!-- checklist page end -->
 
     <script type="text/javascript" src="cordova.js"></script>
     <script src="plugins/com.phonegap.plugins.sqlite/www/SQLitePlugin.js"></script>
@@ -1722,10 +1754,9 @@
     <!-- <script type="text/javascript" src="plugins/mobiscroll.listbase.js"></script> -->
     <!-- <script type="text/javascript" src="plugins/mobiscroll.image.js"></script> -->
      <!-- <script type="text/javascript" src="plugins/mobiscroll.treelist.js"></script> -->
-
      <!-- <script type="text/javascript" src="plugins/mobiscroll.frame.android.js"></script> -->
     <script type="text/javascript" src="plugins/mobiscroll.frame.android-holo.js"></script>
-<script>
+    <script>
         $(function () {
                 // Date picker initialization
                 $('.datepicker_input').mobiscroll().date({
@@ -1736,7 +1767,7 @@
                     dateFormat: 'dd-M-yy'
                 });
             })
-</script>
+    </script>
 
 <script type="text/javascript">
 //detect keyboard showing up and hide carousel control buttons
@@ -1790,13 +1821,15 @@ $("li.checklist_item").on('swiperight', function(){
 });
 
 function showPatienDetail(element){
-    if($(element).hasClass('expand')){
-        $(element).removeClass('expand');
-    }
-    else{
-        $(element).addClass('expand');
+    // if($(element).hasClass('expand')){
+    //     $(element).removeClass('expand');
+    // }
+    // else{
+    //     $(element).addClass('expand');
     
-    }
+    // }
+    $(element).parent().children('.patient_contact_info').toggle();
+    
 }
 function addNewTag()
 {
@@ -1849,6 +1882,7 @@ function setHeightofContent(){
     $('.carousel-inner').height(contentCurrent-bottom-patient_detail);
     $('#schedule_slide .carousel-inner').height(contentCurrent-bottom);
     $('#checklist_slide .carousel-inner').height(contentCurrent-bottom);
+    $('.patient_contact_info').height(contentCurrent-bottom-patient_detail);
 }
 
 function addSymptom(){
@@ -1981,9 +2015,7 @@ function SwitchToggle(status,element){
 }
 
 function goEditChecklist(){
-
     //load the selected checklist info and jump to the next edit page
-
     $("#checklist_slide").carousel('next');
     $("#editbtn").click();
     $('#checklist_slide .carousel_controls .right').hide();
@@ -2012,7 +2044,6 @@ function gotoAssign(){
 }
 
 function loadAssignContent(target_item){
-
     if(target_item == "group"){
         $("#checklist_assign_content .row ul").empty();
         $("#checklist_assign_content .row ul").append('<li data-icon="false" class="group"><div><div class="col-xs-4 text-center"><img src=""></img></div><div class="col-xs-8"><div class="row group_name"><p>Stage 3 treatment</p></div><div class="row goup_info light-font"><p>patient(S) 35</p></div></div></div></li><li data-icon="false" class="group"><div><div class="col-xs-4 text-center"><img src=""></img></div><div class="col-xs-8"><div class="row group_name"><p>Remission</p></div><div class="row goup_info light-font"><p>patient(S) 7</p></div></div></div></li><li data-icon="false" class="group"><div><div class="col-xs-4 text-center"><img src=""></img></div><div class="col-xs-8"><div class="row group_name"><p>Title</p></div><div class="row goup_info light-font"><p>patient(S) 9</p></div></div></div></li><li data-icon="false" class="group"><div><div class="col-xs-4 text-center"><img src=""></img></div><div class="col-xs-8"><div class="row group_name"><p>Title</p></div><div class="row goup_info light-font"><p>patient(S) 23</p></div></div></div></li>').listview('refresh');
@@ -2020,7 +2051,6 @@ function loadAssignContent(target_item){
     else if(target_item == "event"){
         $("#checklist_assign_content .row ul").empty();
         $("#checklist_assign_content .row ul").append('<li data-iconn="false" class="event"><div><div class="col-xs-4 text-center"><img src=""></img></div><div class="col-xs-8 event_name"><p>Chemotherapy</p></div></div></li><li data-iconn="false" class="event"><div><div class="col-xs-4 text-center"><img src=""></img></div><div class="col-xs-8 event_name"><p>Event Title</p></div></div></li><li data-iconn="false" class="event"><div><div class="col-xs-4 text-center"><img src=""></img></div><div class="col-xs-8 event_name"><p>Event Title</p></div></div></li>').listview('refresh');
-
     }
     else if(target_item == "patient"){
         getPatientList("assign_content_list");
@@ -2033,7 +2063,6 @@ $("#country_selector").countrySelect({
                 preferredCountries: ['ie', 'cn', 'us']
             });
 </script>
-        
         <script type="text/javascript" src="js/global.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/login.js"></script>
