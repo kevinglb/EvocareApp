@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D883C214-80F3-46E3-96DC-9FD3330CD381</string>
+	<key>IDESourceControlProjectName</key>
+	<string>EvocareApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>06E014740526508F1FAD199DE8B3B52A4ED98B98</key>
+		<string>https://github.com/kevinglb/EvocareApp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>platforms/ios/EvocareApp.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>06E014740526508F1FAD199DE8B3B52A4ED98B98</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/kevinglb/EvocareApp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>06E014740526508F1FAD199DE8B3B52A4ED98B98</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>06E014740526508F1FAD199DE8B3B52A4ED98B98</string>
+			<key>IDESourceControlWCCName</key>
+			<string>EvocareApp</string>
+		</dict>
+	</array>
+</dict>
+</plist>
