@@ -485,7 +485,7 @@
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "EvocareApp/EvocareApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					CoreFoundation,
@@ -499,7 +499,10 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = EvocareApp;
+<<<<<<< HEAD
 				PROVISIONING_PROFILE = "";
+=======
+>>>>>>> 9897b5178a8c314e7c07303d8b5128b6d8a5a8b0
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -517,7 +520,7 @@
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "EvocareApp/EvocareApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					CoreFoundation,
@@ -531,7 +534,10 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = EvocareApp;
+<<<<<<< HEAD
 				PROVISIONING_PROFILE = "";
+=======
+>>>>>>> 9897b5178a8c314e7c07303d8b5128b6d8a5a8b0
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

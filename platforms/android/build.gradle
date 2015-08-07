@@ -161,8 +161,8 @@ android {
         }
     }
 
-    compileSdkVersion cdvCompileSdkVersion
-    buildToolsVersion cdvBuildToolsVersion
+    compileSdkVersion 21
+    buildToolsVersion '22.0.1'
 
     if (Boolean.valueOf(cdvBuildMultipleApks)) {
         productFlavors {
@@ -225,6 +225,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: '*.jar')
+    compile project(':CordovaLib')
     // SUB-PROJECT DEPENDENCIES START
     // SUB-PROJECT DEPENDENCIES END
 }

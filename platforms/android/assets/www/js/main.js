@@ -5,11 +5,20 @@ var uploadAvatar = false;
 function loadPatientInfo(page_id)
 {
 	// load patient list 
+  //alert(page_id);
 	getPatientList(page_id);
 }
+/*
+Perhaps we only need load the patient list for patientlit_page at the very first time(maybe when open the app) and then replace the 'onClick' function for every link when the user go for
+different sections
 
+also we need a common function for "$mobile.changePage()" with target page id ,reverse(boolean) and changeHash(boolean) as parameters, in this way we can reduce lines of code
+
+Kevin
+*/
 function getPatientList(page_id)
 {
+  console.log(page_id);
 	$.ajax(
 		{
     		url : patientList_url,
@@ -28,12 +37,12 @@ function getPatientList(page_id)
             {
               $.each(response.patients, function(index, value)
               {
-                output += '<li class="patient" data-icon="false"><div id="' + value.id + '" onClick="setUpVCPage(this.id)"><div class="col-xs-4 col-md-3 patient_photo text-center"><img class="img-circle" src="' + value.avatar + '"></div><div class="col-xs-8 col-md-9 patient_info"><div class="row"><p class="patient_name">' + value.full_name + '</p></div><div class="row"><p class="patient_date">' + value.gender.substring(0,1).toUpperCase() + ' . ' + value.date_of_birth + '</p></div><div class="row"><p class="patient_issue">' +value.condition + '</p></div></div></div></li>';
+                output += '<li class="patient" data-icon="false"><div id="' + value.id + '" onClick="setUpVCPage(this.id)"><div class="col-xs-3 col-md-3 patient_photo text-center"><img class="img-circle" src="' + value.avatar + '"></div><div class="col-xs-9 col-md-9 patient_info"><div class="row"><p class="patient_name">' + value.full_name + '</p></div><div class="row"><p class="patient_date">' + value.gender.substring(0,1).toUpperCase() + ' . ' + value.date_of_birth + '</p></div><div class="row"><p class="patient_issue">' +value.condition + '</p></div></div></div></li>';
               });
 
               $('#patient_list').children('ul').empty();
               $('#patient_list').children('ul').append(output).listview().listview('refresh');
-
+              $('#onboarding_btn').hide();
               // navigate to patientlist page after updating
               $.mobile.changePage("#patientlist_page", 
               {
@@ -49,12 +58,12 @@ function getPatientList(page_id)
 
               $.each(response.patients, function(index, value)
               {
-                output += '<li class="patient" data-icon="false"><div id="' + value.id + '" onClick="setUpTriagePage(this.id)"><div class="col-xs-4 col-md-3 patient_photo text-center"><img class="img-circle" src="' + value.avatar + '"></div><div class="col-xs-8 col-md-9 patient_info"><div class="row"><p class="patient_name">' + value.full_name + '</p></div><div class="row"><p class="patient_date">' + value.gender.substring(0,1).toUpperCase() + ' . ' + value.date_of_birth + '</p></div><div class="row"><p class="patient_issue">' +value.condition + '</p></div></div></div></li>';
+                output += '<li class="patient" data-icon="false"><div id="' + value.id + '" onClick="setUpTriagePage(this.id)"><div class="col-xs-3 col-md-3 patient_photo text-center"><img class="img-circle" src="' + value.avatar + '"></div><div class="col-xs-9 col-md-9 patient_info"><div class="row"><p class="patient_name">' + value.full_name + '</p></div><div class="row"><p class="patient_date">' + value.gender.substring(0,1).toUpperCase() + ' . ' + value.date_of_birth + '</p></div><div class="row"><p class="patient_issue">' +value.condition + '</p></div></div></div></li>';
               });
 
               $('#patient_list').children('ul').empty();
               $('#patient_list').children('ul').append(output).listview().listview('refresh');
-
+              $('#onboarding_btn').hide();
               // navigate to patientlist page after updating
               $.mobile.changePage("#patientlist_page", 
               {
@@ -69,8 +78,6 @@ function getPatientList(page_id)
             {
               // display onboarding button
               $('#onboarding_btn').show();
-
-
               $.each(response.patients, function(index, value)
               {
                 output += '<li class="patient" data-icon="false"><div id="' + value.id + '" onClick="patientSelected(this.id,this)"><div class="col-xs-3 patient_photo text-center"><img class="img-circle" src="' + value.avatar + '"></div><div class="col-xs-9 patient_info"><div class="row"><p class="patient_name">' + value.full_name + '</p></div><div class="row"><p class="patient_date">' + value.gender.substring(0,1).toUpperCase() + ' . ' + value.date_of_birth + '</p></div><div class="row"><p class="patient_issue">' +value.condition + '</p></div></div></div></li>';
@@ -118,19 +125,45 @@ function getPatientList(page_id)
               
               $("#checklist_assign_content .row ul").empty();
               $("#checklist_assign_content .row ul").append(output).listview('refresh');
+              $('#onboarding_btn').hide();
+            }
 
+            if(page_id == "prescription_page"){
+              console.log("prescription_page");
+              $.each(response.patients, function(index, value)
+              {
+                output += '<li class="patient" data-icon="false"><div id="' + value.id + '" onClick="setUpPrescriptionPage(this.id)"><div class="col-xs-3 col-md-3 patient_photo text-center"><img class="img-circle" src="' + value.avatar + '"></div><div class="col-xs-9 col-md-9 patient_info"><div class="row"><p class="patient_name">' + value.full_name + '</p></div><div class="row"><p class="patient_date">' + value.gender.substring(0,1).toUpperCase() + ' . ' + value.date_of_birth + '</p></div><div class="row"><p class="patient_issue">' +value.condition + '</p></div></div></div></li>';
+              });
+
+              $('#patient_list').children('ul').empty();
+              $('#patient_list').children('ul').append(output).listview().listview('refresh');
+              $('#onboarding_btn').hide();
+              // navigate to patientlist page after updating
+              $.mobile.changePage("#patientlist_page", 
+              {
+                transition: "slide",
+                reverse: false,
+                changeHash: true
+              });
             }
     			}
     			else
     			{
-    				alert("Sorry, cannot load your patient list");
+    				//alert("Sorry, cannot load your patient list");
+            $('#main_popup .title label').text('Sorry, cannot load the patient list.');
+            $('#main_popup').popup('open');
+            
     			}
     		},
     		error: function (error)
     		{
-    			alert("Sorry, failed to load patient list. Please check your network and try again later");
+    			//alert("Sorry, failed to load patient list. Please check your network and try again later");
+          $('#main_popup .title label').text('Sorry, failed to load patient list. Please check your network and try again later');
+          $('#main_popup').popup('open');
     		}
 		});
+
+   
 }
 
 //load data and fill in the VC Page
@@ -144,7 +177,7 @@ function setUpVCPage(patient_id)
     // set up patient info on triage page header
     var output = '<div class="col-xs-3 vertical-middle"><img src="' +single_patient.avatar + '" class="img-circle img-responsive"></div><div class="col-xs-9 vertical-middle"><div class="row"><div class="col-xs-6 patient_name md-size">' + single_patient.full_name + '</div><div class="col-xs-1 light-font gender">'+single_patient.gender.substring(0,1)+'</div><div class="col-xs-5 light-font birth_date">' + single_patient.date_of_birth + '</div></div><div class="row"><div class="col-xs-12 light-font disease_issue">' + single_patient.condition + '</div></div></div>';
     $('#vc_info').first().html(output);
-
+    $("#vc_info").height($("#vc_info").height());
     // get patient triage history
     $.ajax(
     {
@@ -160,12 +193,16 @@ function setUpVCPage(patient_id)
           }
           else
           {
-            alert("Sorry, cannot load patient triage history");
+            //alert("Sorry, cannot load patient triage history");
+            $("#vc_popup .title label").text('Sorry, cannot load patient triage history');
+            $("#vc_popup").popup('open');
           }
         },
         error: function (error)
         {
-          alert("Sorry, failed to load patient triage history. Please check your network and try again later");
+          //alert("Sorry, failed to load patient triage history. Please check your network and try again later");
+          $("#vc_popup .title label").text('Sorry, failed to load patient triage history. Please check your network and try again later');
+          $("#vc_popup").popup('open');
         }
     });
 }
@@ -180,6 +217,7 @@ function setUpTriagePage(patient_id)
     // set up patient info on triage page header
     var output = '<div class="col-xs-3 vertical-middle"><img src="' +single_patient.avatar + '" class="img-circle img-responsive"></div><div class="col-xs-9 vertical-middle"><div class="row"><div class="col-xs-6 patient_name md-size">' + single_patient.full_name + '</div><div class="col-xs-1 light-font gender">'+single_patient.gender.substring(0,1)+'</div><div class="col-xs-5 light-font birth_date">' + single_patient.date_of_birth + '</div></div><div class="row"><div class="col-xs-12 light-font disease_issue">' + single_patient.condition + '</div></div></div>';
     $('#triage_info').first().html(output);
+    $("#triage_info").height($("#triage_info").height());
 
     // get patient triage history
     $.ajax(
@@ -196,12 +234,16 @@ function setUpTriagePage(patient_id)
           }
           else
           {
-            alert("Sorry, cannot load patient triage history");
+            //alert("Sorry, cannot load patient triage history);;
+            $("#triage_popup .title label").text('Sorry, cannot load patient triage history');
+            $("#triage_popup").popup('open'); 
           }
         },
         error: function (error)
         {
-          alert("Sorry, failed to load patient triage history. Please check your network and try again later");
+          //alert("Sorry, failed to load patient triage history. Please check your network and try again later");
+          $("#triage_popup .title label").text('Sorry, failed to load patient triage history. Please check your network and try again later');
+          $("#triage_popup").popup('open'); 
         }
     });
 }
@@ -216,11 +258,10 @@ function setUpVCContent(response)
   // set up triage trend page
   $('#vc_slide .patient_contacts').text(total_patients);
   $('#vc_slide .clinic_visit').text(total_clinic_visits);
-
    setTimeout(function()
    {
     showPercentDonut('#vc_pie_chart',total_trend);
-   }, 1000);
+   }, 800);
 
 
   // set up triage timeline
@@ -229,12 +270,12 @@ function setUpVCContent(response)
   {
     if(value.clinic_visit == false)
     {
-       triage_time_data += '<li class="timeline_item"><div class="date col-xs-4 md-size">' + value.date + '</div><div class="status col-xs-4 col-xs-offset-4"><i class="fa fa-2x fa-angle-right"></i><i class="fa fa-2x fa-close"></i></div></li>';
+       triage_time_data += '<li class="timeline_item"><div class="date col-xs-4 md-size">' + value.date + '</div><div class="status col-xs-4 col-xs-offset-4"><i class="icon icon-angle-right"></i><i class="icon icon-delete"></i></div></li>';
     }
 
     if(value.clinic_visit == true)
     {
-       triage_time_data += '<li class="timeline_item visited "><div class="date col-xs-4 md-size">' + value.date + '</div><div class="status col-xs-4 col-xs-offset-4"><i class="fa fa-2x fa-angle-right"></i><div><span>Clinic<br>visit</span></div></div></li>';
+       triage_time_data += '<li class="timeline_item visited "><div class="date col-xs-4 md-size">' + value.date + '</div><div class="status col-xs-4 col-xs-offset-4"><i class="icon icon-angle-right icon-2x"></i><div><span>Clinic<br>visit</span></div></div></li>';
     }
    
   });
@@ -265,7 +306,7 @@ function setUpPatientTriageContent(response)
    setTimeout(function()
    {
     showPercentDonut('#triage_pie_chart', total_trend);
-   }, 1000);
+   }, 800);
 
 
   // set up triage timeline
@@ -274,12 +315,12 @@ function setUpPatientTriageContent(response)
   {
     if(value.clinic_visit == false)
     {
-       triage_time_data += '<li class="timeline_item"><div class="date col-xs-4 md-size">' + value.date + '</div><div class="status col-xs-4 col-xs-offset-4"><i class="fa fa-2x fa-angle-right"></i><i class="fa fa-2x fa-close"></i></div></li>';
+       triage_time_data += '<li class="timeline_item"><div class="date col-xs-4 md-size">' + value.date + '</div><div class="status col-xs-4 col-xs-offset-4"><i class="icon icon-angle-right"></i><i class="icon icon-delete"></i></div></li>';
     }
 
     if(value.clinic_visit == true)
     {
-       triage_time_data += '<li class="timeline_item visited "><div class="date col-xs-4 md-size">' + value.date + '</div><div class="status col-xs-4 col-xs-offset-4"><i class="fa fa-2x fa-angle-right"></i><div><span>Clinic<br>visit</span></div></div></li>';
+       triage_time_data += '<li class="timeline_item visited "><div class="date col-xs-4 md-size">' + value.date + '</div><div class="status col-xs-4 col-xs-offset-4"><i class="icon icon-angle-right"></i><div><span>Clinic<br>visit</span></div></div></li>';
     }
    
   });
@@ -323,7 +364,10 @@ function setUpConulstantPage(patient_id)
 
   // get single patient info by id
   var single_patient = getSinglePatientInfo(patient_id);
-
+  // set up patient info on consultants page header
+  var output = '<div class="col-xs-3 vertical-middle"><img src="' +single_patient.avatar + '" class="img-circle img-responsive"></div><div class="col-xs-9 vertical-middle"><div class="row"><div class="col-xs-6 patient_name md-size">' + single_patient.full_name + '</div><div class="col-xs-1 light-font gender">'+single_patient.gender.substring(0,1)+'</div><div class="col-xs-5 light-font birth_date">' + single_patient.date_of_birth + '</div></div><div class="row"><div class="col-xs-12 light-font disease_issue">' + single_patient.condition + '</div></div></div>';
+  $('#consultant_info').first().html(output);
+  $("#consultant_info").height($("#consultant_info").height());
   console.log(single_patient);
 
   
@@ -333,6 +377,101 @@ function setUpConulstantPage(patient_id)
     reverse: false,
     changeHash: true
   });
+
+  document.getElementById("consultant_send").onclick = function(){
+    sendConsultantMessage(single_patient);      
+  };
+}
+
+
+function sendConsultantMessage(single_patient){
+
+    var patient_name = single_patient.full_name;
+    var patient_gender = single_patient.gender;
+    var patient_dob = single_patient.date_of_birth;
+    var patient_issue = single_patient.condition;
+    var patient_id = single_patient.id;
+    //message details
+    var receiver = $("#message_receiver").val();
+    var subject = $("#message_subject").val();
+    var content = $("#message_content").val();
+
+    var emailFormat = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+    console.log(emailFormat.test(receiver) );
+    if(emailFormat.test(receiver) == 0){
+      //alert('please input a valid email address');
+      $('#consultant_popup .title label').text('Please input a valid email address');
+      $('#consultant_popup').popup('open');
+      
+      $("#consultant_popup").popup({
+        afterclose: function () {
+          $("#message_receiver").focus();
+        }
+      },'close'); 
+      
+      }
+    else{
+
+
+    var new_consultant_message = {key: api_key, patient: patient_id, to: receiver, subject: subject, text: content, attachment: ""};;
+
+    $.ajax(
+    {
+        url : sendConsultant_url,
+        type: "POST",
+        data : new_consultant_message,
+        dataType: 'json',
+        success: function(response)
+        {
+          if(response.status == "1")
+          {
+            //console.log(JSON.stringify(response.message));
+            //alert('the email has been send successfully'); 
+            $('#consultant_popup .title label').text('The message has been sent successfully.');
+            $('#consultant_popup').popup('open');
+            $("#consultant_popup .popup-btns a").addClass('success');
+            // $.mobile.changePage("#patientlist_page", 
+            // {
+            //   transition: "pop",
+            //   reverse: false,
+            //   changeHash: false
+            // });
+            // resetConsultantPage();
+          }
+          else
+          {
+            //alert("Sorry, sending message failed");
+            $('#consultant_popup .title label').text('Sorry, sending message failed');
+            $('#consultant_popup').popup('open');
+            
+          }
+        },
+        error: function (error)
+        {
+          //alert("Sorry, failed to create new triage. Please check your network and try again later");
+          $('#consultant_popup .title label').text('Sorry, failed to create new triage. Please check your network and try again later');
+          $('#consultant_popup').popup('open');
+
+        }
+    });
+
+    $("#consultant_popup").popup({
+        afterclose: function () {
+         if( $("#consultant_popup .popup-btns a").hasClass('success')){
+            resetConsultantPage();
+            $.mobile.changePage("#patientlist_page", 
+            {
+                 transition: "slide",
+                  reverse: false,
+                  changeHash: false
+               });
+         
+          }
+          $("#consultant_popup .popup-btns a").removwClass('success'); 
+        }
+      },'close');  
+  
+  }
 }
 
 function getSinglePatientInfo(patient_id)
@@ -350,9 +489,9 @@ function getSinglePatientInfo(patient_id)
 
 function showPercentDonut(element_id, percent) 
 {
-    console.log(element_id + " " + percent);
+    //console.log(element_id + " " + percent);
     var target = $(element_id);
-    console.log(target);
+    //console.log(target);
     target.empty();
     var width= target.width(),
         height = target.height(),
@@ -450,8 +589,8 @@ function createNewTriage()
 
   var pain_grade = $("#nci_grade").val();
 
-  var history_pain = $('#history_record').children().children('label').attr('class').split(' ').pop();
-  if(history_pain == "ui-radio-on")
+  var history_pain = $('#history_record').children().children('label');
+  if(history_pain.hasClass("ui-radio-on"))
   {
     on_treatment = false;
   }
@@ -481,30 +620,50 @@ function createNewTriage()
         {
           if(response.status == "1")
           {
-            alert(response.message);
-            
+            //alert(response.message);
+            $('#triage_popup .title label').text('A new triage has been created.');
+            $('#triage_popup').popup('open');
+            $("#triage_popup .popup-btns a").addClass('success');
             // reset triage form after create a new triage successfully
-            resetTriagePage();
-            $('#triage_slide .carousel_controls .save_note').hide();
-            $('#triage_slide .carousel_controls .right').show();
-            
-            $.mobile.changePage("#patientlist_page", 
-            {
-              transition: "pop",
-              reverse: false,
-              changeHash: false
-            });
+          
           }
           else
           {
-            alert("Sorry, cannot create new triage");
+            // alert("Sorry, cannot create new triage");
+            $('#triage_popup .title label').text('Sorry, cannot create new triage');
+            $('#triage_popup').popup('open');
+            $("#triage_popup .popup-btns a").addClass('success');
           }
         },
         error: function (error)
         {
-          alert("Sorry, failed to create new triage. Please check your network and try again later");
+          //alert("Sorry, failed to create new triage. Please check your network and try again later");
+          $('#triage_popup .title h3').text('Sorry, failed to create new triage. Please check your network and try again later');
+          $('#triage_popup').popup('open');
+          $("#triage_popup .popup-btns a").addClass('success');
+
         }
     });
+
+   $("#triage_popup").popup({
+        afterclose: function () {
+         if( $("#triage_popup .popup-btns a").hasClass('success')){
+          // reset triage form after create a new triage successfully
+           resetTriagePage();
+            $('#triage_slide .carousel_controls .save_note').hide();
+            $('#triage_slide .carousel_controls .right').show();
+            $.mobile.changePage("#patientlist_page", 
+            {
+                 transition: "slide",
+                  reverse: false,
+                  changeHash: false
+               });
+         
+          }
+          $("#triage_popup .popup-btns a").removwClass('success'); 
+        }
+      },'close');  
+  
 
 }
 
@@ -791,5 +950,56 @@ function deletePictureFromCache( imageURI )
     fileEntry.remove();
   }, null);
 }
+
+function initialCalendar(){
+  var start_date = '01-JUN-2015';
+  var end_date = '30-JUN-2015';
+  var message = {key: api_key,from: start_date, to: end_date};
+  $.ajax(
+    {
+        url : getevents_url,
+        type: "POST",
+        data : message,
+        dataType: 'json',
+        success: function(response)
+        {  
+          if(response.status == "1")
+          {
+            var event = [];
+            console.log("success");
+             $.each(response.events, function(index, value){
+                //console.log(JSON.stringify(response.events));
+                var event_content = {};
+                var start_array = value.start_time.split(' ');
+                var start_date = start_array[0];
+                var start_time = start_array[1];
+                event_content["title"] = value.title;
+                event_content['type'] = value.type;
+                event_content['begin'] = new Date(start_date);
+                event_content['end'] = new Date(start_date);
+                event_content['time'] = start_time;
+                event.push(event_content);
+                //console.log('event:'+JSON.stringify(event));
+            }); 
+            $("#calendar").jqmCalendar({
+                    events: event,
+                    months : ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+                    startOfWeek : 0
+                  });
+          }
+          else{
+            console.log('errors in calendar initialization');
+          }
+        },
+        error: function (error)
+        {
+          //alert("Sorry, failed to events. Please check your network and try again later");
+          $("#scheduler_popup .title label").text('Sorry, failed to events. Please check your network and try again later');
+          $("#scheduler_popup").popup('open');
+        }
+    });
+}
+
+
 
 

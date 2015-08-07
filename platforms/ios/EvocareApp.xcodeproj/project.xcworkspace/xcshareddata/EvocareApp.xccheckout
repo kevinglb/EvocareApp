@@ -5,7 +5,11 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
+<<<<<<< HEAD
 	<string>D883C214-80F3-46E3-96DC-9FD3330CD381</string>
+=======
+	<string>DDD47E76-AAB2-414D-A59F-5B9AA0B1A948</string>
+>>>>>>> 9897b5178a8c314e7c07303d8b5128b6d8a5a8b0
 	<key>IDESourceControlProjectName</key>
 	<string>EvocareApp</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
